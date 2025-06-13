@@ -27,6 +27,17 @@ const Analytics = () => {
     const hasValidFBId = FB_PIXEL_ID && FB_PIXEL_ID !== "123456789";
     const hasValidHJId = HOTJAR_ID && HOTJAR_ID !== "123456";
 
+    // Development logging
+    if (isDevelopment) {
+      console.log("Analytics Configuration:", {
+        GA_MEASUREMENT_ID,
+        FB_PIXEL_ID,
+        HOTJAR_ID,
+        hasValidGAId,
+        hasValidFBId,
+        hasValidHJId,
+      });
+    }
     const scriptsToCleanup: HTMLScriptElement[] = [];
 
     // Load Google Analytics only if ID is configured
