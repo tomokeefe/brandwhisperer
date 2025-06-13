@@ -389,11 +389,11 @@ const Footer = () => {
       { name: "Case Studies", path: "/about#cases" },
     ],
     Company: [
-      { name: "About Us", path: "/about", icon: Users },
-      { name: "Our Process", path: "/about#process", icon: ArrowRight },
-      { name: "Contact", path: "/contact", icon: Mail },
-      { name: "Schedule Call", path: "/contact#schedule", icon: Calendar },
-      { name: "Careers", path: "/contact#careers", icon: Users },
+      { name: "About Us", path: "/about" },
+      { name: "Our Process", path: "/about#process" },
+      { name: "Contact", path: "/contact" },
+      { name: "Schedule Call", path: "/contact#schedule" },
+      { name: "Careers", path: "/contact#careers" },
     ],
     Legal: [
       { name: "Privacy Policy", path: "/privacy", icon: null },
