@@ -287,7 +287,7 @@ const Resources = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="assessment" className="mt-8">
+            <TabsContent value="assessment" className="mt-8" id="assessment">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {leadMagnets
                   .filter((r) => r.category === "assessment")
@@ -303,7 +303,7 @@ const Resources = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="framework" className="mt-8">
+            <TabsContent value="framework" className="mt-8" id="framework">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {leadMagnets
                   .filter((r) => r.category === "framework")
