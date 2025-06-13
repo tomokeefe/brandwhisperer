@@ -88,11 +88,6 @@ const Footer = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [hoveredSocial, setHoveredSocial] = useState<string | null>(null);
-  const [realTimeStats, setRealTimeStats] = useState({
-    activeBrands: 150,
-    fundingSuccess: 87,
-    clientsThisYear: 23,
-  });
   const [particles, setParticles] = useState<FloatingParticle[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
