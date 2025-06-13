@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +31,24 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+  ];
+
+  const resourcesItems = [
+    {
+      title: "Blog",
+      href: "/blog",
+      description: "Startup branding insights and case studies",
+    },
+    {
+      title: "Free Resources",
+      href: "/resources",
+      description: "Download frameworks, assessments, and tools",
+    },
+    {
+      title: "Pricing Calculator",
+      href: "/calculator",
+      description: "Get instant estimates for your project",
+    },
   ];
 
   const isActiveRoute = (path: string) => {
@@ -63,24 +89,79 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "relative px-4 py-2 text-sm font-medium transition-colors duration-200",
-                  isActiveRoute(item.path)
-                    ? "text-secondary-400"
-                    : "text-gray-300 hover:text-white",
-                )}
-              >
-                {item.name}
-                {isActiveRoute(item.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"></div>
-                )}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-2">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.path}>
+                    <Link to={item.path}>
+                      <NavigationMenuLink
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          "bg-transparent hover:bg-dark-800",
+                          isActiveRoute(item.path)
+                            ? "text-secondary-400"
+                            : "text-gray-300 hover:text-white",
+                        )}
+                      >
+                        {item.name}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger
+                    className={cn(
+                      "bg-transparent hover:bg-dark-800 text-gray-300 hover:text-white",
+                      (location.pathname.startsWith("/blog") ||
+                        location.pathname.startsWith("/resources") ||
+                        location.pathname.startsWith("/calculator")) &&
+                        "text-secondary-400",
+                    )}
+                  >
+                    Resources
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 bg-dark-900 border border-dark-700 rounded-lg">
+                      {resourcesItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="text-sm font-medium leading-none text-white">
+                                {item.title}
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+                                {item.description}
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link to="/contact">
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "bg-transparent hover:bg-dark-800",
+                        isActiveRoute("/contact")
+                          ? "text-secondary-400"
+                          : "text-gray-300 hover:text-white",
+                      )}
+                    >
+                      Contact
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* CTA Button */}
@@ -126,6 +207,39 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+
+            {/* Mobile Resources Submenu */}
+            <div className="px-4 py-2">
+              <div className="text-gray-400 text-sm font-medium mb-2">
+                Resources
+              </div>
+              <div className="space-y-1 ml-4">
+                {resourcesItems.map((item) => (
+                  <Link
+                    key={item.title}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-2 text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                "block px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200",
+                isActiveRoute("/contact")
+                  ? "text-secondary-400 bg-dark-800"
+                  : "text-gray-300 hover:text-white hover:bg-dark-800",
+              )}
+            >
+              Contact
+            </Link>
+
             <div className="pt-2">
               <Button
                 asChild
