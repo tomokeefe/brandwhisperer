@@ -34,7 +34,7 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
             Trusted by Growing Brands
           </Badge>
           <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
-            Join 50+ Successful Startups
+            Join 150+ Successful Startups
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             From pre-seed to Series A, founders trust us to build brands that
@@ -73,7 +73,7 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
         <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-8 text-sm lg:text-base">
           <div className="flex items-center gap-2 text-gray-400">
             <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
-            <span>50+ Brands Served</span>
+            <span>150+ Brands Served</span>
           </div>
           <div className="flex items-center gap-2 text-gray-400">
             <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
