@@ -17,6 +17,11 @@ import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import Resources from "@/pages/Resources";
 import Calculator from "@/pages/Calculator";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
+import CookiePolicy from "@/pages/CookiePolicy";
+import DataProcessing from "@/pages/DataProcessing";
+import Sitemap from "@/pages/Sitemap";
 import NotFound from "@/pages/NotFound";
 
 function App() {
