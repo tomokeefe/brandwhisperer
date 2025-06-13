@@ -4,36 +4,11 @@ import LogoWall from "@/components/LogoWall";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, TrendingUp, Users, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getFeaturedLogos, clientLogos } from "@/data/clientLogos";
 
 const Clients = () => {
-  // Sample client logos - in a real app, these would come from a CMS or API
-  const clientLogos = [
-    {
-      id: 1,
-      name: "TechFlow",
-      category: "SaaS",
-    },
-    {
-      id: 2,
-      name: "FinanceFirst",
-      category: "FinTech",
-    },
-    {
-      id: 3,
-      name: "HealthHub",
-      category: "HealthTech",
-    },
-    {
-      id: 4,
-      name: "EduNext",
-      category: "EdTech",
-    },
-    {
-      id: 5,
-      name: "RetailPro",
-      category: "E-commerce",
-    },
-  ];
+  // Use real client logos for the page
+  const featuredLogos = getFeaturedLogos(12); // Featured logos for display
 
   const handleCtaClick = () => {
     window.location.href = "/contact";
@@ -72,6 +47,7 @@ const Clients = () => {
         "The Brand Whisperer transformed our pitch deck into a funding magnet. We raised our Series A in just 3 months.",
       author: "Sarah Chen",
       title: "CEO, TechFlow",
+      company: "SaaS Platform",
       category: "SaaS",
       funding: "$12M Series A",
     },
@@ -80,6 +56,7 @@ const Clients = () => {
         "Their brand strategy was the foundation of our $50M exit. Every investor meeting became a 'yes' after their rebrand.",
       author: "Marcus Rodriguez",
       title: "Founder, FinanceFirst",
+      company: "FinTech Platform",
       category: "FinTech",
       funding: "$50M Exit",
     },
@@ -88,6 +65,7 @@ const Clients = () => {
         "We went from unknown startup to industry leader. Their positioning strategy was pure magic.",
       author: "Lisa Park",
       title: "Co-founder, HealthHub",
+      company: "HealthTech Startup",
       category: "HealthTech",
       funding: "$8M Seed",
     },
@@ -99,7 +77,7 @@ const Clients = () => {
         <title>Our Clients - Success Stories | The Brand Whisperer</title>
         <meta
           name="description"
-          content="Discover how 50+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories and client testimonials."
+          content="Discover how 150+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories and client testimonials."
         />
         <meta
           name="keywords"
@@ -114,7 +92,7 @@ const Clients = () => {
         />
         <meta
           property="og:description"
-          content="Discover how 50+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories."
+          content="Discover how 150+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://brandwhisperer.io/clients" />
@@ -127,7 +105,7 @@ const Clients = () => {
         />
         <meta
           name="twitter:description"
-          content="Discover how 50+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories."
+          content="Discover how 150+ startups raised $2.5B+ with our brand strategy. From pre-seed to Series A, see the success stories."
         />
 
         {/* Structured Data */}
@@ -164,7 +142,7 @@ const Clients = () => {
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
               <Zap className="w-4 h-4" />
-              50+ Success Stories
+              150+ Success Stories
             </div>
 
             <h1 className="text-display-xl lg:text-display-2xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">

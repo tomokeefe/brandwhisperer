@@ -3,23 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getFeaturedLogos } from "@/data/clientLogos";
 
 interface ClientShowcaseProps {
   className?: string;
 }
 
 const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
-  // Sample client logos for homepage display
-  const featuredClients = [
-    { id: 1, name: "TechFlow", category: "SaaS" },
-    { id: 2, name: "FinanceFirst", category: "FinTech" },
-    { id: 3, name: "HealthHub", category: "HealthTech" },
-    { id: 4, name: "EduNext", category: "EdTech" },
-    { id: 5, name: "RetailPro", category: "E-commerce" },
-    { id: 6, name: "DataSync", category: "Analytics" },
-    { id: 7, name: "GrowthLabs", category: "Marketing" },
-    { id: 8, name: "CloudVault", category: "Infrastructure" },
-  ];
+  // Get 8 featured client logos for homepage display
+  const featuredClients = getFeaturedLogos(8);
 
   return (
     <section className={`py-16 lg:py-20 ${className}`}>
@@ -53,14 +45,30 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                <div className="text-center">
-                  <div className="text-sm lg:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">
-                    {client.name}
-                  </div>
-                  <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
-                    {client.category}
-                  </div>
-                </div>
+                <img
+                  src={client.url}
+                  alt={client.alt}
+                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  loading="lazy"
+                  onError={(e) => {
+                    // Fallback to text display if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = "none";
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="text-center">
+                          <div class="text-sm lg:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">
+                            ${client.name}
+                          </div>
+                          <div class="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
+                            ${client.category}
+                          </div>
+                        </div>
+                      `;
+                    }
+                  }}
+                />
 
                 {/* Subtle glow effect on hover */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-secondary-500/0 to-secondary-600/0 group-hover:from-secondary-500/5 group-hover:to-secondary-600/5 transition-all duration-300 pointer-events-none" />
