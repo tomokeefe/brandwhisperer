@@ -93,19 +93,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@brandwhisperer.com",
-      link: "mailto:hello@brandwhisperer.com",
+      value: "hello@brandwhisperer.io",
+      link: "mailto:hello@brandwhisperer.io",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+1 (617) 792-3378",
+      link: "tel:+16177923378",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Boston, MA",
       link: null,
     },
     {
