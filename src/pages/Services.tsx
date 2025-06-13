@@ -22,113 +22,129 @@ import {
   Zap,
   Shield,
   Rocket,
+  Calendar,
+  Briefcase,
+  FileText,
 } from "lucide-react";
 
 const Services = () => {
   const mainServices = [
     {
-      title: "Pre-Seed Package",
+      title: "Pre-Seed Foundation",
       description:
-        "Perfect for early-stage startups who need a strong foundation without breaking the bank. Get the essentials to start building trust with customers and investors.",
-      pricing: "$12,000",
+        "Essential brand foundation for early-stage startups ready to scale smart from day one.",
+      pricing: "$15,000",
       equity: "0.25%",
       features: [
-        "Brand strategy & competitive positioning",
-        "Core visual identity system",
-        "Logo package with variations",
-        "Basic brand guidelines (20 pages)",
-        "Initial messaging framework",
-        "Business card & email signature templates",
-        "Social media assets starter pack",
-        "90-day implementation support",
+        "Brand strategy & positioning",
+        "Logo & visual identity",
+        "Core messaging framework",
+        "Basic brand guidelines",
+        "Pitch deck template",
+        "Social media starter kit",
       ],
-      timeline: "4-6 weeks",
+      timeline: "3-4 weeks",
       link: "/contact",
-      ideal: "Pre-seed startups, MVP stage, first customers",
+      ideal: "Pre-seed startups, MVP stage, early customers",
+      icon: Target,
     },
     {
-      title: "Seed Growth Package",
+      title: "Seed Growth System",
       description:
-        "Comprehensive brand system for startups ready to scale their marketing and customer acquisition. Everything you need to grow confidently.",
+        "Comprehensive brand system designed for rapid scaling and Series A preparation.",
       pricing: "$25,000",
       equity: "0.2%",
       features: [
-        "Complete brand strategy & architecture",
-        "Advanced visual identity system",
-        "Comprehensive messaging framework",
-        "Detailed brand guidelines (50+ pages)",
-        "Marketing asset template library",
-        "Website design system components",
-        "Pitch deck design integration",
-        "Social media brand kit",
-        "Email marketing templates",
-        "Ongoing brand evolution roadmap",
+        "Complete visual identity system",
+        "Scalable design templates",
+        "Website design framework",
+        "Marketing collateral system",
+        "Brand voice & tone guide",
+        "6-month growth roadmap",
       ],
-      timeline: "6-8 weeks",
+      timeline: "4-6 weeks",
       badge: "Most Popular",
       highlighted: true,
       link: "/contact",
       ideal: "Seed stage, scaling teams, Series A prep",
+      icon: TrendingUp,
     },
     {
-      title: "Series A Ready Package",
+      title: "Series A Ready",
       description:
-        "Investment-grade brand system designed to impress investors and scale with rapid growth. Built for companies preparing to 10x their business.",
+        "Investment-grade brand system that attracts funding and scales to enterprise levels.",
       pricing: "$40,000",
       equity: "0.1%",
       features: [
-        "Investment-grade brand strategy",
-        "Complete visual identity ecosystem",
-        "Advanced brand architecture planning",
-        "Premium brand guidelines (100+ pages)",
         "Investor presentation materials",
-        "Website design system & style guide",
-        "Marketing automation templates",
-        "Advanced pitch deck design",
-        "Brand implementation playbook",
-        "Team training & workshops",
-        "Ongoing brand advisory (3 months)",
-        "Scale-ready expansion guidelines",
+        "Enterprise sales collateral",
+        "Brand architecture for products",
+        "Crisis communication framework",
+        "Global expansion guidelines",
+        "12-month strategic roadmap",
       ],
-      timeline: "8-12 weeks",
+      timeline: "6-8 weeks",
       link: "/contact",
       ideal: "Pre-Series A, high-growth teams, investor readiness",
+      icon: Rocket,
     },
   ];
 
-  const additionalServices = [
+  const specialtyServices = [
     {
       icon: Users,
       title: "Brand Advisory Retainer",
-      description: "Ongoing strategic guidance for your brand evolution",
-      pricing: "$5,000/month + 0.15% equity",
+      description:
+        "Ongoing strategic brand guidance as you scale through growth milestones.",
+      pricing: "$5,000/month",
+      equity: "0.15%",
       features: [
         "Monthly strategy sessions",
-        "Brand health monitoring",
-        "Growth milestone planning",
+        "Brand decision support",
+        "Evolution planning",
+        "Crisis brand guidance",
+        "Team training & education",
+        "Quarterly brand audits",
       ],
+      timeline: "Ongoing",
+      type: "retainer",
     },
     {
-      icon: TrendingUp,
-      title: "Project + Performance",
-      description: "Base fee plus success bonus tied to funding milestones",
-      pricing: "Custom pricing",
+      icon: Zap,
+      title: "Rapid Brand Sprint",
+      description:
+        "Emergency brand foundation for urgent deadlines and funding pressures.",
+      pricing: "$8,000",
+      equity: null,
       features: [
-        "Reduced upfront cost",
-        "Success-based bonuses",
-        "Funding milestone rewards",
+        "Logo & basic identity (5 days)",
+        "Simple brand guidelines",
+        "Core messaging points",
+        "Pitch deck template",
+        "Basic marketing materials",
+        "Implementation support",
       ],
+      timeline: "1 week delivery",
+      type: "sprint",
+      urgent: true,
     },
     {
-      icon: Rocket,
-      title: "Equity-Heavy Option",
-      description: "Minimal cash investment for strategic partnerships",
-      pricing: "$5K-$10K + 0.5-1% equity",
+      icon: FileText,
+      title: "Investor Pitch Package",
+      description:
+        "Professional presentation materials that make VCs take notice.",
+      pricing: "$3,000-$5,000",
+      equity: null,
       features: [
-        "Low cash requirement",
-        "Higher equity participation",
-        "Long-term partnership",
+        "Pitch deck design",
+        "One-page company summary",
+        "Financial presentation templates",
+        "Demo day materials",
+        "Investor meeting collateral",
+        "Due diligence package",
       ],
+      timeline: "2-3 weeks",
+      type: "pitch",
     },
   ];
 
@@ -172,6 +188,7 @@ const Services = () => {
         description="Expert brand strategy and visual identity services for hypergrowth startups. Pre-Seed to Series A packages with equity options. Build brands that scale."
         keywords="startup branding services, brand strategy packages, startup visual identity, Series A branding, hypergrowth brand services"
       />
+
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-custom">
@@ -187,9 +204,9 @@ const Services = () => {
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               From pre-seed to Series A, we have packages designed for your
-              current stage with the scalability to grow with your business. All
-              packages include equity participation because we believe in true
-              partnership.
+              current stage with the scalability to grow with your business.
+              Strategic partnerships with equity alignment because we believe in
+              your success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -215,9 +232,19 @@ const Services = () => {
       {/* Main Service Packages */}
       <section id="packages" className="section-spacing bg-dark-900/30">
         <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+              Core Brand Packages
+            </h2>
+            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
+              Comprehensive brand systems designed for startups at different
+              growth stages. Each package includes equity participation for true
+              partnership.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {mainServices.map((service, index) => {
-              // Create ID from service title
               const serviceId = service.title
                 .toLowerCase()
                 .replace(/\s+/g, "-")
@@ -251,8 +278,91 @@ const Services = () => {
         </div>
       </section>
 
-      {/* SCALE Framework */}
+      {/* Specialty Services */}
       <section className="section-spacing">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+            >
+              Specialized Offerings
+            </Badge>
+            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+              Flexible Solutions for Every Need
+            </h2>
+            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
+              Beyond our core packages, we offer specialized services for urgent
+              needs, ongoing support, and specific investor requirements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {specialtyServices.map((service, index) => (
+              <Card
+                key={index}
+                className={`bg-dark-900/50 border-dark-700 card-hover relative ${
+                  service.urgent ? "ring-2 ring-red-500/30" : ""
+                }`}
+              >
+                {service.urgent && (
+                  <Badge className="absolute -top-2 left-4 bg-red-600 text-white">
+                    Urgent
+                  </Badge>
+                )}
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-6">
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl text-white">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-400">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <div className="text-2xl font-bold text-secondary-400">
+                      {service.pricing}
+                    </div>
+                    {service.equity && (
+                      <div className="text-sm text-gray-400">
+                        + {service.equity} equity
+                      </div>
+                    )}
+                    {service.timeline && (
+                      <div className="flex items-center space-x-2 text-sm text-gray-400">
+                        <Clock className="w-4 h-4" />
+                        <span>{service.timeline}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-2">
+                        <CheckCircle className="w-4 h-4 text-secondary-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-300 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    asChild
+                    className="w-full bg-primary-600 hover:bg-primary-700"
+                  >
+                    <Link to="/contact">Get Started</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SCALE Framework */}
+      <section className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge
@@ -290,68 +400,6 @@ const Services = () => {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {step.description}
                   </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Alternative Engagement Models */}
-      <section id="advisory" className="section-spacing bg-dark-900/30">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Flexible Options
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Alternative Engagement Models
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              We understand startup constraints. Beyond our main packages, we
-              offer flexible engagement models to match your specific needs and
-              budget.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
-              >
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl text-white">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-400">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-2xl font-bold text-secondary-400">
-                    {service.pricing}
-                  </div>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-secondary-500" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    asChild
-                    className="w-full bg-primary-600 hover:bg-primary-700"
-                  >
-                    <Link to="/contact">Learn More</Link>
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -405,32 +453,40 @@ const Services = () => {
             <Card className="bg-dark-900/50 border-dark-700">
               <CardHeader>
                 <CardTitle className="text-2xl text-white">
-                  Our Promise
+                  Service Comparison
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <blockquote className="text-gray-300 italic text-lg leading-relaxed">
-                  "We build brands that don't break. When you're celebrating
-                  your Series A, your brand will be ready. When you're scaling
-                  from 10 to 100 employees, your visual systems will handle the
-                  growth."
-                </blockquote>
-                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-dark-700">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-secondary-400">
-                      87%
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      Funding success rate
-                    </div>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
+                    <span className="text-gray-300">Foundation</span>
+                    <span className="text-secondary-400 font-semibold">
+                      $15K + 0.25%
+                    </span>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-secondary-400">
-                      5-10x
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      Scale without rebrands
-                    </div>
+                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
+                    <span className="text-gray-300">Growth System</span>
+                    <span className="text-secondary-400 font-semibold">
+                      $25K + 0.2%
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
+                    <span className="text-gray-300">Series A Ready</span>
+                    <span className="text-secondary-400 font-semibold">
+                      $40K + 0.1%
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
+                    <span className="text-gray-300">Advisory Retainer</span>
+                    <span className="text-secondary-400 font-semibold">
+                      $5K/mo + 0.15%
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span className="text-gray-300">Sprint/Pitch</span>
+                    <span className="text-secondary-400 font-semibold">
+                      $3K-$8K
+                    </span>
                   </div>
                 </div>
               </CardContent>
