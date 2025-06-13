@@ -923,7 +923,7 @@ const Footer = () => {
             style={{ animationDelay: "1200ms" }}
           >
             <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-              <div className="text-dark-600 text-sm text-center lg:text-left">
+              <div className="text-gray-300 text-sm text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start space-x-2 mb-1">
                   <span>
                     © {currentYear} The Brand Whisperer. All rights reserved.
@@ -947,7 +947,7 @@ const Footer = () => {
               <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-2 text-sm">
                 <Link
                   to="/privacy"
-                  className="text-dark-600 hover:text-primary-600 transition-colors duration-200 hover:underline underline-offset-2"
+                  className="text-gray-300 hover:text-primary-400 transition-colors duration-200 hover:underline underline-offset-2"
                   onClick={() => trackLinkClick("Privacy Policy", "legal")}
                 >
                   Privacy Policy
