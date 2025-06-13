@@ -833,7 +833,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3 text-dark-600 group">
                   <MapPin className="w-5 h-5 text-primary-600" />
-                  <span>San Francisco, CA</span>
+                  <span>Boston, MA</span>
                   <Badge className="ml-2 bg-green-500/20 text-green-600 text-xs">
                     <Wifi className="w-3 h-3 mr-1" />
                     Online
