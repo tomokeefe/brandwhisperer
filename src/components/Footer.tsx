@@ -154,23 +154,6 @@ const Footer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Simulate real-time stats updates
-  useEffect(() => {
-    const updateStats = () => {
-      setRealTimeStats((prev) => ({
-        activeBrands: prev.activeBrands + Math.floor(Math.random() * 3),
-        fundingSuccess: Math.max(
-          85,
-          Math.min(92, prev.fundingSuccess + (Math.random() - 0.5)),
-        ),
-        clientsThisYear: prev.clientsThisYear + Math.floor(Math.random() * 2),
-      }));
-    };
-
-    const interval = setInterval(updateStats, 30000); // Update every 30 seconds
-    return () => clearInterval(interval);
-  }, []);
-
   // Intersection Observer for footer animations
   useEffect(() => {
     const observer = new IntersectionObserver(
