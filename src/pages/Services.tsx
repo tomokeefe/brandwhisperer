@@ -298,7 +298,7 @@ const Services = () => {
       </section>
 
       {/* Alternative Engagement Models */}
-      <section className="section-spacing bg-dark-900/30">
+      <section id="advisory" className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge
