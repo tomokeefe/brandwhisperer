@@ -219,7 +219,7 @@ const Contact = () => {
       </section>
 
       {/* Main Content Grid */}
-      <section className="section-spacing">
+      <section id="schedule" className="section-spacing">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
