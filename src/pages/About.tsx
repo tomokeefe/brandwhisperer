@@ -30,7 +30,7 @@ const About = () => {
     {
       company: "New Relic",
       role: "Senior Brand Strategist",
-      duration: "2015-2023",
+      duration: "2011-2014",
       description:
         "Lived through hypergrowth from 50 employees to IPO. Witnessed firsthand the cost of delaying brand evolution.",
       achievements: [
@@ -42,7 +42,7 @@ const About = () => {
     {
       company: "Idealab",
       role: "Portfolio Brand Advisor",
-      duration: "2012-2015",
+      duration: "1999-2003",
       description:
         "Worked within proven startup studio environment, understanding unique branding needs of high-potential startups.",
       achievements: [
@@ -54,7 +54,7 @@ const About = () => {
     {
       company: "Boston Creative Agencies",
       role: "Brand Consultant",
-      duration: "1995-2012",
+      duration: "1994-1998",
       description:
         "Foundation years building expertise across industries and company stages.",
       achievements: [
