@@ -340,7 +340,7 @@ const PrivacyPolicy = () => {
                       <Phone className="w-5 h-5 text-primary-400" />
                       <div>
                         <div className="font-semibold">Phone</div>
-                        <div className="text-sm">+1 (555) 123-4567</div>
+                        <div className="text-sm">+1 (617) 792-3378</div>
                       </div>
                     </div>
 
@@ -348,7 +348,7 @@ const PrivacyPolicy = () => {
                       <MapPin className="w-5 h-5 text-primary-400" />
                       <div>
                         <div className="font-semibold">Address</div>
-                        <div className="text-sm">San Francisco, CA</div>
+                        <div className="text-sm">Boston, MA</div>
                       </div>
                     </div>
                   </div>
