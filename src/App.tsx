@@ -17,6 +17,7 @@ import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import Resources from "@/pages/Resources";
 import Calculator from "@/pages/Calculator";
+import Clients from "@/pages/Clients";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookiePolicy from "@/pages/CookiePolicy";
@@ -39,6 +40,7 @@ function App() {
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
               <Route path="/about" element={<About />} />
+              <Route path="/clients" element={<Clients />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/resources" element={<Resources />} />
