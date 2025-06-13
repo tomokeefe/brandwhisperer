@@ -867,20 +867,8 @@ const Footer = () => {
                         animationDelay: `${800 + categoryIndex * 100}ms`,
                       }}
                     >
-                      <h3 className="text-lg font-semibold text-dark-900 mb-6 flex items-center space-x-2">
-                        <span>{category}</span>
-                        {category === "Services" && (
-                          <TrendingUp className="w-4 h-4 text-primary-500" />
-                        )}
-                        {category === "Resources" && (
-                          <BookOpen className="w-4 h-4 text-secondary-500" />
-                        )}
-                        {category === "Company" && (
-                          <Users className="w-4 h-4 text-green-500" />
-                        )}
-                        {category === "Legal" && (
-                          <Shield className="w-4 h-4 text-gray-500" />
-                        )}
+                      <h3 className="text-lg font-semibold text-dark-900 mb-6">
+                        {category}
                       </h3>
                       <ul className="space-y-4">
                         {links.map((link, linkIndex) => (
