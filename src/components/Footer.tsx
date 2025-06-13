@@ -239,8 +239,8 @@ const Footer = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 pt-8 border-t border-dark-200">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="mt-20 pt-12 border-t border-dark-200 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
               <div>
                 <div className="text-2xl font-bold text-primary-600 mb-1">
                   87%
