@@ -169,7 +169,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button
               asChild
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
+              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-6 py-2.5 rounded transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
             >
               <Link to="/contact">Start Your Brand</Link>
             </Button>
@@ -178,7 +178,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-10 h-10 rounded-lg bg-dark-800 border border-dark-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-dark-700 transition-colors duration-200"
+            className="md:hidden w-10 h-10 rounded bg-dark-800 border border-dark-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-dark-700 transition-colors duration-200"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
