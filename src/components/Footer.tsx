@@ -123,9 +123,9 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="relative">
         <div className="container-custom py-20 lg:py-24 px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
             {/* Brand Section */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4 px-4">
               <Link to="/" className="flex items-center space-x-3 mb-6">
                 <div className="relative">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
