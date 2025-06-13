@@ -396,10 +396,10 @@ const Footer = () => {
       { name: "Careers", path: "/contact#careers" },
     ],
     Legal: [
-      { name: "Privacy Policy", path: "/privacy", icon: null },
-      { name: "Terms of Service", path: "/terms", icon: null },
-      { name: "Cookie Policy", path: "/cookies", icon: null },
-      { name: "Data Processing", path: "/data", icon: null },
+      { name: "Privacy Policy", path: "/privacy" },
+      { name: "Terms of Service", path: "/terms" },
+      { name: "Cookie Policy", path: "/cookies" },
+      { name: "Data Processing", path: "/data" },
     ],
   };
 
