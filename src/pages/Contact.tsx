@@ -157,7 +157,8 @@ const Contact = () => {
               Let's Talk
             </Badge>
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
-              Ready to Build a Brand That Scales?
+              Ready to Build a{" "}
+              <span className="text-secondary-400">Brand That Scales?</span>
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               Schedule a free consultation to discuss your startup's unique
