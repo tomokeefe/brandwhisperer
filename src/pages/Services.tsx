@@ -200,7 +200,8 @@ const Services = () => {
               Service Packages
             </Badge>
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
-              Brands Built for Every Growth Stage
+              Brands Built for Every{" "}
+              <span className="text-secondary-400">Growth Stage</span>
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               From pre-seed to Series A, we have packages designed for your
