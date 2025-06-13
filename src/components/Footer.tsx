@@ -66,7 +66,7 @@ const Footer = () => {
 
       {/* Newsletter Section */}
       <div className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="container-custom py-16 lg:py-20">
+        <div className="container-custom py-20 lg:py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <Badge
               variant="outline"
