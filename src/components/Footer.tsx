@@ -843,9 +843,9 @@ const Footer = () => {
                   <Clock className="w-5 h-5 text-primary-600" />
                   <span className="flex items-center space-x-2">
                     <span>
-                      PST:{" "}
+                      EST:{" "}
                       {currentTime.toLocaleTimeString("en-US", {
-                        timeZone: "America/Los_Angeles",
+                        timeZone: "America/New_York",
                         hour: "2-digit",
                         minute: "2-digit",
                       })}
