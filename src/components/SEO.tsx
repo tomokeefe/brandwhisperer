@@ -41,9 +41,9 @@ const SEO: React.FC<SEOProps> = ({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-555-123-4567",
+      telephone: "+1-617-792-3378",
       contactType: "customer service",
-      email: "hello@brandwhisperer.com",
+      email: "hello@brandwhisperer.io",
     },
     sameAs: [
       "https://linkedin.com/company/brandwhisperer",
