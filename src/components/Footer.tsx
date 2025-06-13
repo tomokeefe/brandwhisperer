@@ -67,17 +67,17 @@ const Footer = () => {
       {/* Newsletter Section */}
       <div className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
         <div className="container-custom py-20 lg:py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center px-4">
             <Badge
               variant="outline"
-              className="mb-6 border-primary-300 text-primary-100 bg-primary-100/10"
+              className="mb-8 border-primary-300 text-primary-100 bg-primary-100/10"
             >
               Weekly Insights
             </Badge>
-            <h2 className="text-display-md lg:text-display-lg mb-6">
+            <h2 className="text-display-md lg:text-display-lg mb-8">
               Join 2,500+ Founders Getting Startup Brand Insights
             </h2>
-            <p className="text-body-lg text-primary-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-body-lg text-primary-100 mb-10 max-w-2xl mx-auto">
               Get actionable brand strategy tips, case studies, and frameworks
               delivered to your inbox every Tuesday. No spam, just value.
             </p>
