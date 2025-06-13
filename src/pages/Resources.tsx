@@ -319,7 +319,7 @@ const Resources = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="tools" className="mt-8">
+            <TabsContent value="tools" className="mt-8" id="calculator">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {leadMagnets
                   .filter(
