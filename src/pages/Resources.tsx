@@ -212,7 +212,8 @@ const Resources = () => {
               Free Resources
             </Badge>
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
-              Startup Brand Resources & Tools
+              Brand{" "}
+              <span className="text-secondary-400">Resources & Tools</span>
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               Download the same frameworks, assessments, and tools we use with
