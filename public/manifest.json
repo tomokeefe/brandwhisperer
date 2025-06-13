@@ -1,0 +1,65 @@
+{
+  "name": "The Brand Whisperer - Building Brands That Scale",
+  "short_name": "Brand Whisperer",
+  "description": "Expert brand strategy and visual identity for hypergrowth startups. We build scalable brands that grow with your business from pre-seed to IPO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Schedule Consultation",
+      "short_name": "Consultation",
+      "description": "Schedule a free brand consultation",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Pricing Calculator",
+      "short_name": "Calculator",
+      "description": "Calculate your brand investment",
+      "url": "/calculator",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Free Resources",
+      "short_name": "Resources",
+      "description": "Download free brand resources",
+      "url": "/resources",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

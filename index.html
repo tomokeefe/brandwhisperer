@@ -3,11 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello world project</title>
-  </head>
 
+    <!-- Primary Meta Tags -->
+    <title>
+      The Brand Whisperer - Building Brands That Scale from Startup to Unicorn
+    </title>
+    <meta
+      name="description"
+      content="Expert brand strategy and visual identity for hypergrowth startups. We build scalable brands that grow with your business from pre-seed to IPO without expensive rebrands."
+    />
+    <meta
+      name="keywords"
+      content="startup branding, brand strategy, hypergrowth branding, Series A branding, startup visual identity, scalable brand systems, startup brand consultant"
+    />
+    <meta name="author" content="The Brand Whisperer" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brandwhisperer.com/" />
+    <meta
+      property="og:title"
+      content="The Brand Whisperer - Building Brands That Scale from Startup to Unicorn"
+    />
+    <meta
+      property="og:description"
+      content="Expert brand strategy and visual identity for hypergrowth startups. We build scalable brands that grow with your business from pre-seed to IPO without expensive rebrands."
+    />
+    <meta
+      property="og:image"
+      content="https://brandwhisperer.com/og-image.jpg"
+    />
+    <meta property="og:site_name" content="The Brand Whisperer" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://brandwhisperer.com/" />
+    <meta
+      property="twitter:title"
+      content="The Brand Whisperer - Building Brands That Scale from Startup to Unicorn"
+    />
+    <meta
+      property="twitter:description"
+      content="Expert brand strategy and visual identity for hypergrowth startups. We build scalable brands that grow with your business from pre-seed to IPO without expensive rebrands."
+    />
+    <meta
+      property="twitter:image"
+      content="https://brandwhisperer.com/og-image.jpg"
+    />
+    <meta property="twitter:site" content="@brandwhisperer" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="msapplication-TileColor" content="#4F46E5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Brand Whisperer" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brandwhisperer.com/" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4F46E5" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "The Brand Whisperer",
+        "description": "Building brands that scale from startup to unicorn without breaking",
+        "url": "https://brandwhisperer.com",
+        "logo": "https://brandwhisperer.com/logo.png",
+        "foundingDate": "1995",
+        "founder": {
+          "@type": "Person",
+          "name": "The Brand Whisperer"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-123-4567",
+          "contactType": "customer service",
+          "email": "hello@brandwhisperer.com"
+        },
+        "sameAs": [
+          "https://linkedin.com/company/brandwhisperer",
+          "https://twitter.com/brandwhisperer"
+        ],
+        "makesOffer": {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Startup Brand Strategy & Visual Identity",
+            "description": "Comprehensive branding services for hypergrowth startups"
+          }
+        }
+      }
+    </script>
+
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+      /* Critical above-the-fold styles */
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background-color: #020617;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+
+      .container-custom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .container-custom {
+          padding: 0 1.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container-custom {
+          padding: 0 2rem;
+        }
+      }
+
+      /* Loading indicator */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #020617;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #1e293b;
+        border-top: 3px solid #4f46e5;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading screen -->
+      <div class="loading-screen">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Remove loading screen when React loads -->
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          const loadingScreen = document.querySelector(".loading-screen");
+          if (loadingScreen) {
+            loadingScreen.style.opacity = "0";
+            loadingScreen.style.transition = "opacity 0.3s ease";
+            setTimeout(() => loadingScreen.remove(), 300);
+          }
+        }, 100);
+      });
+    </script>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>
