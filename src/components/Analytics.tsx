@@ -103,8 +103,11 @@ const Analytics = () => {
 
   // Track page views
   useEffect(() => {
+    const GA_MEASUREMENT_ID =
+      import.meta.env.VITE_GA_MEASUREMENT_ID || "G-DEMO12345";
+
     if (window.gtag) {
-      window.gtag("config", "G-XXXXXXXXXX", {
+      window.gtag("config", GA_MEASUREMENT_ID, {
         page_title: document.title,
         page_location: window.location.href,
         page_path: location.pathname,
