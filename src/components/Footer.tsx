@@ -823,11 +823,11 @@ const Footer = () => {
                 <div className="flex items-center space-x-3 text-dark-600 hover:text-primary-600 transition-colors duration-300 group">
                   <Phone className="w-5 h-5 text-primary-600 group-hover:scale-110 transition-transform duration-300" />
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+16177923378"
                     className="transition-colors duration-300"
                     onClick={() => trackLinkClick("Phone", "contact")}
                   >
-                    +1 (555) 123-4567
+                    +1 (617) 792-3378
                   </a>
                   <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
