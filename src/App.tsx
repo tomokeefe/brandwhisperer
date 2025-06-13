@@ -5,6 +5,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import PerformanceOptimizations, {
+  ResourceHints,
+} from "@/components/PerformanceOptimizations";
+import ConversionTracking from "@/components/ConversionTracking";
 import Index from "@/pages/Index";
 import Services from "@/pages/Services";
 import About from "@/pages/About";
@@ -19,7 +23,10 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <div className="min-h-screen bg-dark-950 text-white">
+          <ResourceHints />
+          <PerformanceOptimizations />
           <Analytics />
+          <ConversionTracking />
           <Navbar />
           <main>
             <Routes>
