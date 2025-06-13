@@ -363,24 +363,20 @@ const Footer = () => {
       {
         name: "Pre-Seed Package",
         path: "/services#pre-seed-package",
-        icon: Users,
       },
       {
         name: "Seed Growth Package",
         path: "/services#seed-growth-package",
-        icon: TrendingUp,
       },
       {
         name: "Series A Ready",
         path: "/services#series-a-ready-package",
-        icon: Award,
       },
       {
         name: "Brand Advisory",
         path: "/services#advisory",
-        icon: MessageCircle,
       },
-      { name: "Pricing Calculator", path: "/calculator", icon: BarChart3 },
+      { name: "Pricing Calculator", path: "/calculator" },
     ],
     Resources: [
       { name: "Blog", path: "/blog", icon: BookOpen },
