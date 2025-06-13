@@ -942,7 +942,7 @@ const Footer = () => {
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8",
             )}
-            style={{ animationDelay: "1600ms" }}
+            style={{ animationDelay: "1200ms" }}
           >
             <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
               <div className="text-dark-600 text-sm text-center lg:text-left">
