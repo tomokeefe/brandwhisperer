@@ -9,16 +9,56 @@ interface ClientShowcaseProps {
 }
 
 const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
-  // Sample client logos for homepage display
+  // Featured client logos for homepage display
   const featuredClients = [
-    { id: 1, name: "TechFlow", category: "SaaS" },
-    { id: 2, name: "FinanceFirst", category: "FinTech" },
-    { id: 3, name: "HealthHub", category: "HealthTech" },
-    { id: 4, name: "EduNext", category: "EdTech" },
-    { id: 5, name: "RetailPro", category: "E-commerce" },
-    { id: 6, name: "DataSync", category: "Analytics" },
-    { id: 7, name: "GrowthLabs", category: "Marketing" },
-    { id: 8, name: "CloudVault", category: "Infrastructure" },
+    {
+      id: 1,
+      name: "Stripe",
+      category: "FinTech",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fb2f640d849fa4bea8d55af6f4631a558?format=webp&width=800",
+    },
+    {
+      id: 2,
+      name: "Figma",
+      category: "Design",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F16ca4f0e969545c5972c42c9a36837fd?format=webp&width=800",
+    },
+    {
+      id: 3,
+      name: "Notion",
+      category: "Productivity",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F1e297280f57a44c8a045bf0ad629fd47?format=webp&width=800",
+    },
+    {
+      id: 4,
+      name: "Slack",
+      category: "Communication",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F132bf55f6ddf465eaf112a36616b56a9?format=webp&width=800",
+    },
+    {
+      id: 5,
+      name: "Shopify",
+      category: "E-commerce",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fd8534d79af0a4b40947e7a63b5af7476?format=webp&width=800",
+    },
+    {
+      id: 6,
+      name: "Dropbox",
+      category: "Cloud Storage",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fad9332dfbe3845a6b2a111e08fb99143?format=webp&width=800",
+    },
+    {
+      id: 7,
+      name: "Airbnb",
+      category: "Travel",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fa0ba80f010d744d49ce112baea2b35ea?format=webp&width=800",
+    },
+    {
+      id: 8,
+      name: "GitHub",
+      category: "Developer Tools",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fcdb094fd61d04fba9dbc60e98c85d6d6?format=webp&width=800",
+    },
   ];
 
   return (
