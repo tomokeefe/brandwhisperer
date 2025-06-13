@@ -212,8 +212,8 @@ const Footer = () => {
             </div>
 
             {/* Links Sections */}
-            <div className="lg:col-span-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <div className="lg:col-span-8 px-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
                 {Object.entries(footerLinks).map(([category, links]) => (
                   <div key={category}>
                     <h3 className="text-lg font-semibold text-dark-900 mb-4">
