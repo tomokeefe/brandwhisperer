@@ -883,42 +883,36 @@ const Footer = () => {
                         )}
                       </h3>
                       <ul className="space-y-4">
-                        {links.map((link, linkIndex) => {
-                          const IconComponent = link.icon;
-                          return (
-                            <li
-                              key={link.name}
-                              className={cn(
-                                "transition-all duration-300",
-                                isFooterVisible
-                                  ? "opacity-100 translate-x-0"
-                                  : "opacity-0 -translate-x-4",
-                              )}
-                              style={{
-                                animationDelay: `${1000 + categoryIndex * 100 + linkIndex * 50}ms`,
-                              }}
+                        {links.map((link, linkIndex) => (
+                          <li
+                            key={link.name}
+                            className={cn(
+                              "transition-all duration-300",
+                              isFooterVisible
+                                ? "opacity-100 translate-x-0"
+                                : "opacity-0 -translate-x-4",
+                            )}
+                            style={{
+                              animationDelay: `${1000 + categoryIndex * 100 + linkIndex * 50}ms`,
+                            }}
+                          >
+                            <Link
+                              to={link.path}
+                              className="text-dark-600 hover:text-primary-600 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
+                              onClick={() =>
+                                trackLinkClick(
+                                  link.name,
+                                  category.toLowerCase(),
+                                )
+                              }
                             >
-                              <Link
-                                to={link.path}
-                                className="text-dark-600 hover:text-primary-600 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
-                                onClick={() =>
-                                  trackLinkClick(
-                                    link.name,
-                                    category.toLowerCase(),
-                                  )
-                                }
-                              >
-                                {IconComponent && (
-                                  <IconComponent className="w-4 h-4 mr-2 opacity-60 group-hover:opacity-100 group-hover:text-primary-500 transition-all duration-300" />
-                                )}
-                                <span className="group-hover:underline underline-offset-2">
-                                  {link.name}
-                                </span>
-                                <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
-                              </Link>
-                            </li>
-                          );
-                        })}
+                              <span className="group-hover:underline underline-offset-2">
+                                {link.name}
+                              </span>
+                              <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   ),
