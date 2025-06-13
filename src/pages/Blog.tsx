@@ -38,6 +38,17 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      title:
+        "The Hidden Cost of Inconsistent Branding: How Mixed Messages Kill Growth",
+      excerpt:
+        "Inconsistent branding costs startups 23% of revenue growth. Learn the 5 critical touchpoints where brand inconsistency kills conversions and how to fix them in 30 days.",
+      author: "The Brand Whisperer",
+      date: "2024-01-18",
+      readTime: "11 min read",
+      category: "Brand Strategy",
+      slug: "hidden-cost-inconsistent-branding",
+    },
+    {
       title: "From Garage to IPO: Brand Evolution Frameworks for Hypergrowth",
       excerpt:
         "A comprehensive guide to building brand architectures that accommodate business evolution, new products, and market expansion without breaking.",
