@@ -10,7 +10,7 @@ interface ClientShowcaseProps {
 }
 
 const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
-  // Get 8 featured client logos for homepage display
+  // Get exactly the 8 featured client logos for homepage display
   const featuredClients = getFeaturedLogos(8);
 
   return (
@@ -29,8 +29,8 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
             Join 150+ Successful Startups
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            From pre-seed to Series A, founders trust us to build brands that
-            scale with their vision.
+            From iconic brands like Evite and Picasa to emerging innovators like
+            Cygilant and Gentreo, we build brands that scale with ambition.
           </p>
         </div>
 
