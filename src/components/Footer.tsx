@@ -267,8 +267,8 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-16 pt-8 border-t border-dark-200">
-            <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+          <div className="mt-20 pt-12 border-t border-dark-200 px-4">
+            <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
               <div className="text-dark-600 text-sm">
                 © {currentYear} The Brand Whisperer. All rights reserved.
                 Building brands that scale since 1995.
