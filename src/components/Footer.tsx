@@ -1076,7 +1076,7 @@ const Footer = () => {
                   <span>•</span>
                   <span>Made with</span>
                   <Coffee className="w-3 h-3 text-amber-500" />
-                  <span>in San Francisco.</span>
+                  <span>in Boston.</span>
                   <span>•</span>
                   <Badge className="bg-green-500/20 text-green-600 text-xs">
                     <Globe className="w-3 h-3 mr-1" />
