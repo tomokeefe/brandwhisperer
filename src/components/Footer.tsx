@@ -244,7 +244,7 @@ const Footer = () => {
         path: "/services#advisory",
         icon: MessageCircle,
       },
-      { name: "Pricing Calculator", path: "/calculator", icon: Calculator },
+      { name: "Pricing Calculator", path: "/calculator", icon: BarChart3 },
     ],
     Resources: [
       { name: "Blog", path: "/blog", icon: BookOpen },
