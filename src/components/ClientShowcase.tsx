@@ -93,14 +93,23 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                <div className="text-center">
-                  <div className="text-sm lg:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">
-                    {client.name}
+                {client.url ? (
+                  <img
+                    src={client.url}
+                    alt={`${client.name} logo`}
+                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="text-center">
+                    <div className="text-sm lg:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">
+                      {client.name}
+                    </div>
+                    <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
+                      {client.category}
+                    </div>
                   </div>
-                  <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
-                    {client.category}
-                  </div>
-                </div>
+                )}
 
                 {/* Subtle glow effect on hover */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-secondary-500/0 to-secondary-600/0 group-hover:from-secondary-500/5 group-hover:to-secondary-600/5 transition-all duration-300 pointer-events-none" />
