@@ -238,7 +238,7 @@ const Clients = () => {
       {/* LogoWall Section */}
       <LogoWall
         logos={clientLogos}
-        title="Trusted by 50+ Growing Brands"
+        title="Trusted by 150+ Growing Brands"
         subtitle="From pre-seed startups to Series A companies, we've helped brands across industries build trust, clarity, and momentum that converts investors and customers."
         ctaTitle="Ready to Join These Success Stories?"
         ctaDescription="Let's build a brand that investors and customers can't ignore. Start with a free brand assessment and see how we can transform your startup's trajectory."

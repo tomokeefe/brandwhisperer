@@ -21,7 +21,7 @@ interface LogoWallProps {
 
 const LogoWall: React.FC<LogoWallProps> = ({
   logos = [],
-  title = "Trusted by 50+ Growing Brands",
+  title = "Trusted by 150+ Growing Brands",
   subtitle = "From pre-seed startups to Series A companies, we've helped brands across industries build trust, clarity, and momentum.",
   ctaTitle = "Ready to Join These Success Stories?",
   ctaDescription = "Let's build a brand that investors and customers can't ignore. Start with a free brand assessment.",
