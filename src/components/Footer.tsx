@@ -83,7 +83,7 @@ const Footer = () => {
             </p>
 
             {isSubscribed ? (
-              <div className="bg-green-500/20 border border-green-400/30 rounded-lg p-6 max-w-md mx-auto">
+              <div className="bg-green-500/20 border border-green-400/30 rounded-lg p-8 max-w-md mx-auto">
                 <div className="text-green-400 mb-2">✓ You're subscribed!</div>
                 <p className="text-green-100 text-sm">
                   Welcome to the community. Check your email for a confirmation
@@ -93,19 +93,19 @@ const Footer = () => {
             ) : (
               <form
                 onSubmit={handleNewsletterSubmit}
-                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+                className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto px-4"
               >
                 <Input
                   type="email"
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-primary-900/50 border-primary-500 text-white placeholder:text-primary-200 flex-1"
+                  className="bg-primary-900/50 border-primary-500 text-white placeholder:text-primary-200 flex-1 py-3 px-4"
                   required
                 />
                 <Button
                   type="submit"
-                  className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8"
+                  className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-3"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Subscribe Free
@@ -113,7 +113,7 @@ const Footer = () => {
               </form>
             )}
 
-            <p className="text-primary-200 text-sm mt-4">
+            <p className="text-primary-200 text-sm mt-6">
               Join founders from Y Combinator, Techstars, and 500 Startups
             </p>
           </div>
