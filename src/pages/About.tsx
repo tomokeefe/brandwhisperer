@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -190,6 +191,11 @@ const About = () => {
 
   return (
     <div className="bg-dark-950 pt-32 pb-16">
+      <SEO
+        title="About The Brand Whisperer - 30 Years Building Scalable Startup Brands"
+        description="Meet The Brand Whisperer team. 30+ years experience, 150+ startup projects, New Relic & Idealab background. Building brands that scale from garage to IPO."
+        keywords="brand whisperer team, startup brand consultant, New Relic branding, Idealab experience, startup brand expertise"
+      />
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-custom">

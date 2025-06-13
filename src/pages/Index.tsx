@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
@@ -134,6 +135,7 @@ const Index = () => {
 
   return (
     <div className="bg-dark-950">
+      <SEO />
       {/* Hero Section */}
       <Hero />
 

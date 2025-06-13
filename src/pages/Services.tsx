@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -166,6 +167,11 @@ const Services = () => {
 
   return (
     <div className="bg-dark-950 pt-32 pb-16">
+      <SEO
+        title="Startup Branding Services & Packages - The Brand Whisperer"
+        description="Expert brand strategy and visual identity services for hypergrowth startups. Pre-Seed to Series A packages with equity options. Build brands that scale."
+        keywords="startup branding services, brand strategy packages, startup visual identity, Series A branding, hypergrowth brand services"
+      />
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-custom">

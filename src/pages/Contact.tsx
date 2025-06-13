@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SEO from "@/components/SEO";
+import EnhancedContactForm from "@/components/EnhancedContactForm";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -139,6 +141,11 @@ const Contact = () => {
 
   return (
     <div className="bg-dark-950 pt-32 pb-16">
+      <SEO
+        title="Contact The Brand Whisperer - Free Startup Brand Consultation"
+        description="Schedule a free brand consultation for your startup. Expert brand strategy and visual identity services. Contact The Brand Whisperer today."
+        keywords="startup brand consultation, contact brand whisperer, startup branding contact, free brand consultation"
+      />
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-custom">
@@ -217,156 +224,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div id="contact-form">
-              <div className="mb-8">
-                <h2 className="text-display-sm font-bold text-white mb-4">
-                  Get Started Today
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
-                  Tell us about your startup and we'll get back to you within 24
-                  hours with next steps. All consultations are free and
-                  confidential.
-                </p>
-              </div>
-
-              <Card className="bg-dark-900/50 border-dark-700">
-                <CardContent className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name" className="text-white">
-                          Full Name *
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="bg-dark-800 border-dark-600 text-white"
-                          placeholder="Your full name"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="email" className="text-white">
-                          Email *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="bg-dark-800 border-dark-600 text-white"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="company" className="text-white">
-                          Company Name *
-                        </Label>
-                        <Input
-                          id="company"
-                          name="company"
-                          type="text"
-                          required
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="bg-dark-800 border-dark-600 text-white"
-                          placeholder="Your startup name"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="stage" className="text-white">
-                          Funding Stage *
-                        </Label>
-                        <select
-                          id="stage"
-                          name="stage"
-                          required
-                          value={formData.stage}
-                          onChange={handleChange}
-                          className="w-full bg-dark-800 border border-dark-600 text-white rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        >
-                          <option value="">Select stage</option>
-                          <option value="pre-seed">Pre-Seed</option>
-                          <option value="seed">Seed</option>
-                          <option value="series-a-prep">Pre-Series A</option>
-                          <option value="series-a">Series A</option>
-                          <option value="series-b+">Series B+</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="challenge" className="text-white">
-                        Primary Brand Challenge *
-                      </Label>
-                      <select
-                        id="challenge"
-                        name="challenge"
-                        required
-                        value={formData.challenge}
-                        onChange={handleChange}
-                        className="w-full bg-dark-800 border border-dark-600 text-white rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      >
-                        <option value="">Select primary challenge</option>
-                        <option value="no-brand">
-                          No brand strategy/identity
-                        </option>
-                        <option value="outgrown-brand">
-                          Outgrown current brand
-                        </option>
-                        <option value="inconsistent">
-                          Inconsistent brand application
-                        </option>
-                        <option value="not-scalable">
-                          Brand isn't scalable
-                        </option>
-                        <option value="investor-ready">
-                          Need investor-grade brand
-                        </option>
-                        <option value="pivot">Business model pivot</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message" className="text-white">
-                        Tell us about your startup
-                      </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="bg-dark-800 border-dark-600 text-white"
-                        placeholder="Brief description of your startup, current challenges, and what you're hoping to achieve with branding..."
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold"
-                    >
-                      <Send className="w-5 h-5 mr-2" />
-                      Send Message
-                    </Button>
-
-                    <p className="text-sm text-gray-400 text-center">
-                      We'll respond within 24 hours. All information is kept
-                      confidential.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
+              <EnhancedContactForm formType="consultation" />
             </div>
 
             {/* Consultation Process */}
