@@ -297,7 +297,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-spacing bg-dark-900/30">
+      <section id="careers" className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge
