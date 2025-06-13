@@ -4,10 +4,8 @@ import LogoWall from "@/components/LogoWall";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, TrendingUp, Users, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getFeaturedLogos, clientLogos } from "@/data/clientLogos";
 
 const Clients = () => {
-<<<<<<< HEAD
   // Real client logos
   const clientLogos = [
     {
@@ -311,10 +309,6 @@ const Clients = () => {
       url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F84248d383cfb4bf892e397c57c321750?format=webp&width=800",
     },
   ];
-=======
-  // Use real client logos for the page
-  const featuredLogos = getFeaturedLogos(12); // Featured logos for display
->>>>>>> 364bf61008e0aca9c7ff0ea4fa52e703a42deb76
 
   const handleCtaClick = () => {
     window.location.href = "/contact";
@@ -353,7 +347,6 @@ const Clients = () => {
         "The Brand Whisperer transformed our pitch deck into a funding magnet. We raised our Series A in just 3 months.",
       author: "Sarah Chen",
       title: "CEO, TechFlow",
-      company: "SaaS Platform",
       category: "SaaS",
       funding: "$12M Series A",
     },
@@ -362,7 +355,6 @@ const Clients = () => {
         "Their brand strategy was the foundation of our $50M exit. Every investor meeting became a 'yes' after their rebrand.",
       author: "Marcus Rodriguez",
       title: "Founder, FinanceFirst",
-      company: "FinTech Platform",
       category: "FinTech",
       funding: "$50M Exit",
     },
@@ -371,7 +363,6 @@ const Clients = () => {
         "We went from unknown startup to industry leader. Their positioning strategy was pure magic.",
       author: "Lisa Park",
       title: "Co-founder, HealthHub",
-      company: "HealthTech Startup",
       category: "HealthTech",
       funding: "$8M Seed",
     },
