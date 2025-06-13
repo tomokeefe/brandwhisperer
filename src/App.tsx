@@ -43,6 +43,11 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/calculator" element={<Calculator />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/cookies" element={<CookiePolicy />} />
+              <Route path="/data" element={<DataProcessing />} />
+              <Route path="/sitemap" element={<Sitemap />} />
               {/* Blog post routes - in a real app, these would be dynamic */}
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
