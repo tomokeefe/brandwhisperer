@@ -150,7 +150,7 @@ const Index = () => {
             >
               Our Core Belief
             </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-dark-900">
+            <h2 className="text-display-md lg:text-display-lg font-black mb-8 text-dark-900">
               Brands are not logos. Brands are promises kept at scale.
             </h2>
             <p className="text-body-lg text-dark-700 leading-relaxed max-w-3xl mx-auto">
