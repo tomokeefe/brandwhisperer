@@ -49,6 +49,16 @@ const Blog = () => {
       slug: "hidden-cost-inconsistent-branding",
     },
     {
+      title: "Why VCs Fund Brands, Not Just Products: The Trust Equation",
+      excerpt:
+        "89% of successful Series A raises have one thing in common: founders who can articulate their brand promise in 30 seconds. Learn the trust-building framework that opens investor doors.",
+      author: "The Brand Whisperer",
+      date: "2024-01-16",
+      readTime: "9 min read",
+      category: "Investor Relations",
+      slug: "vcs-fund-brands-not-products",
+    },
+    {
       title: "From Garage to IPO: Brand Evolution Frameworks for Hypergrowth",
       excerpt:
         "A comprehensive guide to building brand architectures that accommodate business evolution, new products, and market expansion without breaking.",
