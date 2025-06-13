@@ -379,15 +379,14 @@ const Footer = () => {
       { name: "Pricing Calculator", path: "/calculator" },
     ],
     Resources: [
-      { name: "Blog", path: "/blog", icon: BookOpen },
-      { name: "Free Resources", path: "/resources", icon: Download },
+      { name: "Blog", path: "/blog" },
+      { name: "Free Resources", path: "/resources" },
       {
         name: "Brand Assessment",
         path: "/resources#assessment",
-        icon: CheckCircle,
       },
-      { name: "SCALE Framework", path: "/resources#framework", icon: Zap },
-      { name: "Case Studies", path: "/about#cases", icon: Award },
+      { name: "SCALE Framework", path: "/resources#framework" },
+      { name: "Case Studies", path: "/about#cases" },
     ],
     Company: [
       { name: "About Us", path: "/about", icon: Users },
