@@ -178,7 +178,7 @@ const Contact = () => {
                 variant="outline"
                 className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900"
               >
-                <a href="mailto:hello@brandwhisperer.com">Email Us Directly</a>
+                <a href="mailto:hello@brandwhisperer.io">Email Us Directly</a>
               </Button>
             </div>
           </div>
