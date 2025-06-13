@@ -83,7 +83,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-display-lg lg:text-display-xl font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-display-lg font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
             {title}
           </h2>
           <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

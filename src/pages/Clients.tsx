@@ -250,7 +250,7 @@ const Clients = () => {
       <section className="py-16 lg:py-24 bg-dark-900/50">
         <div className="container-custom">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-display-lg lg:text-display-xl font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+            <h2 className="text-display-lg font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
               What Our Clients Say
             </h2>
             <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
@@ -307,7 +307,7 @@ const Clients = () => {
       {/* Final CTA Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-r from-secondary-600/10 to-secondary-500/10">
         <div className="container-custom text-center">
-          <h2 className="text-display-lg lg:text-display-xl font-bold mb-4 text-white">
+          <h2 className="text-display-lg font-bold mb-4 text-white">
             Your Success Story Starts Here
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
