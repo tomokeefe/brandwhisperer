@@ -56,7 +56,6 @@ function App() {
           </main>
           <Footer />
           <ExitIntentPopup />
-          <ResponsiveTest />
         </div>
       </BrowserRouter>
     </HelmetProvider>
