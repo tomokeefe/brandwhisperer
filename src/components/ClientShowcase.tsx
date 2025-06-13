@@ -3,14 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getFeaturedLogos } from "@/data/clientLogos";
 
 interface ClientShowcaseProps {
   className?: string;
 }
 
 const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
-<<<<<<< HEAD
   // Featured client logos for homepage display
   const featuredClients = [
     {
@@ -62,10 +60,6 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
       url: "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Fb25cf95ccff149c8895530406bd4c322?format=webp&width=800",
     },
   ];
-=======
-  // Get exactly the 8 featured client logos for homepage display
-  const featuredClients = getFeaturedLogos(8);
->>>>>>> 364bf61008e0aca9c7ff0ea4fa52e703a42deb76
 
   return (
     <section className={`py-16 lg:py-20 ${className}`}>
@@ -83,8 +77,8 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
             Join 150+ Successful Startups
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            From iconic brands like Evite and Picasa to emerging innovators like
-            Cygilant and Gentreo, we build brands that scale with ambition.
+            From pre-seed to Series A, founders trust us to build brands that
+            scale with their vision.
           </p>
         </div>
 
@@ -99,7 +93,6 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-<<<<<<< HEAD
                 {client.url ? (
                   <img
                     src={client.url}
@@ -117,32 +110,6 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
                     </div>
                   </div>
                 )}
-=======
-                <img
-                  src={client.url}
-                  alt={client.alt}
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                  loading="lazy"
-                  onError={(e) => {
-                    // Fallback to text display if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="text-center">
-                          <div class="text-sm lg:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">
-                            ${client.name}
-                          </div>
-                          <div class="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
-                            ${client.category}
-                          </div>
-                        </div>
-                      `;
-                    }
-                  }}
-                />
->>>>>>> 364bf61008e0aca9c7ff0ea4fa52e703a42deb76
 
                 {/* Subtle glow effect on hover */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-secondary-500/0 to-secondary-600/0 group-hover:from-secondary-500/5 group-hover:to-secondary-600/5 transition-all duration-300 pointer-events-none" />
