@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogPost from "@/components/BlogPost";
+import ResponsiveTest from "@/components/ResponsiveTest";
 import Analytics from "@/components/Analytics";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import PerformanceOptimizations, {
