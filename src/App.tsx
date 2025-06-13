@@ -52,25 +52,4 @@ function App() {
   );
 }
 
-// Simple blog post component for individual articles
-const BlogPost = () => {
-  return (
-    <div className="bg-dark-950 pt-32 pb-16">
-      <div className="container-custom">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-display-lg font-bold text-white mb-6">
-              Blog Post Coming Soon
-            </h1>
-            <p className="text-body-lg text-gray-300">
-              Individual blog posts will be dynamically generated based on the
-              content management system.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default App;
