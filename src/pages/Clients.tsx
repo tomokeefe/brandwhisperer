@@ -42,7 +42,7 @@ const Clients = () => {
   const stats = [
     {
       icon: Users,
-      value: "50+",
+      value: "150+",
       label: "Brands Transformed",
       description: "From pre-seed to Series A",
     },
