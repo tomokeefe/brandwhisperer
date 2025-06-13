@@ -447,37 +447,6 @@ const Footer = () => {
     },
   ];
 
-  const liveMetrics = [
-    {
-      icon: TrendingUp,
-      value: `${realTimeStats.fundingSuccess}%`,
-      label: "Series A funding success",
-      trend: "+2% this quarter",
-      isLive: true,
-    },
-    {
-      icon: Users,
-      value: `${realTimeStats.activeBrands}+`,
-      label: "Active brand projects",
-      trend: `+${realTimeStats.clientsThisYear} this year`,
-      isLive: true,
-    },
-    {
-      icon: Award,
-      value: "$2.8B+",
-      label: "Funding raised by clients",
-      trend: "+$600M YTD",
-      isLive: false,
-    },
-    {
-      icon: Star,
-      value: "4.9★",
-      label: "Average client rating",
-      trend: "2,847 reviews",
-      isLive: false,
-    },
-  ];
-
   return (
     <footer
       ref={footerRef}
