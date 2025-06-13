@@ -207,7 +207,8 @@ const About = () => {
               About The Brand Whisperer
             </Badge>
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
-              30 Years of Building Brands That Scale
+              30 Years of Building{" "}
+              <span className="text-secondary-400">Brands That Scale</span>
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               We're not your typical brand agency. With three decades of
@@ -448,7 +449,8 @@ const About = () => {
               Success Stories
             </Badge>
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Brands That Scaled Without Breaking
+              <span className="text-secondary-400">Brands That Scaled</span>{" "}
+              Without Breaking
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
               Real examples of startups that built brands designed for
