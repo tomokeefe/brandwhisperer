@@ -216,29 +216,37 @@ const Services = () => {
       <section id="packages" className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {mainServices.map((service, index) => (
-              <div key={index} className="space-y-4">
-                <ServiceCard {...service} />
-                <Card className="bg-dark-800/50 border-dark-700">
-                  <CardContent className="pt-6">
-                    <div className="space-y-3 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Clock className="w-4 h-4 text-secondary-400" />
-                        <span className="text-gray-400">
-                          Timeline: {service.timeline}
-                        </span>
+            {mainServices.map((service, index) => {
+              // Create ID from service title
+              const serviceId = service.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[^a-z0-9-]/g, "");
+
+              return (
+                <div key={index} id={serviceId} className="space-y-4">
+                  <ServiceCard {...service} />
+                  <Card className="bg-dark-800/50 border-dark-700">
+                    <CardContent className="pt-6">
+                      <div className="space-y-3 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Clock className="w-4 h-4 text-secondary-400" />
+                          <span className="text-gray-400">
+                            Timeline: {service.timeline}
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Target className="w-4 h-4 text-secondary-400" />
+                          <span className="text-gray-400">
+                            Ideal for: {service.ideal}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Target className="w-4 h-4 text-secondary-400" />
-                        <span className="text-gray-400">
-                          Ideal for: {service.ideal}
-                        </span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
