@@ -445,7 +445,8 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-white text-dark-900 relative overflow-hidden"
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#030616" }}
     >
       {/* Floating Particles Background */}
       <div className="absolute inset-0 pointer-events-none">
