@@ -35,8 +35,8 @@ const SEO: React.FC<SEOProps> = ({
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
+      addressLocality: "Boston",
+      addressRegion: "MA",
       addressCountry: "US",
     },
     contactPoint: {
