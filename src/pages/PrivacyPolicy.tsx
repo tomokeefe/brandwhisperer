@@ -196,7 +196,7 @@ const PrivacyPolicy = () => {
                     <ul className="space-y-2">
                       <li>• Comply with legal obligations</li>
                       <li>• Protect our rights</li>
-                      <li>• Prevent fraud</li>
+                      <li>��� Prevent fraud</li>
                       <li>• Ensure security</li>
                     </ul>
                   </CardContent>
@@ -330,9 +330,7 @@ const PrivacyPolicy = () => {
                       <Mail className="w-5 h-5 text-primary-400" />
                       <div>
                         <div className="font-semibold">Email</div>
-                        <div className="text-sm">
-                          privacy@brandwhisperer.com
-                        </div>
+                        <div className="text-sm">privacy@brandwhisperer.io</div>
                       </div>
                     </div>
 
