@@ -394,17 +394,17 @@ const TermsOfService = () => {
                   <p className="text-gray-300 text-sm mb-4">
                     Contact us at{" "}
                     <a
-                      href="mailto:legal@brandwhisperer.com"
+                      href="mailto:legal@brandwhisperer.io"
                       className="text-secondary-400 hover:text-secondary-300"
                     >
-                      legal@brandwhisperer.com
+                      legal@brandwhisperer.io
                     </a>{" "}
                     or call{" "}
                     <a
-                      href="tel:+15551234567"
+                      href="tel:+16177923378"
                       className="text-secondary-400 hover:text-secondary-300"
                     >
-                      +1 (555) 123-4567
+                      +1 (617) 792-3378
                     </a>
                   </p>
                   <p className="text-gray-400 text-xs">
