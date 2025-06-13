@@ -733,17 +733,17 @@ const Footer = () => {
                   <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 blur group-hover:opacity-40 transition-opacity duration-300"></div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-dark-900 group-hover:text-primary-600 transition-colors duration-300">
+                  <div className="text-2xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
                     The Brand Whisperer
                   </div>
-                  <div className="text-sm text-dark-600 flex items-center space-x-2">
+                  <div className="text-sm text-gray-300 flex items-center space-x-2">
                     <span>Building brands that scale</span>
                     <Activity className="w-3 h-3 text-green-500 animate-pulse" />
                   </div>
                 </div>
               </Link>
 
-              <p className="text-dark-600 mb-8 max-w-md leading-relaxed">
+              <p className="text-gray-300 mb-8 max-w-md leading-relaxed">
                 We build brands for the company you're becoming, not just the
                 company you are. With 30+ years of experience and 150+ startup
                 projects, we prevent the expensive rebrands that break momentum
@@ -868,7 +868,7 @@ const Footer = () => {
                         animationDelay: `${800 + categoryIndex * 100}ms`,
                       }}
                     >
-                      <h3 className="text-lg font-semibold text-dark-900 mb-6">
+                      <h3 className="text-lg font-semibold text-white mb-6">
                         {category}
                       </h3>
                       <ul className="space-y-4">
@@ -887,7 +887,7 @@ const Footer = () => {
                           >
                             <Link
                               to={link.path}
-                              className="text-dark-600 hover:text-primary-600 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
+                              className="text-gray-300 hover:text-primary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
                               onClick={() =>
                                 trackLinkClick(
                                   link.name,
