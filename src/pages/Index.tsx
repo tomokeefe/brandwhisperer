@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
+import ClientShowcase from "@/components/ClientShowcase";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -357,6 +358,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Client Showcase */}
+      <ClientShowcase />
 
       {/* What We Stand Against */}
       <section className="section-spacing">
