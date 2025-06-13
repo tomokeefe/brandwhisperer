@@ -52,7 +52,7 @@ const Hero = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
+                  className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4 rounded transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
                 >
                   <Link
                     to="/contact"
@@ -67,7 +67,7 @@ const Hero = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-gray-600 text-white hover:bg-white hover:text-dark-900 px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105"
+                  className="border-2 border-gray-600 text-white hover:bg-white hover:text-dark-900 px-8 py-4 rounded transition-all duration-200 hover:scale-105"
                 >
                   <Link to="/services">View Services</Link>
                 </Button>
