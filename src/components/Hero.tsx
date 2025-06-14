@@ -142,16 +142,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Scroll Indicator - Hidden on mobile */}
-        <div className="absolute bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
-          <div className="text-gray-400 text-sm mb-2 text-center">
-            Scroll Down
-          </div>
-          <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
       </div>
     </section>
   );
