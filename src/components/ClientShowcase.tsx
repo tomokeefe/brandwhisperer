@@ -136,7 +136,7 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button
               asChild
               className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-2.5 group"
@@ -155,11 +155,22 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
               className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 py-2.5 group"
             >
               <Link
-                to="/clients"
+                to="/calculator"
                 className="inline-flex items-center space-x-2"
               >
-                <span>View Success Stories</span>
+                <span>Calculate ROI</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </Link>
+            </Button>
+          </div>
+          <div className="text-center">
+            <Button
+              asChild
+              variant="ghost"
+              className="text-gray-400 hover:text-white px-4 py-2 text-sm"
+            >
+              <Link to="/clients">
+                <span>View Success Stories</span>
               </Link>
             </Button>
           </div>
