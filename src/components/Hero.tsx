@@ -55,10 +55,10 @@ const Hero = () => {
                   className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4 rounded transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
                 >
                   <Link
-                    to="/contact"
+                    to="/assessment"
                     className="inline-flex items-center space-x-2"
                   >
-                    <span>Start Your Brand</span>
+                    <span>Free Brand Assessment</span>
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
