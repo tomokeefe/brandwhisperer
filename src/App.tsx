@@ -25,6 +25,7 @@ import CookiePolicy from "@/pages/CookiePolicy";
 import DataProcessing from "@/pages/DataProcessing";
 import Sitemap from "@/pages/Sitemap";
 import NotFound from "@/pages/NotFound";
+import MobileTestingPanel from "@/components/MobileTestingPanel";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
           </main>
           <Footer />
           <ExitIntentPopup />
+          <MobileTestingPanel />
         </div>
       </BrowserRouter>
     </HelmetProvider>
