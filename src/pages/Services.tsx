@@ -241,9 +241,12 @@ const Services = () => {
   return (
     <div className="bg-dark-950 pt-32 pb-16">
       <SEO
-        title="Startup Branding Services & Packages - The Brand Whisperer"
-        description="Expert brand strategy and visual identity services for hypergrowth startups. Pre-Seed to Series A packages with equity options. Build brands that scale."
-        keywords="startup branding services, brand strategy packages, startup visual identity, Series A branding, hypergrowth brand services"
+        title="Startup Brand Strategy Services | Pre-Seed to Series A Branding Packages"
+        description="Comprehensive brand strategy packages for every growth stage. From $15K pre-seed foundation to $40K Series A ready. Equity options available. 150+ successful startups branded."
+        keywords="startup brand strategy, pre-seed branding, Series A branding, startup visual identity, brand strategy packages, startup brand consultant, equity-based branding, investor-ready brand"
+        url="https://brandwhisperer.com/services"
+        image="https://brandwhisperer.com/og-services.jpg"
+        schema={servicesPageSchema}
       />
 
       {/* Hero Section */}
