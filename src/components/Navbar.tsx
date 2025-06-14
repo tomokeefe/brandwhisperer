@@ -71,21 +71,21 @@ const Navbar = () => {
       )}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-3 group"
+            className="flex items-center space-x-2 lg:space-x-3 group"
             onClick={() => setIsOpen(false)}
           >
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                <Zap className="w-6 h-6 text-white" />
+              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 group-hover:opacity-30 blur transition-opacity duration-200"></div>
             </div>
             <div className="hidden sm:block">
-              <div className="text-xl font-bold text-white">
+              <div className="text-lg lg:text-xl font-bold text-white">
                 The Brand Whisperer
               </div>
               <div className="text-xs text-gray-400 -mt-1">
@@ -174,7 +174,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button
               asChild
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-6 py-2.5 rounded transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25"
+              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-4 lg:px-6 py-2.5 rounded transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/25 text-sm lg:text-base"
             >
               <Link to="/contact">Start Your Brand</Link>
             </Button>
@@ -183,10 +183,10 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-10 h-10 rounded bg-dark-800 border border-dark-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-dark-700 transition-colors duration-200"
+            className="md:hidden w-12 h-12 rounded bg-dark-800 border border-dark-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-dark-700 transition-colors duration-200"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
@@ -194,17 +194,17 @@ const Navbar = () => {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300",
-            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+            isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0",
           )}
         >
-          <div className="py-4 space-y-2 border-t border-dark-800">
+          <div className="py-4 space-y-1 border-t border-dark-800">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "block px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200",
+                  "block px-4 py-4 text-base font-medium rounded-lg transition-colors duration-200 min-h-[48px] flex items-center",
                   isActiveRoute(item.path)
                     ? "text-secondary-400 bg-dark-800"
                     : "text-gray-300 hover:text-white hover:bg-dark-800",
@@ -215,17 +215,17 @@ const Navbar = () => {
             ))}
 
             {/* Mobile Resources Submenu */}
-            <div className="px-4 py-2">
-              <div className="text-gray-400 text-sm font-medium mb-2">
+            <div className="px-4 py-3">
+              <div className="text-gray-400 text-sm font-medium mb-3">
                 Resources
               </div>
-              <div className="space-y-1 ml-4">
+              <div className="space-y-1 ml-2">
                 {resourcesItems.map((item) => (
                   <Link
                     key={item.title}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-2 text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                    className="block py-3 px-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px] flex items-center rounded-md hover:bg-dark-800"
                   >
                     {item.title}
                   </Link>
@@ -237,7 +237,7 @@ const Navbar = () => {
               to="/contact"
               onClick={() => setIsOpen(false)}
               className={cn(
-                "block px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200",
+                "block px-4 py-4 text-base font-medium rounded-lg transition-colors duration-200 min-h-[48px] flex items-center",
                 isActiveRoute("/contact")
                   ? "text-secondary-400 bg-dark-800"
                   : "text-gray-300 hover:text-white hover:bg-dark-800",
@@ -246,10 +246,11 @@ const Navbar = () => {
               Contact
             </Link>
 
-            <div className="pt-2">
+            <div className="pt-3 px-4">
               <Button
                 asChild
-                className="w-full bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold"
+                className="w-full bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold min-h-[48px] text-base"
+                size="lg"
               >
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Start Your Brand
