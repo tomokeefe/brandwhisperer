@@ -300,30 +300,30 @@ const EnhancedROICalculator = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-8 lg:mb-12">
         <Badge
           variant="outline"
-          className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+          className="mb-4 lg:mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
         >
           Advanced ROI Calculator
         </Badge>
-        <h2 className="text-display-md font-bold text-white mb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-display-md font-bold text-white mb-4 lg:mb-6">
           Brand Investment ROI Calculator
         </h2>
-        <p className="text-body-lg text-gray-300 max-w-4xl mx-auto">
+        <p className="text-base sm:text-lg lg:text-body-lg text-gray-300 max-w-4xl mx-auto px-4">
           Calculate the detailed return on investment for your brand initiative.
           Get comprehensive projections across multiple business impact areas.
         </p>
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex justify-center mb-8">
-        <div className="bg-dark-800/50 p-1 rounded-lg border border-dark-700">
+      <div className="flex justify-center mb-6 lg:mb-8">
+        <div className="bg-dark-800/50 p-1 rounded-lg border border-dark-700 w-full max-w-md lg:w-auto">
           <button
             onClick={() => setActiveTab("investment")}
             className={cn(
-              "px-6 py-3 rounded-md font-medium transition-all duration-200",
+              "w-1/2 lg:w-auto lg:px-6 py-3 rounded-md font-medium transition-all duration-200 text-sm lg:text-base",
               activeTab === "investment"
                 ? "bg-secondary-600 text-white"
                 : "text-gray-400 hover:text-white",
@@ -334,7 +334,7 @@ const EnhancedROICalculator = () => {
           <button
             onClick={() => setActiveTab("roi")}
             className={cn(
-              "px-6 py-3 rounded-md font-medium transition-all duration-200",
+              "w-1/2 lg:w-auto lg:px-6 py-3 rounded-md font-medium transition-all duration-200 text-sm lg:text-base",
               activeTab === "roi"
                 ? "bg-secondary-600 text-white"
                 : "text-gray-400 hover:text-white",
@@ -346,39 +346,41 @@ const EnhancedROICalculator = () => {
       </div>
 
       {activeTab === "investment" && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Business Metrics */}
           <Card className="bg-dark-800/50 border-dark-700">
-            <CardHeader>
-              <CardTitle className="text-xl text-white flex items-center gap-2">
+            <CardHeader className="pb-4 lg:pb-6">
+              <CardTitle className="text-lg lg:text-xl text-white flex items-center gap-2">
                 <BarChart3 className="w-5 h-5 text-secondary-400" />
                 Current Business Metrics
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm lg:text-base">
                 Enter your current business metrics for accurate ROI
                 calculations
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 lg:space-y-8">
               <div>
-                <Label className="text-white mb-3 block">
+                <Label className="text-white mb-3 block text-sm lg:text-base">
                   Annual Revenue: $
                   {businessMetrics.currentRevenue.toLocaleString()}
                 </Label>
-                <Slider
-                  value={[businessMetrics.currentRevenue]}
-                  onValueChange={([value]) =>
-                    setBusinessMetrics((prev) => ({
-                      ...prev,
-                      currentRevenue: value,
-                    }))
-                  }
-                  max={50000000}
-                  min={100000}
-                  step={100000}
-                  className="w-full"
-                />
-                <div className="flex justify-between text-sm text-gray-400 mt-2">
+                <div className="px-2">
+                  <Slider
+                    value={[businessMetrics.currentRevenue]}
+                    onValueChange={([value]) =>
+                      setBusinessMetrics((prev) => ({
+                        ...prev,
+                        currentRevenue: value,
+                      }))
+                    }
+                    max={50000000}
+                    min={100000}
+                    step={100000}
+                    className="w-full h-6 lg:h-8"
+                  />
+                </div>
+                <div className="flex justify-between text-xs lg:text-sm text-gray-400 mt-2 px-2">
                   <span>$100K</span>
                   <span>$10M</span>
                   <span>$50M</span>
@@ -405,77 +407,89 @@ const EnhancedROICalculator = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                 <div>
-                  <Label className="text-white mb-2 block">
+                  <Label className="text-white mb-3 block text-sm lg:text-base">
                     Customer CAC: ${businessMetrics.customerAcquisitionCost}
                   </Label>
-                  <Slider
-                    value={[businessMetrics.customerAcquisitionCost]}
-                    onValueChange={([value]) =>
-                      setBusinessMetrics((prev) => ({
-                        ...prev,
-                        customerAcquisitionCost: value,
-                      }))
-                    }
-                    max={1000}
-                    min={10}
-                    step={10}
-                  />
+                  <div className="px-2">
+                    <Slider
+                      value={[businessMetrics.customerAcquisitionCost]}
+                      onValueChange={([value]) =>
+                        setBusinessMetrics((prev) => ({
+                          ...prev,
+                          customerAcquisitionCost: value,
+                        }))
+                      }
+                      max={1000}
+                      min={10}
+                      step={10}
+                      className="w-full h-6 lg:h-8"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <Label className="text-white mb-2 block">
+                  <Label className="text-white mb-3 block text-sm lg:text-base">
                     Customer LTV: ${businessMetrics.customerLifetimeValue}
                   </Label>
-                  <Slider
-                    value={[businessMetrics.customerLifetimeValue]}
-                    onValueChange={([value]) =>
-                      setBusinessMetrics((prev) => ({
-                        ...prev,
-                        customerLifetimeValue: value,
-                      }))
-                    }
-                    max={10000}
-                    min={100}
-                    step={50}
-                  />
+                  <div className="px-2">
+                    <Slider
+                      value={[businessMetrics.customerLifetimeValue]}
+                      onValueChange={([value]) =>
+                        setBusinessMetrics((prev) => ({
+                          ...prev,
+                          customerLifetimeValue: value,
+                        }))
+                      }
+                      max={10000}
+                      min={100}
+                      step={50}
+                      className="w-full h-6 lg:h-8"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                 <div>
-                  <Label className="text-white mb-2 block">
+                  <Label className="text-white mb-3 block text-sm lg:text-base">
                     Conversion Rate: {businessMetrics.conversionRate}%
                   </Label>
-                  <Slider
-                    value={[businessMetrics.conversionRate]}
-                    onValueChange={([value]) =>
-                      setBusinessMetrics((prev) => ({
-                        ...prev,
-                        conversionRate: value,
-                      }))
-                    }
-                    max={20}
-                    min={0.1}
-                    step={0.1}
-                  />
+                  <div className="px-2">
+                    <Slider
+                      value={[businessMetrics.conversionRate]}
+                      onValueChange={([value]) =>
+                        setBusinessMetrics((prev) => ({
+                          ...prev,
+                          conversionRate: value,
+                        }))
+                      }
+                      max={20}
+                      min={0.1}
+                      step={0.1}
+                      className="w-full h-6 lg:h-8"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <Label className="text-white mb-2 block">
+                  <Label className="text-white mb-3 block text-sm lg:text-base">
                     Brand Awareness: {businessMetrics.brandAwareness}%
                   </Label>
-                  <Slider
-                    value={[businessMetrics.brandAwareness]}
-                    onValueChange={([value]) =>
-                      setBusinessMetrics((prev) => ({
-                        ...prev,
-                        brandAwareness: value,
-                      }))
-                    }
-                    max={100}
-                    min={1}
-                    step={1}
-                  />
+                  <div className="px-2">
+                    <Slider
+                      value={[businessMetrics.brandAwareness]}
+                      onValueChange={([value]) =>
+                        setBusinessMetrics((prev) => ({
+                          ...prev,
+                          brandAwareness: value,
+                        }))
+                      }
+                      max={100}
+                      min={1}
+                      step={1}
+                      className="w-full h-6 lg:h-8"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -618,18 +632,20 @@ const EnhancedROICalculator = () => {
       {activeTab === "roi" && (
         <div className="space-y-8">
           {/* ROI Summary */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             <Card className="bg-dark-800/50 border-dark-700 text-center">
-              <CardContent className="p-6">
+              <CardContent className="p-4 lg:p-6">
                 <div
                   className={cn(
-                    "text-3xl font-bold mb-2",
+                    "text-2xl lg:text-3xl font-bold mb-1 lg:mb-2",
                     getROIColor(totalROI.threeYearReturn),
                   )}
                 >
                   {totalROI.threeYearReturn.toFixed(0)}%
                 </div>
-                <div className="text-sm text-gray-400">3-Year ROI</div>
+                <div className="text-xs lg:text-sm text-gray-400">
+                  3-Year ROI
+                </div>
               </CardContent>
             </Card>
 
@@ -854,18 +870,18 @@ const EnhancedROICalculator = () => {
 
           {/* CTA Section */}
           <Card className="bg-gradient-to-r from-secondary-600/10 to-secondary-500/10 border-secondary-500/20">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <CardContent className="p-6 lg:p-8 text-center">
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
                 Ready to Achieve These Results?
               </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              <p className="text-sm lg:text-base text-gray-300 mb-6 max-w-2xl mx-auto">
                 Start your brand transformation today and unlock the growth
                 potential shown in these projections.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col gap-3 lg:gap-4 lg:flex-row lg:justify-center">
                 <Button
                   size="lg"
-                  className="bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-3 text-lg font-semibold group"
+                  className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 lg:px-8 py-3 text-base lg:text-lg font-semibold group min-h-[48px]"
                 >
                   Get Custom Proposal
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -873,7 +889,7 @@ const EnhancedROICalculator = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 px-8 py-3 text-lg font-semibold"
+                  className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 px-6 lg:px-8 py-3 text-base lg:text-lg font-semibold min-h-[48px]"
                 >
                   Schedule Consultation
                 </Button>
