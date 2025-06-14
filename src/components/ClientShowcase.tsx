@@ -62,33 +62,33 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
   ];
 
   return (
-    <section className={`py-16 lg:py-20 ${className}`}>
+    <section className={`py-12 lg:py-16 xl:py-20 ${className}`}>
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 lg:mb-12">
           <Badge
             variant="outline"
-            className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+            className="mb-4 lg:mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 text-xs lg:text-sm"
           >
             <Users className="w-4 h-4 mr-2" />
             Trusted by Growing Brands
           </Badge>
-          <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-4 text-white px-4">
             Join 150+ Successful Startups
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-2xl mx-auto px-4">
             From pre-seed to Series A, founders trust us to build brands that
             scale with their vision.
           </p>
         </div>
 
         {/* Client Logos Grid */}
-        <div className="mb-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-6">
+        <div className="mb-6 lg:mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 lg:gap-4 xl:gap-6">
             {featuredClients.map((client, index) => (
               <div
                 key={client.id}
-                className="group aspect-square bg-dark-800/30 hover:bg-dark-800/50 border border-dark-700/30 hover:border-secondary-500/20 rounded-lg transition-all duration-300 flex flex-col items-center justify-center p-3 lg:p-4"
+                className="group aspect-square bg-dark-800/30 hover:bg-dark-800/50 border border-dark-700/30 hover:border-secondary-500/20 rounded-lg transition-all duration-300 flex flex-col items-center justify-center p-2 sm:p-3 lg:p-4 touch-feedback"
                 style={{
                   animationDelay: `${index * 100}ms`,
                 }}
