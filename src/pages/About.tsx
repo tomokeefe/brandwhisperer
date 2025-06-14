@@ -29,7 +29,7 @@ const About = () => {
   const experience = [
     {
       company: "New Relic",
-      role: "Senior Brand Strategist",
+      role: "Creative Director",
       duration: "2011-2014",
       description:
         "Lived through hypergrowth from 50 employees to IPO. Witnessed firsthand the cost of delaying brand evolution.",
@@ -41,7 +41,7 @@ const About = () => {
     },
     {
       company: "Idealab",
-      role: "Portfolio Brand Advisor",
+      role: "Brand Design Director",
       duration: "1999-2003",
       description:
         "Worked within proven startup studio environment, understanding unique branding needs of high-potential startups.",
@@ -53,7 +53,7 @@ const About = () => {
     },
     {
       company: "Boston Creative Agencies",
-      role: "Brand Consultant",
+      role: "Designer",
       duration: "1994-1998",
       description:
         "Foundation years building expertise across industries and company stages.",
