@@ -51,9 +51,9 @@ const Navbar = () => {
       description: "Download frameworks, assessments, and tools",
     },
     {
-      title: "Pricing Calculator",
+      title: "ROI Calculator",
       href: "/calculator",
-      description: "Get instant estimates for your project",
+      description: "Calculate detailed returns on brand investment",
     },
   ];
 
