@@ -158,15 +158,15 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
 
   return (
     <Card className="bg-dark-900/50 border-dark-700">
-      <CardHeader>
-        <CardTitle className="text-2xl text-white">
+      <CardHeader className="p-6 lg:p-8">
+        <CardTitle className="text-xl lg:text-2xl text-white">
           {formType === "consultation"
             ? "Schedule Free Consultation"
             : formType === "download"
               ? `Download ${resourceName}`
               : "Get In Touch"}
         </CardTitle>
-        <CardDescription className="text-gray-300">
+        <CardDescription className="text-sm lg:text-base text-gray-300">
           {formType === "consultation"
             ? "Tell us about your startup and we'll provide a custom brand strategy consultation."
             : formType === "download"
@@ -174,12 +174,15 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
               : "Let's discuss how we can help build your scalable brand."}
         </CardDescription>
       </CardHeader>
-      <CardContent className="p-8">
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <CardContent className="p-6 lg:p-8">
+        <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
           {/* Basic Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             <div>
-              <Label htmlFor="name" className="text-white">
+              <Label
+                htmlFor="name"
+                className="text-white text-sm lg:text-base mb-2 block"
+              >
                 Full Name *
               </Label>
               <Input
@@ -189,12 +192,15 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-dark-800 border-dark-600 text-white"
+                className="bg-dark-800 border-dark-600 text-white h-12 lg:h-11"
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <Label htmlFor="email" className="text-white">
+              <Label
+                htmlFor="email"
+                className="text-white text-sm lg:text-base mb-2 block"
+              >
                 Email *
               </Label>
               <Input
@@ -204,15 +210,18 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-dark-800 border-dark-600 text-white"
+                className="bg-dark-800 border-dark-600 text-white h-12 lg:h-11"
                 placeholder="your@email.com"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             <div>
-              <Label htmlFor="company" className="text-white">
+              <Label
+                htmlFor="company"
+                className="text-white text-sm lg:text-base mb-2 block"
+              >
                 Company Name *
               </Label>
               <Input
@@ -222,12 +231,15 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 required
                 value={formData.company}
                 onChange={handleChange}
-                className="bg-dark-800 border-dark-600 text-white"
+                className="bg-dark-800 border-dark-600 text-white h-12 lg:h-11"
                 placeholder="Your startup name"
               />
             </div>
             <div>
-              <Label htmlFor="website" className="text-white">
+              <Label
+                htmlFor="website"
+                className="text-white text-sm lg:text-base mb-2 block"
+              >
                 Website
               </Label>
               <Input
@@ -236,7 +248,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 type="url"
                 value={formData.website}
                 onChange={handleChange}
-                className="bg-dark-800 border-dark-600 text-white"
+                className="bg-dark-800 border-dark-600 text-white h-12 lg:h-11"
                 placeholder="https://yourcompany.com"
               />
             </div>
@@ -432,7 +444,10 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
 
           {/* Message */}
           <div>
-            <Label htmlFor="message" className="text-white">
+            <Label
+              htmlFor="message"
+              className="text-white text-sm lg:text-base mb-2 block"
+            >
               Tell us about your startup
               {formType !== "download" && " *"}
             </Label>
@@ -443,7 +458,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
               required={formType !== "download"}
               value={formData.message}
               onChange={handleChange}
-              className="bg-dark-800 border-dark-600 text-white"
+              className="bg-dark-800 border-dark-600 text-white min-h-[120px]"
               placeholder="Brief description of your startup, current challenges, and what you're hoping to achieve..."
             />
           </div>
@@ -493,10 +508,10 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             type="submit"
             disabled={isSubmitting}
             size="lg"
-            className="w-full bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold"
+            className="w-full bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold min-h-[48px] lg:min-h-[44px] text-base lg:text-lg"
           >
             {isSubmitting ? (
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center space-x-2">
                 <div className="w-4 h-4 border-2 border-dark-900 border-t-transparent rounded-full animate-spin"></div>
                 <span>
                   {formType === "consultation"
@@ -507,7 +522,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
                 </span>
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center space-x-2">
                 {formType === "consultation" ? (
                   <Calendar className="w-5 h-5" />
                 ) : formType === "download" ? (
@@ -526,7 +541,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
             )}
           </Button>
 
-          <p className="text-sm text-gray-400 text-center">
+          <p className="text-xs lg:text-sm text-gray-400 text-center px-4">
             {formType === "consultation"
               ? "Free 30-minute consultation • No obligation • Response within 24 hours"
               : "We'll respond within 24 hours • All information is confidential"}
