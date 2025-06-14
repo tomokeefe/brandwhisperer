@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "@/components/SEO";
-import PricingCalculator from "@/components/PricingCalculator";
+import EnhancedROICalculator from "@/components/EnhancedROICalculator";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -14,43 +14,43 @@ import { TrendingUp, DollarSign, Clock, CheckCircle } from "lucide-react";
 const Calculator = () => {
   const benefits = [
     {
-      icon: DollarSign,
-      title: "Transparent Pricing",
-      description:
-        "No hidden costs or surprise fees. Get accurate estimates upfront.",
-    },
-    {
-      icon: Clock,
-      title: "Custom Timeline",
-      description:
-        "Choose delivery speed that matches your funding timeline and needs.",
-    },
-    {
       icon: TrendingUp,
-      title: "ROI Projections",
+      title: "Detailed ROI Analysis",
       description:
-        "See projected returns on your brand investment including valuation boost.",
+        "Comprehensive 3-year projections across multiple business impact areas.",
+    },
+    {
+      icon: DollarSign,
+      title: "Business Impact Metrics",
+      description:
+        "Calculate funding readiness, customer acquisition, and pricing power improvements.",
     },
     {
       icon: CheckCircle,
-      title: "Package Recommendations",
+      title: "Risk Assessment",
       description:
-        "Get personalized package suggestions based on your startup stage.",
+        "Confidence scoring and risk-adjusted returns for informed decision making.",
+    },
+    {
+      icon: Clock,
+      title: "Break-Even Analysis",
+      description:
+        "See exactly when your brand investment will start paying for itself.",
     },
   ];
 
   return (
     <div className="bg-dark-950 pt-32 pb-16">
       <SEO
-        title="Brand Investment Calculator - Calculate Your Startup Brand Cost"
-        description="Get instant pricing estimates for your startup brand project. Interactive calculator with custom packages, equity options, and ROI projections."
-        keywords="startup brand cost calculator, brand investment calculator, startup branding pricing, brand cost estimator"
+        title="Brand ROI Calculator - Calculate Your Branding Investment Return"
+        description="Calculate detailed ROI projections for your startup branding investment. Get comprehensive business impact analysis across funding, customer acquisition, and growth metrics."
+        keywords="brand ROI calculator, branding investment return, startup brand ROI, brand impact calculator, branding business value"
       />
 
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-custom">
-          <PricingCalculator />
+          <EnhancedROICalculator />
         </div>
       </section>
 
@@ -65,7 +65,7 @@ const Calculator = () => {
               Why Use Our Calculator
             </Badge>
             <h2 className="text-display-md font-bold text-white mb-8">
-              Accurate Estimates, No Surprises
+              Data-Driven ROI Insights
             </h2>
           </div>
 
@@ -97,32 +97,33 @@ const Calculator = () => {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-display-md font-bold text-white mb-8">
-              Pricing Questions Answered
+              ROI Methodology Explained
             </h2>
           </div>
 
           <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             {[
               {
-                question: "Why do prices vary by funding stage?",
+                question: "How are ROI projections calculated?",
                 answer:
-                  "Later-stage companies typically need more sophisticated brand systems and have higher complexity requirements. Our pricing reflects the level of strategic depth and implementation needed.",
+                  "Our ROI calculations are based on industry benchmarks, client data from 150+ startups, and proven impact areas like funding readiness, customer acquisition improvements, and pricing power enhancements.",
               },
               {
-                question: "How does equity participation work?",
+                question: "What does the confidence score mean?",
                 answer:
-                  "We offer 20-30% discounts on cash fees in exchange for small equity stakes (0.1-0.25%). This aligns our success with yours and enables ongoing partnership throughout your growth.",
+                  "Confidence scores reflect the likelihood of achieving projected returns based on historical data, market conditions, and implementation factors. High confidence (80%+) indicates proven, measurable impacts.",
               },
               {
-                question: "What's included in rush delivery?",
+                question: "How accurate are the 3-year projections?",
                 answer:
-                  "Rush delivery (4-6 weeks) includes dedicated resources, priority scheduling, and compressed timeline. Quality remains the same, but requires premium pricing for expedited service.",
+                  "Projections are based on actual client outcomes and conservative industry benchmarks. While individual results vary, our methodology has proven accurate within 15-20% for similar startups.",
               },
               {
-                question: "Can I change my package after starting?",
+                question: "Can I customize the impact areas?",
                 answer:
-                  "Yes, we build flexibility into our packages. You can add services or upgrade packages as your needs evolve. Our modular approach accommodates changing requirements.",
+                  "Yes, select the focus areas most relevant to your business goals. The calculator adjusts projections based on your specific priorities like funding readiness or customer acquisition.",
               },
+            ]
             ].map((faq, index) => (
               <Card key={index} className="bg-dark-900/50 border-dark-700">
                 <CardHeader>
