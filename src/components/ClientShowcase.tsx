@@ -119,16 +119,16 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
         </div>
 
         {/* Success Stats Row */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-8 text-sm lg:text-base">
-          <div className="flex items-center gap-2 text-gray-400">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 lg:gap-6 xl:gap-8 mb-6 lg:mb-8 text-xs sm:text-sm lg:text-base">
+          <div className="flex items-center justify-center gap-2 text-gray-400">
             <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
             <span>150+ Brands Served</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center justify-center gap-2 text-gray-400">
             <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
             <span>$2.5B+ Capital Raised</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center justify-center gap-2 text-gray-400">
             <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
             <span>98% Funding Success</span>
           </div>
@@ -136,14 +136,15 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center mb-4">
             <Button
               asChild
-              className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-2.5 group"
+              size="lg"
+              className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
             >
               <Link
                 to="/assessment"
-                className="inline-flex items-center space-x-2"
+                className="inline-flex items-center justify-center space-x-2"
               >
                 <span>Free Brand Assessment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -152,11 +153,12 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
             <Button
               asChild
               variant="outline"
-              className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 py-2.5 group"
+              size="lg"
+              className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
             >
               <Link
                 to="/calculator"
-                className="inline-flex items-center space-x-2"
+                className="inline-flex items-center justify-center space-x-2"
               >
                 <span>Calculate ROI</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -167,7 +169,7 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
             <Button
               asChild
               variant="ghost"
-              className="text-gray-400 hover:text-white px-4 py-2 text-sm"
+              className="text-gray-400 hover:text-white px-4 py-3 text-sm min-h-[44px] touch-feedback"
             >
               <Link to="/clients">
                 <span>View Success Stories</span>
