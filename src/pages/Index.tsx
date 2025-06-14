@@ -210,8 +210,16 @@ const Index = () => {
   ];
 
   return (
-    <div className="bg-dark-950">
-      <SEO />
+    <div>
+      <SEO
+        title="The Brand Whisperer - Building Brands That Scale | Startup Brand Strategy"
+        description="Expert brand strategy & visual identity for hypergrowth startups. 150+ successful brands built from pre-seed to Series A. Get investor-ready branding that scales with your growth."
+        keywords="startup branding, brand strategy, hypergrowth branding, Series A branding, startup visual identity, scalable brand systems, startup brand consultant, investor-ready branding, brand strategy for startups"
+        url="https://brandwhisperer.com"
+        image="https://brandwhisperer.com/og-homepage.jpg"
+        schema={homePageSchema}
+      />
+      <Hero />
       {/* Hero Section */}
       <Hero />
 
