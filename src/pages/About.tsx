@@ -237,9 +237,13 @@ const About = () => {
   return (
     <div className="bg-dark-950 pt-32 pb-16">
       <SEO
-        title="About The Brand Whisperer - 30 Years Building Scalable Startup Brands"
-        description="Meet The Brand Whisperer team. 30+ years experience, 150+ startup projects, New Relic & Idealab background. Building brands that scale from garage to IPO."
-        keywords="brand whisperer team, startup brand consultant, New Relic branding, Idealab experience, startup brand expertise"
+        title="About The Brand Whisperer | 30+ Years Building Scalable Startup Brands"
+        description="Meet the brand strategist behind 150+ successful startups. 30+ years experience from New Relic IPO to Series A brand strategies. Expert in building brands that scale with your growth."
+        keywords="brand strategist, startup brand expert, New Relic brand, Idealab experience, brand consultant background, startup branding expert, series a brand specialist"
+        url="https://brandwhisperer.com/about"
+        image="https://brandwhisperer.com/og-about.jpg"
+        type="profile"
+        schema={aboutPageSchema}
       />
       {/* Hero Section */}
       <section className="section-spacing">
