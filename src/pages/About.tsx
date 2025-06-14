@@ -26,6 +26,51 @@ import {
 } from "lucide-react";
 
 const About = () => {
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://brandwhisperer.com/about/#person",
+    name: "The Brand Whisperer",
+    jobTitle: "Brand Strategy Consultant",
+    description:
+      "30+ years of brand strategy experience from New Relic IPO to 150+ startup portfolio. Expert in building scalable brands for hypergrowth companies.",
+    knowsAbout: [
+      "Brand Strategy",
+      "Visual Identity Design",
+      "Startup Branding",
+      "Hypergrowth Companies",
+      "Series A Preparation",
+      "Investor Relations",
+      "IPO Readiness",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Brand Strategy Consultant",
+      occupationalCategory: "Design and Creative Services",
+      skills: [
+        "Brand Strategy Development",
+        "Visual Identity Systems",
+        "Startup Brand Consulting",
+        "Growth Stage Branding",
+        "Investor Presentation Design",
+      ],
+    },
+    worksFor: {
+      "@type": "Organization",
+      "@id": "https://brandwhisperer.com/#organization",
+    },
+    alumniOf: [
+      {
+        "@type": "Organization",
+        name: "New Relic",
+      },
+      {
+        "@type": "Organization",
+        name: "Idealab",
+      },
+    ],
+  };
+
   const experience = [
     {
       company: "New Relic",

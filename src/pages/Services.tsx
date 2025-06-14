@@ -28,6 +28,63 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  const servicesPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://brandwhisperer.com/services/#service",
+    name: "Startup Brand Strategy Services",
+    description:
+      "Comprehensive brand strategy and visual identity services for startups from pre-seed to Series A and beyond.",
+    provider: {
+      "@type": "Organization",
+      "@id": "https://brandwhisperer.com/#organization",
+    },
+    serviceType: "Brand Strategy Consulting",
+    areaServed: {
+      "@type": "Place",
+      name: "Global",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Brand Strategy Service Packages",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Pre-Seed Foundation",
+          description: "Essential brand foundation for early-stage startups",
+          price: "15000",
+          priceCurrency: "USD",
+          itemOffered: {
+            "@type": "Service",
+            name: "Pre-Seed Brand Package",
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Seed Growth System",
+          description: "Complete brand system for scaling startups",
+          price: "25000",
+          priceCurrency: "USD",
+          itemOffered: {
+            "@type": "Service",
+            name: "Seed Growth Brand Package",
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Series A Ready",
+          description: "Investment-grade brand strategy for funding rounds",
+          price: "40000",
+          priceCurrency: "USD",
+          itemOffered: {
+            "@type": "Service",
+            name: "Series A Brand Package",
+          },
+        },
+      ],
+    },
+  };
+
   const mainServices = [
     {
       title: "Pre-Seed Foundation",

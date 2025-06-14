@@ -27,6 +27,81 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const homePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://brandwhisperer.com/#organization",
+    name: "The Brand Whisperer",
+    alternateName: "Brand Whisperer",
+    description:
+      "Building brands that scale from startup to unicorn without breaking. Expert brand strategy and visual identity for hypergrowth startups.",
+    url: "https://brandwhisperer.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://brandwhisperer.com/logo.png",
+      width: "180",
+      height: "60",
+    },
+    foundingDate: "1995",
+    founder: {
+      "@type": "Person",
+      name: "The Brand Whisperer",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Boston",
+      addressRegion: "MA",
+      addressCountry: "US",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-617-792-3378",
+      contactType: "customer service",
+      email: "hello@brandwhisperer.io",
+      availableLanguage: "en",
+    },
+    sameAs: [
+      "https://linkedin.com/company/brandwhisperer",
+      "https://twitter.com/brandwhisperer",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Brand Strategy Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Pre-Seed Brand Foundation",
+            description:
+              "Essential brand strategy and visual identity for early-stage startups",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Seed Growth System",
+            description: "Comprehensive brand system for scaling startups",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Series A Ready Package",
+            description: "Investment-grade brand strategy for funding rounds",
+          },
+        },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "150",
+    },
+  };
+
   const services = [
     {
       title: "Pre-Seed Package",
