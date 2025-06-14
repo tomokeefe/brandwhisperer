@@ -36,6 +36,11 @@ const Navbar = () => {
 
   const resourcesItems = [
     {
+      title: "Brand Assessment",
+      href: "/assessment",
+      description: "Free interactive brand evaluation tool",
+    },
+    {
       title: "Blog",
       href: "/blog",
       description: "Startup branding insights and case studies",
