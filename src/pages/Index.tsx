@@ -406,36 +406,31 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
-              >
-                <CardContent className="pt-8">
-                  <Quote className="w-8 h-8 text-secondary-400 mb-4" />
-                  <blockquote className="text-gray-300 mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-white" />
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-dark-900/50 border-dark-700 card-hover">
+              <CardContent className="p-12 text-center">
+                <Quote className="w-16 h-16 text-secondary-400 mx-auto mb-8" />
+                <blockquote className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed font-medium">
+                  "{testimonials[0].quote}"
+                </blockquote>
+                <div className="flex items-center justify-center space-x-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-xl font-semibold text-white">
+                      {testimonials[0].author}
                     </div>
-                    <div>
-                      <div className="font-semibold text-white">
-                        {testimonial.author}
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        {testimonial.title}
-                      </div>
-                      <div className="text-sm text-secondary-400">
-                        {testimonial.company}
-                      </div>
+                    <div className="text-base text-gray-400">
+                      {testimonials[0].title}
+                    </div>
+                    <div className="text-base text-secondary-400">
+                      {testimonials[0].company}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
