@@ -27,6 +27,33 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://brandwhisperer.com/contact/#webpage",
+    url: "https://brandwhisperer.com/contact",
+    name: "Contact The Brand Whisperer",
+    description:
+      "Get in touch for expert startup brand strategy. Free consultation available.",
+    mainEntity: {
+      "@type": "Organization",
+      "@id": "https://brandwhisperer.com/#organization",
+      name: "The Brand Whisperer",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+1-617-792-3378",
+        contactType: "customer service",
+        email: "hello@brandwhisperer.io",
+        availableLanguage: "en",
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "17:00",
+        },
+      },
+    },
+  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
