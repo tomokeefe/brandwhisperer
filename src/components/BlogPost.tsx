@@ -779,9 +779,9 @@ const BlogPost = () => {
               <Badge className="mb-4 bg-secondary-500/20 text-secondary-400 border-secondary-500/30">
                 {post.category}
               </Badge>
-              <h1 className="text-display-lg lg:text-display-xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-display-lg lg:text-display-xl font-bold text-white mb-6 leading-tight">
                 {post.title}
-              </h1>
+              </h2>
               <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
                 {post.excerpt}
               </p>
