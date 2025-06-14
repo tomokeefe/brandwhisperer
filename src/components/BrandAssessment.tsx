@@ -486,17 +486,17 @@ const BrandAssessment: React.FC = () => {
 
   if (isComplete && result) {
     return (
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-6 lg:space-y-8 px-4 sm:px-6 lg:px-8">
         {/* Results Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-400 text-sm font-medium px-4 py-2 rounded-full border border-green-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 bg-green-500/10 text-green-400 text-sm font-medium px-4 py-2 rounded-full border border-green-500/20 mb-4 lg:mb-6">
             <CheckCircle className="w-4 h-4" />
             Assessment Complete
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
             Your Brand Assessment Results
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4">
             Based on your responses, here's how your brand measures up and what
             we recommend next.
           </p>
@@ -504,18 +504,18 @@ const BrandAssessment: React.FC = () => {
 
         {/* Overall Score */}
         <Card className="bg-dark-800/50 border-dark-700">
-          <CardContent className="p-8">
+          <CardContent className="p-6 lg:p-8">
             <div className="text-center">
-              <div className="text-6xl font-bold text-white mb-2">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
                 {Math.round(result.overallScore)}
               </div>
-              <div className="text-xl text-gray-300 mb-4">
+              <div className="text-lg lg:text-xl text-gray-300 mb-4">
                 Overall Brand Score
               </div>
               <div className="flex justify-center mb-6">
                 <Badge
                   className={cn(
-                    "text-lg px-4 py-2",
+                    "text-sm lg:text-lg px-3 lg:px-4 py-2",
                     result.priority === "critical" &&
                       "bg-red-500/20 text-red-400 border-red-500/20",
                     result.priority === "high" &&
@@ -539,7 +539,7 @@ const BrandAssessment: React.FC = () => {
         </Card>
 
         {/* Category Breakdown */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {Object.entries(result.categoryScores).map(([category, score]) => {
             const icons = {
               Strategy: Target,
@@ -655,17 +655,17 @@ const BrandAssessment: React.FC = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto space-y-8">
+    <div className="max-w-3xl mx-auto space-y-6 lg:space-y-8 px-4 sm:px-6 lg:px-8">
       {/* Progress Header */}
       <div className="text-center">
-        <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
+        <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-4 lg:mb-6">
           <Target className="w-4 h-4" />
           Brand Assessment
         </div>
-        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
           Evaluate Your Brand's Growth Readiness
         </h2>
-        <p className="text-lg text-gray-300 mb-6">
+        <p className="text-base sm:text-lg text-gray-300 mb-6 px-4">
           Answer {totalSteps} questions to get personalized recommendations for
           your brand's next steps.
         </p>
@@ -678,35 +678,37 @@ const BrandAssessment: React.FC = () => {
             </span>
             <span>{Math.round(progress)}% Complete</span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-3 lg:h-2" />
         </div>
       </div>
 
       {/* Question Card */}
       <Card className="bg-dark-800/50 border-dark-700">
-        <CardHeader>
+        <CardHeader className="pb-4 lg:pb-6">
           <div className="flex items-center gap-3 mb-4">
             <Badge
               variant="outline"
-              className="text-secondary-400 border-secondary-500/30"
+              className="text-secondary-400 border-secondary-500/30 text-xs lg:text-sm"
             >
               {currentQuestion.category}
             </Badge>
           </div>
-          <CardTitle className="text-2xl text-white leading-tight">
+          <CardTitle className="text-xl sm:text-2xl text-white leading-tight">
             {currentQuestion.question}
           </CardTitle>
           {currentQuestion.description && (
-            <p className="text-gray-400 mt-2">{currentQuestion.description}</p>
+            <p className="text-sm lg:text-base text-gray-400 mt-2">
+              {currentQuestion.description}
+            </p>
           )}
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-3 lg:space-y-4">
           {currentQuestion.options.map((option) => (
             <button
               key={option.value}
               onClick={() => handleAnswer(currentQuestion.id, option.value)}
               className={cn(
-                "w-full p-4 rounded-lg border text-left transition-all duration-200 hover:border-secondary-500/50",
+                "w-full p-4 lg:p-5 rounded-lg border text-left transition-all duration-200 hover:border-secondary-500/50 min-h-[48px] lg:min-h-[56px]",
                 answers[currentQuestion.id] === option.value
                   ? "border-secondary-500 bg-secondary-500/10"
                   : "border-dark-600 bg-dark-800/30 hover:bg-dark-700/50",
@@ -726,10 +728,10 @@ const BrandAssessment: React.FC = () => {
                   )}
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-white mb-1">
+                  <div className="font-semibold text-white mb-1 text-sm lg:text-base">
                     {option.label}
                   </div>
-                  <div className="text-sm text-gray-400">
+                  <div className="text-xs lg:text-sm text-gray-400">
                     {option.description}
                   </div>
                 </div>
@@ -740,12 +742,13 @@ const BrandAssessment: React.FC = () => {
       </Card>
 
       {/* Navigation */}
-      <div className="flex justify-between">
+      <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
         <Button
           variant="outline"
           onClick={handlePrevious}
           disabled={currentStep === 0}
-          className="border-gray-600 text-gray-300 disabled:opacity-50"
+          className="border-gray-600 text-gray-300 disabled:opacity-50 min-h-[48px] px-6"
+          size="lg"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Previous
@@ -754,7 +757,8 @@ const BrandAssessment: React.FC = () => {
         <Button
           onClick={handleNext}
           disabled={!hasAnswered}
-          className="bg-secondary-600 hover:bg-secondary-700 text-white disabled:opacity-50 group"
+          className="bg-secondary-600 hover:bg-secondary-700 text-white disabled:opacity-50 group min-h-[48px] px-6"
+          size="lg"
         >
           {currentStep === totalSteps - 1 ? "View Results" : "Next Question"}
           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -764,7 +768,7 @@ const BrandAssessment: React.FC = () => {
       {/* Help Text */}
       {!hasAnswered && (
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 text-sm text-gray-400 bg-dark-800/30 px-4 py-2 rounded-lg border border-dark-700">
+          <div className="inline-flex items-center gap-2 text-sm text-gray-400 bg-dark-800/30 px-4 py-3 rounded-lg border border-dark-700">
             <AlertCircle className="w-4 h-4" />
             Please select an option to continue
           </div>
