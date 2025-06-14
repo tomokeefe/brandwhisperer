@@ -123,7 +123,7 @@ const Calculator = () => {
                 answer:
                   "Yes, select the focus areas most relevant to your business goals. The calculator adjusts projections based on your specific priorities like funding readiness or customer acquisition.",
               },
-            }].map((faq, index) => (
+            ].map((faq, index) => (
               <Card key={index} className="bg-dark-900/50 border-dark-700">
                 <CardHeader>
                   <CardTitle className="text-lg text-white">
