@@ -17,8 +17,6 @@ import {
   Users,
   Award,
   TrendingUp,
-  Github,
-  Youtube,
   MessageCircle,
   BookOpen,
   Download,
