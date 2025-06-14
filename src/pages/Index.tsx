@@ -220,8 +220,6 @@ const Index = () => {
         schema={homePageSchema}
       />
       <Hero />
-      {/* Hero Section */}
-      <Hero />
 
       {/* Core Belief Section */}
       <section className="section-spacing bg-secondary-400 text-dark-900">
