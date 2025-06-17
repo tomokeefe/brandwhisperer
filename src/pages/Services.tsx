@@ -290,8 +290,362 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Main Service Packages */}
+      {/* Package Comparison Table */}
       <section id="packages" className="section-spacing bg-dark-900/30">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+              Compare Brand Packages
+            </h2>
+            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto mb-12">
+              Choose the perfect package for your growth stage. All packages
+              include equity options to align our success with yours.
+            </p>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="overflow-x-auto mb-16">
+            <div className="min-w-[800px] bg-dark-800/50 rounded-xl border border-dark-700">
+              {/* Table Header */}
+              <div className="grid grid-cols-4 border-b border-dark-700">
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-white">Features</h3>
+                </div>
+                <div className="p-6 text-center border-l border-dark-700">
+                  <div className="mb-2">
+                    <Badge
+                      variant="outline"
+                      className="border-primary-500/30 text-primary-400 bg-primary-500/10 mb-2"
+                    >
+                      <Target className="w-3 h-3 mr-1" />
+                      Early Stage
+                    </Badge>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    Pre-Seed Foundation
+                  </h3>
+                  <p className="text-2xl font-bold text-secondary-400 mb-1">
+                    $15,000
+                  </p>
+                  <p className="text-sm text-gray-400">+ 0.25% equity</p>
+                  <p className="text-xs text-gray-500 mt-2">3-4 weeks</p>
+                </div>
+                <div className="p-6 text-center border-l border-dark-700 bg-secondary-500/5 relative">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-secondary-600 text-white">
+                      Most Popular
+                    </Badge>
+                  </div>
+                  <div className="mb-2 mt-2">
+                    <Badge
+                      variant="outline"
+                      className="border-secondary-500/30 text-secondary-400 bg-secondary-500/10 mb-2"
+                    >
+                      <TrendingUp className="w-3 h-3 mr-1" />
+                      Growth Stage
+                    </Badge>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    Seed Growth System
+                  </h3>
+                  <p className="text-2xl font-bold text-secondary-400 mb-1">
+                    $25,000
+                  </p>
+                  <p className="text-sm text-gray-400">+ 0.2% equity</p>
+                  <p className="text-xs text-gray-500 mt-2">4-6 weeks</p>
+                </div>
+                <div className="p-6 text-center border-l border-dark-700">
+                  <div className="mb-2">
+                    <Badge
+                      variant="outline"
+                      className="border-green-500/30 text-green-400 bg-green-500/10 mb-2"
+                    >
+                      <Rocket className="w-3 h-3 mr-1" />
+                      Scale Ready
+                    </Badge>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    Series A Ready
+                  </h3>
+                  <p className="text-2xl font-bold text-secondary-400 mb-1">
+                    $40,000
+                  </p>
+                  <p className="text-sm text-gray-400">+ 0.1% equity</p>
+                  <p className="text-xs text-gray-500 mt-2">6-8 weeks</p>
+                </div>
+              </div>
+
+              {/* Feature Comparison Rows */}
+              {[
+                {
+                  category: "Brand Strategy",
+                  features: [
+                    {
+                      name: "Brand positioning & strategy",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Competitive analysis",
+                      preSeed: "Basic",
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Target audience research",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: "Advanced",
+                    },
+                    {
+                      name: "Brand architecture",
+                      preSeed: false,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Brand storytelling framework",
+                      preSeed: "Basic",
+                      seed: true,
+                      seriesA: "Advanced",
+                    },
+                  ],
+                },
+                {
+                  category: "Visual Identity",
+                  features: [
+                    {
+                      name: "Logo & mark design",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Color palette & typography",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Brand guidelines",
+                      preSeed: "Basic",
+                      seed: "Complete",
+                      seriesA: "Enterprise",
+                    },
+                    {
+                      name: "Business card & stationery",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Icon system",
+                      preSeed: false,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Pattern & texture library",
+                      preSeed: false,
+                      seed: false,
+                      seriesA: true,
+                    },
+                  ],
+                },
+                {
+                  category: "Marketing Materials",
+                  features: [
+                    {
+                      name: "Pitch deck template",
+                      preSeed: true,
+                      seed: true,
+                      seriesA: "Custom design",
+                    },
+                    {
+                      name: "Website design framework",
+                      preSeed: false,
+                      seed: true,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Social media templates",
+                      preSeed: "Starter kit",
+                      seed: "Complete system",
+                      seriesA: "Enterprise system",
+                    },
+                    {
+                      name: "Marketing collateral",
+                      preSeed: false,
+                      seed: true,
+                      seriesA: "Full suite",
+                    },
+                    {
+                      name: "Sales materials",
+                      preSeed: false,
+                      seed: "Basic",
+                      seriesA: "Enterprise grade",
+                    },
+                  ],
+                },
+                {
+                  category: "Strategic Support",
+                  features: [
+                    {
+                      name: "Brand messaging guide",
+                      preSeed: "Core messages",
+                      seed: "Voice & tone guide",
+                      seriesA: "Complete messaging system",
+                    },
+                    {
+                      name: "Implementation roadmap",
+                      preSeed: false,
+                      seed: "6-month plan",
+                      seriesA: "12-month strategic plan",
+                    },
+                    {
+                      name: "Crisis communication plan",
+                      preSeed: false,
+                      seed: false,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Global expansion guidelines",
+                      preSeed: false,
+                      seed: false,
+                      seriesA: true,
+                    },
+                    {
+                      name: "Investor relations materials",
+                      preSeed: false,
+                      seed: "Basic",
+                      seriesA: "Complete suite",
+                    },
+                  ],
+                },
+                {
+                  category: "Ongoing Support",
+                  features: [
+                    {
+                      name: "Revision rounds",
+                      preSeed: "2 rounds",
+                      seed: "3 rounds",
+                      seriesA: "Unlimited",
+                    },
+                    {
+                      name: "Follow-up consultation",
+                      preSeed: "1 month",
+                      seed: "3 months",
+                      seriesA: "6 months",
+                    },
+                    {
+                      name: "Team training session",
+                      preSeed: false,
+                      seed: true,
+                      seriesA: "Multiple sessions",
+                    },
+                    {
+                      name: "Brand health monitoring",
+                      preSeed: false,
+                      seed: false,
+                      seriesA: true,
+                    },
+                  ],
+                },
+              ].map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  {/* Category Header */}
+                  <div className="grid grid-cols-4 border-b border-dark-700/50 bg-dark-700/30">
+                    <div className="p-4 font-semibold text-secondary-400 text-sm uppercase tracking-wide">
+                      {category.category}
+                    </div>
+                    <div className="border-l border-dark-700/50"></div>
+                    <div className="border-l border-dark-700/50"></div>
+                    <div className="border-l border-dark-700/50"></div>
+                  </div>
+
+                  {/* Features */}
+                  {category.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="grid grid-cols-4 border-b border-dark-700/50 hover:bg-dark-700/20 transition-colors"
+                    >
+                      <div className="p-4 text-gray-300 text-sm">
+                        {feature.name}
+                      </div>
+                      <div className="p-4 text-center border-l border-dark-700/50">
+                        {feature.preSeed === true ? (
+                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
+                        ) : feature.preSeed === false ? (
+                          <div className="w-5 h-5 mx-auto"></div>
+                        ) : (
+                          <span className="text-xs text-gray-400">
+                            {feature.preSeed}
+                          </span>
+                        )}
+                      </div>
+                      <div className="p-4 text-center border-l border-dark-700/50 bg-secondary-500/5">
+                        {feature.seed === true ? (
+                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
+                        ) : feature.seed === false ? (
+                          <div className="w-5 h-5 mx-auto"></div>
+                        ) : (
+                          <span className="text-xs text-gray-400">
+                            {feature.seed}
+                          </span>
+                        )}
+                      </div>
+                      <div className="p-4 text-center border-l border-dark-700/50">
+                        {feature.seriesA === true ? (
+                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
+                        ) : feature.seriesA === false ? (
+                          <div className="w-5 h-5 mx-auto"></div>
+                        ) : (
+                          <span className="text-xs text-gray-400">
+                            {feature.seriesA}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              {/* CTA Row */}
+              <div className="grid grid-cols-4 p-6">
+                <div></div>
+                <div className="text-center border-l border-dark-700/50 px-4">
+                  <Button
+                    asChild
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-white"
+                  >
+                    <Link to="/contact">Get Started</Link>
+                  </Button>
+                </div>
+                <div className="text-center border-l border-dark-700/50 px-4 bg-secondary-500/5">
+                  <Button
+                    asChild
+                    className="w-full bg-secondary-600 hover:bg-secondary-700 text-white"
+                  >
+                    <Link to="/contact">Choose Popular</Link>
+                  </Button>
+                </div>
+                <div className="text-center border-l border-dark-700/50 px-4">
+                  <Button
+                    asChild
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    <Link to="/contact">Scale Now</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Service Packages */}
+      <section className="section-spacing">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
