@@ -136,45 +136,53 @@ const ClientShowcase: React.FC<ClientShowcaseProps> = ({ className = "" }) => {
 
         {/* CTA */}
         <div className="text-center">
-          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center mb-4">
+          <div className="flex flex-col lg:flex-row gap-3 lg:gap-4 justify-center items-center">
+            {/* Primary Button */}
             <Button
               asChild
               size="lg"
               className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
             >
               <Link
-                to="/assessment"
+                to="/clients"
                 className="inline-flex items-center justify-center space-x-2"
               >
-                <span>Free Brand Assessment</span>
+                <span>View more clients</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
-            >
-              <Link
-                to="/calculator"
-                className="inline-flex items-center justify-center space-x-2"
+
+            {/* Secondary Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
               >
-                <span>Calculate ROI</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
-            </Button>
-          </div>
-          <div className="text-center">
-            <Button
-              asChild
-              variant="ghost"
-              className="text-gray-400 hover:text-white px-4 py-3 text-sm min-h-[44px] touch-feedback"
-            >
-              <Link to="/clients">
-                <span>View Success Stories</span>
-              </Link>
-            </Button>
+                <Link
+                  to="/assessment"
+                  className="inline-flex items-center justify-center space-x-2"
+                >
+                  <span>Free Brand Assessment</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-secondary-500/30 text-secondary-400 hover:bg-secondary-500/10 hover:border-secondary-500/50 px-6 lg:px-8 py-3 group min-h-[48px] touch-feedback"
+              >
+                <Link
+                  to="/calculator"
+                  className="inline-flex items-center justify-center space-x-2"
+                >
+                  <span>Calculate ROI</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
