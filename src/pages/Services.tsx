@@ -290,8 +290,57 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Main Service Packages */}
+      <section id="packages" className="section-spacing">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+              Core Brand Packages
+            </h2>
+            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
+              Comprehensive brand systems designed for startups at different
+              growth stages. Each package includes equity participation for true
+              partnership.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {mainServices.map((service, index) => {
+              const serviceId = service.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[^a-z0-9-]/g, "");
+
+              return (
+                <div key={index} id={serviceId} className="space-y-4">
+                  <ServiceCard {...service} />
+                  <Card className="bg-dark-800/50 border-dark-700">
+                    <CardContent className="pt-6">
+                      <div className="space-y-3 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Clock className="w-4 h-4 text-secondary-400" />
+                          <span className="text-gray-400">
+                            Timeline: {service.timeline}
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Target className="w-4 h-4 text-secondary-400" />
+                          <span className="text-gray-400">
+                            Ideal for: {service.ideal}
+                          </span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Package Comparison Table */}
-      <section id="packages" className="section-spacing bg-dark-900/30">
+      <section className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
@@ -640,55 +689,6 @@ const Services = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Service Packages */}
-      <section className="section-spacing">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Core Brand Packages
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Comprehensive brand systems designed for startups at different
-              growth stages. Each package includes equity participation for true
-              partnership.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {mainServices.map((service, index) => {
-              const serviceId = service.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")
-                .replace(/[^a-z0-9-]/g, "");
-
-              return (
-                <div key={index} id={serviceId} className="space-y-4">
-                  <ServiceCard {...service} />
-                  <Card className="bg-dark-800/50 border-dark-700">
-                    <CardContent className="pt-6">
-                      <div className="space-y-3 text-sm">
-                        <div className="flex items-center space-x-2">
-                          <Clock className="w-4 h-4 text-secondary-400" />
-                          <span className="text-gray-400">
-                            Timeline: {service.timeline}
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Target className="w-4 h-4 text-secondary-400" />
-                          <span className="text-gray-400">
-                            Ideal for: {service.ideal}
-                          </span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
