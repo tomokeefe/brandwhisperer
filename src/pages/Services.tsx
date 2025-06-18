@@ -283,7 +283,7 @@ const Services = () => {
                 variant="outline"
                 className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900"
               >
-                <Link to="#packages">Compare Packages</Link>
+                <Link to="#compare-packages">Compare Packages</Link>
               </Button>
             </div>
           </div>
@@ -340,7 +340,7 @@ const Services = () => {
       </section>
 
       {/* Package Comparison Table */}
-      <section className="section-spacing bg-dark-900/30">
+      <section id="compare-packages" className="section-spacing bg-dark-900/30">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
