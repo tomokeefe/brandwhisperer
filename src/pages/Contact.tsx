@@ -249,76 +249,10 @@ const Contact = () => {
       {/* Main Content Grid */}
       <section id="schedule" className="section-spacing">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <div id="contact-form">
               <EnhancedContactForm formType="consultation" />
-            </div>
-
-            {/* Consultation Process */}
-            <div>
-              <div className="mb-8">
-                <h2 className="text-display-sm font-bold text-white mb-4">
-                  What Happens Next?
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
-                  Our consultation process is designed to understand your unique
-                  needs and create a custom solution for your startup's growth
-                  stage.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {consultationProcess.map((step, index) => (
-                  <Card key={index} className="bg-dark-900/50 border-dark-700">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <step.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="text-lg font-semibold text-white">
-                              {step.title}
-                            </h3>
-                            <Badge
-                              variant="outline"
-                              className="border-secondary-500/30 text-secondary-400 bg-secondary-500/10 text-xs"
-                            >
-                              {step.duration}
-                            </Badge>
-                          </div>
-                          <p className="text-gray-300 text-sm leading-relaxed">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Quick CTA */}
-              <Card className="mt-8 bg-gradient-to-br from-primary-900/50 to-secondary-900/50 border-primary-700/50">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Need to move faster?
-                  </h3>
-                  <p className="text-primary-100 text-sm mb-4">
-                    Schedule a direct call with our team for immediate
-                    consultation.
-                  </p>
-                  <Button
-                    asChild
-                    className="bg-secondary-500 hover:bg-secondary-600 text-dark-900"
-                  >
-                    <a href="tel:+15551234567">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Us Now
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
