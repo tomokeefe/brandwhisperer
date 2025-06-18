@@ -387,7 +387,6 @@ const Footer = () => {
       { name: "Our Process", path: "/about#process" },
       { name: "Contact", path: "/contact" },
       { name: "Schedule Call", path: "/contact#schedule" },
-      { name: "Careers", path: "/contact#careers" },
     ],
     Legal: [
       { name: "Privacy Policy", path: "/privacy" },
