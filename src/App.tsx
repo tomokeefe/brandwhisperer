@@ -22,7 +22,7 @@ import Assessment from "@/pages/Assessment";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookiePolicy from "@/pages/CookiePolicy";
-import DataProcessing from "@/pages/DataProcessing";
+
 import Sitemap from "@/pages/Sitemap";
 import NotFound from "@/pages/NotFound";
 import MobileTestingPanel from "@/components/MobileTestingPanel";
@@ -51,7 +51,7 @@ function App() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/cookies" element={<CookiePolicy />} />
-              <Route path="/data" element={<DataProcessing />} />
+
               <Route path="/sitemap" element={<Sitemap />} />
               {/* Blog post routes - in a real app, these would be dynamic */}
               <Route path="/blog/:slug" element={<BlogPost />} />
