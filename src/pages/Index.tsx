@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
@@ -24,9 +24,32 @@ import {
   Star,
   Users,
   Rocket,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const Index = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Auto-rotate testimonials every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
+  };
+
   const homePageSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -188,24 +211,38 @@ const Index = () => {
   const testimonials = [
     {
       quote:
-        "The Brand Whisperer helped us build a brand that's grown with us from 10 employees to 500+ without a single rebrand. That's saved us millions and kept our momentum.",
-      author: "Sarah Chen",
-      title: "CEO, TechFlow",
-      company: "Series B Startup",
+        "Over many years, I've worked with The Brand Whisperer team on more than a dozen branding projects. They continue to be my go-to partner for branding because they produce amazing, high quality results quickly that really bring the companies' identity to life. And they do it in a cost effective way. They are easily the best and easiest to work with design group I've ever used.",
+      author: "Lars Perkins",
+      title: "CEO/Founder",
+      company: "Seed Round",
     },
     {
       quote:
-        "Our Series A presentation was 10x more professional because of our brand work. Investors immediately saw us as a serious company, not just another startup.",
+        "Tom's work extends far beyond design—he thoughtfully considers the brand, user interaction, and every detail to craft a truly world-class experience",
+      author: "Tamer Morsey",
+      title: "CEO/Founder Spotlight News",
+      company: "Seed Round",
+    },
+    {
+      quote:
+        "We went from 50 to 500 customers in 8 months without a single brand crisis. Every new hire, every product launch, every marketing campaign felt consistent. The system just works.",
       author: "Marcus Rodriguez",
-      title: "Founder, DataSync",
-      company: "Recently funded $15M Series A",
+      title: "Founder",
+      company: "Seed Round",
     },
     {
       quote:
-        "Three pivots, four product launches, and we're still using the same core brand system. It's exactly what a hypergrowth company needs.",
-      author: "Jennifer Kim",
-      title: "CMO, GrowthLabs",
-      company: "Pre-IPO",
+        "Our first landing page converted at 45% – unheard of for B2B SaaS. The messaging framework helped us find product-market fit faster because prospects immediately understood our value.",
+      author: "Jennifer Lee",
+      title: "Co-founder",
+      company: "Series A",
+    },
+    {
+      quote:
+        "The investor deck template and brand materials were so polished, we started fundraising 3 months earlier than planned. Investors kept commenting on how 'mature' our brand felt for a Series A company.",
+      author: "Alex Rivera",
+      title: "Founder CEO",
+      company: "Series A",
     },
   ];
 
@@ -406,31 +443,63 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto relative">
             <Card className="bg-dark-900/50 border-dark-700 card-hover">
-              <CardContent className="p-12 text-center">
-                <Quote className="w-16 h-16 text-secondary-400 mx-auto mb-8" />
-                <blockquote className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed font-medium">
-                  "{testimonials[0].quote}"
+              <CardContent className="p-8 lg:p-12 text-center">
+                <Quote className="w-12 h-12 lg:w-16 lg:h-16 text-secondary-400 mx-auto mb-6 lg:mb-8" />
+                <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-300 mb-6 lg:mb-8 leading-relaxed font-medium min-h-[120px] lg:min-h-[140px] flex items-center justify-center">
+                  "{testimonials[currentTestimonial].quote}"
                 </blockquote>
-                <div className="flex items-center justify-center space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                    <Users className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-center space-x-4 lg:space-x-6">
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-xl font-semibold text-white">
-                      {testimonials[0].author}
+                    <div className="text-lg lg:text-xl font-semibold text-white">
+                      {testimonials[currentTestimonial].author}
                     </div>
-                    <div className="text-base text-gray-400">
-                      {testimonials[0].title}
+                    <div className="text-sm lg:text-base text-gray-400">
+                      {testimonials[currentTestimonial].title}
                     </div>
-                    <div className="text-base text-secondary-400">
-                      {testimonials[0].company}
+                    <div className="text-sm lg:text-base text-secondary-400">
+                      {testimonials[currentTestimonial].company}
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Navigation Controls */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 border border-dark-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 touch-feedback"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 border border-dark-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 touch-feedback"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === currentTestimonial
+                      ? "bg-secondary-400"
+                      : "bg-dark-600 hover:bg-dark-500"
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
