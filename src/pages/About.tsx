@@ -308,6 +308,56 @@ const About = () => {
         </div>
       </section>
 
+      {/* Personal Testimonial */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <Card className="bg-gradient-to-br from-secondary-900/20 to-primary-900/20 border-secondary-500/30 max-w-5xl mx-auto">
+            <CardContent className="p-0 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+                {/* Quote Content */}
+                <div className="p-8 lg:p-12">
+                  <Quote className="w-12 h-12 text-secondary-400 mb-6" />
+                  <blockquote className="text-xl lg:text-2xl font-medium text-white mb-8 leading-relaxed">
+                    "I've spent 30 years watching startups build brands that
+                    break when they grow. My mission isn't just creating
+                    beautiful designs—it's building brand systems that scale
+                    from garage to IPO without expensive, momentum-killing
+                    rebrands. Every startup deserves a brand that grows with
+                    their ambition."
+                  </blockquote>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-white">
+                        Tom O'Keefe
+                      </div>
+                      <div className="text-base text-secondary-400">
+                        The Brand Whisperer
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Founder & Chief Brand Strategist
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Portrait Image */}
+                <div className="relative h-64 lg:h-full min-h-[400px] bg-gradient-to-br from-dark-800 to-dark-700">
+                  <img
+                    src="https://cdn.builder.io/api/v1/assets/57f3921c477141799725b87f2761d2c2/figma-screenshot-68b952?format=webp&width=800"
+                    alt="Tom O'Keefe, The Brand Whisperer"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-dark-900/20 lg:to-dark-900/40"></div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Values in Action */}
       <section className="section-spacing bg-dark-900/30">
         <div className="container-custom">
