@@ -23,6 +23,7 @@ import {
   Clock,
   DollarSign,
   Star,
+  Quote,
 } from "lucide-react";
 
 const About = () => {
