@@ -34,7 +34,7 @@ const Services = () => {
     "@id": "https://brandwhisperer.com/services/#service",
     name: "Startup Brand Strategy Services",
     description:
-      "Comprehensive brand strategy and visual identity services for startups from pre-seed to Series A and beyond.",
+      "Comprehensive brand strategy, visual identity, website design, UI/UX, and product design services for startups from pre-seed to Series A and beyond.",
     provider: {
       "@type": "Organization",
       "@id": "https://brandwhisperer.com/#organization",
@@ -167,6 +167,29 @@ const Services = () => {
       type: "retainer",
     },
     {
+      icon: Calendar,
+      title: "Design Subscription",
+      description:
+        "Ongoing design support with monthly design assets, consultation hours, and strategic guidance for growing teams.",
+      pricing: "$8,500/month",
+      pricingAnnual: "$85,000/year",
+      equity: "0.5%",
+      features: [
+        "Monthly design asset allocation",
+        "4 hours consultation monthly",
+        "Ongoing brand evolution support",
+        "Priority response time",
+        "Marketing material templates",
+        "Website & UI/UX design support",
+        "Product design consultation",
+        "Brand health monitoring",
+      ],
+      timeline: "Monthly/Annual",
+      type: "subscription",
+      flexible: true,
+      savings: "Save $17,000 annually",
+    },
+    {
       icon: Zap,
       title: "Rapid Brand Sprint",
       description:
@@ -264,10 +287,11 @@ const Services = () => {
               <span className="text-secondary-400">Growth Stage</span>
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
-              From pre-seed to Series A, we have packages designed for your
-              current stage with the scalability to grow with your business.
-              Strategic partnerships with equity alignment because we believe in
-              your success.
+              From pre-seed to Series A, we have comprehensive brand strategy,
+              visual identity, website design, UI/UX, and product design
+              packages for your current stage with the scalability to grow with
+              your business. Strategic partnerships with equity alignment
+              because we believe in your success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -298,8 +322,9 @@ const Services = () => {
               Core Brand Packages
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Comprehensive brand systems designed for startups at different
-              growth stages. Each package includes equity participation for true
+              Comprehensive brand strategy, visual identity, website design,
+              UI/UX, and product design systems for startups at different growth
+              stages. Each package includes equity participation for true
               partnership.
             </p>
           </div>
@@ -718,11 +743,16 @@ const Services = () => {
                 key={index}
                 className={`bg-dark-900/50 border-dark-700 card-hover relative ${
                   service.urgent ? "ring-2 ring-red-500/30" : ""
-                }`}
+                } ${service.flexible ? "ring-2 ring-secondary-500/30" : ""}`}
               >
                 {service.urgent && (
                   <Badge className="absolute -top-2 left-4 bg-red-600 text-white">
                     Urgent
+                  </Badge>
+                )}
+                {service.flexible && (
+                  <Badge className="absolute -top-2 left-4 bg-secondary-600 text-white">
+                    Flexible
                   </Badge>
                 )}
                 <CardHeader>
@@ -738,9 +768,25 @@ const Services = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <div className="text-2xl font-bold text-secondary-400">
-                      {service.pricing}
-                    </div>
+                    {service.type === "subscription" ? (
+                      <div>
+                        <div className="text-2xl font-bold text-secondary-400">
+                          {service.pricing}
+                        </div>
+                        <div className="text-lg text-gray-300">
+                          {service.pricingAnnual}
+                        </div>
+                        {service.savings && (
+                          <div className="text-sm text-green-400 font-medium">
+                            {service.savings}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="text-2xl font-bold text-secondary-400">
+                        {service.pricing}
+                      </div>
+                    )}
                     {service.equity && (
                       <div className="text-sm text-gray-400">
                         + {service.equity} equity

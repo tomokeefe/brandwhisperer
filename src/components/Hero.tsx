@@ -48,9 +48,10 @@ const Hero = () => {
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-2xl leading-relaxed">
-                From startup to unicorn without breaking. We build the visual
-                and strategic foundation that carries you from garage to IPO
-                without expensive, momentum-killing rebrands.
+                From startup to unicorn without breaking. We build the brand
+                strategy, visual identity, websites, UI/UX, and product design
+                that carries you from garage to IPO without expensive,
+                momentum-killing rebrands.
               </p>
 
               {/* CTA Buttons */}

@@ -262,10 +262,11 @@ const About = () => {
             </h1>
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
               We're not your typical brand agency. With three decades of
-              experience, 150+ startup projects, and having lived through
-              hypergrowth at companies like New Relic and Idealab, we understand
-              what it takes to build brands that don't break during rapid
-              scaling.
+              experience in brand strategy, visual identity, website design,
+              UI/UX, and product design across 150+ startup projects, and having
+              lived through hypergrowth at companies like New Relic and Idealab,
+              we understand what it takes to build comprehensive design systems
+              that don't break during rapid scaling.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -318,8 +319,9 @@ const About = () => {
               <blockquote className="text-xl lg:text-2xl font-medium text-white mb-8 leading-relaxed max-w-3xl mx-auto">
                 "I've spent 30 years watching startups build brands that break
                 when they grow. My mission isn't just creating beautiful
-                designs—it's building brand systems that scale from garage to
-                IPO without expensive, momentum-killing rebrands. Every startup
+                designs—it's building brand strategy, visual identity, websites,
+                UI/UX, and product design systems that scale from garage to IPO
+                without expensive, momentum-killing rebrands. Every startup
                 deserves a brand that grows with their ambition."
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
