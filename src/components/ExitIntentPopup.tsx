@@ -111,7 +111,7 @@ const ExitIntentPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[500px] bg-dark-900 border-dark-700 text-white">
         <DialogHeader>
-          <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30 mb-2">
+          <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30 mb-2 w-fit">
             Wait! Don't Leave Empty-Handed
           </Badge>
           <DialogTitle className="text-2xl font-bold text-white">
