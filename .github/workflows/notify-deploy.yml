@@ -1,0 +1,17 @@
+name: Notify Deployment
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger deployment
+      run: |
+        curl -X POST https://eodqiym15xnyc4h.m.pipedream.net \
+          -H "Content-Type: application/json" \
+          -d '{
+            "repository": "${{ github.repository }}",
+            "sha": "${{ github.sha }}"
+          }'
