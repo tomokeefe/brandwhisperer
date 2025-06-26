@@ -111,17 +111,9 @@ const ExitIntentPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-[500px] bg-dark-900 border-dark-700 text-white">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-2">
-              Wait! Don't Leave Empty-Handed
-            </Badge>
-            <button
-              onClick={handleClose}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-2">
+            Wait! Don't Leave Empty-Handed
+          </Badge>
           <DialogTitle className="text-2xl font-bold text-white">
             {isSubmitted
               ? "Your Brand Assessment is Ready!"

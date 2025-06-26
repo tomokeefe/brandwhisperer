@@ -633,7 +633,7 @@ const Footer = () => {
                           >
                             <Link
                               to={link.path}
-                              className="text-gray-300 hover:text-primary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
+                              className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
                               onClick={() =>
                                 trackLinkClick(
                                   link.name,
@@ -693,21 +693,21 @@ const Footer = () => {
               <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-2 text-sm">
                 <Link
                   to="/privacy"
-                  className="text-gray-300 hover:text-primary-400 transition-colors duration-200 hover:underline underline-offset-2"
+                  className="text-gray-300 hover:text-secondary-400 transition-colors duration-200 hover:underline underline-offset-2"
                   onClick={() => trackLinkClick("Privacy Policy", "legal")}
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   to="/terms"
-                  className="text-dark-600 hover:text-primary-600 transition-colors duration-200 hover:underline underline-offset-2"
+                  className="text-gray-300 hover:text-secondary-400 transition-colors duration-200 hover:underline underline-offset-2"
                   onClick={() => trackLinkClick("Terms of Service", "legal")}
                 >
                   Terms of Service
                 </Link>
                 <Link
                   to="/sitemap"
-                  className="text-dark-600 hover:text-primary-600 transition-colors duration-200 hover:underline underline-offset-2"
+                  className="text-gray-300 hover:text-secondary-400 transition-colors duration-200 hover:underline underline-offset-2"
                   onClick={() => trackLinkClick("Sitemap", "navigation")}
                 >
                   Sitemap
