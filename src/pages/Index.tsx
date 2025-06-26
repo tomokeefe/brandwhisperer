@@ -507,6 +507,43 @@ const Index = () => {
       {/* Client Showcase */}
       <ClientShowcase />
 
+      {/* CTA Section */}
+      <section className="section-spacing bg-gradient-to-br from-primary-900 to-primary-800">
+        <div className="container-custom text-center">
+          <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+            Ready to Build a Brand That Scales?
+          </h2>
+          <p className="text-body-lg text-primary-100 mb-8 max-w-3xl mx-auto">
+            Join the ranks of successful startups who've built brands that grow
+            with their business. Let's start the conversation about your brand's
+            future.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4"
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-2"
+              >
+                <span>Start Your Brand Journey</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary-300 text-primary-100 hover:bg-primary-100 hover:text-primary-900 px-8 py-4"
+            >
+              <Link to="/services">Explore Services</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* What We Stand Against */}
       <section className="section-spacing">
         <div className="container-custom">
@@ -556,43 +593,6 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-spacing bg-gradient-to-br from-primary-900 to-primary-800">
-        <div className="container-custom text-center">
-          <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-            Ready to Build a Brand That Scales?
-          </h2>
-          <p className="text-body-lg text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join the ranks of successful startups who've built brands that grow
-            with their business. Let's start the conversation about your brand's
-            future.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4"
-            >
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2"
-              >
-                <span>Start Your Brand Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-300 text-primary-100 hover:bg-primary-100 hover:text-primary-900 px-8 py-4"
-            >
-              <Link to="/services">Explore Services</Link>
-            </Button>
           </div>
         </div>
       </section>

@@ -580,19 +580,19 @@ const Clients = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-secondary-600/10 to-secondary-500/10">
+      <section className="section-spacing bg-gradient-to-br from-primary-900 to-primary-800">
         <div className="container-custom text-center">
           <h2 className="text-display-lg font-bold mb-4 text-white">
             Your Success Story Starts Here
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Join the ranks of funded startups. Let's build a brand that opens
             doors, builds trust, and drives results.
           </p>
           <Link to="/contact">
             <Button
               size="lg"
-              className="bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-3 text-lg font-semibold group"
+              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 px-8 py-3 text-lg font-semibold group"
             >
               Start Your Transformation
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
