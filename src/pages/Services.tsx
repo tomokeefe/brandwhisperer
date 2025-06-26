@@ -378,7 +378,7 @@ const Services = () => {
 
           {/* Comparison Table */}
           <div className="overflow-x-auto mb-16">
-            <div className="min-w-[800px] bg-dark-800/50 rounded-xl border border-dark-700">
+            <div className="min-w-[800px] bg-dark-800/50 rounded-xl border border-dark-700 relative pt-4">
               {/* Table Header */}
               <div className="grid grid-cols-4 border-b border-dark-700">
                 <div className="p-6">
@@ -404,7 +404,7 @@ const Services = () => {
                   <p className="text-xs text-gray-500 mt-2">3-4 weeks</p>
                 </div>
                 <div className="p-6 text-center border-l border-dark-700 bg-secondary-500/5 relative">
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 z-10">
                     <Badge className="bg-secondary-600 text-white">
                       Most Popular
                     </Badge>
