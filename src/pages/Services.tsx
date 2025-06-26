@@ -176,7 +176,6 @@ const Services = () => {
       equity: "0.5%",
       features: [
         "Monthly design asset allocation",
-        "4 hours consultation monthly",
         "Ongoing brand evolution support",
         "Priority response time",
         "Marketing material templates",
