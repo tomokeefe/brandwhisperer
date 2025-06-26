@@ -513,12 +513,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="mb-6 border-red-500/30 text-red-400 bg-red-500/10"
+              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
             >
               What We Stand Against
             </Badge>
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Not Your Typical Brand Agency
+              Not Your Typical{" "}
+              <span className="text-secondary-400">Brand Agency</span>
             </h2>
           </div>
 
@@ -545,7 +546,10 @@ const Index = () => {
                   "Color palettes don't build businesses. Market positioning and scalable systems do. Design is the expression of strategy.",
               },
             ].map((item, index) => (
-              <Card key={index} className="bg-red-900/10 border-red-800/30">
+              <Card
+                key={index}
+                className="bg-secondary-900/10 border-secondary-800/30"
+              >
                 <CardHeader>
                   <CardTitle className="text-xl text-white">
                     {item.title}
