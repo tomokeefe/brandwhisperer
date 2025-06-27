@@ -473,8 +473,12 @@ const Footer = () => {
             >
               <Link to="/" className="flex items-center space-x-3 mb-6 group">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="w-7 h-7 text-white" />
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F089332b31dc440f5ab4990fd938ca08d?format=webp&width=800"
+                      alt="The Brand Whisperer Logo"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
                   </div>
                   <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 blur group-hover:opacity-40 transition-opacity duration-300"></div>
                 </div>

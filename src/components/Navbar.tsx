@@ -79,8 +79,12 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             <div className="relative">
-              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200 overflow-hidden">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F089332b31dc440f5ab4990fd938ca08d?format=webp&width=800"
+                  alt="The Brand Whisperer Logo"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 group-hover:opacity-30 blur transition-opacity duration-200"></div>
             </div>
