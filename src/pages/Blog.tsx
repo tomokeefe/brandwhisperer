@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All Posts");
   const featuredPost = {
     title:
       "The $50M Rebrand Mistake: Why Most Startups Break Their Brands During Hypergrowth",
@@ -157,6 +158,19 @@ const Blog = () => {
     },
   ];
 
+  // Filter posts based on selected category
+  const filteredPosts = useMemo(() => {
+    if (selectedCategory === "All Posts") {
+      return blogPosts;
+    }
+    return blogPosts.filter((post) => post.category === selectedCategory);
+  }, [selectedCategory]);
+
+  // Handle category filter change
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="bg-dark-950 pt-[86px]">
       <SEO
@@ -169,21 +183,29 @@ const Blog = () => {
       <section className="py-[25px] pb-32">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-display-sm font-bold text-white mb-8">
+            <h2 className="text-display-sm font-bold text-white mb-4">
               Latest Articles
             </h2>
+            <p className="text-gray-400 mb-8">
+              {selectedCategory === "All Posts"
+                ? `Showing all ${filteredPosts.length} articles`
+                : `Showing ${filteredPosts.length} articles in "${selectedCategory}"`}
+            </p>
 
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={category === "All Posts" ? "default" : "outline"}
+                  variant={
+                    category === selectedCategory ? "default" : "outline"
+                  }
                   size="sm"
+                  onClick={() => handleCategoryChange(category)}
                   className={
-                    category === "All Posts"
-                      ? "bg-secondary-500 text-dark-900"
-                      : "border-dark-600 text-gray-300 hover:bg-dark-800"
+                    category === selectedCategory
+                      ? "bg-secondary-500 text-dark-900 hover:bg-secondary-600"
+                      : "border-dark-600 text-gray-300 hover:bg-dark-800 hover:text-white"
                   }
                 >
                   {category}
@@ -192,54 +214,72 @@ const Blog = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
-              >
-                <CardHeader>
-                  <Badge
-                    variant="outline"
-                    className="mb-2 w-fit border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-                  >
-                    {post.category}
-                  </Badge>
-                  <CardTitle className="text-xl text-white leading-tight">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-300 leading-relaxed">
-                    {post.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-dark-600 text-gray-300 hover:bg-dark-800"
-                  >
-                    <Link
-                      to={`/blog/${post.slug}`}
-                      className="inline-flex items-center justify-center space-x-2"
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <Card
+                  key={index}
+                  className="bg-dark-900/50 border-dark-700 card-hover"
+                >
+                  <CardHeader>
+                    <Badge
+                      variant="outline"
+                      className="mb-2 w-fit border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
                     >
-                      <span>Read Article</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      {post.category}
+                    </Badge>
+                    <CardTitle className="text-xl text-white leading-tight">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 leading-relaxed">
+                      {post.excerpt}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{post.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Clock className="w-4 h-4" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full border-dark-600 text-gray-300 hover:bg-dark-800"
+                    >
+                      <Link
+                        to={`/blog/${post.slug}`}
+                        className="inline-flex items-center justify-center space-x-2"
+                      >
+                        <span>Read Article</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <BookOpen className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">
+                No articles found
+              </h3>
+              <p className="text-gray-400 mb-6">
+                No articles match the selected category "{selectedCategory}".
+              </p>
+              <Button
+                onClick={() => handleCategoryChange("All Posts")}
+                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900"
+              >
+                Show All Articles
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
