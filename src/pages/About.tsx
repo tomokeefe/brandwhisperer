@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -344,6 +345,32 @@ const About = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Lead Magnet - Case Studies */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <LeadMagnet
+              type="case-study"
+              title="5 Startup Brand Transformations That Raised $100M+"
+              description="Real case studies of how strategic branding helped startups go from unknown to investor magnet."
+              benefits={[
+                "5 detailed brand transformation case studies",
+                "Before/after brand analysis",
+                "Investor response metrics",
+                "Strategic decision breakdowns",
+                "ROI measurement frameworks",
+              ]}
+              buttonText="Download Case Studies"
+              badge="Case Study Collection"
+              stats={{
+                downloads: "892",
+                rating: "4.9/5",
+              }}
+            />
+          </div>
         </div>
       </section>
 
