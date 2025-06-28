@@ -27,14 +27,6 @@ import {
   ChevronRight,
   Quote,
 } from "lucide-react";
-  CheckCircle,
-  Quote,
-  Star,
-  Users,
-  Rocket,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
 
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
