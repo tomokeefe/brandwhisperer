@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
+import ServiceCard from "@/components/ServiceCard";
 import ClientShowcase from "@/components/ClientShowcase";
 import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
