@@ -1,6 +1,7 @@
 import React from "react";
 import SEO from "@/components/SEO";
 import EnhancedROICalculator from "@/components/EnhancedROICalculator";
+import LeadMagnet from "@/components/LeadMagnet";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -88,6 +89,32 @@ const Calculator = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet - ROI Framework */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <LeadMagnet
+              type="calculator"
+              title="Advanced Brand ROI Measurement Framework"
+              description="Go beyond basic calculations with our comprehensive framework for measuring brand impact on revenue, funding, and valuation."
+              benefits={[
+                "Advanced ROI calculation methods",
+                "Brand impact tracking spreadsheet",
+                "Investor presentation templates",
+                "12-month measurement timeline",
+                "Benchmarking against 150+ startups",
+              ]}
+              buttonText="Download Framework"
+              badge="ROI Framework"
+              stats={{
+                downloads: "1,567",
+                rating: "4.8/5",
+              }}
+            />
           </div>
         </div>
       </section>
