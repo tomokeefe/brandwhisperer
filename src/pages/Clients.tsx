@@ -442,7 +442,7 @@ const Clients = () => {
               150+ Success Stories
             </div>
 
-            <h1 className="text-display-xl lg:text-display-2xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-display-lg lg:text-display-xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
               Brands That Raised
               <br />
               <span className="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
