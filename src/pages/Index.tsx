@@ -1,6 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import ClientShowcase from "@/components/ClientShowcase";
+import LeadMagnet from "@/components/LeadMagnet";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Users,
+  DollarSign,
+  Clock,
+  Target,
+  Zap,
+  Shield,
+  Rocket,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import ClientShowcase from "@/components/ClientShowcase";
@@ -500,6 +528,33 @@ const Index = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet - Brand Assessment */}
+      <section className="section-spacing bg-dark-900/30">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <LeadMagnet
+              type="assessment"
+              title="Free Startup Brand Readiness Assessment"
+              description="Discover if your brand is ready for hypergrowth with our 50-point evaluation framework used by Series A startups."
+              benefits={[
+                "50-point brand readiness checklist",
+                "Series A preparation scorecard",
+                "Investor perception analysis",
+                "Action plan for improvement",
+                "Used by 150+ funded startups",
+              ]}
+              buttonText="Get Free Assessment"
+              badge="Free 50-Point Audit"
+              stats={{
+                downloads: "2,847",
+                rating: "4.9/5",
+                users: "150+ startups",
+              }}
+            />
           </div>
         </div>
       </section>
