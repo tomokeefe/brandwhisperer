@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SEO from "@/components/SEO";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
+import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
