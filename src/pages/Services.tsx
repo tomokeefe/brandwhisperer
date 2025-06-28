@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import ServiceCard from "@/components/ServiceCard";
+import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -951,6 +952,32 @@ const Services = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet - Service Guide */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <LeadMagnet
+              type="guide"
+              title="The Complete Guide to Startup Branding Packages"
+              description="Learn which branding package is right for your startup stage and how to maximize ROI from your brand investment."
+              benefits={[
+                "Package selection framework",
+                "ROI calculation methods",
+                "Timeline and milestone planning",
+                "Investor presentation tips",
+                "Real startup case studies",
+              ]}
+              buttonText="Download Guide"
+              badge="Strategy Guide"
+              stats={{
+                downloads: "1,234",
+                rating: "4.8/5",
+              }}
+            />
           </div>
         </div>
       </section>
