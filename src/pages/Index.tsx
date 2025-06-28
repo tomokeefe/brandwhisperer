@@ -27,11 +27,6 @@ import {
   ChevronRight,
   Quote,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-import SEO from "@/components/SEO";
-import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
-import ClientShowcase from "@/components/ClientShowcase";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
