@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogPost from "@/components/BlogPost";
 import Analytics from "@/components/Analytics";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
+
 import PerformanceOptimizations, {
   ResourceHints,
 } from "@/components/PerformanceOptimizations";
@@ -59,7 +59,6 @@ function App() {
             </Routes>
           </main>
           <Footer />
-          <ExitIntentPopup />
         </div>
       </BrowserRouter>
     </HelmetProvider>
