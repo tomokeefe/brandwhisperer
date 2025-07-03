@@ -173,7 +173,10 @@ Submitted at: ${new Date().toLocaleString()}
           });
         }
       } else {
-        throw new Error("Form submission failed");
+        // If Formspree fails, try mailto fallback
+        throw new Error(
+          `Form submission failed with status: ${response.status}`,
+        );
       }
     } catch (error) {
       console.error("Form submission error:", error);
