@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -281,32 +280,6 @@ const Blog = () => {
               </Button>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Lead Magnet - Newsletter */}
-      <section className="py-8">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <LeadMagnet
-              type="newsletter"
-              title="Weekly Startup Branding Insights"
-              description="Join 2,500+ founders getting actionable brand strategy tips, case studies, and framework updates every Tuesday."
-              benefits={[
-                "Weekly brand strategy insights",
-                "Real startup case studies",
-                "Framework updates and templates",
-                "First access to new resources",
-                "Join 2,500+ startup founders",
-              ]}
-              buttonText="Subscribe Free"
-              badge="Weekly Newsletter"
-              stats={{
-                users: "2,500+",
-                rating: "4.9/5",
-              }}
-            />
-          </div>
         </div>
       </section>
 
