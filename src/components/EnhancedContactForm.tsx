@@ -79,54 +79,17 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     setIsSubmitting(true);
     setError(null);
 
-    try {
-      // Prepare form data for Formspree
-      const services = formData.services
-        ? Object.entries(formData.services)
-            .filter(([_, checked]) => checked)
-            .map(([service, _]) => service)
-            .join(", ")
-        : "None specified";
+    // Prepare form data for email
+    const services = formData.services
+      ? Object.entries(formData.services)
+          .filter(([_, checked]) => checked)
+          .map(([service, _]) => service)
+          .join(", ")
+      : "None specified";
 
-      const submitData = {
-        _replyto: formData.email,
-        _subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
-        name: formData.name,
-        email: formData.email,
-        company: formData.company,
-        website: formData.website,
-        stage: formData.stage,
-        fundingStage: formData.fundingStage,
-        teamSize: formData.teamSize,
-        currentRevenue: formData.currentRevenue,
-        challenge: formData.challenge,
-        timeline: formData.timeline,
-        budget: formData.budget,
-        message: formData.message,
-        urgency: formData.urgency,
-        preferredContact: formData.preferredContact,
-        heardAbout: formData.heardAbout,
-        services: services,
-        priority: formData.priority,
-        newsletter: formData.newsletter ? "Yes" : "No",
-        formType: formType,
-        resourceName: resourceName,
-        submittedAt: new Date().toLocaleString(),
-      };
+    const emailSubject = `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`;
 
-      // Submit to Web3Forms (free service, no setup required)
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "e8f3c2d1-4b5a-6789-a1b2-c3d4e5f67890", // Web3Forms demo key
-          from_name: formData.name,
-          from_email: formData.email,
-          to_email: "hello@brandwhisperer.io",
-          subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
-          message: `
+    const emailBody = `
 New ${formType} request from ${formData.name}
 
 Contact Information:
@@ -157,14 +120,17 @@ Additional Information:
 - Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
 
 Submitted at: ${new Date().toLocaleString()}
-          `.trim(),
-          ...submitData,
-        }),
-      });
+    `.trim();
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+    try {
+      // Create mailto link
+      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Simulate processing time for better UX
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // Open email client
+      window.location.href = mailtoLink;
 
       // Show success message
       setIsSubmitted(true);
@@ -184,7 +150,7 @@ Submitted at: ${new Date().toLocaleString()}
     } catch (error) {
       console.error("Form submission error:", error);
       setError(
-        "There was an error submitting your form. Please try again or email us directly at hello@brandwhisperer.io",
+        "There was an error processing your request. Please copy the information below and email us directly at hello@brandwhisperer.io",
       );
 
       // Track error
