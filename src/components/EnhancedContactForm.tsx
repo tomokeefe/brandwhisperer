@@ -67,22 +67,116 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      if (onSubmit) {
-        onSubmit(formData);
-      }
+    try {
+      // Create the email body with form data
+      const emailData = {
+        to: "hello@brandwhisperer.io",
+        subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
+        replyTo: formData.email,
+        message: `
+New ${formType} request from ${formData.name}
 
-      // Track conversion event (in real app, integrate with analytics)
+Contact Information:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Company: ${formData.company}
+- Website: ${formData.website}
+
+Project Details:
+- Stage: ${formData.stage}
+- Timeline: ${formData.timeline}
+- Budget: ${formData.budget}
+- Priority: ${formData.priority}
+- Urgency: ${formData.urgency}
+
+Services Interested In:
+${Object.entries(formData.services)
+  .filter(([_, checked]) => checked)
+  .map(([service, _]) => `- ${service}`)
+  .join("\n")}
+
+Message:
+${formData.message}
+
+Additional Information:
+- Preferred Contact: ${formData.preferredContact}
+- How they heard about us: ${formData.heardAbout}
+- Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
+
+Submitted at: ${new Date().toLocaleString()}
+        `.trim(),
+      };
+
+      // Use Formspree (replace with your Formspree endpoint)
+      const response = await fetch("https://formspree.io/f/xdkozpvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          website: formData.website,
+          stage: formData.stage,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          priority: formData.priority,
+          urgency: formData.urgency,
+          services: Object.entries(formData.services)
+            .filter(([_, checked]) => checked)
+            .map(([service, _]) => service)
+            .join(", "),
+          message: formData.message,
+          preferredContact: formData.preferredContact,
+          heardAbout: formData.heardAbout,
+          newsletter: formData.newsletter,
+          formType: formType,
+          _replyto: formData.email,
+          _subject: emailData.subject,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        if (onSubmit) {
+          onSubmit(formData);
+        }
+
+        // Track successful conversion
+        if (window.gtag) {
+          window.gtag("event", "form_submit_success", {
+            event_category: "conversion",
+            event_label: formType,
+            form_type: formType,
+            resource_name: resourceName,
+          });
+        }
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+
+      // Track error
       if (window.gtag) {
-        window.gtag("event", "form_submit", {
-          form_type: formType,
-          resource_name: resourceName,
+        window.gtag("event", "form_submit_error", {
+          event_category: "error",
+          event_label: formType,
         });
       }
-    }, 2000);
+
+      // Show error state or fallback to mailto
+      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(
+        `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage: ${formData.message}`,
+      )}`;
+
+      window.location.href = mailtoLink;
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
