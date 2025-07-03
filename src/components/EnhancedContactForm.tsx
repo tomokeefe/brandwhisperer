@@ -208,11 +208,22 @@ Submitted at: ${new Date().toLocaleString()}
           </h3>
           <p className="text-gray-300 mb-6">
             {formType === "consultation"
-              ? "Your default email client should open with your consultation request. If it doesn't open automatically, please email hello@brandwhisperer.io directly. We'll send you a calendar link within 24 hours."
+              ? "Your email client should open with your consultation request pre-filled. Simply send the email and we'll send you a calendar link within 24 hours."
               : formType === "download"
-                ? `Your ${resourceName} request has been prepared. Your email client should open to send the request. If not, please email hello@brandwhisperer.io.`
-                : "Your message has been prepared in your email client. If it doesn't open automatically, please email hello@brandwhisperer.io. We'll get back to you within 24 hours."}
+                ? `Your email client should open with your ${resourceName} request. Send the email to receive your download link.`
+                : "Your email client should open with your message pre-filled. Send the email and we'll get back to you within 24 hours."}
           </p>
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-4">
+              Email client didn't open?
+            </p>
+            <a
+              href="mailto:hello@brandwhisperer.io"
+              className="text-secondary-400 hover:text-secondary-300 underline"
+            >
+              Click here to email us directly
+            </a>
+          </div>
           <div className="space-y-4">
             <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30">
               Response within 24 hours
