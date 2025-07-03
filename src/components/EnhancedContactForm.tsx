@@ -62,10 +62,12 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
       // Create the email body with form data
@@ -157,6 +159,9 @@ Submitted at: ${new Date().toLocaleString()}
       }
     } catch (error) {
       console.error("Form submission error:", error);
+      setError(
+        "There was an issue sending your message. Please try again or email us directly at hello@brandwhisperer.io",
+      );
 
       // Track error
       if (window.gtag) {
@@ -165,15 +170,6 @@ Submitted at: ${new Date().toLocaleString()}
           event_label: formType,
         });
       }
-
-      // Show error state or fallback to mailto
-      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(
-        `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
-      )}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage: ${formData.message}`,
-      )}`;
-
-      window.location.href = mailtoLink;
     } finally {
       setIsSubmitting(false);
     }
