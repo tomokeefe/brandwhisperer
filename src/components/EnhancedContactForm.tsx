@@ -28,6 +28,7 @@ import {
   TrendingUp,
   Phone,
   Video,
+  AlertCircle,
 } from "lucide-react";
 
 interface EnhancedContactFormProps {
