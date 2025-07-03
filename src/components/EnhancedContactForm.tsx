@@ -102,10 +102,14 @@ Project Details:
 - Urgency: ${formData.urgency}
 
 Services Interested In:
-${Object.entries(formData.services)
-  .filter(([_, checked]) => checked)
-  .map(([service, _]) => `- ${service}`)
-  .join("\n")}
+${
+  formData.services
+    ? Object.entries(formData.services)
+        .filter(([_, checked]) => checked)
+        .map(([service, _]) => `- ${service}`)
+        .join("\n")
+    : "None specified"
+}
 
 Message:
 ${formData.message}
