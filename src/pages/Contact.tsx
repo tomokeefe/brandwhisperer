@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SEO from "@/components/SEO";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
-import LeadMagnet from "@/components/LeadMagnet";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -254,33 +253,6 @@ const Contact = () => {
             {/* Contact Form */}
             <div id="contact-form">
               <EnhancedContactForm formType="consultation" />
-            </div>
-
-            {/* Lead Magnet - While You Wait */}
-            <div className="mt-12">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  While You're Here...
-                </h3>
-                <p className="text-gray-400">
-                  Get our most popular resource while you consider your next
-                  steps
-                </p>
-              </div>
-              <LeadMagnet
-                type="template"
-                title="Brand Strategy Templates Starter Pack"
-                description="The exact templates we use with clients for brand positioning, messaging, and visual direction."
-                benefits={[
-                  "Brand positioning canvas",
-                  "Messaging framework template",
-                  "Visual direction worksheet",
-                  "Competitor analysis template",
-                ]}
-                buttonText="Download Templates"
-                badge="Template Pack"
-                variant="default"
-              />
             </div>
           </div>
         </div>
