@@ -201,11 +201,22 @@ Submitted at: ${new Date().toLocaleString()}
           </h3>
           <p className="text-gray-300 mb-6">
             {formType === "consultation"
-              ? "Your consultation request has been submitted successfully! We'll send you a calendar link within 24 hours to schedule your free strategy session."
+              ? "Your email client should have opened with your consultation request pre-filled. Please send the email and we'll respond with a calendar link within 24 hours."
               : formType === "download"
-                ? `Your request for ${resourceName} has been received! Check your email for the download link.`
-                : "Your message has been sent successfully! We'll get back to you within 24 hours."}
+                ? `Your email client should have opened with your ${resourceName} request. Please send the email to receive your download link.`
+                : "Your email client should have opened with your message pre-filled. Please send the email and we'll get back to you within 24 hours."}
           </p>
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-4">
+              Email client didn't open automatically?
+            </p>
+            <a
+              href="mailto:hello@brandwhisperer.io"
+              className="text-secondary-400 hover:text-secondary-300 underline"
+            >
+              Click here to email us directly at hello@brandwhisperer.io
+            </a>
+          </div>
           <div className="space-y-4">
             <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30">
               Response within 24 hours
