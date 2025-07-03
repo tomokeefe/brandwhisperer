@@ -265,6 +265,25 @@ Submitted at: ${new Date().toLocaleString()}
         </CardDescription>
       </CardHeader>
       <CardContent className="p-6 lg:p-8">
+        {error && (
+          <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg">
+            <div className="flex items-start space-x-3">
+              <div className="text-red-400 mt-0.5">⚠️</div>
+              <div>
+                <h4 className="text-red-400 font-semibold mb-1">
+                  Submission Error
+                </h4>
+                <p className="text-red-300 text-sm">{error}</p>
+                <a
+                  href="mailto:hello@brandwhisperer.io"
+                  className="text-red-400 hover:text-red-300 underline text-sm mt-2 inline-block"
+                >
+                  Email us directly instead
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
         <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
           {/* Basic Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
