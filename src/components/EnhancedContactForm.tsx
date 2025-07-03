@@ -270,16 +270,31 @@ Submitted at: ${new Date().toLocaleString()}
           <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg">
             <div className="flex items-start space-x-3">
               <AlertCircle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
-              <div>
+              <div className="w-full">
                 <h4 className="text-red-400 font-semibold mb-1">
                   Submission Error
                 </h4>
-                <p className="text-red-300 text-sm">{error}</p>
+                <p className="text-red-300 text-sm mb-3">{error}</p>
+                <div className="bg-red-950/50 p-3 rounded border border-red-500/20 mb-3">
+                  <p className="text-red-300 text-xs mb-2 font-semibold">
+                    Your form data (copy this):
+                  </p>
+                  <pre className="text-red-200 text-xs whitespace-pre-wrap break-words">
+                    {`Subject: ${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}
+
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+${formData.website ? `Website: ${formData.website}` : ""}
+${formData.challenge ? `Challenge: ${formData.challenge}` : ""}
+${formData.message ? `Message: ${formData.message}` : ""}`}
+                  </pre>
+                </div>
                 <a
                   href="mailto:hello@brandwhisperer.io"
-                  className="text-red-400 hover:text-red-300 underline text-sm mt-2 inline-block"
+                  className="text-red-400 hover:text-red-300 underline text-sm"
                 >
-                  Email us directly instead
+                  Email us directly at hello@brandwhisperer.io
                 </a>
               </div>
             </div>
