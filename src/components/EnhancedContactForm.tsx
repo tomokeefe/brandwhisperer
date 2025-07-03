@@ -80,50 +80,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     setError(null);
 
     try {
-      // Create the email body with form data
-      const emailData = {
-        to: "hello@brandwhisperer.io",
-        subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
-        replyTo: formData.email,
-        message: `
-New ${formType} request from ${formData.name}
-
-Contact Information:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Company: ${formData.company}
-- Website: ${formData.website}
-
-Project Details:
-- Stage: ${formData.stage}
-- Timeline: ${formData.timeline}
-- Budget: ${formData.budget}
-- Priority: ${formData.priority}
-- Urgency: ${formData.urgency}
-
-Services Interested In:
-${
-  formData.services
-    ? Object.entries(formData.services)
-        .filter(([_, checked]) => checked)
-        .map(([service, _]) => `- ${service}`)
-        .join("\n")
-    : "None specified"
-}
-
-Message:
-${formData.message}
-
-Additional Information:
-- Preferred Contact: ${formData.preferredContact}
-- How they heard about us: ${formData.heardAbout}
-- Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
-
-Submitted at: ${new Date().toLocaleString()}
-        `.trim(),
-      };
-
-      // Use mailto to send email directly to hello@brandwhisperer.io
+      // Prepare form data for Formspree
       const services = formData.services
         ? Object.entries(formData.services)
             .filter(([_, checked]) => checked)
@@ -131,13 +88,44 @@ Submitted at: ${new Date().toLocaleString()}
             .join(", ")
         : "None specified";
 
-      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(emailData.message)}`;
+      const submitData = {
+        _replyto: formData.email,
+        _subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        website: formData.website,
+        stage: formData.stage,
+        fundingStage: formData.fundingStage,
+        teamSize: formData.teamSize,
+        currentRevenue: formData.currentRevenue,
+        challenge: formData.challenge,
+        timeline: formData.timeline,
+        budget: formData.budget,
+        message: formData.message,
+        urgency: formData.urgency,
+        preferredContact: formData.preferredContact,
+        heardAbout: formData.heardAbout,
+        services: services,
+        priority: formData.priority,
+        newsletter: formData.newsletter ? "Yes" : "No",
+        formType: formType,
+        resourceName: resourceName,
+        submittedAt: new Date().toLocaleString(),
+      };
 
-      // Simulate processing delay for better UX
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Submit to Formspree
+      const response = await fetch("https://formspree.io/f/xgvwdrek", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submitData),
+      });
 
-      // Open mailto link
-      window.location.href = mailtoLink;
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       // Show success message
       setIsSubmitted(true);
@@ -157,10 +145,10 @@ Submitted at: ${new Date().toLocaleString()}
     } catch (error) {
       console.error("Form submission error:", error);
       setError(
-        "There was an unexpected error. Please email us directly at hello@brandwhisperer.io",
+        "There was an error submitting your form. Please try again or email us directly at hello@brandwhisperer.io",
       );
 
-      // Track error (though this should rarely happen now)
+      // Track error
       if (window.gtag) {
         window.gtag("event", "form_submit_error", {
           event_category: "error",
