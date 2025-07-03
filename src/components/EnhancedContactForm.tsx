@@ -110,7 +110,9 @@ Submitted at: ${new Date().toLocaleString()}
         `.trim(),
       };
 
-      // Use Formspree (replace with your Formspree endpoint)
+      // Use Formspree to send emails to hello@brandwhisperer.io
+      // You need to replace "xdkozpvp" with your actual Formspree form ID
+      // Sign up at https://formspree.io and create a form with hello@brandwhisperer.io
       const response = await fetch("https://formspree.io/f/xdkozpvp", {
         method: "POST",
         headers: {
