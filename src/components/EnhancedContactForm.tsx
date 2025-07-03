@@ -269,7 +269,7 @@ Submitted at: ${new Date().toLocaleString()}
         {error && (
           <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg">
             <div className="flex items-start space-x-3">
-              <div className="text-red-400 mt-0.5">⚠️</div>
+              <AlertCircle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="text-red-400 font-semibold mb-1">
                   Submission Error
