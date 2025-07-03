@@ -123,65 +123,7 @@ Submitted at: ${new Date().toLocaleString()}
         `.trim(),
       };
 
-      // Use Formspree to send emails to hello@brandwhisperer.io
-      // You need to replace "xdkozpvp" with your actual Formspree form ID
-      // Sign up at https://formspree.io and create a form with hello@brandwhisperer.io
-      const response = await fetch("https://formspree.io/f/xdkozpvp", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          website: formData.website,
-          stage: formData.stage,
-          timeline: formData.timeline,
-          budget: formData.budget,
-          priority: formData.priority,
-          urgency: formData.urgency,
-          services: formData.services
-            ? Object.entries(formData.services)
-                .filter(([_, checked]) => checked)
-                .map(([service, _]) => service)
-                .join(", ")
-            : "",
-          message: formData.message,
-          preferredContact: formData.preferredContact,
-          heardAbout: formData.heardAbout,
-          newsletter: formData.newsletter,
-          formType: formType,
-          _replyto: formData.email,
-          _subject: emailData.subject,
-        }),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        if (onSubmit) {
-          onSubmit(formData);
-        }
-
-        // Track successful conversion
-        if (window.gtag) {
-          window.gtag("event", "form_submit_success", {
-            event_category: "conversion",
-            event_label: formType,
-            form_type: formType,
-            resource_name: resourceName,
-          });
-        }
-      } else {
-        // If Formspree fails, try mailto fallback
-        throw new Error(
-          `Form submission failed with status: ${response.status}`,
-        );
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-
-      // Automatically try mailto fallback
+      // Use mailto to send email directly to hello@brandwhisperer.io
       const services = formData.services
         ? Object.entries(formData.services)
             .filter(([_, checked]) => checked)
@@ -189,46 +131,39 @@ Submitted at: ${new Date().toLocaleString()}
             .join(", ")
         : "None specified";
 
-      const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Website: ${formData.website}
+      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(emailData.message)}`;
 
-Project Details:
-- Stage: ${formData.stage}
-- Timeline: ${formData.timeline}
-- Budget: ${formData.budget}
-- Priority: ${formData.priority}
-- Urgency: ${formData.urgency}
-
-Services Interested In: ${services}
-
-Message:
-${formData.message}
-
-Additional Information:
-- Preferred Contact: ${formData.preferredContact}
-- How they heard about us: ${formData.heardAbout}
-- Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
-      `.trim();
-
-      const subject = `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`;
-      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+      // Simulate processing delay for better UX
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Open mailto link
       window.location.href = mailtoLink;
 
-      // Show success message since we're using mailto fallback
+      // Show success message
       setIsSubmitted(true);
       if (onSubmit) {
         onSubmit(formData);
       }
 
-      // Track that we used mailto fallback
+      // Track successful conversion
       if (window.gtag) {
-        window.gtag("event", "form_submit_mailto_fallback", {
+        window.gtag("event", "form_submit_success", {
           event_category: "conversion",
+          event_label: formType,
+          form_type: formType,
+          resource_name: resourceName,
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setError(
+        "There was an unexpected error. Please email us directly at hello@brandwhisperer.io",
+      );
+
+      // Track error (though this should rarely happen now)
+      if (window.gtag) {
+        window.gtag("event", "form_submit_error", {
+          event_category: "error",
           event_label: formType,
         });
       }
