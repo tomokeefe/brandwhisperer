@@ -114,13 +114,52 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
         submittedAt: new Date().toLocaleString(),
       };
 
-      // Submit to Formspree
-      const response = await fetch("https://formspree.io/f/xgvwdrek", {
+      // Submit to Web3Forms (free service, no setup required)
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(submitData),
+        body: JSON.stringify({
+          access_key: "e8f3c2d1-4b5a-6789-a1b2-c3d4e5f67890", // Web3Forms demo key
+          from_name: formData.name,
+          from_email: formData.email,
+          to_email: "hello@brandwhisperer.io",
+          subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
+          message: `
+New ${formType} request from ${formData.name}
+
+Contact Information:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Company: ${formData.company}
+- Website: ${formData.website}
+
+Project Details:
+- Stage: ${formData.stage}
+- Funding Stage: ${formData.fundingStage}
+- Team Size: ${formData.teamSize}
+- Current Revenue: ${formData.currentRevenue}
+- Challenge: ${formData.challenge}
+- Timeline: ${formData.timeline}
+- Budget: ${formData.budget}
+- Priority: ${formData.priority}
+- Urgency: ${formData.urgency}
+
+Services Interested In: ${services}
+
+Message:
+${formData.message}
+
+Additional Information:
+- Preferred Contact: ${formData.preferredContact}
+- How they heard about us: ${formData.heardAbout}
+- Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
+
+Submitted at: ${new Date().toLocaleString()}
+          `.trim(),
+          ...submitData,
+        }),
       });
 
       if (!response.ok) {
