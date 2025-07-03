@@ -79,7 +79,7 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     setIsSubmitting(true);
     setError(null);
 
-    // Prepare form data for email
+    // Prepare form data
     const services = formData.services
       ? Object.entries(formData.services)
           .filter(([_, checked]) => checked)
@@ -87,9 +87,68 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
           .join(", ")
       : "None specified";
 
-    const emailSubject = `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`;
+    try {
+      // Primary method: Submit to Formspree
+      const submitData = {
+        _replyto: formData.email,
+        _subject: `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`,
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        website: formData.website,
+        stage: formData.stage,
+        fundingStage: formData.fundingStage,
+        teamSize: formData.teamSize,
+        currentRevenue: formData.currentRevenue,
+        challenge: formData.challenge,
+        timeline: formData.timeline,
+        budget: formData.budget,
+        message: formData.message,
+        urgency: formData.urgency,
+        preferredContact: formData.preferredContact,
+        heardAbout: formData.heardAbout,
+        services: services,
+        priority: formData.priority,
+        newsletter: formData.newsletter ? "Yes" : "No",
+        formType: formType,
+        resourceName: resourceName,
+        submittedAt: new Date().toLocaleString(),
+      };
 
-    const emailBody = `
+      const response = await fetch("https://formspree.io/f/mzzgwkla", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Show success message
+      setIsSubmitted(true);
+      if (onSubmit) {
+        onSubmit(formData);
+      }
+
+      // Track successful conversion
+      if (window.gtag) {
+        window.gtag("event", "form_submit_success", {
+          event_category: "conversion",
+          event_label: formType,
+          form_type: formType,
+          resource_name: resourceName,
+        });
+      }
+    } catch (error) {
+      console.error("Formspree submission failed:", error);
+
+      // Fallback method: Use mailto
+      const emailSubject = `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`;
+
+      const emailBody = `
 New ${formType} request from ${formData.name}
 
 Contact Information:
@@ -120,45 +179,38 @@ Additional Information:
 - Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
 
 Submitted at: ${new Date().toLocaleString()}
-    `.trim();
+      `.trim();
 
-    try {
-      // Create mailto link
-      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      try {
+        // Create mailto link as fallback
+        const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        window.location.href = mailtoLink;
 
-      // Simulate processing time for better UX
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+        setIsSubmitted(true);
+        if (onSubmit) {
+          onSubmit(formData);
+        }
 
-      // Open email client
-      window.location.href = mailtoLink;
+        // Track fallback success
+        if (window.gtag) {
+          window.gtag("event", "form_submit_fallback", {
+            event_category: "conversion",
+            event_label: formType,
+          });
+        }
+      } catch (fallbackError) {
+        console.error("Both Formspree and mailto failed:", fallbackError);
+        setError(
+          "There was an error submitting your form. Please copy the information below and email us directly at hello@brandwhisperer.io",
+        );
 
-      // Show success message
-      setIsSubmitted(true);
-      if (onSubmit) {
-        onSubmit(formData);
-      }
-
-      // Track successful conversion
-      if (window.gtag) {
-        window.gtag("event", "form_submit_success", {
-          event_category: "conversion",
-          event_label: formType,
-          form_type: formType,
-          resource_name: resourceName,
-        });
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setError(
-        "There was an error processing your request. Please copy the information below and email us directly at hello@brandwhisperer.io",
-      );
-
-      // Track error
-      if (window.gtag) {
-        window.gtag("event", "form_submit_error", {
-          event_category: "error",
-          event_label: formType,
-        });
+        // Track error
+        if (window.gtag) {
+          window.gtag("event", "form_submit_error", {
+            event_category: "error",
+            event_label: formType,
+          });
+        }
       }
     } finally {
       setIsSubmitting(false);
