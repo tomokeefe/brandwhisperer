@@ -180,14 +180,55 @@ Submitted at: ${new Date().toLocaleString()}
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setError(
-        "There was an issue sending your message. Please try again or email us directly at hello@brandwhisperer.io",
-      );
 
-      // Track error
+      // Automatically try mailto fallback
+      const services = formData.services
+        ? Object.entries(formData.services)
+            .filter(([_, checked]) => checked)
+            .map(([service, _]) => service)
+            .join(", ")
+        : "None specified";
+
+      const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+Website: ${formData.website}
+
+Project Details:
+- Stage: ${formData.stage}
+- Timeline: ${formData.timeline}
+- Budget: ${formData.budget}
+- Priority: ${formData.priority}
+- Urgency: ${formData.urgency}
+
+Services Interested In: ${services}
+
+Message:
+${formData.message}
+
+Additional Information:
+- Preferred Contact: ${formData.preferredContact}
+- How they heard about us: ${formData.heardAbout}
+- Newsletter subscription: ${formData.newsletter ? "Yes" : "No"}
+      `.trim();
+
+      const subject = `${formType === "consultation" ? "Consultation Request" : "Contact Form"} - ${formData.name}`;
+      const mailtoLink = `mailto:hello@brandwhisperer.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open mailto link
+      window.location.href = mailtoLink;
+
+      // Show success message since we're using mailto fallback
+      setIsSubmitted(true);
+      if (onSubmit) {
+        onSubmit(formData);
+      }
+
+      // Track that we used mailto fallback
       if (window.gtag) {
-        window.gtag("event", "form_submit_error", {
-          event_category: "error",
+        window.gtag("event", "form_submit_mailto_fallback", {
+          event_category: "conversion",
           event_label: formType,
         });
       }
