@@ -273,10 +273,10 @@ Additional Information:
           </h3>
           <p className="text-gray-300 mb-6">
             {formType === "consultation"
-              ? "We'll review your information and send you a calendar link within 24 hours to schedule your free consultation."
+              ? "Your default email client should open with your consultation request. If it doesn't open automatically, please email hello@brandwhisperer.io directly. We'll send you a calendar link within 24 hours."
               : formType === "download"
-                ? `Your ${resourceName} is being prepared. Check your email for the download link.`
-                : "Thank you for reaching out. We'll get back to you within 24 hours."}
+                ? `Your ${resourceName} request has been prepared. Your email client should open to send the request. If not, please email hello@brandwhisperer.io.`
+                : "Your message has been prepared in your email client. If it doesn't open automatically, please email hello@brandwhisperer.io. We'll get back to you within 24 hours."}
           </p>
           <div className="space-y-4">
             <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30">
