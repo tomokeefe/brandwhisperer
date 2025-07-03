@@ -59,6 +59,15 @@ const EnhancedContactForm: React.FC<EnhancedContactFormProps> = ({
     urgency: "",
     preferredContact: "email",
     heardAbout: "",
+    services: {
+      "Brand Strategy": false,
+      "Visual Identity": false,
+      "Website Design": false,
+      "Marketing Materials": false,
+      "Investor Materials": false,
+      "Brand Guidelines": false,
+    },
+    priority: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -128,10 +137,12 @@ Submitted at: ${new Date().toLocaleString()}
           budget: formData.budget,
           priority: formData.priority,
           urgency: formData.urgency,
-          services: Object.entries(formData.services)
-            .filter(([_, checked]) => checked)
-            .map(([service, _]) => service)
-            .join(", "),
+          services: formData.services
+            ? Object.entries(formData.services)
+                .filter(([_, checked]) => checked)
+                .map(([service, _]) => service)
+                .join(", ")
+            : "",
           message: formData.message,
           preferredContact: formData.preferredContact,
           heardAbout: formData.heardAbout,
