@@ -243,8 +243,6 @@ const Navbar = () => {
                     <a
                       key={item.title}
                       href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
                       className="block py-3 px-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px] flex items-center rounded-md hover:bg-dark-800"
                     >
