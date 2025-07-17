@@ -635,21 +635,41 @@ const Footer = () => {
                               animationDelay: `${1000 + categoryIndex * 100 + linkIndex * 50}ms`,
                             }}
                           >
-                            <Link
-                              to={link.path}
-                              className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
-                              onClick={() =>
-                                trackLinkClick(
-                                  link.name,
-                                  category.toLowerCase(),
-                                )
-                              }
-                            >
-                              <span className="group-hover:underline underline-offset-2">
-                                {link.name}
-                              </span>
-                              <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
-                            </Link>
+                            {link.path.startsWith("http") ? (
+                              <a
+                                href={link.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
+                                onClick={() =>
+                                  trackLinkClick(
+                                    link.name,
+                                    category.toLowerCase(),
+                                  )
+                                }
+                              >
+                                <span className="group-hover:underline underline-offset-2">
+                                  {link.name}
+                                </span>
+                                <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                              </a>
+                            ) : (
+                              <Link
+                                to={link.path}
+                                className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
+                                onClick={() =>
+                                  trackLinkClick(
+                                    link.name,
+                                    category.toLowerCase(),
+                                  )
+                                }
+                              >
+                                <span className="group-hover:underline underline-offset-2">
+                                  {link.name}
+                                </span>
+                                <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" />
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>
