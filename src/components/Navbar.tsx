@@ -240,16 +240,29 @@ const Navbar = () => {
                 Resources
               </div>
               <div className="space-y-1 ml-2">
-                {resourcesItems.map((item) => (
-                  <Link
-                    key={item.title}
-                    to={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block py-3 px-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px] flex items-center rounded-md hover:bg-dark-800"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+                {resourcesItems.map((item) =>
+                  item.href.startsWith("http") ? (
+                    <a
+                      key={item.title}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block py-3 px-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px] flex items-center rounded-md hover:bg-dark-800"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.title}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-3 px-2 text-sm text-gray-300 hover:text-white transition-colors duration-200 min-h-[44px] flex items-center rounded-md hover:bg-dark-800"
+                    >
+                      {item.title}
+                    </Link>
+                  ),
+                )}
               </div>
             </div>
 
