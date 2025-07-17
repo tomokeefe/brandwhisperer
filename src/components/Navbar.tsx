@@ -42,7 +42,7 @@ const Navbar = () => {
     },
     {
       title: "Blog",
-      href: "/blog",
+      href: "https://blog.brandwhisperer.io",
       description: "Startup branding insights and case studies",
     },
     {
