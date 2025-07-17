@@ -137,17 +137,33 @@ const Navbar = () => {
                       {resourcesItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
-                            <Link
-                              to={item.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none text-white">
-                                {item.title}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-                                {item.description}
-                              </p>
-                            </Link>
+                            {item.href.startsWith("http") ? (
+                              <a
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none text-white">
+                                  {item.title}
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+                                  {item.description}
+                                </p>
+                              </a>
+                            ) : (
+                              <Link
+                                to={item.href}
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              >
+                                <div className="text-sm font-medium leading-none text-white">
+                                  {item.title}
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+                                  {item.description}
+                                </p>
+                              </Link>
+                            )}
                           </NavigationMenuLink>
                         </li>
                       ))}
