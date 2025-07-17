@@ -638,8 +638,6 @@ const Footer = () => {
                             {link.path.startsWith("http") ? (
                               <a
                                 href={link.path}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
                                 onClick={() =>
                                   trackLinkClick(
