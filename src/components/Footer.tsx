@@ -378,7 +378,7 @@ const Footer = () => {
     ],
     Resources: [
       { name: "Brand Assessment", path: "/assessment" },
-      { name: "Blog", path: "/blog" },
+      { name: "Blog", path: "https://blog.brandwhisperer.io" },
       { name: "Free Resources", path: "/resources" },
       { name: "SCALE Framework", path: "/resources#framework" },
     ],
