@@ -140,8 +140,6 @@ const Navbar = () => {
                             {item.href.startsWith("http") ? (
                               <a
                                 href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               >
                                 <div className="text-sm font-medium leading-none text-white">
