@@ -41,6 +41,11 @@ const Navbar = () => {
       description: "Free interactive brand evaluation tool",
     },
     {
+      title: "Newsletter",
+      href: "/newsletter",
+      description: "Weekly brand insights + premium tiers available",
+    },
+    {
       title: "Blog",
       href: "https://blog.brandwhisperer.io",
       description: "Startup branding insights and case studies",
@@ -137,7 +142,7 @@ const Navbar = () => {
                       {resourcesItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
-                            {item.href.startsWith("http") ? (
+                            {item.href.startsWith('http') ? (
                               <a
                                 href={item.href}
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dark-800 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -238,8 +243,8 @@ const Navbar = () => {
                 Resources
               </div>
               <div className="space-y-1 ml-2">
-                {resourcesItems.map((item) =>
-                  item.href.startsWith("http") ? (
+                {resourcesItems.map((item) => (
+                  item.href.startsWith('http') ? (
                     <a
                       key={item.title}
                       href={item.href}
@@ -257,8 +262,8 @@ const Navbar = () => {
                     >
                       {item.title}
                     </Link>
-                  ),
-                )}
+                  )
+                ))}
               </div>
             </div>
 
