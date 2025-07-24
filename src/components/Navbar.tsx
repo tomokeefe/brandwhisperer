@@ -50,11 +50,12 @@ const Navbar = () => {
       href: "https://blog.brandwhisperer.io",
       description: "Startup branding insights and case studies",
     },
-    {
-      title: "Free Resources",
-      href: "/resources",
-      description: "Download frameworks, assessments, and tools",
-    },
+    // Temporarily disabled - uncomment to re-enable Free Resources page
+    // {
+    //   title: "Free Resources",
+    //   href: "/resources",
+    //   description: "Download frameworks, assessments, and tools",
+    // },
     {
       title: "ROI Calculator",
       href: "/calculator",
