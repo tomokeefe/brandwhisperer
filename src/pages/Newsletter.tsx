@@ -182,7 +182,7 @@ const Newsletter = () => {
               3 Tiers Available
             </Badge>
 
-            <h1 className="text-display-sm lg:text-display-md font-bold mb-6 text-white">
+            <h1 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
               The Newsletter That Prevents{" "}
               <span className="text-secondary-400">$500K+ Rebrands</span>
             </h1>
