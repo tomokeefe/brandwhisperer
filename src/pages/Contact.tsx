@@ -174,7 +174,7 @@ const Contact = () => {
         keywords="startup brand consultation, contact brand whisperer, startup branding contact, free brand consultation"
       />
       {/* Hero Section */}
-      <section className="section-spacing">
+      <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <Badge
