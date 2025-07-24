@@ -163,7 +163,7 @@ const Newsletter = () => {
   ];
 
   return (
-    <div className="bg-dark-950 pt-32 pb-16">
+    <div className="bg-dark-950 pb-16">
       <SEO
         title="The Brand Whisperer Newsletter - Startup Brand Insights"
         description="Join 2,500+ founders getting weekly startup brand insights. Free tier available, premium tiers with daily insights and direct access to Tom."
