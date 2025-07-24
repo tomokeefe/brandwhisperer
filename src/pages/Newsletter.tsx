@@ -40,24 +40,30 @@ const Newsletter = () => {
       name: "Sarah Chen",
       role: "CEO, TechFlow",
       company: "Series A, $12M raised",
-      quote: "The daily insights helped us pivot our brand strategy before our Series A. Tom's frameworks saved us months of work.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b589?w=64&h=64&fit=crop&crop=face",
+      quote:
+        "The daily insights helped us pivot our brand strategy before our Series A. Tom's frameworks saved us months of work.",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b589?w=64&h=64&fit=crop&crop=face",
       tier: "Daily Mastery",
     },
     {
       name: "Marcus Rodriguez",
       role: "Founder, GrowthLab",
       company: "Pre-Seed, $2M raised",
-      quote: "The weekly breakdowns are gold. I've implemented 3 major brand changes that directly led to better investor conversations.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
+      quote:
+        "The weekly breakdowns are gold. I've implemented 3 major brand changes that directly led to better investor conversations.",
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
       tier: "Weekly Insights",
     },
     {
       name: "Emily Foster",
       role: "CMO, DataStream",
       company: "Series B, $25M raised",
-      quote: "The monthly office hours are incredible. Tom's direct feedback helped us nail our rebrand for Series B.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
+      quote:
+        "The monthly office hours are incredible. Tom's direct feedback helped us nail our rebrand for Series B.",
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face",
       tier: "Brand Accelerator",
     },
   ];
@@ -144,21 +150,24 @@ const Newsletter = () => {
       type: "Brand Breakdown",
       tier: "All Tiers",
       date: "3 days ago",
-      description: "Deep dive into Canva's strategic rebrand and what it signals about their Series D plans.",
+      description:
+        "Deep dive into Canva's strategic rebrand and what it signals about their Series D plans.",
     },
     {
       title: "The $50M Mistake: When Linear Almost Rebranded",
       type: "Case Study",
       tier: "Daily & Premium",
       date: "1 week ago",
-      description: "How Linear's brand consistency during hypergrowth saved them from an expensive rebrand.",
+      description:
+        "How Linear's brand consistency during hypergrowth saved them from an expensive rebrand.",
     },
     {
       title: "Pitch Deck Brand Signals That VCs Actually Notice",
       type: "Investor Insights",
       tier: "Premium Only",
       date: "2 weeks ago",
-      description: "The subtle brand elements that make VCs take your startup seriously (with examples).",
+      description:
+        "The subtle brand elements that make VCs take your startup seriously (with examples).",
     },
   ];
 
@@ -175,8 +184,7 @@ const Newsletter = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
-              <Sparkles className="w-4 h-4" />
-              3 Tiers Available
+              <Sparkles className="w-4 h-4" />3 Tiers Available
             </div>
 
             <h1 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
@@ -185,8 +193,9 @@ const Newsletter = () => {
             </h1>
 
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
-              Join 2,500+ founders who get actionable brand insights before they need them.
-              From weekly frameworks to daily tactical tips to VIP mentorship—choose your level of growth.
+              Join 2,500+ founders who get actionable brand insights before they
+              need them. From weekly frameworks to daily tactical tips to VIP
+              mentorship—choose your level of growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -214,7 +223,9 @@ const Newsletter = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-2xl font-bold text-white">
+                    {stat.value}
+                  </div>
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
@@ -237,19 +248,26 @@ const Newsletter = () => {
               What You've Been Missing
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Real insights from real startup brand challenges. Here's what subscribers received recently.
+              Real insights from real startup brand challenges. Here's what
+              subscribers received recently.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentContent.map((content, index) => (
-              <Card key={index} className="bg-dark-900/50 border-dark-700 card-hover">
+              <Card
+                key={index}
+                className="bg-dark-900/50 border-dark-700 card-hover"
+              >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-3">
                     <Badge className="bg-primary-500/20 text-primary-400 text-xs">
                       {content.type}
                     </Badge>
-                    <Badge variant="outline" className="text-xs border-dark-600 text-gray-400">
+                    <Badge
+                      variant="outline"
+                      className="text-xs border-dark-600 text-gray-400"
+                    >
                       {content.tier}
                     </Badge>
                   </div>
@@ -286,7 +304,8 @@ const Newsletter = () => {
               From Weekly Insights to VIP Access
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Start free and upgrade as your startup grows. Every tier builds on the previous.
+              Start free and upgrade as your startup grows. Every tier builds on
+              the previous.
             </p>
           </div>
 
@@ -323,9 +342,14 @@ const Newsletter = () => {
             </div>
 
             {comparisons.map((comparison, index) => (
-              <div key={index} className="grid grid-cols-4 gap-0 border-b border-dark-700 last:border-b-0">
+              <div
+                key={index}
+                className="grid grid-cols-4 gap-0 border-b border-dark-700 last:border-b-0"
+              >
                 <div className="p-4 bg-dark-800/30">
-                  <span className="text-gray-300 text-sm">{comparison.feature}</span>
+                  <span className="text-gray-300 text-sm">
+                    {comparison.feature}
+                  </span>
                 </div>
                 <div className="p-4 text-center">
                   {comparison.free ? (
@@ -385,9 +409,15 @@ const Newsletter = () => {
                       className="w-12 h-12 rounded-full"
                     />
                     <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role}</div>
-                      <div className="text-xs text-gray-500">{testimonial.company}</div>
+                      <div className="font-semibold text-white">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {testimonial.role}
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {testimonial.company}
+                      </div>
                     </div>
                   </div>
                   <Badge className="mt-4 bg-primary-500/20 text-primary-400 text-xs">

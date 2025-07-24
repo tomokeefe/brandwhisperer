@@ -134,7 +134,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
 
     try {
       const selectedTierData = tiers.find((tier) => tier.id === selectedTier);
-      
+
       // Kit.com integration - you'll replace this with actual Kit.com API calls
       const kitData = {
         email,
@@ -151,24 +151,29 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
         // Example Kit.com checkout URL structure - replace with actual URLs
         const checkoutUrls = {
           daily: "https://your-kit-account.kit.com/checkout/daily-mastery",
-          premium: "https://your-kit-account.kit.com/checkout/brand-accelerator",
+          premium:
+            "https://your-kit-account.kit.com/checkout/brand-accelerator",
         };
-        
+
         // Store email data temporarily and redirect to checkout
         localStorage.setItem("pendingSubscription", JSON.stringify(kitData));
-        window.location.href = checkoutUrls[selectedTier as keyof typeof checkoutUrls];
+        window.location.href =
+          checkoutUrls[selectedTier as keyof typeof checkoutUrls];
         return;
       }
 
       // For free tier, submit directly to Kit.com
-      const response = await fetch(`https://api.kit.com/v3/forms/${selectedTierData?.kitFormId}/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.VITE_KIT_API_KEY}`, // Add this to your .env
+      const response = await fetch(
+        `https://api.kit.com/v3/forms/${selectedTierData?.kitFormId}/subscribe`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.VITE_KIT_API_KEY}`, // Add this to your .env
+          },
+          body: JSON.stringify(kitData),
         },
-        body: JSON.stringify(kitData),
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Subscription failed");
@@ -192,7 +197,6 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
         setEmail("");
         setFirstName("");
       }, 5000);
-
     } catch (error) {
       console.error("Newsletter subscription error:", error);
       setError("Something went wrong. Please try again or email us directly.");
@@ -215,7 +219,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
               Get weekly startup brand insights
             </p>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="space-y-3">
             <Input
               type="email"
@@ -237,7 +241,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
               )}
             </Button>
           </form>
-          
+
           <p className="text-xs text-gray-400 text-center mt-3">
             Free • No spam • Unsubscribe anytime
           </p>
@@ -254,7 +258,9 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
             <CheckCircle className="w-8 h-8 text-green-400" />
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">
-            {selectedTier === "free" ? "Welcome to the Community!" : "Subscription Created!"}
+            {selectedTier === "free"
+              ? "Welcome to the Community!"
+              : "Subscription Created!"}
           </h3>
           <p className="text-gray-300 mb-6">
             {selectedTier === "free"
@@ -289,7 +295,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                 selectedTier === tier.id
                   ? "bg-dark-800 border-secondary-500 ring-2 ring-secondary-500/50"
                   : "bg-dark-900/50 border-dark-700 hover:border-dark-600",
-                tier.popular && "ring-2 ring-primary-500/50"
+                tier.popular && "ring-2 ring-primary-500/50",
               )}
               onClick={() => setSelectedTier(tier.id)}
             >
@@ -298,30 +304,41 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                   Most Popular
                 </Badge>
               )}
-              
+
               <CardHeader className="text-center pb-4">
-                <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 bg-gradient-to-br", tier.gradient)}>
+                <div
+                  className={cn(
+                    "w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 bg-gradient-to-br",
+                    tier.gradient,
+                  )}
+                >
                   {tier.icon}
                 </div>
                 <CardTitle className="text-white">{tier.name}</CardTitle>
                 <div className="text-3xl font-bold text-white">
                   {tier.price}
-                  {tier.price !== "Free" && <span className="text-sm text-gray-400">/month</span>}
+                  {tier.price !== "Free" && (
+                    <span className="text-sm text-gray-400">/month</span>
+                  )}
                 </div>
                 <CardDescription className="text-gray-300">
                   {tier.description}
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent>
                 <ul className="space-y-3">
                   {tier.features.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                      <span className={cn(
-                        "text-sm",
-                        feature.endsWith(":") ? "text-gray-400 font-medium" : "text-gray-300"
-                      )}>
+                      <span
+                        className={cn(
+                          "text-sm",
+                          feature.endsWith(":")
+                            ? "text-gray-400 font-medium"
+                            : "text-gray-300",
+                        )}
+                      >
                         {feature}
                       </span>
                     </li>
@@ -337,7 +354,12 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
       <Card className="bg-dark-900/50 border-dark-700">
         <CardHeader>
           <div className="flex items-center space-x-3">
-            <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br", selectedTierData?.gradient)}>
+            <div
+              className={cn(
+                "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br",
+                selectedTierData?.gradient,
+              )}
+            >
               {selectedTierData?.icon}
             </div>
             <div>
@@ -350,14 +372,16 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
             </div>
           </div>
         </CardHeader>
-        
+
         <CardContent>
           {error && (
             <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg">
               <div className="flex items-start space-x-3">
                 <AlertCircle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-red-400 font-semibold mb-1">Subscription Error</h4>
+                  <h4 className="text-red-400 font-semibold mb-1">
+                    Subscription Error
+                  </h4>
                   <p className="text-red-300 text-sm">{error}</p>
                 </div>
               </div>
@@ -380,7 +404,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                   required
                 />
               </div>
-              
+
               <div>
                 <Label htmlFor="email" className="text-white mb-2 block">
                   Email Address *
@@ -400,12 +424,14 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
             <div className="bg-dark-800/50 rounded-lg p-4">
               <h4 className="text-white font-medium mb-3">What you'll get:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                {selectedTierData?.features.slice(0, 4).map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span className="text-gray-300">{feature}</span>
-                  </div>
-                ))}
+                {selectedTierData?.features
+                  .slice(0, 4)
+                  .map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <span className="text-gray-300">{feature}</span>
+                    </div>
+                  ))}
               </div>
               {selectedTierData && selectedTierData.features.length > 4 && (
                 <p className="text-gray-400 text-sm mt-2">
@@ -422,7 +448,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                 "w-full font-semibold text-base",
                 selectedTier === "free"
                   ? "bg-secondary-500 hover:bg-secondary-600 text-dark-900"
-                  : "bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white"
+                  : "bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white",
               )}
             >
               {isSubmitting ? (
@@ -452,7 +478,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                   ? "Free forever • No credit card required • Unsubscribe anytime"
                   : "Cancel anytime • Secure payment • 7-day money-back guarantee"}
               </p>
-              
+
               <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
                 <div className="flex items-center space-x-1">
                   <Users className="w-3 h-3" />

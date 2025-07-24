@@ -637,7 +637,7 @@ const Footer = () => {
                               animationDelay: `${1000 + categoryIndex * 100 + linkIndex * 50}ms`,
                             }}
                           >
-                            {link.path.startsWith('http') ? (
+                            {link.path.startsWith("http") ? (
                               <a
                                 href={link.path}
                                 className="text-gray-300 hover:text-secondary-400 transition-all duration-300 inline-flex items-center group hover:translate-x-1"
