@@ -15,6 +15,7 @@ import Services from "@/pages/Services";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
+import Newsletter from "@/pages/Newsletter";
 import Resources from "@/pages/Resources";
 import Calculator from "@/pages/Calculator";
 import Clients from "@/pages/Clients";
