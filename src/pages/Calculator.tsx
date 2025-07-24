@@ -40,7 +40,7 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="bg-dark-950 pt-32 pb-16">
+    <div className="bg-dark-950 pb-16">
       <SEO
         title="Brand ROI Calculator - Calculate Your Branding Investment Return"
         description="Calculate detailed ROI projections for your startup branding investment. Get comprehensive business impact analysis across funding, customer acquisition, and growth metrics."
