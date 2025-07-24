@@ -275,12 +275,10 @@ const Services = () => {
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
+            <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
+              <Briefcase className="w-4 h-4" />
               Service Packages
-            </Badge>
+            </div>
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
               Brands Built for Every{" "}
               <span className="text-secondary-400">Growth Stage</span>
