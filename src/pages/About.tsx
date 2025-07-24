@@ -236,7 +236,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-dark-950 pt-32 pb-16">
+    <div className="bg-dark-950 pb-16">
       <SEO
         title="About The Brand Whisperer | 30+ Years Building Scalable Startup Brands"
         description="Meet the brand strategist behind 150+ successful startups. 30+ years experience from New Relic IPO to Series A brand strategies. Expert in building brands that scale with your growth."
