@@ -380,8 +380,9 @@ const Footer = () => {
       { name: "Brand Assessment", path: "/assessment" },
       { name: "Newsletter", path: "/newsletter" },
       { name: "Blog", path: "https://blog.brandwhisperer.io" },
-      { name: "Free Resources", path: "/resources" },
-      { name: "SCALE Framework", path: "/resources#framework" },
+      // Temporarily disabled - uncomment to re-enable Free Resources page
+      // { name: "Free Resources", path: "/resources" },
+      // { name: "SCALE Framework", path: "/resources#framework" },
     ],
     Company: [
       { name: "About Us", path: "/about" },
