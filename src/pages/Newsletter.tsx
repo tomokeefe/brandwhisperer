@@ -174,13 +174,10 @@ const Newsletter = () => {
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              <Sparkles className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
+              <Sparkles className="w-4 h-4" />
               3 Tiers Available
-            </Badge>
+            </div>
 
             <h1 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
               The Newsletter That Prevents{" "}
