@@ -24,6 +24,7 @@ import {
   Users,
   Target,
   Zap,
+  MessageCircle,
 } from "lucide-react";
 
 const Contact = () => {
