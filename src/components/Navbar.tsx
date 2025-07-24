@@ -217,7 +217,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden overflow-hidden transition-all duration-300",
+            "md:hidden overflow-hidden transition-all duration-300 bg-dark-900/95 backdrop-blur-lg",
             isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0",
           )}
         >
