@@ -261,7 +261,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-dark-950 pt-32 pb-16">
+    <div className="bg-dark-950 pb-16">
       <SEO
         title="Startup Brand Strategy Services | Pre-Seed to Series A Branding Packages"
         description="Comprehensive brand strategy packages for every growth stage. From $15K pre-seed foundation to $40K Series A ready. Equity options available. 150+ successful startups branded."
