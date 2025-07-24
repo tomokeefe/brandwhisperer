@@ -181,14 +181,14 @@ const Newsletter = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               3 Tiers Available
             </Badge>
-            
-            <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
+
+            <h1 className="text-display-sm lg:text-display-md font-bold mb-6 text-white">
               The Newsletter That Prevents{" "}
               <span className="text-secondary-400">$500K+ Rebrands</span>
             </h1>
-            
+
             <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
-              Join 2,500+ founders who get actionable brand insights before they need them. 
+              Join 2,500+ founders who get actionable brand insights before they need them.
               From weekly frameworks to daily tactical tips to VIP mentorship—choose your level of growth.
             </p>
 
@@ -435,7 +435,7 @@ const Newsletter = () => {
                   Get in touch
                 </Link>
               </p>
-              
+
               <div className="flex items-center justify-center space-x-6 text-xs text-gray-500">
                 <div className="flex items-center space-x-1">
                   <Shield className="w-3 h-3" />
