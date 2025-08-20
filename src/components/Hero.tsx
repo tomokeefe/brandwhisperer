@@ -40,18 +40,11 @@ const Hero = () => {
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-4 lg:mb-6 max-w-4xl mx-auto leading-relaxed">
-                We partner with founders like you to craft strategic, adaptable
-                brands that attract investors, customers, and talent—saving you
-                time and money as you grow.
-              </p>
-
-              {/* Value Proposition */}
-              <p className="text-base lg:text-lg text-gray-400 mb-6 lg:mb-8 leading-relaxed max-w-4xl mx-auto">
-                With 30+ years of experience and 150+ successful projects, we've
-                helped startups boost funding success by up to 40% through
-                clear, scalable branding. No more outgrowing your identity every
-                funding round—let's build a brand that evolves with you.
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
+                We team up with founders like you to create flexible brands that
+                draw investors, customers, and talent—saving time and cash as you
+                scale. With 30+ years of wins, we've boosted funding success by up
+                to 40%. Say goodbye to outgrown identities—your brand grows with you.
               </p>
 
               {/* CTA Buttons */}
