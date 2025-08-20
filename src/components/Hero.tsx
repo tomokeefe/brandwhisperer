@@ -36,8 +36,8 @@ const Hero = () => {
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
                 Scale Your Startup Brand from Pre-Seed to{" "}
-                <span className="text-secondary-400">Unicorn—Without</span>{" "}
-                the Costly Rebrand
+                <span className="text-secondary-400">Unicorn—Without</span> the
+                Costly Rebrand
               </h1>
 
               {/* Subheadline */}
@@ -50,9 +50,9 @@ const Hero = () => {
               {/* Value Proposition */}
               <p className="text-base lg:text-lg text-gray-400 mb-6 lg:mb-8 leading-relaxed max-w-4xl mx-auto">
                 With 30+ years of experience and 150+ successful projects, we've
-                helped startups boost funding success by up to 40% through clear,
-                scalable branding. No more outgrowing your identity every funding
-                round—let's build a brand that evolves with you.
+                helped startups boost funding success by up to 40% through
+                clear, scalable branding. No more outgrowing your identity every
+                funding round—let's build a brand that evolves with you.
               </p>
 
               {/* CTA Buttons */}
@@ -101,8 +101,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
