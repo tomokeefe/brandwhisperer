@@ -34,7 +34,7 @@ const Hero = () => {
               </Badge>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
                 Scale Your Startup Brand from Pre-Seed to{" "}
                 <span className="text-secondary-400">Unicorn—Without</span>{" "}
                 the Costly Rebrand
