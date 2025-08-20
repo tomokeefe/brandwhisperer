@@ -41,10 +41,11 @@ const Hero = () => {
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
-                We team up with founders like you to create flexible brands that
-                draw investors, customers, and talent—saving time and cash as you
-                scale. With 30+ years of wins, we've boosted funding success by up
-                to 40%. Say goodbye to outgrown identities—your brand grows with you.
+                We partner with ambitious founders to build adaptable brands that
+                attract investors, customers, and top talent—streamlining your growth
+                while saving time and costs. With over 30 years of proven success,
+                we've increased funding outcomes by up to 40%. Say goodbye to outdated
+                identities; your brand evolves with you. Ready to scale smarter?
               </p>
 
               {/* CTA Buttons */}
