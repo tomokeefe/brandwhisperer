@@ -35,15 +35,9 @@ const Hero = () => {
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl md:text-display-lg lg:text-[120px] xl:text-[140px] font-bold md:leading-tight lg:leading-none mb-6 lg:mb-8 text-white">
-                <span className="block max-sm:text-[62px] max-sm:leading-[65px]">
-                  Building
-                </span>
-                <span className="block text-secondary-400 max-sm:text-[62px] max-sm:leading-[65px]">
-                  Brands
-                </span>
-                <span className="block max-sm:text-[62px] max-sm:leading-[65px]">
-                  That Scale
-                </span>
+                Scale Your Startup Brand from Pre-Seed to{" "}
+                <span className="text-secondary-400">Unicorn—Without</span>{" "}
+                the Costly Rebrand
               </h1>
 
               {/* Subheadline */}
