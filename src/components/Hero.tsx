@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Main Content */}
           <div className="lg:col-span-8">
-            <div className="max-w-4xl">
+            <div className="max-w-4xl text-center">
               {/* Badge */}
               <Badge
                 variant="outline"
