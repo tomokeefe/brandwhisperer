@@ -41,14 +41,14 @@ const Hero = () => {
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-4 lg:mb-6 max-w-4xl mx-auto leading-relaxed">
                 We partner with founders like you to craft strategic, adaptable
                 brands that attract investors, customers, and talent—saving you
                 time and money as you grow.
               </p>
 
               {/* Value Proposition */}
-              <p className="text-base lg:text-lg text-gray-400 mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-base lg:text-lg text-gray-400 mb-6 lg:mb-8 leading-relaxed max-w-4xl mx-auto">
                 With 30+ years of experience and 150+ successful projects, we've
                 helped startups boost funding success by up to 40% through clear,
                 scalable branding. No more outgrowing your identity every funding
@@ -56,7 +56,7 @@ const Hero = () => {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8 lg:mb-12 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-6 lg:mb-8 justify-center">
                 <Button
                   asChild
                   size="lg"
