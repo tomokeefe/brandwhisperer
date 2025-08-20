@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="flex justify-center items-center">
           {/* Main Content */}
           <div className="w-full">
-            <div className="max-w-4xl text-center">
+            <div className="max-w-5xl mx-auto text-center">
               {/* Badge */}
               <Badge
                 variant="outline"
