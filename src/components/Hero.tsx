@@ -21,9 +21,9 @@ const Hero = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10 pt-24 lg:pt-32 pb-12 lg:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
+        <div className="flex justify-center items-center">
           {/* Main Content */}
-          <div className="lg:col-span-8">
+          <div className="w-full">
             <div className="max-w-4xl text-center">
               {/* Badge */}
               <Badge
