@@ -102,47 +102,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="lg:col-span-4 mt-8 lg:mt-0">
-            <div className="space-y-6 lg:space-y-8">
-              <div className="bg-dark-900/50 backdrop-blur-sm border border-dark-800 rounded-2xl p-6 lg:p-8">
-                <h3 className="text-lg lg:text-heading-lg text-white mb-4 lg:mb-6">
-                  Our Track Record
-                </h3>
-                <div className="space-y-4 lg:space-y-6">
-                  {stats.map((stat, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 lg:space-x-4"
-                    >
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <stat.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-xl lg:text-2xl font-bold text-white">
-                          {stat.value}
-                        </div>
-                        <div className="text-xs lg:text-sm text-gray-400">
-                          {stat.label}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Quote */}
-              <div className="bg-dark-900/30 backdrop-blur-sm border border-dark-800 rounded-2xl p-5 lg:p-6">
-                <blockquote className="text-sm lg:text-base text-gray-300 italic mb-3 lg:mb-4">
-                  "Don't wait 14 years like New Relic did — build a brand that
-                  evolves with your growth."
-                </blockquote>
-                <cite className="text-xs lg:text-sm text-secondary-400 font-medium">
-                  The Brand Whisperer Philosophy
-                </cite>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
