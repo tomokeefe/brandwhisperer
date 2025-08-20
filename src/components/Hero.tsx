@@ -87,11 +87,11 @@ const Hero = () => {
               </div>
 
               {/* Social Proof */}
-              <div className="text-xs lg:text-sm text-gray-400">
+              <div className="text-xs lg:text-sm text-gray-400 text-center">
                 <p className="mb-2">
                   Trusted by hypergrowth startups and backed by
                 </p>
-                <div className="flex flex-wrap items-center gap-2 lg:gap-6 opacity-70">
+                <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-6 opacity-70">
                   <span className="font-medium">New Relic</span>
                   <span className="hidden lg:inline">•</span>
                   <span className="font-medium">Idealab</span>
