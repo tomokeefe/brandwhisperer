@@ -21,10 +21,10 @@ const Hero = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl"></div>
 
       <div className="w-full relative z-10 pt-24 lg:pt-32 pb-12 lg:pb-16 px-6">
-        <div className="flex justify-center items-center">
+        <div className="w-full flex justify-center items-center">
           {/* Main Content */}
-          <div className="w-full">
-            <div className="max-w-5xl mx-auto text-center">
+          <div className="w-full max-w-6xl">
+            <div className="text-center px-4">
               {/* Badge */}
               <Badge
                 variant="outline"
