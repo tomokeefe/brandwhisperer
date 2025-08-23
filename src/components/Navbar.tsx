@@ -41,6 +41,11 @@ const Navbar = () => {
       description: "Free interactive brand evaluation tool",
     },
     {
+      title: "Brand Stage Quiz",
+      href: "/quiz",
+      description: "2-minute quiz to find your brand's growth stage",
+    },
+    {
       title: "Newsletter",
       href: "/newsletter",
       description: "Weekly brand insights + premium tiers available",
