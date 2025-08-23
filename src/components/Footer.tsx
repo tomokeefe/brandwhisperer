@@ -378,6 +378,7 @@ const Footer = () => {
     ],
     Resources: [
       { name: "Brand Assessment", path: "/assessment" },
+      { name: "Brand Stage Quiz", path: "/quiz" },
       { name: "Newsletter", path: "/newsletter" },
       { name: "Blog", path: "https://blog.brandwhisperer.io" },
       // Temporarily disabled - uncomment to re-enable Free Resources page
