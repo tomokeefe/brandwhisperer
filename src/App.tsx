@@ -16,6 +16,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import Newsletter from "@/pages/Newsletter";
+import Quiz from "@/pages/Quiz";
 import Resources from "@/pages/Resources";
 import Calculator from "@/pages/Calculator";
 import Clients from "@/pages/Clients";
