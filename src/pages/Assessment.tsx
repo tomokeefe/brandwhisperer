@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import BrandAssessment from "@/components/BrandAssessment";
 
 const Assessment = () => {
