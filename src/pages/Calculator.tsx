@@ -53,14 +53,24 @@ const Calculator = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section
+        ref={heroRef}
+        className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
+          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <EnhancedROICalculator />
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="section-spacing bg-dark-900/30">
+      <section
+        ref={benefitsRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          benefitsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge
