@@ -39,7 +39,8 @@ const Newsletter = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
   const { ref: tiersRef, isVisible: tiersVisible } = useScrollAnimation();
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } =
+    useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
   const testimonials = [
@@ -190,7 +191,7 @@ const Newsletter = () => {
       <section
         ref={heroRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
-          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -232,7 +233,9 @@ const Newsletter = () => {
             <div
               ref={statsRef}
               className={`grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 ${
-                statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                statsVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
             >
               {stats.map((stat, index) => (
@@ -255,7 +258,9 @@ const Newsletter = () => {
       <section
         ref={contentRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          contentVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">

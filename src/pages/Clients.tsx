@@ -517,7 +517,7 @@ const Clients = () => {
       <div
         ref={logosRef}
         className={`transition-all duration-700 ${
-          logosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          logosVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <LogoWall

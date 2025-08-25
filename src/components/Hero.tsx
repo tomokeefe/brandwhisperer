@@ -6,11 +6,21 @@ import { ArrowRight, TrendingUp, Users, Award } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Hero = () => {
-  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({ delay: 200 });
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({ delay: 400 });
-  const { ref: subtitleRef, isVisible: subtitleVisible } = useScrollAnimation({ delay: 600 });
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation({ delay: 800 });
-  const { ref: socialRef, isVisible: socialVisible } = useScrollAnimation({ delay: 1000 });
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({
+    delay: 200,
+  });
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({
+    delay: 400,
+  });
+  const { ref: subtitleRef, isVisible: subtitleVisible } = useScrollAnimation({
+    delay: 600,
+  });
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation({
+    delay: 800,
+  });
+  const { ref: socialRef, isVisible: socialVisible } = useScrollAnimation({
+    delay: 1000,
+  });
 
   const stats = [
     { icon: TrendingUp, value: "87%", label: "Series A funding success" },
@@ -54,8 +64,8 @@ const Hero = () => {
                 ref={badgeRef}
                 className={`transition-all duration-1000 ${
                   badgeVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                 }`}
               >
                 <Badge
@@ -71,13 +81,15 @@ const Hero = () => {
                 ref={titleRef}
                 className={`transition-all duration-1000 delay-200 ${
                   titleVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
                 }`}
               >
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
                   Grow Your Startup Seamlessly from Pre-Seed to{" "}
-                  <span className="text-secondary-400 hover:text-secondary-300 transition-colors duration-300">Unicorn</span>
+                  <span className="text-secondary-400 hover:text-secondary-300 transition-colors duration-300">
+                    Unicorn
+                  </span>
                 </h1>
               </div>
 
@@ -86,8 +98,8 @@ const Hero = () => {
                 ref={subtitleRef}
                 className={`transition-all duration-1000 delay-400 ${
                   subtitleVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
                 }`}
               >
                 <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -95,8 +107,8 @@ const Hero = () => {
                   that attract investors, customers, and top talent—streamlining
                   your growth while saving time and costs. With over 30 years of
                   proven success, we've increased funding outcomes by up to 40%.
-                  Say goodbye to outdated identities; your brand evolves with you.
-                  Ready to scale smarter?
+                  Say goodbye to outdated identities; your brand evolves with
+                  you. Ready to scale smarter?
                 </p>
               </div>
 
@@ -105,8 +117,8 @@ const Hero = () => {
                 ref={ctaRef}
                 className={`transition-all duration-1000 delay-600 ${
                   ctaVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-6 lg:mb-8 justify-center">
@@ -146,8 +158,8 @@ const Hero = () => {
                 ref={socialRef}
                 className={`transition-all duration-1000 delay-800 ${
                   socialVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                 }`}
               >
                 <div className="text-xs lg:text-sm text-gray-400 text-center">
@@ -155,11 +167,17 @@ const Hero = () => {
                     Trusted by hypergrowth startups and backed by
                   </p>
                   <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-6 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">New Relic</span>
+                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">
+                      New Relic
+                    </span>
                     <span className="hidden lg:inline">•</span>
-                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">Idealab</span>
+                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">
+                      Idealab
+                    </span>
                     <span className="hidden lg:inline">•</span>
-                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">150+ Portfolio Companies</span>
+                    <span className="font-medium hover:text-secondary-400 transition-colors duration-300 cursor-pointer">
+                      150+ Portfolio Companies
+                    </span>
                   </div>
                 </div>
               </div>

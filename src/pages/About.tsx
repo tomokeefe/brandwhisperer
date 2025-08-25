@@ -28,14 +28,24 @@ import {
 } from "lucide-react";
 
 const About = () => {
-  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({ delay: 200 });
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({ delay: 400 });
-  const { ref: descRef, isVisible: descVisible } = useScrollAnimation({ delay: 600 });
-  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({ delay: 800 });
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({
+    delay: 200,
+  });
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({
+    delay: 400,
+  });
+  const { ref: descRef, isVisible: descVisible } = useScrollAnimation({
+    delay: 600,
+  });
+  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({
+    delay: 800,
+  });
 
-  const { ref: philosophyRef, isVisible: philosophyVisible } = useScrollAnimation();
+  const { ref: philosophyRef, isVisible: philosophyVisible } =
+    useScrollAnimation();
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
-  const { ref: methodologyRef, isVisible: methodologyVisible } = useScrollAnimation();
+  const { ref: methodologyRef, isVisible: methodologyVisible } =
+    useScrollAnimation();
   const { ref: casesRef, isVisible: casesVisible } = useScrollAnimation();
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
 
@@ -265,7 +275,9 @@ const About = () => {
             <div
               ref={badgeRef}
               className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
-                badgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                badgeVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               <Award className="w-4 h-4" />
@@ -274,7 +286,9 @@ const About = () => {
             <h1
               ref={titleRef}
               className={`text-display-lg lg:text-display-xl font-bold mb-8 text-white transition-all duration-700 ${
-                titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                titleVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               30 Years of Building{" "}
@@ -283,7 +297,9 @@ const About = () => {
             <p
               ref={descRef}
               className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
-                descVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                descVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               We're not your typical brand agency. With three decades of
@@ -296,7 +312,9 @@ const About = () => {
             <div
               ref={buttonsRef}
               className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
-                buttonsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                buttonsVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               <Button
@@ -323,7 +341,9 @@ const About = () => {
       <section
         ref={philosophyRef}
         className={`section-spacing bg-secondary-400 text-dark-900 transition-all duration-700 ${
-          philosophyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          philosophyVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -386,7 +406,9 @@ const About = () => {
       <section
         ref={valuesRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          valuesVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -436,7 +458,9 @@ const About = () => {
         id="process"
         ref={methodologyRef}
         className={`section-spacing transition-all duration-700 ${
-          methodologyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          methodologyVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -513,7 +537,7 @@ const About = () => {
         id="cases"
         ref={casesRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          casesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          casesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -587,7 +611,7 @@ const About = () => {
       <section
         ref={statsRef}
         className={`section-spacing transition-all duration-700 ${
-          statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          statsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">

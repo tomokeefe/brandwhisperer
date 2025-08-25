@@ -58,7 +58,7 @@ const Quiz = () => {
       <section
         ref={quizRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
-          quizVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          quizVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         {/* Background Elements */}

@@ -4,7 +4,10 @@ import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import ClientShowcase from "@/components/ClientShowcase";
-import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import {
+  useScrollAnimation,
+  useStaggeredAnimation,
+} from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -37,8 +40,10 @@ const Index = () => {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   const { ref: pillarsRef, isVisible: pillarsVisible } = useScrollAnimation();
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation();
-  const { ref: pillarsGridRef, visibleItems: pillarItems } = useStaggeredAnimation(4, 200);
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } =
+    useScrollAnimation();
+  const { ref: pillarsGridRef, visibleItems: pillarItems } =
+    useStaggeredAnimation(4, 200);
 
   // Auto-rotate testimonials every 5 seconds
   useEffect(() => {
@@ -297,8 +302,8 @@ const Index = () => {
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
               pillarsVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <Badge
@@ -316,14 +321,17 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12" ref={pillarsGridRef}>
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+            ref={pillarsGridRef}
+          >
             {pillars.map((pillar, index) => (
               <div
                 key={index}
                 className={`transition-all duration-1000 ${
                   pillarItems[index]
-                    ? 'opacity-100 translate-y-0 scale-100'
-                    : 'opacity-0 translate-y-8 scale-95'
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-8 scale-95"
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
@@ -357,8 +365,8 @@ const Index = () => {
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
               servicesVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <Badge
@@ -395,8 +403,8 @@ const Index = () => {
                 key={index}
                 className={`transition-all duration-1000 ${
                   servicesVisible
-                    ? 'opacity-100 translate-y-0 scale-100'
-                    : 'opacity-0 translate-y-8 scale-95'
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-8 scale-95"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
@@ -472,8 +480,8 @@ const Index = () => {
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
               testimonialsVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <Badge
@@ -490,8 +498,8 @@ const Index = () => {
           <div
             className={`max-w-4xl mx-auto relative transition-all duration-1000 delay-200 ${
               testimonialsVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <Card className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 hover:shadow-xl hover:shadow-secondary-500/10 transition-all duration-500 group">

@@ -47,8 +47,9 @@ const LogoWall: React.FC<LogoWallProps> = ({
 
     const gridElement = gridRef.current;
     if (gridElement) {
-      gridElement.addEventListener('mousemove', handleMouseMove);
-      return () => gridElement.removeEventListener('mousemove', handleMouseMove);
+      gridElement.addEventListener("mousemove", handleMouseMove);
+      return () =>
+        gridElement.removeEventListener("mousemove", handleMouseMove);
     }
   }, []);
 
@@ -60,7 +61,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (gridRef.current) {
@@ -73,16 +74,18 @@ const LogoWall: React.FC<LogoWallProps> = ({
   // Get category-based color for hover effects
   const getCategoryColor = (category?: string) => {
     const colorMap: Record<string, string> = {
-      'AI': 'from-purple-500/20 to-purple-600/10',
-      'FinTech': 'from-green-500/20 to-green-600/10',
-      'SaaS': 'from-blue-500/20 to-blue-600/10',
-      'Design': 'from-pink-500/20 to-pink-600/10',
-      'E-commerce': 'from-orange-500/20 to-orange-600/10',
-      'HealthTech': 'from-teal-500/20 to-teal-600/10',
-      'EdTech': 'from-indigo-500/20 to-indigo-600/10',
-      'Crypto': 'from-yellow-500/20 to-yellow-600/10',
+      AI: "from-purple-500/20 to-purple-600/10",
+      FinTech: "from-green-500/20 to-green-600/10",
+      SaaS: "from-blue-500/20 to-blue-600/10",
+      Design: "from-pink-500/20 to-pink-600/10",
+      "E-commerce": "from-orange-500/20 to-orange-600/10",
+      HealthTech: "from-teal-500/20 to-teal-600/10",
+      EdTech: "from-indigo-500/20 to-indigo-600/10",
+      Crypto: "from-yellow-500/20 to-yellow-600/10",
     };
-    return colorMap[category || ''] || 'from-secondary-500/20 to-secondary-600/10';
+    return (
+      colorMap[category || ""] || "from-secondary-500/20 to-secondary-600/10"
+    );
   };
   // Generate placeholder logos if not enough provided
   const generatePlaceholderLogos = (): Logo[] => {
@@ -177,23 +180,28 @@ const LogoWall: React.FC<LogoWallProps> = ({
                   hover:border-secondary-500/40 transition-all duration-500 hover:bg-dark-800/80
                   flex items-center justify-center p-4 cursor-pointer overflow-hidden
                   hover:scale-110 hover:-translate-y-2 hover:rotate-1
-                  ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}
+                  ${isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"}
                   hover:shadow-2xl hover:shadow-secondary-500/20`}
                 style={{
                   animationDelay: `${index * 100}ms`,
-                  transform: isHovered ? 'perspective(1000px) rotateY(10deg) rotateX(5deg)' : undefined,
+                  transform: isHovered
+                    ? "perspective(1000px) rotateY(10deg) rotateX(5deg)"
+                    : undefined,
                 }}
                 onMouseEnter={() => setHoveredLogo(logo.id)}
                 onMouseLeave={() => setHoveredLogo(null)}
               >
                 {/* Animated Border */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-secondary-500/0 via-secondary-500/50 to-secondary-500/0
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 animate-border-flow" />
+                <div
+                  className="absolute inset-0 rounded-xl bg-gradient-to-r from-secondary-500/0 via-secondary-500/50 to-secondary-500/0
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 animate-border-flow"
+                />
 
                 {/* Floating Animation */}
-                <div className={`w-full h-full flex items-center justify-center transition-all duration-700
-                  ${isHovered ? 'transform scale-110' : ''}`}>
-
+                <div
+                  className={`w-full h-full flex items-center justify-center transition-all duration-700
+                  ${isHovered ? "transform scale-110" : ""}`}
+                >
                   {logo.url ? (
                     <img
                       src={logo.url}
@@ -205,13 +213,17 @@ const LogoWall: React.FC<LogoWallProps> = ({
                     />
                   ) : (
                     <div className="text-center">
-                      <div className="text-sm font-medium text-gray-400 group-hover:text-gray-200
-                        transition-all duration-300 leading-tight group-hover:scale-105">
+                      <div
+                        className="text-sm font-medium text-gray-400 group-hover:text-gray-200
+                        transition-all duration-300 leading-tight group-hover:scale-105"
+                      >
                         {logo.name}
                       </div>
                       {logo.category && (
-                        <div className="text-xs text-gray-500 group-hover:text-secondary-400
-                          transition-all duration-300 mt-1 group-hover:font-medium">
+                        <div
+                          className="text-xs text-gray-500 group-hover:text-secondary-400
+                          transition-all duration-300 mt-1 group-hover:font-medium"
+                        >
                           {logo.category}
                         </div>
                       )}
@@ -220,22 +232,30 @@ const LogoWall: React.FC<LogoWallProps> = ({
                 </div>
 
                 {/* Dynamic Category-Based Glow */}
-                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br opacity-0
-                  group-hover:opacity-100 transition-all duration-500 ${categoryColor}`} />
+                <div
+                  className={`absolute inset-0 rounded-xl bg-gradient-to-br opacity-0
+                  group-hover:opacity-100 transition-all duration-500 ${categoryColor}`}
+                />
 
                 {/* Pulse Effect */}
-                <div className="absolute inset-0 rounded-xl bg-secondary-500/10 opacity-0
-                  group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300" />
+                <div
+                  className="absolute inset-0 rounded-xl bg-secondary-500/10 opacity-0
+                  group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"
+                />
 
                 {/* Shine Effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-transparent
+                <div
+                  className="absolute inset-0 rounded-xl bg-gradient-to-tr from-transparent
                   via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%]
-                  transition-transform duration-1000 ease-out" />
+                  transition-transform duration-1000 ease-out"
+                />
 
                 {/* Magnetic Effect Indicator */}
                 {isHovered && (
-                  <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-secondary-500/20
-                    to-transparent animate-spin-slow opacity-50" />
+                  <div
+                    className="absolute -inset-1 rounded-xl bg-gradient-to-r from-secondary-500/20
+                    to-transparent animate-spin-slow opacity-50"
+                  />
                 )}
               </div>
             );

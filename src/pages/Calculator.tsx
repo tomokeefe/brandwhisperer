@@ -15,7 +15,8 @@ import { TrendingUp, DollarSign, Clock, CheckCircle } from "lucide-react";
 const Calculator = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
-  const { ref: calculatorRef, isVisible: calculatorVisible } = useScrollAnimation();
+  const { ref: calculatorRef, isVisible: calculatorVisible } =
+    useScrollAnimation();
 
   const benefits = [
     {
@@ -56,7 +57,7 @@ const Calculator = () => {
       <section
         ref={heroRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
-          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -68,7 +69,9 @@ const Calculator = () => {
       <section
         ref={benefitsRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          benefitsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          benefitsVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
@@ -111,7 +114,9 @@ const Calculator = () => {
       <section
         ref={calculatorRef}
         className={`section-spacing transition-all duration-700 ${
-          calculatorVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          calculatorVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">

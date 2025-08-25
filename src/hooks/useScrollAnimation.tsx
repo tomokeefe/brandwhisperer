@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -21,7 +21,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
           setTimeout(() => {
             setIsVisible(true);
           }, delay);
-          
+
           if (triggerOnce) {
             observer.unobserve(element);
           }
@@ -29,7 +29,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
           setIsVisible(false);
         }
       },
-      { threshold }
+      { threshold },
     );
 
     observer.observe(element);
@@ -42,8 +42,13 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   return { ref, isVisible };
 };
 
-export const useStaggeredAnimation = (itemCount: number, delay: number = 100) => {
-  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
+export const useStaggeredAnimation = (
+  itemCount: number,
+  delay: number = 100,
+) => {
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(
+    new Array(itemCount).fill(false),
+  );
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -56,18 +61,18 @@ export const useStaggeredAnimation = (itemCount: number, delay: number = 100) =>
           // Stagger the animation of items
           visibleItems.forEach((_, index) => {
             setTimeout(() => {
-              setVisibleItems(prev => {
+              setVisibleItems((prev) => {
                 const newState = [...prev];
                 newState[index] = true;
                 return newState;
               });
             }, index * delay);
           });
-          
+
           observer.unobserve(element);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(element);

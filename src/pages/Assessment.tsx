@@ -79,7 +79,7 @@ const Assessment = () => {
       <section
         ref={heroRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
-          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         {/* Background Elements */}
@@ -97,7 +97,9 @@ const Assessment = () => {
       <section
         ref={featuresRef}
         className={`py-16 lg:py-20 bg-dark-900/30 transition-all duration-700 ${
-          featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          featuresVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
