@@ -259,7 +259,6 @@ const Services = () => {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ filter: 'brightness(0.3)' }}
           >
             <source
               src="https://www.dropbox.com/scl/fi/5x1glwa4mhrdu4p6g5uqt/6593843-hd_1920_1080_30fps.mp4?rlkey=g59ows8jpf4klv20yga8tov2f&dl=1"
@@ -267,7 +266,7 @@ const Services = () => {
             />
           </video>
           {/* Video Overlay */}
-          <div className="absolute inset-0 bg-dark-950/60" />
+          <div className="absolute inset-0 bg-dark-950/40" />
         </div>
 
         <div className="container-custom relative z-10">
