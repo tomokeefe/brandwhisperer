@@ -8,36 +8,37 @@ const Quiz = () => {
     "@type": "Quiz",
     "@id": "https://brandwhisperer.com/quiz/#quiz",
     name: "Startup Brand Stage Quiz",
-    description: "Interactive quiz to assess your startup's branding readiness and get personalized recommendations for growth.",
+    description:
+      "Interactive quiz to assess your startup's branding readiness and get personalized recommendations for growth.",
     url: "https://brandwhisperer.com/quiz",
     about: {
       "@type": "Thing",
-      name: "Startup Branding Assessment"
+      name: "Startup Branding Assessment",
     },
     author: {
       "@type": "Organization",
-      "@id": "https://brandwhisperer.com/#organization"
+      "@id": "https://brandwhisperer.com/#organization",
     },
     hasPart: [
       {
         "@type": "Question",
         name: "Mission Clarity",
-        text: "How clear is your startup's mission?"
+        text: "How clear is your startup's mission?",
       },
       {
         "@type": "Question",
         name: "Audience Understanding",
-        text: "Do you know your target audience?"
+        text: "Do you know your target audience?",
       },
       {
         "@type": "Question",
         name: "Visual Identity",
-        text: "How's your visual branding?"
-      }
+        text: "How's your visual branding?",
+      },
     ],
     educationalLevel: "Beginner to Advanced",
     timeRequired: "PT2M",
-    interactivityType: "mixed"
+    interactivityType: "mixed",
   };
 
   return (
@@ -70,44 +71,84 @@ const Quiz = () => {
               Why Take Our Brand Assessment?
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Get insights that help you make informed decisions about your brand investment
+              Get insights that help you make informed decisions about your
+              brand investment
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-8 h-8 text-secondary-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Instant Assessment</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Instant Assessment
+              </h3>
               <p className="text-gray-300">
-                Get immediate feedback on your brand's strengths and areas for improvement
+                Get immediate feedback on your brand's strengths and areas for
+                improvement
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <svg
+                  className="w-8 h-8 text-secondary-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Actionable Insights</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Actionable Insights
+              </h3>
               <p className="text-gray-300">
-                Receive specific recommendations tailored to your startup's current stage
+                Receive specific recommendations tailored to your startup's
+                current stage
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-secondary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                <svg
+                  className="w-8 h-8 text-secondary-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Free Resources</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Free Resources
+              </h3>
               <p className="text-gray-300">
-                Access our library of brand guides and frameworks based on your results
+                Access our library of brand guides and frameworks based on your
+                results
               </p>
             </div>
           </div>

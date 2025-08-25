@@ -58,11 +58,12 @@ const Hero = () => {
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-4xl mx-auto leading-relaxed">
-                We partner with ambitious founders to build adaptable brands that
-                attract investors, customers, and top talent—streamlining your growth
-                while saving time and costs. With over 30 years of proven success,
-                we've increased funding outcomes by up to 40%. Say goodbye to outdated
-                identities; your brand evolves with you. Ready to scale smarter?
+                We partner with ambitious founders to build adaptable brands
+                that attract investors, customers, and top talent—streamlining
+                your growth while saving time and costs. With over 30 years of
+                proven success, we've increased funding outcomes by up to 40%.
+                Say goodbye to outdated identities; your brand evolves with you.
+                Ready to scale smarter?
               </p>
 
               {/* CTA Buttons */}

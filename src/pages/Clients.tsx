@@ -445,9 +445,7 @@ const Clients = () => {
             <h1 className="text-display-lg lg:text-display-xl font-bold mb-6 text-white">
               Brands That Raised
               <br />
-              <span className="text-secondary-400">
-                $2.5B+ Together
-              </span>
+              <span className="text-secondary-400">$2.5B+ Together</span>
             </h1>
 
             <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
