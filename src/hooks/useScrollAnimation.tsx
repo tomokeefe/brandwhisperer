@@ -12,22 +12,25 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
-  const handleIntersection = useCallback(([entry]: IntersectionObserverEntry[]) => {
-    if (entry.isIntersecting) {
-      if (delay > 0) {
-        timeoutRef.current = setTimeout(() => {
+  const handleIntersection = useCallback(
+    ([entry]: IntersectionObserverEntry[]) => {
+      if (entry.isIntersecting) {
+        if (delay > 0) {
+          timeoutRef.current = setTimeout(() => {
+            setIsVisible(true);
+          }, delay);
+        } else {
           setIsVisible(true);
-        }, delay);
-      } else {
-        setIsVisible(true);
+        }
+      } else if (!triggerOnce) {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        setIsVisible(false);
       }
-    } else if (!triggerOnce) {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      setIsVisible(false);
-    }
-  }, [delay, triggerOnce]);
+    },
+    [delay, triggerOnce],
+  );
 
   useEffect(() => {
     const element = ref.current;
@@ -35,7 +38,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
 
     const observer = new IntersectionObserver(handleIntersection, {
       threshold,
-      rootMargin: '0px 0px -10% 0px' // Trigger slightly before element is fully visible
+      rootMargin: "0px 0px -10% 0px", // Trigger slightly before element is fully visible
     });
 
     observer.observe(element);

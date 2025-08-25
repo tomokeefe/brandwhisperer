@@ -377,8 +377,9 @@ const Index = () => {
               From DIY Resources to Custom Magic
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto mb-8">
-              Start free with our ebooks and quiz, book a consulting session, or go big with custom branding projects.
-              We have solutions for every stage and budget.
+              Start free with our ebooks and quiz, book a consulting session, or
+              go big with custom branding projects. We have solutions for every
+              stage and budget.
             </p>
             <Button
               asChild
