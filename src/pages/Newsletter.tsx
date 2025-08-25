@@ -220,8 +220,8 @@ const Newsletter = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-secondary-400/10 border border-secondary-400/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <stat.icon className="w-6 h-6 text-secondary-400" />
                   </div>
                   <div className="text-2xl font-bold text-white">
                     {stat.value}

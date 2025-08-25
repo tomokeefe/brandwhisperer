@@ -36,12 +36,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <Card
       className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
         highlighted
-          ? "border-2 border-secondary-500 bg-gradient-to-br from-secondary-500/5 to-primary-500/5"
+          ? "border-2 border-secondary-500 bg-secondary-500/5"
           : "border-dark-700 bg-dark-900/50 hover:border-dark-600"
       }`}
     >
       {highlighted && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-secondary-500"></div>
       )}
 
       {badge && (

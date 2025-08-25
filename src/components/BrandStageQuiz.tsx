@@ -73,7 +73,7 @@ const BrandStageQuiz: React.FC = () => {
     },
     {
       id: "audience",
-      category: "Strategy", 
+      category: "Strategy",
       question: "Do you know your target audience?",
       options: [
         { text: "We're mostly guessing who might buy", score: 1 },
@@ -131,7 +131,7 @@ const BrandStageQuiz: React.FC = () => {
   const calculateResult = (): QuizResult => {
     const totalScore = Object.values(answers).reduce((sum, score) => sum + score, 0);
     const maxScore = questions.length * 4;
-    
+
     if (totalScore <= 12) {
       return {
         tier: "beginner",
@@ -152,7 +152,7 @@ const BrandStageQuiz: React.FC = () => {
       };
     } else if (totalScore <= 20) {
       return {
-        tier: "intermediate", 
+        tier: "intermediate",
         title: "Solid Start—Let's Polish! ✨",
         description: "You're on the right track but could shine brighter with some strategic upgrades.",
         score: totalScore,
@@ -191,7 +191,7 @@ const BrandStageQuiz: React.FC = () => {
 
   const handleAnswer = (questionId: string, score: number) => {
     setAnswers(prev => ({ ...prev, [questionId]: score }));
-    
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(prev => prev + 1);
     } else {
@@ -202,17 +202,17 @@ const BrandStageQuiz: React.FC = () => {
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !firstName || !emailConsent) return;
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // Simulate API call - replace with actual email service
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       const calculatedResult = calculateResult();
       setResult(calculatedResult);
       setCurrentStep('results');
-      
+
       // Track completion
       if (window.gtag) {
         window.gtag('event', 'quiz_complete', {
@@ -255,13 +255,13 @@ const BrandStageQuiz: React.FC = () => {
             <Target className="w-4 h-4" />
             Brand Stage Assessment
           </div>
-          
+
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             What's Your Brand's Growth Stage?
           </h1>
-          
+
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Take our 2-minute quiz to see if your startup's brand is ready to charm 
+            Take our 2-minute quiz to see if your startup's brand is ready to charm
             investors—or needs a strategic glow-up first!
           </p>
         </div>
@@ -269,8 +269,8 @@ const BrandStageQuiz: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
           <Card className="bg-dark-800/50 border-dark-700 text-center">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-green-500/20 border border-green-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-6 h-6 text-green-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Quick & Easy</h3>
               <p className="text-gray-400 text-sm">6 strategic questions, 2 minutes max</p>
@@ -317,7 +317,7 @@ const BrandStageQuiz: React.FC = () => {
   // Quiz Questions
   if (currentStep === 'quiz') {
     const question = questions[currentQuestion];
-    
+
     return (
       <div className="max-w-3xl mx-auto space-y-8">
         {/* Progress */}
@@ -339,7 +339,7 @@ const BrandStageQuiz: React.FC = () => {
               {question.question}
             </CardTitle>
           </CardHeader>
-          
+
           <CardContent className="space-y-4">
             {question.options.map((option, index) => (
               <button
@@ -366,7 +366,7 @@ const BrandStageQuiz: React.FC = () => {
         {/* Navigation */}
         <div className="flex justify-between">
           <Button
-            variant="outline" 
+            variant="outline"
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
             className="border-dark-600 text-gray-300"
@@ -374,7 +374,7 @@ const BrandStageQuiz: React.FC = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Previous
           </Button>
-          
+
           <div className="flex space-x-2">
             {questions.map((_, index) => (
               <div
@@ -399,13 +399,13 @@ const BrandStageQuiz: React.FC = () => {
           <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full flex items-center justify-center mx-auto">
             <Mail className="w-8 h-8 text-white" />
           </div>
-          
+
           <h2 className="text-3xl font-bold text-white">
             Get Your Results + Free Brand Guide
           </h2>
-          
+
           <p className="text-gray-300">
-            Enter your email to see your personalized results and get a free PDF 
+            Enter your email to see your personalized results and get a free PDF
             summary with actionable next steps!
           </p>
         </div>
@@ -425,7 +425,7 @@ const BrandStageQuiz: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div>
                 <Label htmlFor="email" className="text-white">Email Address *</Label>
                 <Input
@@ -481,7 +481,7 @@ const BrandStageQuiz: React.FC = () => {
   if (currentStep === 'results' && result) {
     const tierColors = {
       beginner: "from-green-500 to-emerald-500",
-      intermediate: "from-yellow-500 to-orange-500", 
+      intermediate: "from-yellow-500 to-orange-500",
       advanced: "from-purple-500 to-pink-500"
     };
 
@@ -500,7 +500,7 @@ const BrandStageQuiz: React.FC = () => {
           <div className={cn("w-20 h-20 rounded-full flex items-center justify-center mx-auto bg-gradient-to-br", tierColors[result.tier])}>
             <TierIcon className="w-10 h-10 text-white" />
           </div>
-          
+
           <div>
             <h2 className="text-4xl font-bold text-white mb-4">{result.title}</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">{result.description}</p>
@@ -544,7 +544,7 @@ const BrandStageQuiz: React.FC = () => {
             {result.cta.primary}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
-          
+
           {result.cta.secondary && (
             <Button
               size="lg"
