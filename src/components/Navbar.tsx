@@ -97,7 +97,7 @@ const Navbar = () => {
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
-              <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 group-hover:opacity-30 blur transition-opacity duration-200"></div>
+              <div className="absolute -inset-2 bg-secondary-400/20 rounded-lg group-hover:bg-secondary-400/30 blur transition-all duration-200"></div>
             </div>
             <div className="hidden sm:block">
               <div className="text-lg lg:text-xl font-bold text-white">
