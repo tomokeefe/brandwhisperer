@@ -867,7 +867,7 @@ const EnhancedROICalculator = () => {
           </div>
 
           {/* CTA Section */}
-          <Card className="bg-gradient-to-r from-secondary-600/10 to-secondary-500/10 border-secondary-500/20">
+          <Card className="bg-secondary-600/10 border-secondary-500/20">
             <CardContent className="p-6 lg:p-8 text-center">
               <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">
                 Ready to Achieve These Results?

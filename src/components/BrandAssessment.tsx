@@ -588,7 +588,7 @@ const BrandAssessment: React.FC = () => {
         </Card>
 
         {/* Package Recommendation */}
-        <Card className="bg-gradient-to-r from-secondary-600/10 to-secondary-500/10 border-secondary-500/20">
+        <Card className="bg-secondary-600/10 border-secondary-500/20">
           <CardContent className="p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
               Recommended Package: {result.packageRecommendation}

@@ -367,7 +367,7 @@ const PricingCalculator = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Main Estimate */}
-            <div className="text-center p-6 bg-gradient-to-br from-primary-900/20 to-secondary-900/20 rounded-lg">
+            <div className="text-center p-6 bg-primary-900/20 rounded-lg">
               <div className="text-4xl font-bold text-white mb-2">
                 ${estimate.totalInvestment.toLocaleString()}
               </div>
