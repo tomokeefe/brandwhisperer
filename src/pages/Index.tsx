@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import ClientShowcase from "@/components/ClientShowcase";
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
