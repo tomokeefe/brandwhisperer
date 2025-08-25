@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,877 +11,387 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
   ArrowRight,
-  CheckCircle,
-  Clock,
-  DollarSign,
-  TrendingUp,
-  Users,
-  Target,
+  BookOpen,
+  HelpCircle,
+  Lightbulb,
+  Search,
   Zap,
-  Shield,
-  Rocket,
+  Palette,
+  Monitor,
+  Code,
+  Star,
+  CheckCircle,
   Calendar,
-  Briefcase,
-  FileText,
+  Mail,
+  Users,
+  TrendingUp,
+  Award,
 } from "lucide-react";
 
 const Services = () => {
-  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({
-    delay: 200,
-  });
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({
-    delay: 400,
-  });
-  const { ref: descRef, isVisible: descVisible } = useScrollAnimation({
-    delay: 600,
-  });
-  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({
-    delay: 800,
-  });
-  const { ref: packagesRef, isVisible: packagesVisible } = useScrollAnimation();
-  const { ref: comparisonRef, isVisible: comparisonVisible } =
-    useScrollAnimation();
-  const { ref: specialtyRef, isVisible: specialtyVisible } =
-    useScrollAnimation();
-  const { ref: scaleRef, isVisible: scaleVisible } = useScrollAnimation();
-  const { ref: equityRef, isVisible: equityVisible } = useScrollAnimation();
+  const [email, setEmail] = useState("");
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: resourcesRef, isVisible: resourcesVisible } = useScrollAnimation();
+  const { ref: consultingRef, isVisible: consultingVisible } = useScrollAnimation();
+  const { ref: customRef, isVisible: customVisible } = useScrollAnimation();
+  const { ref: whyUsRef, isVisible: whyUsVisible } = useScrollAnimation();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   const servicesPageSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://brandwhisperer.com/services/#service",
-    name: "Startup Brand Strategy Services",
-    description:
-      "Comprehensive brand strategy, visual identity, website design, UI/UX, and product design services for startups from pre-seed to Series A and beyond.",
+    name: "Brand Whisperer Services",
+    description: "Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups. Digital resources, consulting, and custom projects.",
     provider: {
       "@type": "Organization",
       "@id": "https://brandwhisperer.com/#organization",
     },
-    serviceType: "Brand Strategy Consulting",
+    serviceType: "Branding and Design Services",
     areaServed: {
       "@type": "Place",
       name: "Global",
     },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Brand Strategy Service Packages",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "Pre-Seed Foundation",
-          description: "Essential brand foundation for early-stage startups",
-          price: "15000",
-          priceCurrency: "USD",
-          itemOffered: {
-            "@type": "Service",
-            name: "Pre-Seed Brand Package",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Seed Growth System",
-          description: "Complete brand system for scaling startups",
-          price: "25000",
-          priceCurrency: "USD",
-          itemOffered: {
-            "@type": "Service",
-            name: "Seed Growth Brand Package",
-          },
-        },
-        {
-          "@type": "Offer",
-          name: "Series A Ready",
-          description: "Investment-grade brand strategy for funding rounds",
-          price: "40000",
-          priceCurrency: "USD",
-          itemOffered: {
-            "@type": "Service",
-            name: "Series A Brand Package",
-          },
-        },
-      ],
-    },
   };
 
-  const mainServices = [
+  const digitalResources = [
     {
-      title: "Pre-Seed Foundation",
-      description:
-        "Essential brand foundation for early-stage startups ready to scale smart from day one.",
-      pricing: "$15,000",
-      equity: "0.25%",
-      features: [
-        "Brand strategy & positioning",
-        "Logo & visual identity",
-        "Core messaging framework",
-        "Basic brand guidelines",
-        "Pitch deck template",
-        "Social media starter kit",
-      ],
-      timeline: "3-4 weeks",
-      link: "/contact",
-      ideal: "Pre-seed startups, MVP stage, early customers",
-      icon: Target,
+      title: "Startup Brand Stage Quiz",
+      description: "2-minute quiz to check your brand's readiness. Get a PDF summary and tips.",
+      price: "Free",
+      type: "quiz",
+      ctaText: "Take Quiz Now",
+      ctaLink: "/quiz",
+      icon: HelpCircle,
+      humor: "Is your brand a seedling or a rocket? Find out!",
+      color: "coral",
     },
     {
-      title: "Seed Growth System",
-      description:
-        "Comprehensive brand system designed for rapid scaling and Series A preparation.",
-      pricing: "$25,000",
-      equity: "0.2%",
-      features: [
-        "Complete visual identity system",
-        "Scalable design templates",
-        "Website design framework",
-        "Marketing collateral system",
-        "Brand voice & tone guide",
-        "6-month growth roadmap",
-      ],
-      timeline: "4-6 weeks",
-      badge: "Most Popular",
-      highlighted: true,
-      link: "/contact",
-      ideal: "Seed stage, scaling teams, Series A prep",
-      icon: TrendingUp,
+      title: "Foundations of Startup Branding",
+      description: "50-page guide on mission, audience, storytelling. Free templates included.",
+      price: "Free",
+      type: "ebook",
+      ctaText: "Download Free",
+      ctaLink: "/resources",
+      icon: BookOpen,
+      humor: "No mission? No problem—start here.",
+      color: "gold",
     },
     {
-      title: "Series A Ready",
-      description:
-        "Investment-grade brand system that attracts funding and scales to enterprise levels.",
-      pricing: "$40,000",
-      equity: "0.1%",
-      features: [
-        "Investor presentation materials",
-        "Enterprise sales collateral",
-        "Brand architecture for products",
-        "Crisis communication framework",
-        "Global expansion guidelines",
-        "12-month strategic roadmap",
-      ],
-      timeline: "6-8 weeks",
-      link: "/contact",
-      ideal: "Pre-Series A, high-growth teams, investor readiness",
-      icon: Rocket,
-    },
-  ];
-
-  const specialtyServices = [
-    {
-      icon: Users,
-      title: "Brand Advisory Retainer",
-      description:
-        "Ongoing strategic brand guidance as you scale through growth milestones.",
-      pricing: "$5,000/month",
-      equity: "0.15%",
-      features: [
-        "Monthly strategy sessions",
-        "Brand decision support",
-        "Evolution planning",
-        "Crisis brand guidance",
-        "Team training & education",
-        "Quarterly brand audits",
-      ],
-      timeline: "Ongoing",
-      type: "retainer",
+      title: "Visual Identity Mastery",
+      description: "50-page guide on logos, colors, visuals. Mood board templates.",
+      price: "Free",
+      type: "ebook",
+      ctaText: "Grab Free",
+      ctaLink: "/resources",
+      icon: Palette,
+      humor: "Make your brand pop, not flop.",
+      color: "gold",
     },
     {
-      icon: Calendar,
-      title: "Design Subscription",
-      description:
-        "Ongoing design support with monthly design assets, consultation hours, and strategic guidance for growing teams.",
-      pricing: "$8,500/month",
-      pricingAnnual: "$85,000/year",
-      equity: "0.5%",
-      features: [
-        "Monthly design asset allocation",
-        "Ongoing brand evolution support",
-        "Priority response time",
-        "Marketing material templates",
-        "Website & UI/UX design support",
-        "Product design consultation",
-        "Brand health monitoring",
-      ],
-      timeline: "Monthly/Annual",
+      title: "Mastery Series Subscription",
+      description: "Unlimited access to premium ebooks (#3-6: UX, Product Design, AI, Vibe Coding), templates, webinars. New content quarterly.",
+      price: "$9/month or $97/year",
       type: "subscription",
-      flexible: true,
-      savings: "Save $17,000 annually",
-    },
-    {
-      icon: Zap,
-      title: "Rapid Brand Sprint",
-      description:
-        "Emergency brand foundation for urgent deadlines and funding pressures.",
-      pricing: "$8,000",
-      equity: null,
-      features: [
-        "Logo & basic identity (5 days)",
-        "Simple brand guidelines",
-        "Core messaging points",
-        "Pitch deck template",
-        "Basic marketing materials",
-        "Implementation support",
-      ],
-      timeline: "1 week delivery",
-      type: "sprint",
-      urgent: true,
-    },
-    {
-      icon: FileText,
-      title: "Investor Pitch Package",
-      description:
-        "Professional presentation materials that make VCs take notice.",
-      pricing: "$3,000-$5,000",
-      equity: null,
-      features: [
-        "Pitch deck design",
-        "One-page company summary",
-        "Financial presentation templates",
-        "Demo day materials",
-        "Investor meeting collateral",
-        "Due diligence package",
-      ],
-      timeline: "2-3 weeks",
-      type: "pitch",
+      ctaText: "Join Premium",
+      ctaLink: "/resources",
+      icon: Star,
+      humor: "All the branding smarts, none of the overwhelm.",
+      color: "coral",
     },
   ];
 
-  const scaleFramework = [
+  const consultingServices = [
     {
-      letter: "S",
-      title: "Strategic Foundation",
-      description:
-        "Market analysis, competitive positioning, and investor-grade messaging that works at any scale",
+      title: "Brand Clarity Session",
+      description: "1-hour virtual call to define mission, vision, audience. Includes custom brand brief.",
+      price: "$199",
+      duration: "1 hour",
+      ctaText: "Book Now",
+      ctaLink: "/contact",
+      icon: Lightbulb,
+      humor: "Vague brand? We'll make it crystal-clear.",
+      color: "gold",
     },
     {
-      letter: "C",
-      title: "Creative Systems",
-      description:
-        "Visual identity designed for infinite scalability and consistent application across all touchpoints",
+      title: "Brand Scalability Audit",
+      description: "2-hour deep dive into branding, visuals, UX. 10-page report with steps.",
+      price: "$999",
+      duration: "2 hours",
+      ctaText: "Schedule Audit",
+      ctaLink: "/contact",
+      icon: Search,
+      humor: "No more 'hot mess' branding moments.",
+      color: "coral",
     },
     {
-      letter: "A",
-      title: "Architecture Planning",
-      description:
-        "Brand frameworks that accommodate business evolution, new products, and market expansion",
-    },
-    {
-      letter: "L",
-      title: "Launch Excellence",
-      description:
-        "Implementation support that ensures consistent brand execution across your entire organization",
-    },
-    {
-      letter: "E",
-      title: "Evolution Readiness",
-      description:
-        "Ongoing adaptation and optimization as you hit growth milestones and funding stages",
+      title: "AI Design Sprint",
+      description: "3-hour session using AI (Midjourney, Cursor) for logos, UI, or prototypes. Includes assets.",
+      price: "$1,499",
+      duration: "3 hours",
+      ctaText: "Start Sprint",
+      ctaLink: "/contact",
+      icon: Zap,
+      humor: "AI magic, human touch—design fast.",
+      color: "sapphire",
     },
   ];
+
+  const customProjects = [
+    {
+      title: "Startup Branding Package",
+      description: "Full brand identity (logo, palette, typography, guidelines) plus messaging. 4-6 weeks.",
+      priceRange: "$5,000-$10,000",
+      duration: "4-6 weeks",
+      ctaText: "Get Quote",
+      ctaLink: "/contact",
+      icon: Award,
+      humor: "Investor-ready branding, no DIY stress.",
+      color: "gold",
+    },
+    {
+      title: "UI/UX Design Overhaul",
+      description: "Complete UX audit, wireframes, prototypes, design system. 6-8 weeks.",
+      priceRange: "$7,500-$15,000",
+      duration: "6-8 weeks",
+      ctaText: "Request Quote",
+      ctaLink: "/contact",
+      icon: Monitor,
+      humor: "Users won't rage-quit with this UX.",
+      color: "coral",
+    },
+    {
+      title: "AI/Vibe Coding Prototype",
+      description: "Functional prototype using AI tools (Cursor, v0) for landing pages/UI. 3-5 weeks.",
+      priceRange: "$3,000-$7,500",
+      duration: "3-5 weeks",
+      ctaText: "Build It",
+      ctaLink: "/contact",
+      icon: Code,
+      humor: "Vibe your idea into reality—fast.",
+      color: "sapphire",
+    },
+  ];
+
+  const whyChooseUsPoints = [
+    "Scalable solutions for pre-seed to Series A",
+    "AI and vibe coding expertise for 2025",
+    "Proven results with startups like yours",
+    "40% funding boosts, 50% better conversions",
+  ];
+
+  const testimonials = [
+    {
+      quote: "Brand Whisperer doubled our sign-ups and made our pitch deck unforgettable!",
+      author: "Sarah K.",
+      company: "TechFlow (Series A)",
+    },
+    {
+      quote: "The AI design sprint saved us months of work. Our prototype looks incredible.",
+      author: "Mike R.",
+      company: "DataSync (Seed)",
+    },
+    {
+      quote: "Finally, a brand that doesn't look like every other startup. Investors noticed.",
+      author: "Alex P.",
+      company: "GrowthLab (Pre-Seed)",
+    },
+  ];
+
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const getColorClasses = (color: string, type: 'button' | 'bg' | 'text' | 'border' = 'button') => {
+    const colorMap = {
+      gold: {
+        button: "bg-yellow-500 hover:bg-yellow-600 text-black",
+        bg: "bg-yellow-500/10",
+        text: "text-yellow-500",
+        border: "border-yellow-500/30",
+      },
+      coral: {
+        button: "bg-orange-500 hover:bg-orange-600 text-white",
+        bg: "bg-orange-500/10",
+        text: "text-orange-500",
+        border: "border-orange-500/30",
+      },
+      sapphire: {
+        button: "bg-blue-600 hover:bg-blue-700 text-white",
+        bg: "bg-blue-600/10",
+        text: "text-blue-600",
+        border: "border-blue-600/30",
+      },
+    };
+    return colorMap[color as keyof typeof colorMap]?.[type] || colorMap.gold[type];
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle Mailchimp integration here
+    console.log("Email submitted:", email);
+    setEmail("");
+  };
 
   return (
-    <div className="bg-dark-950 pb-16">
+    <div className="bg-dark-950 pb-16" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <SEO
-        title="Startup Brand Strategy Services | Pre-Seed to Series A Branding Packages"
-        description="Comprehensive brand strategy packages for every growth stage. From $15K pre-seed foundation to $40K Series A ready. Equity options available. 150+ successful startups branded."
-        keywords="startup brand strategy, pre-seed branding, Series A branding, startup visual identity, brand strategy packages, startup brand consultant, equity-based branding, investor-ready brand"
+        title="Branding Services for Startups | Brand Whisperer"
+        description="Scalable branding, UI/UX, and AI solutions for startups. Free ebooks and quiz at brandwhisperer.io!"
+        keywords="startup branding, UI/UX design, AI prototyping 2025"
         url="https://brandwhisperer.com/services"
-        image="https://brandwhisperer.com/og-services.jpg"
         schema={servicesPageSchema}
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section 
+        ref={heroRef}
+        className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
+          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+        style={{ background: 'linear-gradient(135deg, #0F52BA 0%, #1a1a2e 100%)' }}
+      >
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <div
-              ref={badgeRef}
-              className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
-                badgeVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              <Briefcase className="w-4 h-4" />
-              Service Packages
-            </div>
-            <h1
-              ref={titleRef}
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white transition-all duration-700 ${
-                titleVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              Brands Built for Every{" "}
-              <span className="text-secondary-400">Growth Stage</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
+              Brand Whisperer Services: From{" "}
+              <span style={{ color: '#FFD700' }}>Meh to Money Magnet</span>
             </h1>
-            <p
-              ref={descRef}
-              className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
-                descVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              From pre-seed to Series A, we have comprehensive brand strategy,
-              visual identity, website design, UI/UX, and product design
-              packages for your current stage with the scalability to grow with
-              your business. Strategic partnerships with equity alignment
-              because we believe in your success.
+            <p className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+              Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups. 
+              Start free with our ebooks or quiz, or go big with custom projects.
             </p>
-            <div
-              ref={buttonsRef}
-              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
-                buttonsVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
+            <p className="text-base text-white/70 mb-8 italic">
+              Ready to make your brand shine brighter than a Series A pitch deck?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 hover:scale-105 transition-all duration-300"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
               >
-                <Link to="/contact">Schedule a Call</Link>
+                <Link to="/quiz">Take Our Free Quiz</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold"
               >
-                <Link to="#compare-packages">Compare Packages</Link>
+                <Link to="/resources">Get Free Ebook</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Service Packages */}
-      <section
-        id="packages"
-        ref={packagesRef}
+      {/* Digital Resources Section */}
+      <section 
+        ref={resourcesRef}
         className={`section-spacing transition-all duration-700 ${
-          packagesVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+          resourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Core Brand Packages
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+              Digital Resources: DIY Branding That Packs a Punch
             </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Comprehensive brand strategy, visual identity, website design,
-              UI/UX, and product design systems for startups at different growth
-              stages. Each package includes equity participation for true
-              partnership.
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Learn to brand like a pro with our free and premium tools—no design degree needed.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {mainServices.map((service, index) => {
-              const serviceId = service.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")
-                .replace(/[^a-z0-9-]/g, "");
-
-              return (
-                <div key={index} id={serviceId} className="space-y-4">
-                  <ServiceCard {...service} />
-                  <Card className="bg-dark-800/50 border-dark-700">
-                    <CardContent className="pt-6">
-                      <div className="space-y-3 text-sm">
-                        <div className="flex items-center space-x-2">
-                          <Clock className="w-4 h-4 text-secondary-400" />
-                          <span className="text-gray-400">
-                            Timeline: {service.timeline}
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Target className="w-4 h-4 text-secondary-400" />
-                          <span className="text-gray-400">
-                            Ideal for: {service.ideal}
-                          </span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Package Comparison Table */}
-      <section
-        id="compare-packages"
-        ref={comparisonRef}
-        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          comparisonVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Compare Brand Packages
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto mb-12">
-              Choose the perfect package for your growth stage. All packages
-              include equity options to align our success with yours.
-            </p>
-          </div>
-
-          {/* Comparison Table */}
-          <div className="overflow-x-auto mb-16">
-            <div className="min-w-[800px] bg-dark-800/50 rounded-xl border border-dark-700 relative pt-4">
-              {/* Table Header */}
-              <div className="grid grid-cols-4 border-b border-dark-700">
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-white">Features</h3>
-                </div>
-                <div className="p-6 text-center border-l border-dark-700">
-                  <div className="mb-2">
-                    <Badge
-                      variant="outline"
-                      className="border-primary-500/30 text-primary-400 bg-primary-500/10 mb-2"
-                    >
-                      <Target className="w-3 h-3 mr-1" />
-                      Early Stage
-                    </Badge>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-1">
-                    Pre-Seed Foundation
-                  </h3>
-                  <p className="text-2xl font-bold text-secondary-400 mb-1">
-                    $15,000
-                  </p>
-                  <p className="text-sm text-gray-400">+ 0.25% equity</p>
-                  <p className="text-xs text-gray-500 mt-2">3-4 weeks</p>
-                </div>
-                <div className="p-6 text-center border-l border-dark-700 bg-secondary-500/5 relative">
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 z-10">
-                    <Badge className="bg-secondary-600 text-white">
-                      Most Popular
-                    </Badge>
-                  </div>
-                  <div className="mb-2 mt-2">
-                    <Badge
-                      variant="outline"
-                      className="border-secondary-500/30 text-secondary-400 bg-secondary-500/10 mb-2"
-                    >
-                      <TrendingUp className="w-3 h-3 mr-1" />
-                      Growth Stage
-                    </Badge>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-1">
-                    Seed Growth System
-                  </h3>
-                  <p className="text-2xl font-bold text-secondary-400 mb-1">
-                    $25,000
-                  </p>
-                  <p className="text-sm text-gray-400">+ 0.2% equity</p>
-                  <p className="text-xs text-gray-500 mt-2">4-6 weeks</p>
-                </div>
-                <div className="p-6 text-center border-l border-dark-700">
-                  <div className="mb-2">
-                    <Badge
-                      variant="outline"
-                      className="border-green-500/30 text-green-400 bg-green-500/10 mb-2"
-                    >
-                      <Rocket className="w-3 h-3 mr-1" />
-                      Scale Ready
-                    </Badge>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-1">
-                    Series A Ready
-                  </h3>
-                  <p className="text-2xl font-bold text-secondary-400 mb-1">
-                    $40,000
-                  </p>
-                  <p className="text-sm text-gray-400">+ 0.1% equity</p>
-                  <p className="text-xs text-gray-500 mt-2">6-8 weeks</p>
-                </div>
-              </div>
-
-              {/* Feature Comparison Rows */}
-              {[
-                {
-                  category: "Brand Strategy",
-                  features: [
-                    {
-                      name: "Brand positioning & strategy",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Competitive analysis",
-                      preSeed: "Basic",
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Target audience research",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: "Advanced",
-                    },
-                    {
-                      name: "Brand architecture",
-                      preSeed: false,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Brand storytelling framework",
-                      preSeed: "Basic",
-                      seed: true,
-                      seriesA: "Advanced",
-                    },
-                  ],
-                },
-                {
-                  category: "Visual Identity",
-                  features: [
-                    {
-                      name: "Logo & mark design",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Color palette & typography",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Brand guidelines",
-                      preSeed: "Basic",
-                      seed: "Complete",
-                      seriesA: "Enterprise",
-                    },
-                    {
-                      name: "Business card & stationery",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Icon system",
-                      preSeed: false,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Pattern & texture library",
-                      preSeed: false,
-                      seed: false,
-                      seriesA: true,
-                    },
-                  ],
-                },
-                {
-                  category: "Marketing Materials",
-                  features: [
-                    {
-                      name: "Pitch deck template",
-                      preSeed: true,
-                      seed: true,
-                      seriesA: "Custom design",
-                    },
-                    {
-                      name: "Website design framework",
-                      preSeed: false,
-                      seed: true,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Social media templates",
-                      preSeed: "Starter kit",
-                      seed: "Complete system",
-                      seriesA: "Enterprise system",
-                    },
-                    {
-                      name: "Marketing collateral",
-                      preSeed: false,
-                      seed: true,
-                      seriesA: "Full suite",
-                    },
-                    {
-                      name: "Sales materials",
-                      preSeed: false,
-                      seed: "Basic",
-                      seriesA: "Enterprise grade",
-                    },
-                  ],
-                },
-                {
-                  category: "Strategic Support",
-                  features: [
-                    {
-                      name: "Brand messaging guide",
-                      preSeed: "Core messages",
-                      seed: "Voice & tone guide",
-                      seriesA: "Complete messaging system",
-                    },
-                    {
-                      name: "Implementation roadmap",
-                      preSeed: false,
-                      seed: "6-month plan",
-                      seriesA: "12-month strategic plan",
-                    },
-                    {
-                      name: "Crisis communication plan",
-                      preSeed: false,
-                      seed: false,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Global expansion guidelines",
-                      preSeed: false,
-                      seed: false,
-                      seriesA: true,
-                    },
-                    {
-                      name: "Investor relations materials",
-                      preSeed: false,
-                      seed: "Basic",
-                      seriesA: "Complete suite",
-                    },
-                  ],
-                },
-                {
-                  category: "Ongoing Support",
-                  features: [
-                    {
-                      name: "Revision rounds",
-                      preSeed: "2 rounds",
-                      seed: "3 rounds",
-                      seriesA: "Unlimited",
-                    },
-                    {
-                      name: "Follow-up consultation",
-                      preSeed: "1 month",
-                      seed: "3 months",
-                      seriesA: "6 months",
-                    },
-                    {
-                      name: "Team training session",
-                      preSeed: false,
-                      seed: true,
-                      seriesA: "Multiple sessions",
-                    },
-                    {
-                      name: "Brand health monitoring",
-                      preSeed: false,
-                      seed: false,
-                      seriesA: true,
-                    },
-                  ],
-                },
-              ].map((category, categoryIndex) => (
-                <div key={categoryIndex}>
-                  {/* Category Header */}
-                  <div className="grid grid-cols-4 border-b border-dark-700/50 bg-dark-700/30">
-                    <div className="p-4 font-semibold text-secondary-400 text-sm uppercase tracking-wide">
-                      {category.category}
-                    </div>
-                    <div className="border-l border-dark-700/50"></div>
-                    <div className="border-l border-dark-700/50"></div>
-                    <div className="border-l border-dark-700/50"></div>
-                  </div>
-
-                  {/* Features */}
-                  {category.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="grid grid-cols-4 border-b border-dark-700/50 hover:bg-dark-700/20 transition-colors"
-                    >
-                      <div className="p-4 text-gray-300 text-sm">
-                        {feature.name}
-                      </div>
-                      <div className="p-4 text-center border-l border-dark-700/50">
-                        {feature.preSeed === true ? (
-                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
-                        ) : feature.preSeed === false ? (
-                          <div className="w-5 h-5 mx-auto"></div>
-                        ) : (
-                          <span className="text-xs text-gray-400">
-                            {feature.preSeed}
-                          </span>
-                        )}
-                      </div>
-                      <div className="p-4 text-center border-l border-dark-700/50 bg-secondary-500/5">
-                        {feature.seed === true ? (
-                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
-                        ) : feature.seed === false ? (
-                          <div className="w-5 h-5 mx-auto"></div>
-                        ) : (
-                          <span className="text-xs text-gray-400">
-                            {feature.seed}
-                          </span>
-                        )}
-                      </div>
-                      <div className="p-4 text-center border-l border-dark-700/50">
-                        {feature.seriesA === true ? (
-                          <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
-                        ) : feature.seriesA === false ? (
-                          <div className="w-5 h-5 mx-auto"></div>
-                        ) : (
-                          <span className="text-xs text-gray-400">
-                            {feature.seriesA}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
-
-              {/* CTA Row */}
-              <div className="grid grid-cols-4 p-6">
-                <div></div>
-                <div className="text-center border-l border-dark-700/50 px-4">
-                  <Button
-                    asChild
-                    className="w-full bg-primary-600 hover:bg-primary-700 text-white"
-                  >
-                    <Link to="/contact">Get Started</Link>
-                  </Button>
-                </div>
-                <div className="text-center border-l border-dark-700/50 px-4 bg-secondary-500/5">
-                  <Button
-                    asChild
-                    className="w-full bg-secondary-600 hover:bg-secondary-700 text-white"
-                  >
-                    <Link to="/contact">Choose Popular</Link>
-                  </Button>
-                </div>
-                <div className="text-center border-l border-dark-700/50 px-4">
-                  <Button
-                    asChild
-                    className="w-full bg-green-600 hover:bg-green-700 text-white"
-                  >
-                    <Link to="/contact">Scale Now</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialty Services */}
-      <section
-        ref={specialtyRef}
-        className={`section-spacing transition-all duration-700 ${
-          specialtyVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Specialized Offerings
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Flexible Solutions for Every Need
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Beyond our core packages, we offer specialized services for urgent
-              needs, ongoing support, and specific investor requirements.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {specialtyServices.map((service, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {digitalResources.map((resource, index) => (
               <Card
                 key={index}
-                className={`bg-dark-900/50 border-dark-700 card-hover relative ${
-                  service.urgent ? "ring-2 ring-red-500/30" : ""
-                } ${service.flexible ? "ring-2 ring-secondary-500/30" : ""}`}
+                className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group overflow-hidden"
               >
-                {service.urgent && (
-                  <Badge className="absolute -top-2 left-4 bg-red-600 text-white">
-                    Urgent
-                  </Badge>
-                )}
-                {service.flexible && (
-                  <Badge className="absolute -top-2 left-4 bg-secondary-600 text-white">
-                    Flexible
-                  </Badge>
-                )}
                 <CardHeader>
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-secondary-400" />
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(resource.color, 'bg')}`}>
+                    <resource.icon className={`w-8 h-8 ${getColorClasses(resource.color, 'text')}`} />
                   </div>
-                  <CardTitle className="text-xl text-white">
+                  <CardTitle className="text-xl text-white mb-2">
+                    {resource.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-300">
+                    {resource.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-secondary-400 mb-2">
+                      {resource.price}
+                    </div>
+                    <p className="text-sm text-gray-400 italic">
+                      {resource.humor}
+                    </p>
+                  </div>
+                  <Button
+                    asChild
+                    className={`w-full ${getColorClasses(resource.color)} font-semibold`}
+                  >
+                    <Link to={resource.ctaLink}>{resource.ctaText}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consulting Services Section */}
+      <section 
+        ref={consultingRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          consultingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+              Consulting: Your Brand's Personal Trainer
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              One-on-one sessions to get your brand investor-ready or user-loved.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {consultingServices.map((service, index) => (
+              <Card
+                key={index}
+                className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group"
+              >
+                <CardHeader>
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(service.color, 'bg')}`}>
+                    <service.icon className={`w-8 h-8 ${getColorClasses(service.color, 'text')}`} />
+                  </div>
+                  <CardTitle className="text-xl text-white mb-2">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-400">
+                  <CardDescription className="text-gray-300">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    {service.type === "subscription" ? (
-                      <div>
-                        <div className="text-2xl font-bold text-secondary-400">
-                          {service.pricing}
-                        </div>
-                        <div className="text-lg text-gray-300">
-                          {service.pricingAnnual}
-                        </div>
-                        {service.savings && (
-                          <div className="text-sm text-green-400 font-medium">
-                            {service.savings}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="text-2xl font-bold text-secondary-400">
-                        {service.pricing}
-                      </div>
-                    )}
-                    {service.equity && (
-                      <div className="text-sm text-gray-400">
-                        + {service.equity} equity
-                      </div>
-                    )}
-                    {service.timeline && (
-                      <div className="flex items-center space-x-2 text-sm text-gray-400">
-                        <Clock className="w-4 h-4" />
-                        <span>{service.timeline}</span>
-                      </div>
-                    )}
+                <CardContent>
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-secondary-400 mb-1">
+                      {service.price}
+                    </div>
+                    <div className="text-sm text-gray-400 mb-2">
+                      Duration: {service.duration}
+                    </div>
+                    <p className="text-sm text-gray-400 italic">
+                      {service.humor}
+                    </p>
                   </div>
-
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-secondary-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
                   <Button
                     asChild
-                    className="w-full bg-primary-600 hover:bg-primary-700"
+                    className={`w-full ${getColorClasses(service.color)} font-semibold`}
                   >
-                    <Link to="/contact">Get Started</Link>
+                    <Link to={service.ctaLink}>{service.ctaText}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -891,50 +400,58 @@ const Services = () => {
         </div>
       </section>
 
-      {/* SCALE Framework */}
-      <section
-        ref={scaleRef}
-        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          scaleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      {/* Custom Projects Section */}
+      <section 
+        ref={customRef}
+        className={`section-spacing transition-all duration-700 ${
+          customVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Our Methodology
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              The SCALE Framework
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+              Custom Projects: From Garage to Unicorn
             </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Our proven 5-step methodology that ensures every brand we build
-              can scale from startup to unicorn.
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Bespoke branding, UI/UX, and AI prototyping to scale your startup.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {scaleFramework.map((step, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {customProjects.map((project, index) => (
               <Card
                 key={index}
-                className="bg-dark-900/50 border-dark-700 text-center card-hover"
+                className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-secondary-400">
-                      {step.letter}
-                    </span>
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(project.color, 'bg')}`}>
+                    <project.icon className={`w-8 h-8 ${getColorClasses(project.color, 'text')}`} />
                   </div>
-                  <CardTitle className="text-lg text-white">
-                    {step.title}
+                  <CardTitle className="text-xl text-white mb-2">
+                    {project.title}
                   </CardTitle>
+                  <CardDescription className="text-gray-300">
+                    {project.description}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-secondary-400 mb-1">
+                      {project.priceRange}
+                    </div>
+                    <div className="text-sm text-gray-400 mb-2">
+                      Timeline: {project.duration}
+                    </div>
+                    <p className="text-sm text-gray-400 italic">
+                      {project.humor}
+                    </p>
+                  </div>
+                  <Button
+                    asChild
+                    className={`w-full ${getColorClasses(project.color)} font-semibold`}
+                  >
+                    <Link to={project.ctaLink}>{project.ctaText}</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -942,133 +459,137 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Why Equity Participation */}
-      <section
-        ref={equityRef}
-        className={`section-spacing transition-all duration-700 ${
-          equityVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+      {/* Why Choose Us Section */}
+      <section 
+        ref={whyUsRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
+        style={{ background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)' }}
       >
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-black">
+              Why Brand Whisperer?
+            </h2>
+            <p className="text-lg text-black/80 max-w-3xl mx-auto mb-8">
+              Our stra-tactical™ approach blends strategy and creativity to deliver results—40% funding boosts, 50% better conversions.
+            </p>
+            <p className="text-base text-black/70 italic">
+              We're not your average agency—think less suits, more startup swagger.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge
-                variant="outline"
-                className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-              >
-                Partnership Over Vendorship
-              </Badge>
-              <h2 className="text-display-md font-bold mb-6 text-white">
-                Why We Take Equity
-              </h2>
-              <div className="space-y-4 text-gray-300">
-                <p>
-                  We take equity because we believe in true partnership. When
-                  you succeed, we succeed. When you face challenges, we're
-                  invested in solutions. This isn't a transaction—it's a
-                  relationship that lasts through your growth journey.
-                </p>
-                <p>
-                  Equity participation allows us to offer startup-friendly
-                  pricing while ensuring we're aligned with your long-term
-                  success. We're not just building a brand for today—we're
-                  building for the company you'll become.
-                </p>
-              </div>
-              <div className="mt-8 space-y-4">
-                {[
-                  "Aligned incentives for long-term success",
-                  "Startup-friendly cash pricing",
-                  "Ongoing support through growth stages",
-                  "True partnership, not just vendor relationship",
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-secondary-500" />
-                    <span className="text-gray-300">{benefit}</span>
+              <ul className="space-y-4">
+                {whyChooseUsPoints.map((point, index) => (
+                  <li key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                    <span className="text-black font-medium">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <div className="text-center">
+                <div className="flex items-center justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 text-yellow-600 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-black mb-6 leading-relaxed">
+                  "{testimonials[currentTestimonial].quote}"
+                </blockquote>
+                <div>
+                  <div className="font-semibold text-black">
+                    {testimonials[currentTestimonial].author}
                   </div>
+                  <div className="text-black/70">
+                    {testimonials[currentTestimonial].company}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Testimonial Navigation */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentTestimonial ? 'bg-black scale-125' : 'bg-black/30'
+                    }`}
+                  />
                 ))}
               </div>
             </div>
-
-            <Card className="bg-dark-900/50 border-dark-700">
-              <CardHeader>
-                <CardTitle className="text-2xl text-white">
-                  Service Comparison
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
-                    <span className="text-gray-300">Foundation</span>
-                    <span className="text-secondary-400 font-semibold">
-                      $15K + 0.25%
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
-                    <span className="text-gray-300">Growth System</span>
-                    <span className="text-secondary-400 font-semibold">
-                      $25K + 0.2%
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
-                    <span className="text-gray-300">Series A Ready</span>
-                    <span className="text-secondary-400 font-semibold">
-                      $40K + 0.1%
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-dark-700">
-                    <span className="text-gray-300">Advisory Retainer</span>
-                    <span className="text-secondary-400 font-semibold">
-                      $5K/mo + 0.15%
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-gray-300">Sprint/Pitch</span>
-                    <span className="text-secondary-400 font-semibold">
-                      $3K-$8K
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-spacing bg-primary-900">
+      <section 
+        ref={ctaRef}
+        className={`section-spacing transition-all duration-700 ${
+          ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+        style={{ background: 'linear-gradient(135deg, #0F52BA 0%, #1a1a2e 100%)' }}
+      >
         <div className="container-custom text-center">
-          <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-            Ready to Start Your Brand Journey?
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
+            Ready to Make Your Brand Unforgettable?
           </h2>
-          <p className="text-body-lg text-primary-100 mb-8 max-w-3xl mx-auto">
-            Schedule a free consultation to discuss your startup's unique needs
-            and find the perfect package for your growth stage.
+          <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto">
+            Start free, go premium, or partner with us for custom magic.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               asChild
               size="lg"
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
             >
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2"
+              <Link to="/quiz">Take Free Quiz</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold"
+            >
+              <Link to="/resources">Get Free Ebook</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
+            >
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
+
+          {/* Email Capture Form */}
+          <div className="max-w-md mx-auto">
+            <h3 className="text-xl font-semibold text-white mb-4">
+              Join our waitlist for exclusive tips!
+            </h3>
+            <form onSubmit={handleEmailSubmit} className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                required
+              />
+              <Button
+                type="submit"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-6"
               >
-                <span>Schedule Free Consultation</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-300 text-primary-100 hover:bg-primary-100 hover:text-primary-900 px-8 py-4"
-            >
-              <Link to="/about">Learn About Our Process</Link>
-            </Button>
+                <Mail className="w-4 h-4" />
+              </Button>
+            </form>
           </div>
         </div>
       </section>
