@@ -1,7 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Star, TrendingUp } from "lucide-react";
-import { clientLogos, type Logo } from "@/data/clientLogos";
+
+interface Logo {
+  id: number;
+  name: string;
+  url?: string;
+  category?: string;
+}
 
 interface LogoWallProps {
   logos?: Logo[];
@@ -22,9 +28,46 @@ const LogoWall: React.FC<LogoWallProps> = ({
   ctaButtonText = "Get Your Free Assessment",
   onCtaClick,
 }) => {
-  // Use provided logos or default to all client logos, ensuring we have exactly 50
-  const useLogos = logos.length > 0 ? logos : clientLogos;
-  const displayLogos = useLogos.slice(0, 50);
+  // Generate placeholder logos if not enough provided
+  const generatePlaceholderLogos = (): Logo[] => {
+    const placeholderCount = Math.max(0, 50 - logos.length);
+    const placeholders: Logo[] = [];
+
+    const categories = [
+      "FinTech",
+      "HealthTech",
+      "SaaS",
+      "E-commerce",
+      "AI/ML",
+      "Crypto",
+      "EdTech",
+      "PropTech",
+    ];
+    const companyTypes = [
+      "Inc",
+      "Labs",
+      "Co",
+      "Tech",
+      "AI",
+      "Pro",
+      "Hub",
+      "Ventures",
+    ];
+
+    for (let i = 0; i < placeholderCount; i++) {
+      const category = categories[i % categories.length];
+      const type = companyTypes[i % companyTypes.length];
+      placeholders.push({
+        id: logos.length + i + 1,
+        name: `${category}${type}`,
+        category: category,
+      });
+    }
+
+    return placeholders;
+  };
+
+  const allLogos = [...logos, ...generatePlaceholderLogos()].slice(0, 50);
 
   const handleDefaultCtaClick = () => {
     const contactSection = document.getElementById("contact");
@@ -40,7 +83,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-display-lg font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-display-lg font-bold mb-4 text-white">
             {title}
           </h2>
           <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -52,7 +95,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
         <div className="flex flex-wrap justify-center gap-8 mb-12 lg:mb-16 px-4">
           <div className="flex items-center gap-2 text-secondary-400">
             <Users className="w-5 h-5" />
-            <span className="font-semibold">150+ Brands</span>
+            <span className="font-semibold">50+ Brands</span>
           </div>
           <div className="flex items-center gap-2 text-secondary-400">
             <Star className="w-5 h-5" />
@@ -66,7 +109,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
 
         {/* Logo Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 lg:gap-6 mb-16 lg:mb-20">
-          {displayLogos.map((logo, index) => (
+          {allLogos.map((logo, index) => (
             <div
               key={logo.id}
               className="group relative aspect-square bg-dark-800/50 rounded-lg border border-dark-700/50 hover:border-secondary-500/30 transition-all duration-300 hover:bg-dark-800/80 flex items-center justify-center p-4"
@@ -74,30 +117,25 @@ const LogoWall: React.FC<LogoWallProps> = ({
                 animationDelay: `${index * 50}ms`,
               }}
             >
-              <img
-                src={logo.url}
-                alt={logo.alt}
-                className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                loading="lazy"
-                onError={(e) => {
-                  // Fallback to text display if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `
-                      <div class="text-center">
-                        <div class="text-sm font-medium text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-tight">
-                          ${logo.name}
-                        </div>
-                        <div class="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
-                          ${logo.category}
-                        </div>
-                      </div>
-                    `;
-                  }
-                }}
-              />
+              {logo.url ? (
+                <img
+                  src={logo.url}
+                  alt={`${logo.name} logo`}
+                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="text-center">
+                  <div className="text-sm font-medium text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-tight">
+                    {logo.name}
+                  </div>
+                  {logo.category && (
+                    <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
+                      {logo.category}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-secondary-500/0 to-secondary-600/0 group-hover:from-secondary-500/10 group-hover:to-secondary-600/5 transition-all duration-300" />
@@ -142,7 +180,7 @@ const LogoWall: React.FC<LogoWallProps> = ({
                     </div>
                   ))}
                 </div>
-                <span>Join 150+ successful founders</span>
+                <span>Join 50+ successful founders</span>
               </div>
             </div>
           </div>

@@ -442,10 +442,10 @@ const Clients = () => {
               150+ Success Stories
             </div>
 
-            <h1 className="text-display-lg lg:text-display-xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+            <h1 className="text-display-lg lg:text-display-xl font-bold mb-6 text-white">
               Brands That Raised
               <br />
-              <span className="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
+              <span className="text-secondary-400">
                 $2.5B+ Together
               </span>
             </h1>
@@ -525,7 +525,7 @@ const Clients = () => {
       <section className="py-16 lg:py-24 bg-dark-900/50">
         <div className="container-custom">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-display-lg font-bold mb-4 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+            <h2 className="text-display-lg font-bold mb-4 text-white">
               What Our Clients Say
             </h2>
             <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">

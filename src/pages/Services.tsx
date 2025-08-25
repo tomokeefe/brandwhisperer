@@ -845,8 +845,8 @@ const Services = () => {
                 className="bg-dark-900/50 border-dark-700 text-center card-hover"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-secondary-400">
                       {step.letter}
                     </span>
                   </div>

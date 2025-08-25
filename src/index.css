@@ -222,7 +222,7 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent;
+    @apply text-secondary-400;
   }
 
   /* Button hover effects */
