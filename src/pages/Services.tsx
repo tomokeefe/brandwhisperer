@@ -139,7 +139,7 @@ const Services = () => {
     {
       title: "AI Design Sprint",
       description:
-        "3-hour session using AI (Midjourney, Cursor) for logos, UI, or prototypes. Includes assets.",
+        "3-hour session using AI (Visual Electric, Builder.io) for logos, UI, or prototypes. Includes assets.",
       price: "$1,499",
       duration: "3 hours",
       ctaText: "Start Sprint",
