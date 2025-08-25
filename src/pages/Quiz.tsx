@@ -1,8 +1,11 @@
 import React from "react";
 import SEO from "@/components/SEO";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import BrandStageQuiz from "@/components/BrandStageQuiz";
 
 const Quiz = () => {
+  const { ref: quizRef, isVisible: quizVisible } = useScrollAnimation();
+
   const quizPageSchema = {
     "@context": "https://schema.org",
     "@type": "Quiz",
