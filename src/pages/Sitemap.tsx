@@ -256,7 +256,7 @@ const Sitemap = () => {
 
             {/* Quick Stats */}
             <section>
-              <Card className="bg-gradient-to-br from-primary-900/20 to-secondary-900/20 border-primary-500/30">
+              <Card className="bg-primary-900/20 border-primary-500/30">
                 <CardContent className="pt-8 text-center">
                   <h2 className="text-2xl font-bold text-white mb-6">
                     Website Statistics
