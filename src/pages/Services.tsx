@@ -266,11 +266,8 @@ const Services = () => {
               type="video/mp4"
             />
           </video>
-          {/* Gradient Overlay */}
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{ background: 'linear-gradient(135deg, rgba(15, 82, 186, 0.8) 0%, rgba(26, 26, 46, 0.9) 100%)' }}
-          />
+          {/* Video Overlay */}
+          <div className="absolute inset-0 bg-dark-950/60" />
         </div>
 
         <div className="container-custom relative z-10">
@@ -553,10 +550,9 @@ const Services = () => {
       {/* CTA Section */}
       <section
         ref={ctaRef}
-        className={`section-spacing transition-all duration-700 ${
+        className={`section-spacing bg-primary-900 transition-all duration-700 ${
           ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
-        style={{ background: 'linear-gradient(135deg, #0F52BA 0%, #1a1a2e 100%)' }}
       >
         <div className="container-custom text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
