@@ -141,53 +141,51 @@ const Index = () => {
 
   const services = [
     {
-      title: "Pre-Seed Package",
+      title: "Digital Resources",
       description:
-        "Perfect for early-stage startups who need a strong foundation without breaking the bank.",
-      pricing: "$12,000",
-      equity: "0.25%",
+        "Start your brand journey with our free ebooks, quiz, and premium subscription. DIY branding that actually works.",
+      pricing: "Free - $97/year",
       features: [
-        "Brand strategy & positioning",
-        "Basic visual identity system",
-        "Simple brand guidelines",
-        "Startup-ready logo package",
-        "Initial messaging framework",
+        "Free brand stage quiz",
+        "Startup branding ebooks",
+        "Visual identity mastery guide",
+        "Premium subscription access",
+        "Templates & frameworks",
+        "Quarterly content updates",
       ],
-      link: "/services#pre-seed",
+      link: "/services",
     },
     {
-      title: "Seed Growth Package",
+      title: "Brand Consulting",
       description:
-        "Comprehensive brand system for startups ready to scale their marketing and customer acquisition.",
-      pricing: "$25,000",
-      equity: "0.2%",
-      features: [
-        "Complete brand system",
-        "Advanced messaging framework",
-        "Marketing asset templates",
-        "Pitch deck integration",
-        "Implementation guidelines",
-        "Growth-ready foundations",
-      ],
+        "One-on-one sessions to get your brand investor-ready. From clarity sessions to AI design sprints.",
+      pricing: "$199 - $1,499",
       badge: "Most Popular",
       highlighted: true,
-      link: "/services#seed-growth",
+      features: [
+        "Brand clarity session (1hr)",
+        "Brand scalability audit (2hrs)",
+        "AI design sprint (3hrs)",
+        "Custom brand brief",
+        "Actionable recommendations",
+        "Implementation roadmap",
+      ],
+      link: "/services",
     },
     {
-      title: "Series A Ready",
+      title: "Custom Projects",
       description:
-        "Investment-grade brand system designed to impress investors and scale with rapid growth.",
-      pricing: "$40,000",
-      equity: "0.1%",
+        "Bespoke branding, UI/UX, and AI prototyping to scale your startup from garage to unicorn.",
+      pricing: "$3,000 - $15,000",
       features: [
-        "Investment-grade brand system",
-        "Comprehensive style guide",
-        "Advanced brand architecture",
+        "Complete brand identity",
+        "UI/UX design overhaul",
+        "AI/Vibe coding prototype",
         "Investor presentation materials",
-        "Scale-ready implementation",
-        "Ongoing brand evolution plan",
+        "Design system development",
+        "4-8 week delivery",
       ],
-      link: "/services#series-a",
+      link: "/services",
     },
   ];
 
@@ -246,7 +244,7 @@ const Index = () => {
     },
     {
       quote:
-        "Our first landing page converted at 45% – unheard of for B2B SaaS. The messaging framework helped us find product-market fit faster because prospects immediately understood our value.",
+        "Our first landing page converted at 45% ��� unheard of for B2B SaaS. The messaging framework helped us find product-market fit faster because prospects immediately understood our value.",
       author: "Jennifer Lee",
       title: "Co-founder",
       company: "Series A",
@@ -373,14 +371,14 @@ const Index = () => {
               variant="outline"
               className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
             >
-              Service Packages
+              Service Offerings
             </Badge>
             <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Brands Built for Every Growth Stage
+              From DIY Resources to Custom Magic
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto mb-8">
-              From pre-seed to Series A, we have packages designed for your
-              current stage with the scalability to grow with your business.
+              Start free with our ebooks and quiz, book a consulting session, or go big with custom branding projects.
+              We have solutions for every stage and budget.
             </p>
             <Button
               asChild
