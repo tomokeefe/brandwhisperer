@@ -1,11 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import LogoWall from "@/components/LogoWall";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, TrendingUp, Users, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Clients = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: logosRef, isVisible: logosVisible } = useScrollAnimation();
+  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
+
   // Real client logos
   const clientLogos = [
     {

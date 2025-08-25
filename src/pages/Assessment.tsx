@@ -4,6 +4,9 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import BrandAssessment from "@/components/BrandAssessment";
 
 const Assessment = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+
   return (
     <>
       <Helmet>
@@ -73,7 +76,12 @@ const Assessment = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section
+        ref={heroRef}
+        className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
+          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-950 to-dark-900" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
@@ -86,7 +94,12 @@ const Assessment = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 lg:py-20 bg-dark-900/30">
+      <section
+        ref={featuresRef}
+        className={`py-16 lg:py-20 bg-dark-900/30 transition-all duration-700 ${
+          featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">

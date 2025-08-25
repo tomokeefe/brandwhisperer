@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -24,6 +25,9 @@ import {
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: featuredRef, isVisible: featuredVisible } = useScrollAnimation();
+  const { ref: postsRef, isVisible: postsVisible } = useScrollAnimation();
   const featuredPost = {
     title:
       "The $50M Rebrand Mistake: Why Most Startups Break Their Brands During Hypergrowth",
