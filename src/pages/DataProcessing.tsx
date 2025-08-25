@@ -24,7 +24,7 @@ const DataProcessing = () => {
             >
               Data Protection
             </Badge>
-            <h1 className="text-display-lg font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               Data Processing Agreement
             </h1>
             <p className="text-body-lg text-gray-300 mb-4">

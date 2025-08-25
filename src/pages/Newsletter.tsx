@@ -200,7 +200,7 @@ const Newsletter = () => {
               <Sparkles className="w-4 h-4" />3 Tiers Available
             </div>
 
-            <h1 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               The Newsletter That Prevents{" "}
               <span className="text-secondary-400">$500K+ Rebrands</span>
             </h1>

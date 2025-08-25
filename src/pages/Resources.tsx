@@ -211,7 +211,7 @@ const Resources = () => {
             >
               Free Resources
             </Badge>
-            <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               Brand{" "}
               <span className="text-secondary-400">Resources & Tools</span>
             </h1>
