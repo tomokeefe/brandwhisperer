@@ -447,7 +447,7 @@ const Clients = () => {
               150+ Success Stories
             </div>
 
-            <h1 className="text-display-lg lg:text-display-xl font-bold mb-6 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               Brands That Raised
               <br />
               <span className="text-secondary-400">$2.5B+ Together</span>
