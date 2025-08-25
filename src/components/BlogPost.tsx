@@ -291,7 +291,7 @@ const blogPosts: Record<string, BlogPostData> = {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-primary-900/20 to-secondary-900/20 p-8 rounded-lg border border-primary-500/30 mb-8">
+        <div className="bg-primary-900/20 p-8 rounded-lg border border-primary-500/30 mb-8">
           <h3 className="text-xl font-semibold text-white mb-4">
             Week 2: Prioritize & Plan
           </h3>
@@ -342,7 +342,7 @@ const blogPosts: Record<string, BlogPostData> = {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-primary-900/20 to-secondary-900/20 p-8 rounded-lg border border-primary-500/30 mb-12">
+        <div className="bg-primary-900/20 p-8 rounded-lg border border-primary-500/30 mb-12">
           <h3 className="text-xl font-semibold text-white mb-4">
             Week 4: Measure & Optimize
           </h3>
