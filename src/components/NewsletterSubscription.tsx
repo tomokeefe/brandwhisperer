@@ -65,8 +65,8 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
       name: "Weekly Insights",
       price: "Free",
       description: "Essential startup brand insights delivered weekly",
-      icon: <Mail className="w-6 h-6" />,
-      gradient: "from-blue-500 to-cyan-500",
+      icon: <Mail className="w-6 h-6 text-blue-400" />,
+      gradient: "bg-blue-500/20 border border-blue-500/30",
       kitFormId: "your-kit-free-form-id", // Replace with actual Kit.com form ID
       features: [
         "Weekly startup brand breakdowns",
@@ -82,8 +82,8 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
       price: "$19/mo",
       description: "Daily brand insights for serious founders",
       popular: true,
-      icon: <Zap className="w-6 h-6" />,
-      gradient: "from-primary-500 to-secondary-500",
+      icon: <Zap className="w-6 h-6 text-secondary-400" />,
+      gradient: "bg-secondary-400/20 border border-secondary-400/30",
       kitFormId: "your-kit-daily-form-id", // Replace with actual Kit.com form ID
       features: [
         "Everything in Weekly, plus:",
@@ -99,8 +99,8 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
       name: "Brand Accelerator",
       price: "$79/mo",
       description: "VIP access with direct mentorship",
-      icon: <Crown className="w-6 h-6" />,
-      gradient: "from-amber-500 to-orange-500",
+      icon: <Crown className="w-6 h-6 text-amber-400" />,
+      gradient: "bg-amber-500/20 border border-amber-500/30",
       kitFormId: "your-kit-premium-form-id", // Replace with actual Kit.com form ID
       features: [
         "Everything in Daily, plus:",
@@ -308,7 +308,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
               <CardHeader className="text-center pb-4">
                 <div
                   className={cn(
-                    "w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 bg-gradient-to-br",
+                    "w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4",
                     tier.gradient,
                   )}
                 >
@@ -356,7 +356,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
           <div className="flex items-center space-x-3">
             <div
               className={cn(
-                "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br",
+                "w-12 h-12 rounded-lg flex items-center justify-center",
                 selectedTierData?.gradient,
               )}
             >
