@@ -279,8 +279,8 @@ const BrandStageQuiz: React.FC = () => {
 
           <Card className="bg-dark-800/50 border-dark-700 text-center">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-blue-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Personalized Results</h3>
               <p className="text-gray-400 text-sm">Custom recommendations for your stage</p>
@@ -289,8 +289,8 @@ const BrandStageQuiz: React.FC = () => {
 
           <Card className="bg-dark-800/50 border-dark-700 text-center">
             <CardContent className="p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Download className="w-6 h-6 text-purple-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Free Resources</h3>
               <p className="text-gray-400 text-sm">Get actionable guides based on results</p>
@@ -396,8 +396,8 @@ const BrandStageQuiz: React.FC = () => {
     return (
       <div className="max-w-lg mx-auto text-center space-y-8">
         <div className="space-y-4">
-          <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full flex items-center justify-center mx-auto">
-            <Mail className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center mx-auto">
+            <Mail className="w-8 h-8 text-secondary-400" />
           </div>
 
           <h2 className="text-3xl font-bold text-white">
@@ -497,7 +497,7 @@ const BrandStageQuiz: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Results Header */}
         <div className="text-center space-y-6">
-          <div className={cn("w-20 h-20 rounded-full flex items-center justify-center mx-auto bg-gradient-to-br", tierColors[result.tier])}>
+          <div className={cn("w-20 h-20 rounded-full flex items-center justify-center mx-auto", tierColors[result.tier])}>
             <TierIcon className="w-10 h-10 text-white" />
           </div>
 
