@@ -292,12 +292,18 @@ const Index = () => {
       </section>
 
       {/* Four Pillars Section */}
-      <section className="section-spacing">
+      <section className="section-spacing" ref={pillarsRef}>
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              pillarsVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <Badge
               variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
             >
               Our Philosophy
             </Badge>
@@ -310,29 +316,36 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12" ref={pillarsGridRef}>
             {pillars.map((pillar, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
+                className={`transition-all duration-1000 ${
+                  pillarItems[index]
+                    ? 'opacity-100 translate-y-0 scale-100'
+                    : 'opacity-0 translate-y-8 scale-95'
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <CardHeader>
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mb-6">
-                    <pillar.icon className="w-8 h-8 text-secondary-400" />
-                  </div>
-                  <CardTitle className="text-2xl text-white mb-2">
-                    {pillar.title}
-                  </CardTitle>
-                  <div className="text-secondary-400 italic mb-4">
-                    {pillar.tagline}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300 leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 hover:bg-dark-800/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-secondary-500/10 group">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary-400/20 group-hover:border-secondary-400/40 group-hover:scale-110 transition-all duration-300">
+                      <pillar.icon className="w-8 h-8 text-secondary-400 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <CardTitle className="text-2xl text-white mb-2 group-hover:text-secondary-400 transition-colors duration-300">
+                      {pillar.title}
+                    </CardTitle>
+                    <div className="text-secondary-400 italic mb-4 group-hover:text-secondary-300 transition-colors duration-300">
+                      {pillar.tagline}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                      {pillar.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
