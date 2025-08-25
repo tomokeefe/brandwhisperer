@@ -467,12 +467,18 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-spacing bg-dark-900/30">
+      <section className="section-spacing bg-dark-900/30" ref={testimonialsRef}>
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              testimonialsVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <Badge
               variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
             >
               Client Success
             </Badge>
@@ -481,25 +487,31 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto relative">
-            <Card className="bg-dark-900/50 border-dark-700 card-hover">
+          <div
+            className={`max-w-4xl mx-auto relative transition-all duration-1000 delay-200 ${
+              testimonialsVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <Card className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 hover:shadow-xl hover:shadow-secondary-500/10 transition-all duration-500 group">
               <CardContent className="p-8 lg:p-12 text-center">
-                <Quote className="w-12 h-12 lg:w-16 lg:h-16 text-secondary-400 mx-auto mb-6 lg:mb-8" />
-                <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-300 mb-6 lg:mb-8 leading-relaxed font-medium min-h-[120px] lg:min-h-[140px] flex items-center justify-center">
+                <Quote className="w-12 h-12 lg:w-16 lg:h-16 text-secondary-400 mx-auto mb-6 lg:mb-8 group-hover:scale-110 group-hover:text-secondary-300 transition-all duration-300" />
+                <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-300 mb-6 lg:mb-8 leading-relaxed font-medium min-h-[120px] lg:min-h-[140px] flex items-center justify-center group-hover:text-gray-200 transition-colors duration-300">
                   "{testimonials[currentTestimonial].quote}"
                 </blockquote>
                 <div className="flex items-center justify-center space-x-4 lg:space-x-6">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-secondary-400" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-400/20 group-hover:border-secondary-400/40 group-hover:scale-110 transition-all duration-300">
+                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-secondary-400 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="text-left">
-                    <div className="text-lg lg:text-xl font-semibold text-white">
+                    <div className="text-lg lg:text-xl font-semibold text-white group-hover:text-secondary-400 transition-colors duration-300">
                       {testimonials[currentTestimonial].author}
                     </div>
-                    <div className="text-sm lg:text-base text-gray-400">
+                    <div className="text-sm lg:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                       {testimonials[currentTestimonial].title}
                     </div>
-                    <div className="text-sm lg:text-base text-secondary-400">
+                    <div className="text-sm lg:text-base text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300">
                       {testimonials[currentTestimonial].company}
                     </div>
                   </div>
@@ -510,14 +522,14 @@ const Index = () => {
             {/* Navigation Controls */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 border border-dark-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 touch-feedback"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 hover:bg-secondary-400/20 border border-dark-600 hover:border-secondary-400/40 rounded-full flex items-center justify-center text-gray-400 hover:text-secondary-400 transition-all duration-300 hover:scale-110"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 border border-dark-600 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200 touch-feedback"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 hover:bg-secondary-400/20 border border-dark-600 hover:border-secondary-400/40 rounded-full flex items-center justify-center text-gray-400 hover:text-secondary-400 transition-all duration-300 hover:scale-110"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
@@ -529,10 +541,10 @@ const Index = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                     index === currentTestimonial
-                      ? "bg-secondary-400"
-                      : "bg-dark-600 hover:bg-dark-500"
+                      ? "bg-secondary-400 scale-125"
+                      : "bg-dark-600 hover:bg-secondary-400/60"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
