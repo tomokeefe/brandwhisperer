@@ -452,8 +452,8 @@ const Index = () => {
                   "{testimonials[currentTestimonial].quote}"
                 </blockquote>
                 <div className="flex items-center justify-center space-x-4 lg:space-x-6">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-secondary-400" />
                   </div>
                   <div className="text-left">
                     <div className="text-lg lg:text-xl font-semibold text-white">

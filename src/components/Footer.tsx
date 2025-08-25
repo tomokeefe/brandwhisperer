@@ -483,7 +483,7 @@ const Footer = () => {
                       className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
-                  <div className="absolute -inset-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg opacity-20 blur group-hover:opacity-40 transition-opacity duration-300"></div>
+                  <div className="absolute -inset-2 bg-secondary-400/20 rounded-lg group-hover:bg-secondary-400/40 blur transition-all duration-300"></div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
