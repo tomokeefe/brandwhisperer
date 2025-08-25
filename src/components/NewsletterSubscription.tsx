@@ -448,7 +448,7 @@ const NewsletterSubscription: React.FC<NewsletterSubscriptionProps> = ({
                 "w-full font-semibold text-base",
                 selectedTier === "free"
                   ? "bg-secondary-500 hover:bg-secondary-600 text-dark-900"
-                  : "bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white",
+                  : "bg-secondary-500 hover:bg-secondary-600 text-white",
               )}
             >
               {isSubmitting ? (
