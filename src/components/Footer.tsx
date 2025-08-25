@@ -750,7 +750,7 @@ const Footer = () => {
       <Button
         onClick={scrollToTop}
         className={cn(
-          "fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white shadow-2xl transition-all duration-300 group",
+          "fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-secondary-500 hover:bg-secondary-600 text-white shadow-2xl transition-all duration-300 group",
           showScrollTop
             ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-4 scale-75 pointer-events-none",
@@ -758,7 +758,7 @@ const Footer = () => {
         aria-label="Scroll to top"
       >
         <ChevronUp className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 animate-pulse opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 rounded-full bg-secondary-400/20 opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
       </Button>
     </footer>
   );
