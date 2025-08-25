@@ -34,19 +34,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <Card
-      className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
+      className={`relative overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:scale-105 group ${
         highlighted
-          ? "border-2 border-secondary-500 bg-secondary-500/5"
-          : "border-dark-700 bg-dark-900/50 hover:border-dark-600"
+          ? "border-2 border-secondary-500 bg-secondary-500/5 hover:bg-secondary-500/10 hover:border-secondary-400 hover:shadow-2xl hover:shadow-secondary-500/20"
+          : "border-dark-700 bg-dark-900/50 hover:border-secondary-500/50 hover:bg-dark-800/50 hover:shadow-xl hover:shadow-secondary-500/10"
       }`}
     >
       {highlighted && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-secondary-500"></div>
+        <div className="absolute top-0 left-0 right-0 h-1 bg-secondary-500 group-hover:h-2 transition-all duration-300"></div>
       )}
 
       {badge && (
         <div className="absolute top-4 right-4">
-          <Badge className="bg-secondary-500 text-dark-900 hover:bg-secondary-600">
+          <Badge className="bg-secondary-500 text-dark-900 hover:bg-secondary-600 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
             {badge}
           </Badge>
         </div>
@@ -54,23 +54,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <CardHeader className="pb-4">
         <CardTitle
-          className={`text-2xl ${highlighted ? "text-white" : "text-white"}`}
+          className={`text-2xl transition-colors duration-300 group-hover:text-secondary-400 ${highlighted ? "text-white" : "text-white"}`}
         >
           {title}
         </CardTitle>
-        <CardDescription className="text-gray-400 text-base leading-relaxed">
+        <CardDescription className="text-gray-400 text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
           {description}
         </CardDescription>
       </CardHeader>
 
       <CardContent className="space-y-6">
         {/* Pricing */}
-        <div className="space-y-2">
+        <div className="space-y-2 group-hover:scale-105 transition-transform duration-300">
           <div className="flex items-baseline space-x-2">
-            <span className="text-3xl font-bold text-white">{pricing}</span>
-            <span className="text-gray-400">+ {equity} equity</span>
+            <span className="text-3xl font-bold text-white group-hover:text-secondary-400 transition-colors duration-300">{pricing}</span>
+            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">+ {equity} equity</span>
           </div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
             Perfect for pre-Series A startups
           </p>
         </div>
@@ -97,14 +97,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             highlighted
               ? "bg-secondary-500 hover:bg-secondary-600 text-dark-900"
               : "bg-primary-600 hover:bg-primary-700 text-white"
-          } font-semibold py-3 rounded-lg transition-all duration-200 hover:scale-105`}
+          } font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg group/button`}
         >
           <Link
             to={link}
             className="inline-flex items-center justify-center space-x-2"
           >
             <span>Get Started</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover/button:translate-x-1 transition-transform duration-300" />
           </Link>
         </Button>
 
