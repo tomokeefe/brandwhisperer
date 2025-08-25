@@ -55,7 +55,12 @@ const Quiz = () => {
       />
 
       {/* Quiz Section */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section
+        ref={quizRef}
+        className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
+          quizVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-950 to-dark-900" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
