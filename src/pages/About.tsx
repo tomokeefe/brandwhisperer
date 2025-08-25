@@ -285,7 +285,7 @@ const About = () => {
             </div>
             <h1
               ref={titleRef}
-              className={`text-display-lg lg:text-display-xl font-bold mb-8 text-white transition-all duration-700 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white transition-all duration-700 ${
                 titleVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
