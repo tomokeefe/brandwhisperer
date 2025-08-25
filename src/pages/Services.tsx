@@ -178,7 +178,7 @@ const Services = () => {
     {
       title: "AI/Vibe Coding Prototype",
       description:
-        "Functional prototype using AI tools (Cursor, v0) for landing pages/UI. 3-5 weeks.",
+        "Functional prototype using AI tools (Builder.io) for landing pages/UI. 3-5 weeks.",
       priceRange: "$3,000-$7,500",
       duration: "3-5 weeks",
       ctaText: "Build It",
