@@ -34,8 +34,10 @@ import {
 const Services = () => {
   const [email, setEmail] = useState("");
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { ref: resourcesRef, isVisible: resourcesVisible } = useScrollAnimation();
-  const { ref: consultingRef, isVisible: consultingVisible } = useScrollAnimation();
+  const { ref: resourcesRef, isVisible: resourcesVisible } =
+    useScrollAnimation();
+  const { ref: consultingRef, isVisible: consultingVisible } =
+    useScrollAnimation();
   const { ref: customRef, isVisible: customVisible } = useScrollAnimation();
   const { ref: whyUsRef, isVisible: whyUsVisible } = useScrollAnimation();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
@@ -45,7 +47,8 @@ const Services = () => {
     "@type": "Service",
     "@id": "https://brandwhisperer.com/services/#service",
     name: "Brand Whisperer Services",
-    description: "Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups. Digital resources, consulting, and custom projects.",
+    description:
+      "Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups. Digital resources, consulting, and custom projects.",
     provider: {
       "@type": "Organization",
       "@id": "https://brandwhisperer.com/#organization",
@@ -60,7 +63,8 @@ const Services = () => {
   const digitalResources = [
     {
       title: "Startup Brand Stage Quiz",
-      description: "2-minute quiz to check your brand's readiness. Get a PDF summary and tips.",
+      description:
+        "2-minute quiz to check your brand's readiness. Get a PDF summary and tips.",
       price: "Free",
       type: "quiz",
       ctaText: "Take Quiz Now",
@@ -71,7 +75,8 @@ const Services = () => {
     },
     {
       title: "Foundations of Startup Branding",
-      description: "50-page guide on mission, audience, storytelling. Free templates included.",
+      description:
+        "50-page guide on mission, audience, storytelling. Free templates included.",
       price: "Free",
       type: "ebook",
       ctaText: "Download Free",
@@ -82,7 +87,8 @@ const Services = () => {
     },
     {
       title: "Visual Identity Mastery",
-      description: "50-page guide on logos, colors, visuals. Mood board templates.",
+      description:
+        "50-page guide on logos, colors, visuals. Mood board templates.",
       price: "Free",
       type: "ebook",
       ctaText: "Grab Free",
@@ -93,7 +99,8 @@ const Services = () => {
     },
     {
       title: "Mastery Series Subscription",
-      description: "Unlimited access to premium ebooks (#3-6: UX, Product Design, AI, Vibe Coding), templates, webinars. New content quarterly.",
+      description:
+        "Unlimited access to premium ebooks (#3-6: UX, Product Design, AI, Vibe Coding), templates, webinars. New content quarterly.",
       price: "$9/month or $97/year",
       type: "subscription",
       ctaText: "Join Premium",
@@ -107,7 +114,8 @@ const Services = () => {
   const consultingServices = [
     {
       title: "Brand Clarity Session",
-      description: "1-hour virtual call to define mission, vision, audience. Includes custom brand brief.",
+      description:
+        "1-hour virtual call to define mission, vision, audience. Includes custom brand brief.",
       price: "$199",
       duration: "1 hour",
       ctaText: "Book Now",
@@ -118,7 +126,8 @@ const Services = () => {
     },
     {
       title: "Brand Scalability Audit",
-      description: "2-hour deep dive into branding, visuals, UX. 10-page report with steps.",
+      description:
+        "2-hour deep dive into branding, visuals, UX. 10-page report with steps.",
       price: "$999",
       duration: "2 hours",
       ctaText: "Schedule Audit",
@@ -129,7 +138,8 @@ const Services = () => {
     },
     {
       title: "AI Design Sprint",
-      description: "3-hour session using AI (Midjourney, Cursor) for logos, UI, or prototypes. Includes assets.",
+      description:
+        "3-hour session using AI (Midjourney, Cursor) for logos, UI, or prototypes. Includes assets.",
       price: "$1,499",
       duration: "3 hours",
       ctaText: "Start Sprint",
@@ -143,7 +153,8 @@ const Services = () => {
   const customProjects = [
     {
       title: "Startup Branding Package",
-      description: "Full brand identity (logo, palette, typography, guidelines) plus messaging. 4-6 weeks.",
+      description:
+        "Full brand identity (logo, palette, typography, guidelines) plus messaging. 4-6 weeks.",
       priceRange: "$5,000-$10,000",
       duration: "4-6 weeks",
       ctaText: "Get Quote",
@@ -154,7 +165,8 @@ const Services = () => {
     },
     {
       title: "UI/UX Design Overhaul",
-      description: "Complete UX audit, wireframes, prototypes, design system. 6-8 weeks.",
+      description:
+        "Complete UX audit, wireframes, prototypes, design system. 6-8 weeks.",
       priceRange: "$7,500-$15,000",
       duration: "6-8 weeks",
       ctaText: "Request Quote",
@@ -165,7 +177,8 @@ const Services = () => {
     },
     {
       title: "AI/Vibe Coding Prototype",
-      description: "Functional prototype using AI tools (Cursor, v0) for landing pages/UI. 3-5 weeks.",
+      description:
+        "Functional prototype using AI tools (Cursor, v0) for landing pages/UI. 3-5 weeks.",
       priceRange: "$3,000-$7,500",
       duration: "3-5 weeks",
       ctaText: "Build It",
@@ -185,17 +198,20 @@ const Services = () => {
 
   const testimonials = [
     {
-      quote: "Brand Whisperer doubled our sign-ups and made our pitch deck unforgettable!",
+      quote:
+        "Brand Whisperer doubled our sign-ups and made our pitch deck unforgettable!",
       author: "Sarah K.",
       company: "TechFlow (Series A)",
     },
     {
-      quote: "The AI design sprint saved us months of work. Our prototype looks incredible.",
+      quote:
+        "The AI design sprint saved us months of work. Our prototype looks incredible.",
       author: "Mike R.",
       company: "DataSync (Seed)",
     },
     {
-      quote: "Finally, a brand that doesn't look like every other startup. Investors noticed.",
+      quote:
+        "Finally, a brand that doesn't look like every other startup. Investors noticed.",
       author: "Alex P.",
       company: "GrowthLab (Pre-Seed)",
     },
@@ -203,7 +219,10 @@ const Services = () => {
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  const getColorClasses = (color: string, type: 'button' | 'bg' | 'text' | 'border' = 'button') => {
+  const getColorClasses = (
+    color: string,
+    type: "button" | "bg" | "text" | "border" = "button",
+  ) => {
     const colorMap = {
       gold: {
         button: "bg-yellow-500 hover:bg-yellow-600 text-black",
@@ -224,7 +243,9 @@ const Services = () => {
         border: "border-blue-600/30",
       },
     };
-    return colorMap[color as keyof typeof colorMap]?.[type] || colorMap.gold[type];
+    return (
+      colorMap[color as keyof typeof colorMap]?.[type] || colorMap.gold[type]
+    );
   };
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -235,7 +256,10 @@ const Services = () => {
   };
 
   return (
-    <div className="bg-dark-950 pb-16" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <div
+      className="bg-dark-950 pb-16"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
       <SEO
         title="Branding Services for Startups | Brand Whisperer"
         description="Scalable branding, UI/UX, and AI solutions for startups. Free ebooks and quiz at brandwhisperer.io!"
@@ -248,7 +272,7 @@ const Services = () => {
       <section
         ref={heroRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
-          heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         {/* Background Video */}
@@ -273,14 +297,16 @@ const Services = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               Brand Whisperer Services: From{" "}
-              <span style={{ color: '#FFD700' }}>Meh to Money Magnet</span>
+              <span style={{ color: "#FFD700" }}>Meh to Money Magnet</span>
             </h1>
             <p className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups.
-              Start free with our ebooks or quiz, or go big with custom projects.
+              Scalable branding, UI/UX, and AI solutions for pre-seed to Series
+              A startups. Start free with our ebooks or quiz, or go big with
+              custom projects.
             </p>
             <p className="text-base text-white/70 mb-8 italic">
-              Ready to make your brand shine brighter than a Series A pitch deck?
+              Ready to make your brand shine brighter than a Series A pitch
+              deck?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -306,16 +332,22 @@ const Services = () => {
       <section
         ref={resourcesRef}
         className={`section-spacing transition-all duration-700 ${
-          resourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          resourcesVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+            <h2
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              style={{ color: "#FFD700" }}
+            >
               Digital Resources: DIY Branding That Packs a Punch
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Learn to brand like a pro with our free and premium tools—no design degree needed.
+              Learn to brand like a pro with our free and premium tools—no
+              design degree needed.
             </p>
           </div>
 
@@ -326,8 +358,12 @@ const Services = () => {
                 className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group overflow-hidden"
               >
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(resource.color, 'bg')}`}>
-                    <resource.icon className={`w-8 h-8 ${getColorClasses(resource.color, 'text')}`} />
+                  <div
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(resource.color, "bg")}`}
+                  >
+                    <resource.icon
+                      className={`w-8 h-8 ${getColorClasses(resource.color, "text")}`}
+                    />
                   </div>
                   <CardTitle className="text-xl text-white mb-2">
                     {resource.title}
@@ -362,16 +398,22 @@ const Services = () => {
       <section
         ref={consultingRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          consultingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          consultingVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+            <h2
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              style={{ color: "#FFD700" }}
+            >
               Consulting: Your Brand's Personal Trainer
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              One-on-one sessions to get your brand investor-ready or user-loved.
+              One-on-one sessions to get your brand investor-ready or
+              user-loved.
             </p>
           </div>
 
@@ -382,8 +424,12 @@ const Services = () => {
                 className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group"
               >
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(service.color, 'bg')}`}>
-                    <service.icon className={`w-8 h-8 ${getColorClasses(service.color, 'text')}`} />
+                  <div
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(service.color, "bg")}`}
+                  >
+                    <service.icon
+                      className={`w-8 h-8 ${getColorClasses(service.color, "text")}`}
+                    />
                   </div>
                   <CardTitle className="text-xl text-white mb-2">
                     {service.title}
@@ -421,12 +467,17 @@ const Services = () => {
       <section
         ref={customRef}
         className={`section-spacing transition-all duration-700 ${
-          customVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          customVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#FFD700' }}>
+            <h2
+              className="text-3xl lg:text-4xl font-bold mb-4"
+              style={{ color: "#FFD700" }}
+            >
               Custom Projects: From Garage to Unicorn
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
@@ -441,8 +492,12 @@ const Services = () => {
                 className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 transition-all duration-300 group"
               >
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(project.color, 'bg')}`}>
-                    <project.icon className={`w-8 h-8 ${getColorClasses(project.color, 'text')}`} />
+                  <div
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${getColorClasses(project.color, "bg")}`}
+                  >
+                    <project.icon
+                      className={`w-8 h-8 ${getColorClasses(project.color, "text")}`}
+                    />
                   </div>
                   <CardTitle className="text-xl text-white mb-2">
                     {project.title}
@@ -480,9 +535,11 @@ const Services = () => {
       <section
         ref={whyUsRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          whyUsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
-        style={{ background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)' }}
+        style={{
+          background: "linear-gradient(135deg, #FFD700 0%, #FFA500 100%)",
+        }}
       >
         <div className="container-custom">
           <div className="text-center mb-16">
@@ -490,10 +547,12 @@ const Services = () => {
               Why Brand Whisperer?
             </h2>
             <p className="text-lg text-black/80 max-w-3xl mx-auto mb-8">
-              Our stra-tactical™ approach blends strategy and creativity to deliver results—40% funding boosts, 50% better conversions.
+              Our stra-tactical™ approach blends strategy and creativity to
+              deliver results—40% funding boosts, 50% better conversions.
             </p>
             <p className="text-base text-black/70 italic">
-              We're not your average agency—think less suits, more startup swagger.
+              We're not your average agency—think less suits, more startup
+              swagger.
             </p>
           </div>
 
@@ -513,7 +572,10 @@ const Services = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 text-yellow-600 fill-current" />
+                    <Star
+                      key={i}
+                      className="w-6 h-6 text-yellow-600 fill-current"
+                    />
                   ))}
                 </div>
                 <blockquote className="text-lg text-black mb-6 leading-relaxed">
@@ -536,7 +598,9 @@ const Services = () => {
                     key={index}
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentTestimonial ? 'bg-black scale-125' : 'bg-black/30'
+                      index === currentTestimonial
+                        ? "bg-black scale-125"
+                        : "bg-black/30"
                     }`}
                   />
                 ))}
@@ -550,7 +614,7 @@ const Services = () => {
       <section
         ref={ctaRef}
         className={`section-spacing bg-primary-900 transition-all duration-700 ${
-          ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom text-center">
