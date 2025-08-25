@@ -31,7 +31,7 @@ import NotFound from "@/pages/NotFound";
 function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true }}>
         <div className="min-h-screen bg-dark-950 text-white">
           <ResourceHints />
           <PerformanceOptimizations />
