@@ -33,6 +33,13 @@ import {
 const Index = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
+  // Scroll animations
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  const { ref: pillarsRef, isVisible: pillarsVisible } = useScrollAnimation();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
+  const { ref: testimonialsRef, isVisible: testimonialsVisible } = useScrollAnimation();
+  const { ref: pillarsGridRef, visibleItems: pillarItems } = useStaggeredAnimation(4, 200);
+
   // Auto-rotate testimonials every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
