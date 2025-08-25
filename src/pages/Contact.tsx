@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SEO from "@/components/SEO";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -28,6 +29,13 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({ delay: 200 });
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({ delay: 400 });
+  const { ref: descRef, isVisible: descVisible } = useScrollAnimation({ delay: 600 });
+  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({ delay: 800 });
+  const { ref: contactInfoRef, isVisible: contactInfoVisible } = useScrollAnimation();
+  const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
+
   const contactPageSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -178,24 +186,44 @@ const Contact = () => {
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6">
+            <div
+              ref={badgeRef}
+              className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
+                badgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
               <MessageCircle className="w-4 h-4" />
               Let's Talk
             </div>
-            <h1 className="text-display-lg lg:text-display-xl font-bold mb-8 text-white">
+            <h1
+              ref={titleRef}
+              className={`text-display-lg lg:text-display-xl font-bold mb-8 text-white transition-all duration-700 ${
+                titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
               Ready to Build a{" "}
               <span className="text-secondary-400">Brand That Scales?</span>
             </h1>
-            <p className="text-body-lg text-gray-300 leading-relaxed mb-8">
+            <p
+              ref={descRef}
+              className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
+                descVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
               Schedule a free consultation to discuss your startup's unique
               needs. We'll explore your growth trajectory, brand challenges, and
               find the perfect package for your stage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div
+              ref={buttonsRef}
+              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
+                buttonsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
               <Button
                 asChild
                 size="lg"
-                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900"
+                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 hover:scale-105 transition-all duration-300"
               >
                 <a href="#contact-form">Start the Conversation</a>
               </Button>
@@ -203,7 +231,7 @@ const Contact = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900"
+                className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
               >
                 <a href="mailto:hello@brandwhisperer.io">Email Us Directly</a>
               </Button>
@@ -213,7 +241,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="section-spacing bg-dark-900/30">
+      <section
+        ref={contactInfoRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          contactInfoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -258,7 +291,12 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-spacing bg-dark-900/30">
+      <section
+        ref={faqRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge

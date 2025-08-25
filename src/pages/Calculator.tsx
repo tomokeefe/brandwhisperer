@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "@/components/SEO";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import EnhancedROICalculator from "@/components/EnhancedROICalculator";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,6 +13,10 @@ import {
 import { TrendingUp, DollarSign, Clock, CheckCircle } from "lucide-react";
 
 const Calculator = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: benefitsRef, isVisible: benefitsVisible } = useScrollAnimation();
+  const { ref: calculatorRef, isVisible: calculatorVisible } = useScrollAnimation();
+
   const benefits = [
     {
       icon: TrendingUp,
