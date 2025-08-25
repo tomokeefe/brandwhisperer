@@ -596,7 +596,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-spacing bg-gradient-to-br from-primary-900 to-primary-800">
+      <section className="section-spacing bg-primary-900">
         <div className="container-custom text-center">
           <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
             Ready to Build a Brand That Scales?

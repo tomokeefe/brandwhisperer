@@ -286,7 +286,7 @@ const Blog = () => {
       {/* CTA Section */}
       <section className="py-[29px] pb-32">
         <div className="container-custom">
-          <Card className="bg-gradient-to-br from-primary-900 to-primary-800 border-primary-700 text-center">
+          <Card className="bg-primary-900 border-primary-700 text-center">
             <CardContent className="p-12">
               <h2 className="text-display-sm font-bold text-white mb-6">
                 Ready to Build a Brand That Scales?
