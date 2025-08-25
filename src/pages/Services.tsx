@@ -250,9 +250,30 @@ const Services = () => {
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
-        style={{ background: 'linear-gradient(135deg, #0F52BA 0%, #1a1a2e 100%)' }}
       >
-        <div className="container-custom">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ filter: 'brightness(0.3)' }}
+          >
+            <source
+              src="https://www.dropbox.com/scl/fi/5x1glwa4mhrdu4p6g5uqt/6593843-hd_1920_1080_30fps.mp4?rlkey=g59ows8jpf4klv20yga8tov2f&dl=1"
+              type="video/mp4"
+            />
+          </video>
+          {/* Gradient Overlay */}
+          <div
+            className="absolute inset-0 w-full h-full"
+            style={{ background: 'linear-gradient(135deg, rgba(15, 82, 186, 0.8) 0%, rgba(26, 26, 46, 0.9) 100%)' }}
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
               Brand Whisperer Services: From{" "}
