@@ -406,8 +406,8 @@ const Resources = () => {
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center">
+                      <Users className="w-6 h-6 text-secondary-400" />
                     </div>
                     <div>
                       <div className="font-semibold text-white">
@@ -480,8 +480,8 @@ const ResourceCard = ({ resource, onDownload, email, setEmail }) => {
     <Card className="bg-dark-900/50 border-dark-700 card-hover">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center">
-            <resource.icon className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center">
+            <resource.icon className="w-8 h-8 text-secondary-400" />
           </div>
           <Badge className="bg-secondary-500/20 text-secondary-400 border-secondary-500/30">
             {resource.type}
