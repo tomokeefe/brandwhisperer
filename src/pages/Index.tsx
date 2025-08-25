@@ -352,12 +352,18 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section-spacing bg-dark-900/30">
+      <section className="section-spacing bg-dark-900/30" ref={servicesRef}>
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              servicesVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <Badge
               variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
             >
               Service Packages
             </Badge>
@@ -371,21 +377,31 @@ const Index = () => {
             <Button
               asChild
               variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900"
+              className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300 group"
             >
               <Link
                 to="/services"
                 className="inline-flex items-center space-x-2"
               >
                 <span>View All Services</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </Button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <div
+                key={index}
+                className={`transition-all duration-1000 ${
+                  servicesVisible
+                    ? 'opacity-100 translate-y-0 scale-100'
+                    : 'opacity-0 translate-y-8 scale-95'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <ServiceCard {...service} />
+              </div>
             ))}
           </div>
         </div>
