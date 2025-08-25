@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "@/components/SEO";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import NewsletterSubscription from "@/components/NewsletterSubscription";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

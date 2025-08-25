@@ -108,7 +108,12 @@ const Calculator = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-spacing">
+      <section
+        ref={calculatorRef}
+        className={`section-spacing transition-all duration-700 ${
+          calculatorVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-display-md font-bold text-white mb-8">
