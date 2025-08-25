@@ -13,14 +13,31 @@ const Hero = () => {
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-dark-950">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://www.dropbox.com/scl/fi/5i278ec6wq7202cvcsve5/27669-365224683_small.mp4?rlkey=741jbjzxk3t64e0xo5bjk2a6q&dl=1"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Video Overlay */}
+      <div className="absolute inset-0 bg-dark-950/60 z-5"></div>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+      <div className="absolute inset-0 grid-pattern opacity-10 z-10"></div>
 
       {/* Gradient Overlays */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl z-15"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl z-15"></div>
 
-      <div className="w-full relative z-10 pt-24 lg:pt-32 pb-16 lg:pb-24 px-6">
+      <div className="w-full relative z-20 pt-24 lg:pt-32 pb-16 lg:pb-24 px-6">
         <div className="w-full flex justify-center items-center">
           {/* Main Content */}
           <div className="w-full max-w-6xl">
