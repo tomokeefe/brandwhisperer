@@ -514,15 +514,22 @@ const Clients = () => {
       </section>
 
       {/* LogoWall Section */}
-      <LogoWall
-        logos={clientLogos}
-        title="Trusted by 150+ Growing Brands"
-        subtitle="From pre-seed startups to Series A companies, we've helped brands across industries build trust, clarity, and momentum that converts investors and customers."
-        ctaTitle="Ready to Join These Success Stories?"
-        ctaDescription="Let's build a brand that investors and customers can't ignore. Start with a free brand assessment and see how we can transform your startup's trajectory."
-        ctaButtonText="Get Your Free Assessment"
-        onCtaClick={handleCtaClick}
-      />
+      <div
+        ref={logosRef}
+        className={`transition-all duration-700 ${
+          logosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <LogoWall
+          logos={clientLogos}
+          title="Trusted by 150+ Growing Brands"
+          subtitle="From pre-seed startups to Series A companies, we've helped brands across industries build trust, clarity, and momentum that converts investors and customers."
+          ctaTitle="Ready to Join These Success Stories?"
+          ctaDescription="Let's build a brand that investors and customers can't ignore. Start with a free brand assessment and see how we can transform your startup's trajectory."
+          ctaButtonText="Get Your Free Assessment"
+          onCtaClick={handleCtaClick}
+        />
+      </div>
 
       {/* Testimonials Section */}
       <section className="py-16 lg:py-24 bg-dark-900/50">
