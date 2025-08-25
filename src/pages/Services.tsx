@@ -212,10 +212,10 @@ const Services = () => {
         border: "border-yellow-500/30",
       },
       coral: {
-        button: "bg-orange-500 hover:bg-orange-600 text-white",
-        bg: "bg-orange-500/10",
-        text: "text-orange-500",
-        border: "border-orange-500/30",
+        button: "bg-yellow-500 hover:bg-yellow-600 text-black",
+        bg: "bg-yellow-500/10",
+        text: "text-yellow-500",
+        border: "border-yellow-500/30",
       },
       sapphire: {
         button: "bg-blue-600 hover:bg-blue-700 text-white",
@@ -245,7 +245,7 @@ const Services = () => {
       />
 
       {/* Hero Section */}
-      <section 
+      <section
         ref={heroRef}
         className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
           heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -259,7 +259,7 @@ const Services = () => {
               <span style={{ color: '#FFD700' }}>Meh to Money Magnet</span>
             </h1>
             <p className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups. 
+              Scalable branding, UI/UX, and AI solutions for pre-seed to Series A startups.
               Start free with our ebooks or quiz, or go big with custom projects.
             </p>
             <p className="text-base text-white/70 mb-8 italic">
@@ -269,7 +269,7 @@ const Services = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold"
               >
                 <Link to="/quiz">Take Our Free Quiz</Link>
               </Button>
@@ -286,7 +286,7 @@ const Services = () => {
       </section>
 
       {/* Digital Resources Section */}
-      <section 
+      <section
         ref={resourcesRef}
         className={`section-spacing transition-all duration-700 ${
           resourcesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -342,7 +342,7 @@ const Services = () => {
       </section>
 
       {/* Consulting Services Section */}
-      <section 
+      <section
         ref={consultingRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
           consultingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -401,7 +401,7 @@ const Services = () => {
       </section>
 
       {/* Custom Projects Section */}
-      <section 
+      <section
         ref={customRef}
         className={`section-spacing transition-all duration-700 ${
           customVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -460,7 +460,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section 
+      <section
         ref={whyUsRef}
         className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
           whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -511,7 +511,7 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Testimonial Navigation */}
               <div className="flex justify-center mt-6 space-x-2">
                 {testimonials.map((_, index) => (
@@ -530,7 +530,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section 
+      <section
         ref={ctaRef}
         className={`section-spacing transition-all duration-700 ${
           ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -549,7 +549,7 @@ const Services = () => {
             <Button
               asChild
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold"
             >
               <Link to="/quiz">Take Free Quiz</Link>
             </Button>
@@ -585,7 +585,7 @@ const Services = () => {
               />
               <Button
                 type="submit"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-6"
               >
                 <Mail className="w-4 h-4" />
               </Button>
