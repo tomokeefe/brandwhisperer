@@ -264,7 +264,7 @@ const blogPosts: Record<string, BlogPostData> = {
           The 30-Day Brand Consistency Sprint
         </h2>
 
-        <div className="bg-gradient-to-r from-secondary-900/20 to-primary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
+        <div className="bg-secondary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
           <h3 className="text-xl font-semibold text-white mb-4">
             Week 1: Audit & Align
           </h3>
@@ -317,7 +317,7 @@ const blogPosts: Record<string, BlogPostData> = {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-secondary-900/20 to-primary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
+        <div className="bg-secondary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
           <h3 className="text-xl font-semibold text-white mb-4">
             Week 3: Execute & Update
           </h3>
@@ -573,7 +573,7 @@ const blogPosts: Record<string, BlogPostData> = {
           questions in 30 seconds or less?
         </p>
 
-        <div className="bg-gradient-to-r from-secondary-900/20 to-primary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
+        <div className="bg-secondary-900/20 p-8 rounded-lg border border-secondary-500/30 mb-8">
           <h3 className="text-lg font-semibold text-white mb-4">
             The Essential Questions:
           </h3>
@@ -840,7 +840,7 @@ const BlogPost = () => {
             </div>
 
             {/* CTA */}
-            <Card className="bg-gradient-to-br from-primary-900 to-primary-800 border-primary-700">
+            <Card className="bg-primary-900 border-primary-700">
               <CardContent className="p-8 text-center">
                 <BookOpen className="w-12 h-12 text-secondary-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-4">
