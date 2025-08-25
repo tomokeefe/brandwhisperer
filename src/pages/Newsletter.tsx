@@ -229,7 +229,12 @@ const Newsletter = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              ref={statsRef}
+              className={`grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 ${
+                statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="w-12 h-12 bg-secondary-400/10 border border-secondary-400/20 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -247,7 +252,12 @@ const Newsletter = () => {
       </section>
 
       {/* Recent Content Preview */}
-      <section className="section-spacing bg-dark-900/30">
+      <section
+        ref={contentRef}
+        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
+          contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="container-custom">
           <div className="text-center mb-16">
             <Badge
