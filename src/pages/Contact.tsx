@@ -187,9 +187,9 @@ const Contact = () => {
   return (
     <div className="bg-dark-950 pb-16">
       <SEO
-        title="Contact The Brand Whisperer - Free Startup Brand Consultation"
-        description="Schedule a free brand consultation for your startup. Expert brand strategy and visual identity services. Contact The Brand Whisperer today."
-        keywords="startup brand consultation, contact brand whisperer, startup branding contact, free brand consultation"
+        title="Contact Brand Whisperer | Startup Branding Experts"
+        description="Reach out for branding, UI/UX, and AI solutions at brandwhisperer.io/contact!"
+        keywords="contact startup branding, UI/UX consultation, AI design services 2025"
       />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-28 overflow-hidden">
