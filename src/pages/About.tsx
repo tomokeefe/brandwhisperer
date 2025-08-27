@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -13,704 +15,471 @@ import {
 } from "@/components/ui/card";
 import {
   ArrowRight,
-  Target,
-  Shield,
   Zap,
-  Rocket,
-  TrendingUp,
   Users,
   Award,
   CheckCircle,
-  Clock,
-  DollarSign,
+  TrendingUp,
   Star,
   Quote,
+  Mail,
+  BookOpen,
+  HelpCircle,
+  Sparkles,
 } from "lucide-react";
 
-const About = () => {
-  const { ref: badgeRef, isVisible: badgeVisible } = useScrollAnimation({
-    delay: 200,
-  });
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation({
-    delay: 400,
-  });
-  const { ref: descRef, isVisible: descVisible } = useScrollAnimation({
-    delay: 600,
-  });
-  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({
-    delay: 800,
-  });
+// Neon Rebellion Palette
+const GOLD = "#FFD700";
+const SAPPHIRE = "#0F52BA";
+const CORAL = "#FF6F61";
 
-  const { ref: philosophyRef, isVisible: philosophyVisible } =
-    useScrollAnimation();
-  const { ref: valuesRef, isVisible: valuesVisible } = useScrollAnimation();
-  const { ref: methodologyRef, isVisible: methodologyVisible } =
-    useScrollAnimation();
-  const { ref: casesRef, isVisible: casesVisible } = useScrollAnimation();
-  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+const About = () => {
+  // Scroll animations
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: whoWeAreRef, isVisible: whoWeAreVisible } = useScrollAnimation();
+  const { ref: storyRef, isVisible: storyVisible } = useScrollAnimation();
+  const { ref: whyUsRef, isVisible: whyUsVisible } = useScrollAnimation();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+
+  // Mailchimp form state
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const aboutPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://brandwhisperer.com/about/#person",
-    name: "The Brand Whisperer",
-    jobTitle: "Brand Strategy Consultant",
-    description:
-      "30+ years of brand strategy experience from New Relic IPO to 150+ startup portfolio. Expert in building scalable brands for hypergrowth companies.",
+    "@type": "Organization",
+    "@id": "https://brandwhisperer.com/about/#organization",
+    name: "Brand Whisperer",
+    description: "Your startup's secret weapon for branding, UI/UX, and AI solutions. We help startups scale without breaking their brands.",
+    url: "https://brandwhisperer.com/about",
+    foundingDate: "1995",
     knowsAbout: [
-      "Brand Strategy",
-      "Visual Identity Design",
       "Startup Branding",
-      "Hypergrowth Companies",
-      "Series A Preparation",
-      "Investor Relations",
-      "IPO Readiness",
+      "UI/UX Design", 
+      "AI Design Solutions",
+      "Brand Strategy",
+      "Series A Preparation"
     ],
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Brand Strategy Consultant",
-      occupationalCategory: "Design and Creative Services",
-      skills: [
-        "Brand Strategy Development",
-        "Visual Identity Systems",
-        "Startup Brand Consulting",
-        "Growth Stage Branding",
-        "Investor Presentation Design",
-      ],
-    },
-    worksFor: {
-      "@type": "Organization",
-      "@id": "https://brandwhisperer.com/#organization",
-    },
-    alumniOf: [
-      {
-        "@type": "Organization",
-        name: "New Relic",
-      },
-      {
-        "@type": "Organization",
-        name: "Idealab",
-      },
-    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Brand Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Brand Clarity Session",
+            price: "$199"
+          }
+        }
+      ]
+    }
   };
 
-  const experience = [
-    {
-      company: "New Relic",
-      role: "Creative Director",
-      duration: "2011-2014",
-      description:
-        "Lived through hypergrowth from 50 employees to IPO. Witnessed firsthand the cost of delaying brand evolution.",
-      achievements: [
-        "IPO brand readiness",
-        "Global expansion support",
-        "Product portfolio integration",
-      ],
-    },
-    {
-      company: "Idealab",
-      role: "Brand Design Director",
-      duration: "1999-2003",
-      description:
-        "Worked within proven startup studio environment, understanding unique branding needs of high-potential startups.",
-      achievements: [
-        "150+ company portfolio",
-        "45 IPO success stories",
-        "Startup methodology development",
-      ],
-    },
-    {
-      company: "Boston Creative Agencies",
-      role: "Designer",
-      duration: "1994-1998",
-      description:
-        "Foundation years building expertise across industries and company stages.",
-      achievements: [
-        "Multi-industry experience",
-        "Traditional to digital transition",
-        "Strategic framework development",
-      ],
-    },
+  const handleMailchimpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+
+    // Track GA4 event
+    try {
+      if (window.gtag) {
+        window.gtag("event", "email_signup", {
+          event_category: "engagement",
+          event_label: "about_page_mailchimp",
+          value: 1,
+          utm_source: "about"
+        });
+      }
+    } catch {}
+
+    // Simulate Mailchimp integration (replace with actual endpoint)
+    try {
+      // In real implementation, this would call your Mailchimp API endpoint
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("Mailchimp signup failed", err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const achievements = [
+    "40% funding boosts for clients",
+    "AI expertise since 2023", 
+    "Featured in WWD & NY Times",
+    "150+ startups scaled successfully"
   ];
 
-  const values = [
+  const testimonials = [
     {
-      title: "Partnership Over Vendorship",
-      description:
-        "We take equity because we believe in true partnership. When you succeed, we succeed.",
-      icon: Users,
+      quote: "Brand Whisperer turned our 'hot mess' brand into investor gold. We raised Series A in 6 months!",
+      author: "Sarah Chen",
+      company: "TechFlow (Series A)",
+      metric: "$15M raised"
     },
     {
-      title: "Substance Over Style",
-      description:
-        'Every design decision must answer: "How does this help the company scale?"',
-      icon: Target,
-    },
-    {
-      title: "Transparency Over Sales",
-      description:
-        "We tell you what you need to hear, not what you want to hear.",
-      icon: Shield,
-    },
-    {
-      title: "Systems Over Solutions",
-      description:
-        "We build systems that prevent future brand problems, not just solve today's.",
-      icon: Zap,
-    },
-    {
-      title: "Evidence Over Opinion",
-      description:
-        "Brand decisions should be strategic, not aesthetic. Data guides every choice.",
-      icon: Award,
-    },
-  ];
-
-  const methodology = [
-    {
-      phase: "Discovery & Research",
-      duration: "1-2 weeks",
-      description:
-        "Deep dive into your market, competitors, and growth trajectory.",
-      deliverables: [
-        "Market analysis",
-        "Competitive audit",
-        "Stakeholder interviews",
-        "Brand positioning foundation",
-      ],
-    },
-    {
-      phase: "Strategy Development",
-      duration: "2-3 weeks",
-      description:
-        "Create the strategic foundation that will guide all visual and messaging decisions.",
-      deliverables: [
-        "Brand strategy document",
-        "Messaging framework",
-        "Target audience definition",
-        "Brand architecture",
-      ],
-    },
-    {
-      phase: "Visual Identity",
-      duration: "3-4 weeks",
-      description:
-        "Design the scalable visual system that grows with your business.",
-      deliverables: [
-        "Logo system",
-        "Color palette",
-        "Typography",
-        "Visual guidelines",
-        "Asset library",
-      ],
-    },
-    {
-      phase: "Implementation & Launch",
-      duration: "2-3 weeks",
-      description:
-        "Ensure consistent application across all touchpoints and train your team.",
-      deliverables: [
-        "Brand guidelines",
-        "Template library",
-        "Team training",
-        "Launch support",
-      ],
-    },
-    {
-      phase: "Evolution Planning",
-      duration: "Ongoing",
-      description:
-        "Roadmap for how your brand evolves as you hit growth milestones.",
-      deliverables: [
-        "Growth milestone planning",
-        "Brand health monitoring",
-        "Adaptation guidelines",
-      ],
-    },
-  ];
-
-  const caseStudies = [
-    {
-      company: "TechFlow",
-      stage: "Seed to Series B",
-      challenge: "Needed brand that could scale from 10 to 500+ employees",
-      solution: "Built modular brand system with flexible applications",
-      result: "Zero rebrands through 50x growth, $50M Series B",
-      metric: "500+ employees, no rebrand needed",
-    },
-    {
-      company: "DataSync",
-      stage: "Pre-Series A",
-      challenge: 'Brand looked too "startup" for enterprise customers',
-      solution: "Investment-grade visual system with enterprise credibility",
-      result: "Successfully raised $15M Series A, 10x more professional",
-      metric: "$15M Series A raised",
-    },
-    {
-      company: "GrowthLabs",
-      stage: "Multiple pivots",
-      challenge: "Three pivots threatened brand consistency",
-      solution:
-        "Pivot-proof brand architecture that adapts to business changes",
-      result: "Maintained brand equity through all business model changes",
-      metric: "3 pivots, same core brand",
-    },
+      quote: "Finally, someone who gets that startups can't afford to rebrand every year. Our brand scaled 10x without breaking.",
+      author: "Marcus Rodriguez", 
+      company: "DataSync (Series B)",
+      metric: "10x growth, same brand"
+    }
   ];
 
   return (
-    <div className="bg-dark-950 pb-16">
+    <div className="bg-dark-950 pb-16" style={{ fontFamily: "Poppins, sans-serif" }}>
       <SEO
-        title="About The Brand Whisperer | 30+ Years Building Scalable Startup Brands"
-        description="Meet the brand strategist behind 150+ successful startups. 30+ years experience from New Relic IPO to Series A brand strategies. Expert in building brands that scale with your growth."
-        keywords="brand strategist, startup brand expert, New Relic brand, Idealab experience, brand consultant background, startup branding expert, series a brand specialist"
-        url="https://brandwhisperer.com/about"
-        image="https://brandwhisperer.com/og-about.jpg"
-        type="profile"
+        title="About Brand Whisperer: Your Startup's Secret Weapon | Branding, UI/UX, AI"
+        description="We help startups scale with branding, UI/UX, AI. Clients featured in WWD, NY Times. 40% funding boosts. Disruptors who love creators—unless their brand's a hot mess!"
+        keywords="startup branding expert, UI/UX design, AI design solutions, brand strategy, series a branding, about brand whisperer"
+        url="https://brandwhisperer.com/about?utm_source=about"
         schema={aboutPageSchema}
       />
+
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
-        <div className="container-custom">
+      <section
+        ref={heroRef}
+        className={`relative py-20 lg:py-28 overflow-hidden transition-all duration-700 ${
+          heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        {/* Background Video/Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <div 
+            className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20"
+            style={{ 
+              backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          />
+          <div className="absolute inset-0" style={{ backgroundColor: "rgba(15,23,42,0.8)" }} />
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div
-              ref={badgeRef}
-              className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
-                badgeVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
+            <Badge 
+              variant="outline" 
+              className="mb-6 border-yellow-500/30 bg-yellow-500/10 text-yellow-400"
             >
-              <Award className="w-4 h-4" />
-              About The Brand Whisperer
-            </div>
-            <h1
-              ref={titleRef}
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white transition-all duration-700 ${
-                titleVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              30 Years of Building{" "}
-              <span className="text-secondary-400">Brands That Scale</span>
+              <Sparkles className="w-4 h-4 mr-2" />
+              Your Startup's Secret Weapon
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white">
+              About Brand Whisperer:{" "}
+              <span style={{ color: GOLD }}>Your Startup's Secret Weapon</span>
             </h1>
-            <p
-              ref={descRef}
-              className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
-                descVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              We're not your typical brand agency. With three decades of
-              experience in brand strategy, visual identity, website design,
-              UI/UX, and product design across 150+ startup projects, and having
-              lived through hypergrowth at companies like New Relic and Idealab,
-              we understand what it takes to build comprehensive design systems
-              that don't break during rapid scaling.
+            <p className="text-lg lg:text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+              The branding partner that gets startups. We turn "hot mess" brands into investor magnets—no corporate BS, just results that scale.
             </p>
-            <div
-              ref={buttonsRef}
-              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
-                buttonsVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 hover:scale-105 transition-all duration-300"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                asChild 
+                size="lg" 
+                className="text-black font-semibold px-8 py-4"
+                style={{ backgroundColor: GOLD }}
               >
-                <Link to="/contact">Work With Us</Link>
+                <Link to="/resources?utm_source=about&utm_campaign=hero">
+                  Get Free Ebooks
+                </Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
+              <Button 
+                asChild 
+                size="lg" 
+                className="text-white font-semibold px-8 py-4"
+                style={{ backgroundColor: CORAL }}
               >
-                <Link to="/services">Our Services</Link>
+                <Link to="/quiz?utm_source=about&utm_campaign=hero">
+                  Take Quiz
+                </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Philosophy */}
+      {/* Who We Are Section */}
       <section
-        ref={philosophyRef}
-        className={`section-spacing bg-secondary-400 text-dark-900 transition-all duration-700 ${
-          philosophyVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-dark-900">
-              Our Core Belief
-            </h2>
-            <blockquote className="text-2xl lg:text-3xl font-medium leading-relaxed text-dark-800 mb-8">
-              "Brands are not logos. Brands are promises kept at scale."
-            </blockquote>
-            <p className="text-body-lg text-dark-700 leading-relaxed">
-              In the hypergrowth startup world, most companies build brands for
-              today that shatter tomorrow. We build brands for the company
-              you're becoming, not just the company you are. Every pixel, every
-              word, every decision considers one question: "Will this work when
-              we're 100x bigger?"
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Personal Testimonial */}
-      <section className="section-spacing">
-        <div className="container-custom">
-          <Card className="bg-secondary-900/20 border-secondary-500/30 max-w-4xl mx-auto">
-            <CardContent className="p-8 lg:p-12 text-center">
-              <Quote className="w-12 h-12 text-secondary-400 mx-auto mb-6" />
-              <blockquote className="text-xl lg:text-2xl font-medium text-white mb-8 leading-relaxed max-w-3xl mx-auto">
-                "I've spent 30 years watching startups build brands that break
-                when they grow. My mission isn't just creating beautiful
-                designs—it's building brand strategy, visual identity, websites,
-                UI/UX, and product design systems that scale from garage to IPO
-                without expensive, momentum-killing rebrands. Every startup
-                deserves a brand that grows with their ambition."
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <img
-                  src="https://cdn.builder.io/api/v1/assets/57f3921c477141799725b87f2761d2c2/screenshot-2025-06-19-at-11.34.13-am-9c859a?format=webp&width=800"
-                  alt="Tom O'Keefe"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-secondary-400"
-                />
-                <div className="text-left">
-                  <div className="text-xl font-bold text-white">
-                    Tom O'Keefe
-                  </div>
-                  <div className="text-base text-secondary-400">
-                    The Brand Whisperer
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    Founder & Chief Brand Strategist
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Values in Action */}
-      <section
-        ref={valuesRef}
-        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          valuesVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Our Values
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Values in Action
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              These aren't just words on a wall. These are the principles that
-              guide every decision we make and every brand we build.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
-              >
-                <CardHeader>
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mb-4">
-                    <value.icon className="w-8 h-8 text-secondary-400" />
-                  </div>
-                  <CardTitle className="text-xl text-white">
-                    {value.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300 leading-relaxed">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology */}
-      <section
-        id="process"
-        ref={methodologyRef}
+        ref={whoWeAreRef}
         className={`section-spacing transition-all duration-700 ${
-          methodologyVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+          whoWeAreVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <Badge 
+              variant="outline" 
+              className="mb-6 border-blue-500/30 bg-blue-500/10 text-blue-400"
             >
-              Our Process
+              Who We Are
             </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              The SCALE Methodology
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: GOLD }}>
+              We Help Startups Scale with Branding, UI/UX, AI
             </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Our proven 5-phase process ensures your brand is built for scale
-              from day one. No expensive rebrands, no momentum-killing pivots.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {methodology.map((phase, index) => (
-              <Card key={index} className="bg-dark-900/50 border-dark-700">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div className="lg:col-span-1">
-                      <div className="w-12 h-12 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center">
-                        <span className="text-xl font-bold text-secondary-400">
-                          {index + 1}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="lg:col-span-4">
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        {phase.phase}
-                      </h3>
-                      <div className="flex items-center space-x-2 mb-4">
-                        <Clock className="w-4 h-4 text-secondary-400" />
-                        <span className="text-secondary-400 text-sm">
-                          {phase.duration}
-                        </span>
-                      </div>
-                      <p className="text-gray-300 leading-relaxed">
-                        {phase.description}
-                      </p>
-                    </div>
-                    <div className="lg:col-span-7">
-                      <h4 className="text-white font-semibold mb-4">
-                        Deliverables:
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {phase.deliverables.map((deliverable, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center space-x-2"
-                          >
-                            <CheckCircle className="w-4 h-4 text-secondary-500 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">
-                              {deliverable}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section
-        id="cases"
-        ref={casesRef}
-        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          casesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Success Stories
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              <span className="text-secondary-400">Brands That Scaled</span>{" "}
-              Without Breaking
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Real examples of startups that built brands designed for
-              hypergrowth. These companies avoided expensive rebrands and
-              maintained brand equity through rapid scaling.
+            <p className="text-lg text-gray-300 mb-8">
+              Our clients have been featured in <strong style={{ color: GOLD }}>Women's Wear Daily</strong> and the <strong style={{ color: GOLD }}>New York Times</strong>. We're the team behind brands that don't break when startups scale.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 card-hover"
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge
-                      variant="outline"
-                      className="border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-                    >
-                      {study.stage}
-                    </Badge>
-                    <Star className="w-5 h-5 text-secondary-400" />
-                  </div>
-                  <CardTitle className="text-2xl text-white">
-                    {study.company}
-                  </CardTitle>
-                  <CardDescription className="text-gray-400">
-                    {study.challenge}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Solution:</h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {study.solution}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Result:</h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {study.result}
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-dark-700">
-                    <div className="text-2xl font-bold text-secondary-400">
-                      {study.metric}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="bg-dark-900/50 border" style={{ borderColor: SAPPHIRE }}>
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: `${GOLD}20`, border: `1px solid ${GOLD}40` }}>
+                  <Zap className="w-8 h-8" style={{ color: GOLD }} />
+                </div>
+                <CardTitle className="text-xl text-white">Branding That Scales</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">
+                  From logo to complete visual identity systems that grow with your business. No expensive rebrands when you hit Series A.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-dark-900/50 border" style={{ borderColor: SAPPHIRE }}>
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: `${CORAL}20`, border: `1px solid ${CORAL}40` }}>
+                  <Users className="w-8 h-8" style={{ color: CORAL }} />
+                </div>
+                <CardTitle className="text-xl text-white">UI/UX Excellence</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">
+                  User experiences that convert visitors into customers and investors into believers. Beautiful and functional.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-dark-900/50 border" style={{ borderColor: SAPPHIRE }}>
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4" style={{ backgroundColor: `${SAPPHIRE}20`, border: `1px solid ${SAPPHIRE}40` }}>
+                  <Sparkles className="w-8 h-8" style={{ color: SAPPHIRE }} />
+                </div>
+                <CardTitle className="text-xl text-white">AI-Powered Design</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">
+                  Cutting-edge AI tools and vibe coding to bring your brand vision to life faster than traditional methods.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Our Story Section */}
       <section
-        ref={statsRef}
+        ref={storyRef}
         className={`section-spacing transition-all duration-700 ${
-          statsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          storyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{ backgroundColor: `${CORAL}15` }}
+      >
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge 
+              variant="outline" 
+              className="mb-6 text-white"
+              style={{ borderColor: CORAL, backgroundColor: `${CORAL}20` }}
+            >
+              Our Story
+            </Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: GOLD }}>
+              Disruptors Who Love Creators—Unless Their Brand's a Hot Mess!
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+              We've seen too many brilliant startups with brands that look like they were designed by a committee of colorblind robots. That's where we come in—to turn your visual chaos into brand clarity that actually helps you raise money and scale faster.
+            </p>
+            <p className="text-base text-gray-400 italic">
+              "Life's too short for ugly brands and even shorter for startups that run out of runway because their pitch deck looks like a ransom note."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Work With Us Section */}
+      <section
+        ref={whyUsRef}
+        className={`section-spacing transition-all duration-700 ${
+          whyUsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <Badge 
+              variant="outline" 
+              className="mb-6 border-yellow-500/30 bg-yellow-500/10 text-yellow-400"
             >
-              Track Record
+              Why Choose Us
             </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Our Measure of Success
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: GOLD }}>
+              40% Funding Boosts & AI Expertise That Actually Works
             </h2>
+            <p className="text-lg text-gray-300 mb-12">
+              We're not just pretty pixels—we're growth accelerators with receipts to prove it.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                value: "87%",
-                label: "Series A Success Rate",
-                description: "Of our clients raise funding within 12 months",
-                icon: TrendingUp,
-              },
-              {
-                value: "15-30%",
-                label: "Higher Valuations",
-                description: "Compared to companies without strategic branding",
-                icon: DollarSign,
-              },
-              {
-                value: "150+",
-                label: "Startup Projects",
-                description: "30 years of experience across all stages",
-                icon: Users,
-              },
-              {
-                value: "5-10x",
-                label: "Scale Without Rebrands",
-                description: "Growth achieved without breaking brand systems",
-                icon: Rocket,
-              },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 text-center card-hover"
-              >
-                <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-secondary-400" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="space-y-6">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 flex-shrink-0" style={{ color: GOLD }} />
+                    <span className="text-white font-medium text-lg">{achievement}</span>
                   </div>
-                  <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-lg font-semibold text-secondary-400 mb-2">
-                    {stat.label}
-                  </div>
-                  <div className="text-sm text-gray-400 leading-relaxed">
-                    {stat.description}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+
+              <div className="mt-12 p-6 rounded-lg border" style={{ backgroundColor: `${SAPPHIRE}10`, borderColor: SAPPHIRE }}>
+                <h3 className="text-xl font-bold text-white mb-4">The Secret Sauce</h3>
+                <p className="text-gray-300">
+                  While other agencies are still figuring out Figma, we're using AI tools like Visual Electric and Builder.io to create brands that are both future-proof and investor-ready. Your competitors' brands will look like they're from 2019.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-dark-900/50 border-dark-700">
+                  <CardContent className="p-6">
+                    <Quote className="w-8 h-8 mb-4" style={{ color: CORAL }} />
+                    <blockquote className="text-white mb-4 leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.author}</div>
+                        <div className="text-sm text-gray-400">{testimonial.company}</div>
+                      </div>
+                      <Badge style={{ backgroundColor: GOLD, color: "black" }}>
+                        {testimonial.metric}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-spacing bg-primary-900">
+      <section
+        ref={ctaRef}
+        className={`section-spacing transition-all duration-700 ${
+          ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{ backgroundColor: SAPPHIRE }}
+      >
         <div className="container-custom text-center">
-          <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-            Ready to Build a Brand That Scales?
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
+            Ready to Turn Your Brand from Mess to Money Magnet?
           </h2>
-          <p className="text-body-lg text-primary-100 mb-8 max-w-3xl mx-auto">
-            With 30 years of experience and 150+ startup projects behind us,
-            we're ready to help you build a brand that grows with your business.
-            Let's start the conversation.
+          <p className="text-lg text-white/90 mb-12 max-w-3xl mx-auto">
+            Stop losing investors because your pitch deck looks like a preschool art project. Let's build something that scales.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4"
-            >
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2"
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* CTA Buttons */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-bold text-white mb-6">Get Started Today</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="text-black font-semibold"
+                  style={{ backgroundColor: GOLD }}
+                >
+                  <Link to="/resources?utm_source=about&utm_campaign=cta">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Get Free Ebook
+                  </Link>
+                </Button>
+                
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="text-white font-semibold"
+                  style={{ backgroundColor: CORAL }}
+                >
+                  <Link to="/quiz?utm_source=about&utm_campaign=cta">
+                    <HelpCircle className="w-5 h-5 mr-2" />
+                    Take Quiz
+                  </Link>
+                </Button>
+              </div>
+
+              <Button 
+                asChild 
+                size="lg" 
+                className="w-full bg-white text-black font-semibold hover:bg-gray-100"
               >
-                <span>Start Your Brand Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-300 text-primary-100 hover:bg-primary-100 hover:text-primary-900 px-8 py-4"
-            >
-              <Link to="/services">Explore Our Services</Link>
-            </Button>
+                <Link to="/contact?utm_source=about&utm_campaign=cta">
+                  Book $199 Session
+                </Link>
+              </Button>
+            </div>
+
+            {/* Mailchimp Form */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
+              <h3 className="text-xl font-bold text-white mb-4">Join Our Insider List</h3>
+              <p className="text-white/80 mb-6">
+                Get weekly startup branding insights that actually help you raise money.
+              </p>
+              
+              {isSubmitted ? (
+                <div className="text-center">
+                  <CheckCircle className="w-12 h-12 mx-auto mb-4" style={{ color: GOLD }} />
+                  <h4 className="text-lg font-bold text-white mb-2">You're In!</h4>
+                  <p className="text-white/80">Check your inbox for golden brand tips.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleMailchimpSubmit} className="space-y-4">
+                  <div>
+                    <Label htmlFor="email" className="text-white mb-2 block">
+                      Email Address
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      placeholder="founder@yourstartup.com"
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full text-black font-semibold"
+                    style={{ backgroundColor: GOLD }}
+                  >
+                    {isSubmitting ? (
+                      "Adding you to the list..."
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5 mr-2" />
+                        Get Brand Insights
+                      </>
+                    )}
+                  </Button>
+                  <p className="text-xs text-white/60 text-center">
+                    No spam, just startup gold. Unsubscribe anytime.
+                  </p>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
