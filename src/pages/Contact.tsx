@@ -132,32 +132,6 @@ const Contact = () => {
     },
   ];
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "hello@brandwhisperer.io",
-      link: "mailto:hello@brandwhisperer.io",
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (617) 792-3378",
-      link: "tel:+16177923378",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Boston, MA",
-      link: null,
-    },
-    {
-      icon: Clock,
-      label: "Response Time",
-      value: "Within 24 hours",
-      link: null,
-    },
-  ];
 
   const faqs = [
     {
