@@ -258,45 +258,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section
-        ref={contactInfoRef}
-        className={`section-spacing bg-dark-900/30 transition-all duration-700 ${
-          contactInfoVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((info, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 text-center card-hover"
-              >
-                <CardContent className="pt-8">
-                  <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="w-8 h-8 text-secondary-400" />
-                  </div>
-                  <div className="text-lg font-semibold text-white mb-2">
-                    {info.label}
-                  </div>
-                  {info.link ? (
-                    <a
-                      href={info.link}
-                      className="text-secondary-400 hover:text-secondary-300 transition-colors duration-200"
-                    >
-                      {info.value}
-                    </a>
-                  ) : (
-                    <div className="text-gray-300">{info.value}</div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
       {/* FAQ Section */}
