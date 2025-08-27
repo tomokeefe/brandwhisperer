@@ -191,67 +191,68 @@ const Contact = () => {
         description="Reach out for branding, UI/UX, and AI solutions at brandwhisperer.io/contact!"
         keywords="contact startup branding, UI/UX consultation, AI design services 2025"
       />
-      {/* Hero Section */}
+      {/* Hero Section with Contact Form */}
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <div
-              ref={badgeRef}
-              className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
-                badgeVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              <MessageCircle className="w-4 h-4" />
-              Let's Talk
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Hero Content */}
+            <div className="text-center lg:text-left">
+              <div
+                ref={badgeRef}
+                className={`inline-flex items-center gap-2 bg-secondary-600/10 text-secondary-400 text-sm font-medium px-4 py-2 rounded-full border border-secondary-500/20 mb-6 transition-all duration-700 ${
+                  badgeVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                <MessageCircle className="w-4 h-4" />
+                Let's Talk
+              </div>
+              <h1
+                ref={titleRef}
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white transition-all duration-700 ${
+                  titleVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                Ready to Build a{" "}
+                <span className="text-secondary-400">Brand That Scales?</span>
+              </h1>
+              <p
+                ref={descRef}
+                className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
+                  descVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                Schedule a free consultation to discuss your startup's unique
+                needs. We'll explore your growth trajectory, brand challenges, and
+                find the perfect package for your stage.
+              </p>
+              <div
+                ref={buttonsRef}
+                className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-700 ${
+                  buttonsVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
+                >
+                  <a href="mailto:hello@brandwhisperer.io">Email Us Directly</a>
+                </Button>
+              </div>
             </div>
-            <h1
-              ref={titleRef}
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 lg:mb-6 text-white transition-all duration-700 ${
-                titleVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              Ready to Build a{" "}
-              <span className="text-secondary-400">Brand That Scales?</span>
-            </h1>
-            <p
-              ref={descRef}
-              className={`text-body-lg text-gray-300 leading-relaxed mb-8 transition-all duration-700 ${
-                descVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              Schedule a free consultation to discuss your startup's unique
-              needs. We'll explore your growth trajectory, brand challenges, and
-              find the perfect package for your stage.
-            </p>
-            <div
-              ref={buttonsRef}
-              className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
-                buttonsVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 hover:scale-105 transition-all duration-300"
-              >
-                <a href="#contact-form">Start the Conversation</a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
-              >
-                <a href="mailto:hello@brandwhisperer.io">Email Us Directly</a>
-              </Button>
+
+            {/* Contact Form */}
+            <div id="contact-form" className="flex justify-center lg:justify-end">
+              <ContactLeadForm />
             </div>
           </div>
         </div>
