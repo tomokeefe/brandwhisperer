@@ -68,9 +68,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             <span className="text-3xl font-bold text-white group-hover:text-secondary-400 transition-colors duration-300">
               {pricing}
             </span>
-            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-              + {equity} equity
-            </span>
           </div>
           <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
             Perfect for pre-Series A startups
