@@ -45,7 +45,9 @@ const ContactLeadForm: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
+  const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as
+    | string
+    | undefined;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,12 +113,22 @@ const ContactLeadForm: React.FC = () => {
       </div>
 
       {error && (
-        <div className="mb-4 text-sm p-3 rounded" style={{ background: "#7F1D1D", color: "#FCA5A5" }}>
+        <div
+          className="mb-4 text-sm p-3 rounded"
+          style={{ background: "#7F1D1D", color: "#FCA5A5" }}
+        >
           {error}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4 p-5 rounded-lg" style={{ background: "rgba(15,82,186,0.08)", border: `1px solid ${SAPPHIRE}` }}>
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 p-5 rounded-lg"
+        style={{
+          background: "rgba(15,82,186,0.08)",
+          border: `1px solid ${SAPPHIRE}`,
+        }}
+      >
         <div>
           <Label htmlFor="name" className="mb-1 block" style={{ color: GOLD }}>
             Name *
@@ -127,7 +139,7 @@ const ContactLeadForm: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
             required
             placeholder="Your name (so we can say hi!)."
-            className="h-12 bg-dark-800 border" 
+            className="h-12 bg-dark-800 border"
             style={{ borderColor: SAPPHIRE, color: "#FFFFFF" }}
           />
         </div>
@@ -143,13 +155,17 @@ const ContactLeadForm: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             placeholder="Your email (for our golden tips!)."
-            className="h-12 bg-dark-800 border" 
+            className="h-12 bg-dark-800 border"
             style={{ borderColor: SAPPHIRE, color: "#FFFFFF" }}
           />
         </div>
 
         <div>
-          <Label htmlFor="company" className="mb-1 block" style={{ color: GOLD }}>
+          <Label
+            htmlFor="company"
+            className="mb-1 block"
+            style={{ color: GOLD }}
+          >
             Company *
           </Label>
           <Input
@@ -158,7 +174,7 @@ const ContactLeadForm: React.FC = () => {
             onChange={(e) => setCompany(e.target.value)}
             required
             placeholder="Your startup's name (keep it snappy!)."
-            className="h-12 bg-dark-800 border" 
+            className="h-12 bg-dark-800 border"
             style={{ borderColor: SAPPHIRE, color: "#FFFFFF" }}
           />
         </div>
@@ -168,10 +184,16 @@ const ContactLeadForm: React.FC = () => {
             Service Interest *
           </Label>
           <Select onValueChange={(v) => setService(v)}>
-            <SelectTrigger className="h-12 bg-dark-800 border text-white" style={{ borderColor: SAPPHIRE }}>
+            <SelectTrigger
+              className="h-12 bg-dark-800 border text-white"
+              style={{ borderColor: SAPPHIRE }}
+            >
               <SelectValue placeholder="Choose a service" />
             </SelectTrigger>
-            <SelectContent className="bg-dark-800 border" style={{ borderColor: SAPPHIRE }}>
+            <SelectContent
+              className="bg-dark-800 border"
+              style={{ borderColor: SAPPHIRE }}
+            >
               {serviceOptions.map((opt) => (
                 <SelectItem value={opt} key={opt} className="text-white">
                   {opt}
@@ -182,7 +204,11 @@ const ContactLeadForm: React.FC = () => {
         </div>
 
         <div>
-          <Label htmlFor="message" className="mb-1 block" style={{ color: GOLD }}>
+          <Label
+            htmlFor="message"
+            className="mb-1 block"
+            style={{ color: GOLD }}
+          >
             Message (optional)
           </Label>
           <Textarea
@@ -196,11 +222,24 @@ const ContactLeadForm: React.FC = () => {
         </div>
 
         <div className="flex items-start gap-2">
-          <Checkbox id="consent" checked={consent} onCheckedChange={(c) => setConsent(!!c)} className="mt-1 border" style={{ borderColor: SAPPHIRE }} />
+          <Checkbox
+            id="consent"
+            checked={consent}
+            onCheckedChange={(c) => setConsent(!!c)}
+            className="mt-1 border"
+            style={{ borderColor: SAPPHIRE }}
+          />
           <Label htmlFor="consent" className="text-sm text-gray-300">
             Yes, send me branding updates! (No spam, promise.) I agree to the
             processing of my information per the
-            <a href="/privacy" className="underline ml-1" style={{ color: GOLD }}>privacy policy</a>.
+            <a
+              href="/privacy"
+              className="underline ml-1"
+              style={{ color: GOLD }}
+            >
+              privacy policy
+            </a>
+            .
           </Label>
         </div>
 

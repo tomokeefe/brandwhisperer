@@ -127,7 +127,6 @@ const Contact = () => {
     },
   ];
 
-
   const faqs = [
     {
       question: "How quickly can we start?",
@@ -195,8 +194,8 @@ const Contact = () => {
                 }`}
               >
                 Schedule a free consultation to discuss your startup's unique
-                needs. We'll explore your growth trajectory, brand challenges, and
-                find the perfect package for your stage.
+                needs. We'll explore your growth trajectory, brand challenges,
+                and find the perfect package for your stage.
               </p>
               <div
                 ref={buttonsRef}
@@ -217,14 +216,15 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div id="contact-form" className="flex justify-center lg:justify-end">
+            <div
+              id="contact-form"
+              className="flex justify-center lg:justify-end"
+            >
               <ContactLeadForm />
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* FAQ Section */}
       <section
