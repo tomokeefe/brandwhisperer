@@ -314,60 +314,148 @@ const About = () => {
         }`}
       >
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <Badge 
-              variant="outline" 
-              className="mb-6 border-yellow-500/30 bg-yellow-500/10 text-yellow-400"
+          <div className="max-w-5xl mx-auto text-center mb-16">
+            <Badge
+              variant="outline"
+              className="mb-6 border-yellow-500/30 bg-yellow-500/10 text-yellow-400 hover:bg-yellow-500/20 transition-all duration-300"
             >
+              <TrendingUp className="w-4 h-4 mr-2" />
               Why Choose Us
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ color: GOLD }}>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               40% Funding Boosts & AI Expertise That Actually Works
             </h2>
-            <p className="text-lg text-gray-300 mb-12">
-              We're not just pretty pixels—we're growth accelerators with receipts to prove it.
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              We're not just pretty pixels—we're growth accelerators with <strong className="text-yellow-400">receipts</strong> to prove it.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Column - Stats & Achievements */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 mb-8">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-6 h-6 flex-shrink-0" style={{ color: GOLD }} />
-                    <span className="text-white font-medium text-lg">{achievement}</span>
+                  <div
+                    key={index}
+                    className="group p-4 rounded-xl bg-gradient-to-r from-dark-800/50 to-dark-900/50 border border-dark-700/50 hover:border-yellow-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/10"
+                    style={{
+                      animationDelay: `${index * 150}ms`,
+                      animation: whyUsVisible ? `fadeInUp 0.6s ease-out forwards` : 'none'
+                    }}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: `${GOLD}20`, border: `2px solid ${GOLD}` }}>
+                        <CheckCircle className="w-5 h-5" style={{ color: GOLD }} />
+                      </div>
+                      <span className="text-white font-semibold text-base group-hover:text-yellow-300 transition-colors duration-300">
+                        {achievement}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-12 p-6 rounded-lg border" style={{ backgroundColor: `${SAPPHIRE}10`, borderColor: SAPPHIRE }}>
-                <h3 className="text-xl font-bold text-white mb-4">The Secret Sauce</h3>
-                <p className="text-gray-300">
-                  While other agencies are still figuring out Figma, we're using AI tools like Visual Electric and Builder.io to create brands that are both future-proof and investor-ready. Your competitors' brands will look like they're from 2019.
-                </p>
+              {/* The Secret Sauce - Enhanced */}
+              <div
+                className="relative p-8 rounded-2xl border-2 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-sm overflow-hidden group hover:border-blue-400/50 transition-all duration-500"
+                style={{ borderColor: SAPPHIRE }}
+              >
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-blue-500/20" />
+                </div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: `${SAPPHIRE}30`, border: `2px solid ${SAPPHIRE}` }}>
+                      <Sparkles className="w-6 h-6" style={{ color: SAPPHIRE }} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                      The Secret Sauce
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed text-lg group-hover:text-gray-200 transition-colors duration-300">
+                    While other agencies are still figuring out Figma, we're using cutting-edge AI tools like <strong style={{ color: GOLD }}>Visual Electric</strong> and <strong style={{ color: GOLD }}>Builder.io</strong> to create brands that are both future-proof and investor-ready.
+                  </p>
+                  <div className="mt-4 text-sm font-medium" style={{ color: CORAL }}>
+                    💡 Your competitors' brands will look like they're from 2019.
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-6">
+            {/* Right Column - Enhanced Testimonials */}
+            <div className="lg:col-span-7 space-y-6">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-dark-900/50 border-dark-700">
-                  <CardContent className="p-6">
-                    <Quote className="w-8 h-8 mb-4" style={{ color: CORAL }} />
-                    <blockquote className="text-white mb-4 leading-relaxed">
+                <Card
+                  key={index}
+                  className="relative bg-gradient-to-br from-dark-800/80 to-dark-900/80 border-dark-700/50 hover:border-coral-500/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-coral-500/10 group overflow-hidden"
+                >
+                  {/* Background Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-coral-500/20 to-yellow-500/20" />
+
+                  <CardContent className="p-8 relative z-10">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: `${CORAL}20`, border: `2px solid ${CORAL}` }}>
+                        <Quote className="w-6 h-6" style={{ color: CORAL }} />
+                      </div>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                    </div>
+
+                    <blockquote className="text-white text-lg mb-6 leading-relaxed font-medium group-hover:text-gray-100 transition-colors duration-300">
                       "{testimonial.quote}"
                     </blockquote>
+
                     <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-semibold text-white">{testimonial.author}</div>
-                        <div className="text-sm text-gray-400">{testimonial.company}</div>
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-coral-500 flex items-center justify-center text-white font-bold text-lg">
+                          {testimonial.author.split(' ').map(n => n[0]).join('')}
+                        </div>
+                        <div>
+                          <div className="font-bold text-white text-lg group-hover:text-yellow-300 transition-colors duration-300">
+                            {testimonial.author}
+                          </div>
+                          <div className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                            {testimonial.company}
+                          </div>
+                        </div>
                       </div>
-                      <Badge style={{ backgroundColor: GOLD, color: "black" }}>
-                        {testimonial.metric}
-                      </Badge>
+
+                      <div className="text-right">
+                        <Badge
+                          className="font-bold text-lg px-4 py-2 hover:scale-105 transition-transform duration-300"
+                          style={{ backgroundColor: GOLD, color: "black" }}
+                        >
+                          {testimonial.metric}
+                        </Badge>
+                        <div className="text-xs text-gray-500 mt-1">Success Metric</div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
               ))}
+
+              {/* Call-to-Action Card */}
+              <Card className="bg-gradient-to-r from-yellow-500/10 to-coral-500/10 border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:scale-[1.02]">
+                <CardContent className="p-6 text-center">
+                  <h4 className="text-xl font-bold text-white mb-2">Ready for Similar Results?</h4>
+                  <p className="text-gray-300 mb-4">Join 150+ startups who chose growth over pretty pixels</p>
+                  <Button
+                    asChild
+                    className="text-black font-semibold hover:scale-105 transition-transform duration-300"
+                    style={{ backgroundColor: GOLD }}
+                  >
+                    <Link to="/contact?utm_source=about&utm_campaign=why_us">
+                      Book Your $199 Session
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
