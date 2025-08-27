@@ -15,12 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
   CheckCircle,
-  Send,
   Calendar,
   Users,
   Target,
