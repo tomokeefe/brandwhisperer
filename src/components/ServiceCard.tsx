@@ -109,9 +109,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
         {/* Additional Info */}
         <div className="pt-4 border-t border-dark-700">
-          <p className="text-xs text-gray-500 text-center">
-            90-day delivery
-          </p>
+          <p className="text-xs text-gray-500 text-center">90-day delivery</p>
         </div>
       </CardContent>
     </Card>
