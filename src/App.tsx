@@ -54,6 +54,7 @@ function App() {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/cookies" element={<CookiePolicy />} />
+              <Route path="/thank-you" element={<ThankYou />} />
 
               <Route path="/sitemap" element={<Sitemap />} />
               {/* Blog post routes - in a real app, these would be dynamic */}
