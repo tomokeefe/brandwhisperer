@@ -15,7 +15,6 @@ interface ServiceCardProps {
   title: string;
   description: string;
   pricing: string;
-  equity: string;
   features: string[];
   badge?: string;
   highlighted?: boolean;
