@@ -108,10 +108,6 @@ const ContactLeadForm: React.FC = () => {
         <h2 className="text-2xl font-bold mb-2" style={{ color: GOLD }}>
           Get in Touch with Brand Whisperer
         </h2>
-        <p className="text-sm" style={{ color: "#E5E7EB" }}>
-          Fill this out, and we’ll turn your branding woes into wins—no dentist
-          visit required!
-        </p>
       </div>
 
       {error && (
@@ -161,7 +157,7 @@ const ContactLeadForm: React.FC = () => {
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             required
-            placeholder="Your startup’s name (keep it snappy!)."
+            placeholder="Your startup's name (keep it snappy!)."
             className="h-12 bg-dark-800 border" 
             style={{ borderColor: SAPPHIRE, color: "#FFFFFF" }}
           />
@@ -214,7 +210,7 @@ const ContactLeadForm: React.FC = () => {
           className="w-full text-black font-semibold text-base min-h-[48px] hover:scale-105 transition-transform"
           style={{ background: GOLD }}
         >
-          {submitting ? "Sending..." : "Let’s Chat!"}
+          {submitting ? "Sending..." : "Let's Chat!"}
         </Button>
       </form>
 
