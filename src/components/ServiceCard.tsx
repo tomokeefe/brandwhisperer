@@ -25,7 +25,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   pricing,
-  equity,
   features,
   badge,
   highlighted = false,
