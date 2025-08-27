@@ -212,7 +212,7 @@ const ContactLeadForm: React.FC = () => {
           type="submit"
           disabled={submitting}
           className="w-full text-black font-semibold text-base min-h-[48px] hover:scale-105 transition-transform"
-          style={{ background: CORAL }}
+          style={{ background: GOLD }}
         >
           {submitting ? "Sending..." : "Let’s Chat!"}
         </Button>
