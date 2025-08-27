@@ -209,8 +209,7 @@ const Contact = () => {
                 <Button
                   asChild
                   size="lg"
-                  variant="outline"
-                  className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300"
+                  className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 hover:scale-105 transition-all duration-300"
                 >
                   <a href="mailto:hello@brandwhisperer.io">Email Us Directly</a>
                 </Button>
