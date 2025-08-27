@@ -302,8 +302,8 @@ const Contact = () => {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
-            <div id="contact-form">
-              <EnhancedContactForm formType="consultation" />
+            <div id="contact-form" className="flex justify-center">
+              <ContactLeadForm />
             </div>
           </div>
         </div>
