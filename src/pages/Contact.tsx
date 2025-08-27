@@ -41,8 +41,6 @@ const Contact = () => {
   const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({
     delay: 800,
   });
-  const { ref: contactInfoRef, isVisible: contactInfoVisible } =
-    useScrollAnimation();
   const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
 
   const contactPageSchema = {
