@@ -26,6 +26,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import CookiePolicy from "@/pages/CookiePolicy";
 
 import Sitemap from "@/pages/Sitemap";
+import ThankYou from "@/pages/ThankYou";
 import NotFound from "@/pages/NotFound";
 
 function App() {
