@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SEO from "@/components/SEO";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import EnhancedContactForm from "@/components/EnhancedContactForm";
+import ContactLeadForm from "@/components/ContactLeadForm";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
