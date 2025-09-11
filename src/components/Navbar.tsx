@@ -36,6 +36,11 @@ const Navbar = () => {
 
   const resourcesItems = [
     {
+      title: "Free Brand Snapshot",
+      href: "/resources/snapshot",
+      description: "3 insights in 48 hours + upgrade to $799 audit",
+    },
+    {
       title: "Brand Assessment",
       href: "/assessment",
       description: "Free interactive brand evaluation tool",
