@@ -18,6 +18,7 @@ import Blog from "@/pages/Blog";
 import Newsletter from "@/pages/Newsletter";
 import Quiz from "@/pages/Quiz";
 import Resources from "@/pages/Resources";
+import ResourceSnapshot from "@/pages/ResourceSnapshot";
 import Calculator from "@/pages/Calculator";
 import Clients from "@/pages/Clients";
 import Assessment from "@/pages/Assessment";
@@ -50,6 +51,7 @@ function App() {
               <Route path="/newsletter" element={<Newsletter />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/snapshot" element={<ResourceSnapshot />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/assessment" element={<Assessment />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />

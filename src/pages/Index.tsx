@@ -10,15 +10,6 @@ import {
 } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   Card,
   CardContent,
@@ -40,7 +31,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Quote,
-  Search,
 } from "lucide-react";
 
 const Index = () => {
@@ -72,58 +62,6 @@ const Index = () => {
     setCurrentTestimonial(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
-  };
-
-  // Snapshot Form State
-  const [snapshotName, setSnapshotName] = useState("");
-  const [snapshotEmail, setSnapshotEmail] = useState("");
-  const [snapshotCompany, setSnapshotCompany] = useState("");
-  const [snapshotChallenge, setSnapshotChallenge] = useState("");
-  const [snapshotSubmitting, setSnapshotSubmitting] = useState(false);
-  const [snapshotSuccess, setSnapshotSuccess] = useState(false);
-  const [snapshotError, setSnapshotError] = useState<string | null>(null);
-  const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
-
-  const submitSnapshot = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSnapshotError(null);
-    if (!snapshotName || !snapshotEmail || !snapshotCompany || !snapshotChallenge) {
-      setSnapshotError("Please complete all required fields.");
-      return;
-    }
-    setSnapshotSubmitting(true);
-
-    const payload = {
-      name: snapshotName,
-      email: snapshotEmail,
-      company: snapshotCompany,
-      challenge: snapshotChallenge,
-      offer: "free_brand_snapshot",
-      ts: new Date().toISOString(),
-      source: "homepage_snapshot",
-    };
-
-    try {
-      if ((window as any).gtag) {
-        (window as any).gtag("event", "snapshot_form_submit", {
-          event_category: "lead",
-          event_label: snapshotChallenge,
-        });
-      }
-      if (WEBHOOK_URL) {
-        await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      }
-      setSnapshotSuccess(true);
-    } catch (err) {
-      console.error("Snapshot submit failed", err);
-      setSnapshotError("There was an error submitting. Please try again.");
-    } finally {
-      setSnapshotSubmitting(false);
-    }
   };
 
   const homePageSchema = {
@@ -332,217 +270,6 @@ const Index = () => {
       />
       <Hero />
 
-      {/* Benefits Section */}
-      <section className="section-spacing bg-dark-900/40">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-display-md lg:text-display-lg font-bold text-white">Why Your Brand Needs an Audit</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: TrendingUp,
-                title: "Avoid costly rebrands with a scalable identity.",
-              },
-              {
-                icon: Shield,
-                title:
-                  "Boost funding readiness by up to 40% with tailored recommendations.",
-              },
-              {
-                icon: Search,
-                title: "Outshine competitors with a 10-area deep dive.",
-              },
-            ].map((item, idx) => (
-              <Card key={idx} className="bg-dark-900/50 border-dark-700 hover:border-yellow-500/30 transition-all duration-300">
-                <CardContent className="p-8 flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(244,208,63,0.12)", border: "1px solid rgba(244,208,63,0.35)" }}>
-                    <item.icon className="w-6 h-6" style={{ color: "#f4d03f" }} />
-                  </div>
-                  <div className="text-white font-semibold leading-relaxed">{item.title}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get Section */}
-      <section className="section-spacing">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-display-md lg:text-display-lg font-bold text-white">From Free Snapshot to Full Audit</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <Card className="bg-dark-900/50 border-dark-700">
-              <CardHeader>
-                <CardTitle className="text-white">Free Brand Snapshot</CardTitle>
-                <CardDescription className="text-gray-300">What you'll receive</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3 text-gray-200">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5" style={{ color: "#f4d03f" }} />
-                  <span>3-area analysis: Branding, Messaging, Digital Presence</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5" style={{ color: "#f4d03f" }} />
-                  <span>Quick wins delivered in 48 hours</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-dark-900/50 border-dark-700">
-              <CardHeader>
-                <CardTitle className="text-white">$799 Startup Brand Check</CardTitle>
-                <CardDescription className="text-gray-300">Full 10-area audit</CardDescription>
-              </CardHeader>
-              <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-200">
-                {[
-                  "Branding",
-                  "Messaging",
-                  "Content Strategy",
-                  "Customer Experience",
-                  "Conversion Optimization",
-                  "Design",
-                  "Usability",
-                  "Digital Presence",
-                  "Competitor Analysis",
-                  "Consistency & Compliance",
-                  "Actionable recommendations",
-                ].map((item) => (
-                  <div className="flex items-start gap-3" key={item}>
-                    <CheckCircle className="w-5 h-5" style={{ color: "#f4d03f" }} />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Comparison Table */}
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-left border-collapse">
-              <thead>
-                <tr>
-                  <th className="p-4 text-sm font-semibold text-gray-300 border-b border-dark-700">Feature</th>
-                  <th className="p-4 text-sm font-semibold text-gray-300 border-b border-dark-700">Free Snapshot</th>
-                  <th className="p-4 text-sm font-semibold text-gray-300 border-b border-dark-700">$799 Audit</th>
-                </tr>
-              </thead>
-              <tbody className="text-white">
-                {[
-                  { feature: "Branding", snap: "✓", audit: "✓" },
-                  { feature: "Messaging", snap: "✓", audit: "✓" },
-                  { feature: "Content Strategy", snap: "✗", audit: "✓" },
-                  { feature: "Customer Experience", snap: "✗", audit: "✓" },
-                  { feature: "Conversion Optimization", snap: "✗", audit: "✓" },
-                  { feature: "Design", snap: "✗", audit: "✓" },
-                  { feature: "Usability", snap: "✗", audit: "✓" },
-                  { feature: "Digital Presence", snap: "✓", audit: "✓" },
-                  { feature: "Competitor Analysis", snap: "✗", audit: "✓" },
-                  { feature: "Consistency & Compliance", snap: "✗", audit: "✓" },
-                ].map((row) => (
-                  <tr key={row.feature} className="border-b border-dark-800">
-                    <td className="p-4 text-gray-200">{row.feature}</td>
-                    <td className="p-4" style={{ color: row.snap === "✓" ? "#f4d03f" : "#9ca3af" }}>{row.snap}</td>
-                    <td className="p-4" style={{ color: row.audit === "✓" ? "#f4d03f" : "#9ca3af" }}>{row.audit}</td>
-                  </tr>
-                ))}
-                <tr className="border-b border-dark-800">
-                  <td className="p-4 text-gray-200">Recommendations</td>
-                  <td className="p-4 text-gray-300">Basic</td>
-                  <td className="p-4 text-gray-300">Detailed</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section className="section-spacing bg-dark-900/30">
-        <div className="container-custom">
-          <div className="text-center mb-8">
-            <h2 className="text-display-md lg:text-display-lg font-bold text-white">Trusted by Startups Like Yours</h2>
-          </div>
-          <div className="max-w-3xl mx-auto text-center text-gray-300 space-y-4 mb-8">
-            <p>Backed by 150+ portfolio companies.</p>
-            <p>
-              "The Snapshot gave us clarity in days—worth every second. Upgraded to the audit next!" – Jane Doe, Founder, TechStartupX.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {['New Relic','Idealab','StartupOne','AlphaLabs','BetaWorks'].map((logo) => (
-              <span key={logo} className="px-4 py-2 rounded-full text-sm border" style={{ borderColor: "rgba(244,208,63,0.35)", color: "#f4d03f"}}>
-                {logo}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Form Section */}
-      <section id="snapshot-form" className="section-spacing bg-dark-900/60">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-display-md lg:text-display-lg font-bold text-white">Ready to Scale? Start Here</h2>
-            </div>
-
-            <Card className="bg-dark-900/50 border-dark-700">
-              <CardContent className="p-6 lg:p-8">
-                {snapshotSuccess ? (
-                  <div className="text-center text-white space-y-2">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-2" style={{ backgroundColor: "rgba(244,208,63,0.12)", border: "1px solid rgba(244,208,63,0.35)" }}>
-                      <CheckCircle className="w-6 h-6" style={{ color: "#f4d03f" }} />
-                    </div>
-                    <div className="text-2xl font-bold">Submitted!</div>
-                    <p className="text-gray-300">No credit card required. We’ll follow up with your snapshot and $799 audit details.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={submitSnapshot} className="space-y-4">
-                    {snapshotError && (
-                      <div className="p-3 rounded text-sm" style={{ background: "#7F1D1D", color: "#FCA5A5" }}>{snapshotError}</div>
-                    )}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="snap-name" className="text-white mb-2 block">Name *</Label>
-                        <Input id="snap-name" value={snapshotName} onChange={(e) => setSnapshotName(e.target.value)} placeholder="Your Name" required className="bg-dark-800 border-dark-600 text-white h-12" />
-                      </div>
-                      <div>
-                        <Label htmlFor="snap-email" className="text-white mb-2 block">Email *</Label>
-                        <Input id="snap-email" type="email" value={snapshotEmail} onChange={(e) => setSnapshotEmail(e.target.value)} placeholder="Your Email" required className="bg-dark-800 border-dark-600 text-white h-12" />
-                      </div>
-                    </div>
-                    <div>
-                      <Label htmlFor="snap-company" className="text-white mb-2 block">Company Name *</Label>
-                      <Input id="snap-company" value={snapshotCompany} onChange={(e) => setSnapshotCompany(e.target.value)} placeholder="Company Name" required className="bg-dark-800 border-dark-600 text-white h-12" />
-                    </div>
-                    <div>
-                      <Label className="text-white mb-2 block">Biggest Brand Challenge *</Label>
-                      <Select onValueChange={(v) => setSnapshotChallenge(v)}>
-                        <SelectTrigger className="bg-dark-800 border-dark-600 text-white h-12">
-                          <SelectValue placeholder="Select one" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-dark-800 border-dark-600 text-white">
-                          {['Branding','Funding','Growth','Other'].map((opt) => (
-                            <SelectItem key={opt} value={opt}>{opt}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <Button type="submit" disabled={snapshotSubmitting} className="w-full font-semibold text-base min-h-[48px]" style={{ backgroundColor: "#f4d03f", color: "#111" }}>
-                      {snapshotSubmitting ? "Submitting..." : "Submit for Free Snapshot"}
-                    </Button>
-                    <p className="text-xs text-gray-400 text-center">No credit card required. We’ll follow up with your snapshot and $799 audit details.</p>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Core Belief Section */}
       <section className="section-spacing bg-secondary-400 text-dark-900">
         <div className="container-custom">
@@ -625,7 +352,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </div>
-            ))}
+            )))}
           </div>
         </div>
       </section>
