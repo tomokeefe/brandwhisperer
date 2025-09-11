@@ -99,10 +99,10 @@ const Hero = () => {
                     className="font-semibold px-6 lg:px-8 py-3 lg:py-4 rounded transition-all duration-300 min-h-[48px] group"
                     style={{ backgroundColor: GOLD, color: "#111", boxShadow: "0 10px 35px rgba(244,208,63,0.25)" }}
                   >
-                    <Link to="#snapshot-form" className="inline-flex items-center justify-center gap-2">
+                    <a href="#snapshot-form" className="inline-flex items-center justify-center gap-2">
                       <span>Get Your Free Snapshot Now</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </div>
