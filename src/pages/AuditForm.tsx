@@ -150,7 +150,7 @@ const AuditForm: React.FC = () => {
             )}
 
             {/* Back Link */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-4">
               <Link
                 to="/"
                 className="text-gold text-sm font-medium px-8 py-3 hover:underline"
@@ -162,9 +162,9 @@ const AuditForm: React.FC = () => {
         </section>
 
         {/* Form Section */}
-        <section className="px-4 py-12 md:py-16 lg:py-20">
+        <section className="px-4 py-6 md:py-8 lg:py-10">
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
