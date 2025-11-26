@@ -276,7 +276,7 @@ const AuditForm: React.FC = () => {
                   className="w-4 h-4 rounded border-[#3A3A3A] bg-black cursor-pointer accent-gold"
                 />
                 <label className="ml-3 text-white text-sm font-medium cursor-pointer">
-                  I'd rather jump on a quick call with Tom
+                  I'd rather jump on a 15-min live roast call with Tom than get a written report
                 </label>
               </div>
 
