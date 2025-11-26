@@ -226,13 +226,13 @@ const AuditForm: React.FC = () => {
                   Website URL <span className="text-gold">*</span>
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
-                  placeholder="https://yourcompany.com"
+                  placeholder="yourcompany.com or www.yourcompany.com"
                 />
               </div>
 
