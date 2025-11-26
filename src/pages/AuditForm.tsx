@@ -40,21 +40,24 @@ const AuditForm: React.FC = () => {
     },
     founder: {
       title: "You're About to Stop Looking Early-Stage",
-      subtitle: "$15k one-time. Full identity system, pitch deck, website wires, tone of voice. Delivered in 7 days or your round will thank you.",
+      subtitle:
+        "$15k one-time. Full identity system, pitch deck, website wires, tone of voice. Delivered in 7 days or your round will thank you.",
       description: "",
       buttonText: "Secure My Founder Brand Slot →",
       seoTitle: "The Founder Brand Package | The Brand Whisperer",
     },
     growth: {
       title: "Lock In Your Fractional Brand Team",
-      subtitle: "$5k/mo. We run product branding, launches, employer brand, executive positioning — everything that moves revenue. No contracts. Cancel anytime.",
+      subtitle:
+        "$5k/mo. We run product branding, launches, employer brand, executive positioning — everything that moves revenue. No contracts. Cancel anytime.",
       description: "",
       buttonText: "Start My Growth Brand →",
       seoTitle: "The Growth Brand Package | The Brand Whisperer",
     },
     unicorn: {
       title: "You Think You're Ready for Unicorn? Prove It.",
-      subtitle: "Invite-only. Starts at $40k/mo + warrants. Only for companies already >$20M ARR or on a clear $1B+ trajectory.",
+      subtitle:
+        "Invite-only. Starts at $40k/mo + warrants. Only for companies already >$20M ARR or on a clear $1B+ trajectory.",
       description: "",
       buttonText: "Request Unicorn Invitation →",
       seoTitle: "The Unicorn Brand Package | The Brand Whisperer",
@@ -64,7 +67,9 @@ const AuditForm: React.FC = () => {
   const current = variants[offer as keyof typeof variants] || variants.free;
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value, type } = e.target;
     if (type === "checkbox") {
@@ -280,7 +285,12 @@ const AuditForm: React.FC = () => {
                 <button
                   type="submit"
                   className="w-full bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-lg leading-5 px-8 py-[20px] md:py-[20px] rounded-md transition-all duration-200 hover:scale-105 shadow-[0_0_20px_4px_rgba(255,177,0,0.4)] hover:shadow-[0_0_30px_8px_rgba(255,177,0,0.6)]"
-                  style={{ minHeight: "80px", display: "flex", alignItems: "center", justifyContent: "center" }}
+                  style={{
+                    minHeight: "80px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
                   {current.buttonText}
                 </button>
@@ -296,7 +306,9 @@ const AuditForm: React.FC = () => {
             <div className="mt-16 md:mt-24 text-center">
               <p className="text-white text-lg md:text-xl leading-tight">
                 Still hesitating?{" "}
-                <span className="text-gold font-bold">Your competitors aren't.</span>
+                <span className="text-gold font-bold">
+                  Your competitors aren't.
+                </span>
               </p>
             </div>
           </div>
