@@ -2,14 +2,76 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Index: React.FC = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Brand Whisperer",
+    "description": "Expert brand strategy and visual identity for hypergrowth startups. We scale your startup brand from pre-seed to unicorn without the rebrand tax.",
+    "provider": {
+      "@type": "Organization",
+      "name": "The Brand Whisperer",
+      "url": "https://brandwhisperer.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "The Founder Brand",
+          "price": "15000",
+          "description": "Full identity system, pitch deck, website wires, tone of voice for pre-seed to seed founders"
+        },
+        {
+          "@type": "Offer",
+          "name": "The Growth Brand",
+          "price": "5000",
+          "description": "Monthly retainer for fractional brand team support",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        },
+        {
+          "@type": "Offer",
+          "name": "The Unicorn Brand",
+          "price": "40000",
+          "description": "Premium package for companies >$20M ARR",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      ]
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>The Brand Whisperer - Building Brands That Scale from Startup to Unicorn</title>
         <meta
           name="description"
-          content="Most branding agencies charge you $150k to make you look like everyone else. We scale your startup brand from pre-seed to unicorn without the rebrand tax."
+          content="Expert brand strategy and visual identity for hypergrowth startups. We scale your startup brand from pre-seed to unicorn without the rebrand tax. One fixed price. Zero surprises."
         />
+        <meta
+          name="keywords"
+          content="startup branding, brand strategy, hypergrowth branding, Series A branding, startup visual identity, brand consultant, brand design"
+        />
+        <meta name="author" content="The Brand Whisperer" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://brandwhisperer.com/" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="The Brand Whisperer - Building Brands That Scale" />
+        <meta property="og:description" content="Expert brand strategy and visual identity for hypergrowth startups. We scale your startup brand from pre-seed to unicorn without the rebrand tax." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://brandwhisperer.com/" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-black text-white">
