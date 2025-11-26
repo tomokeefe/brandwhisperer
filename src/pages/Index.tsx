@@ -1,663 +1,348 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import SEO from "@/components/SEO";
-import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
-import ClientShowcase from "@/components/ClientShowcase";
-import {
-  useScrollAnimation,
-  useStaggeredAnimation,
-} from "@/hooks/useScrollAnimation";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ArrowRight,
-  CheckCircle,
-  TrendingUp,
-  Users,
-  DollarSign,
-  Clock,
-  Target,
-  Zap,
-  Shield,
-  Rocket,
-  ChevronLeft,
-  ChevronRight,
-  Quote,
-} from "lucide-react";
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
-const Index = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  // Scroll animations
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
-  const { ref: pillarsRef, isVisible: pillarsVisible } = useScrollAnimation();
-  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
-  const { ref: testimonialsRef, isVisible: testimonialsVisible } =
-    useScrollAnimation();
-  const { ref: pillarsGridRef, visibleItems: pillarItems } =
-    useStaggeredAnimation(4, 200);
-
-  // Auto-rotate testimonials every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
-    );
-  };
-
-  const homePageSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://brandwhisperer.com/#organization",
-    name: "The Brand Whisperer",
-    alternateName: "Brand Whisperer",
-    description:
-      "Building brands that scale from startup to unicorn without breaking. Expert brand strategy and visual identity for hypergrowth startups.",
-    url: "https://brandwhisperer.com",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://brandwhisperer.com/logo.png",
-      width: "180",
-      height: "60",
-    },
-    foundingDate: "1995",
-    founder: {
-      "@type": "Person",
-      name: "The Brand Whisperer",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Boston",
-      addressRegion: "MA",
-      addressCountry: "US",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1-617-792-3378",
-      contactType: "customer service",
-      email: "hello@brandwhisperer.io",
-      availableLanguage: "en",
-    },
-    sameAs: [
-      "https://linkedin.com/company/brandwhisperer",
-      "https://twitter.com/brandwhisperer",
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Brand Strategy Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Pre-Seed Brand Foundation",
-            description:
-              "Essential brand strategy and visual identity for early-stage startups",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Seed Growth System",
-            description: "Comprehensive brand system for scaling startups",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Series A Ready Package",
-            description: "Investment-grade brand strategy for funding rounds",
-          },
-        },
-      ],
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "150",
-    },
-  };
-
-  const services = [
-    {
-      title: "Digital Resources",
-      description:
-        "Start your brand journey with our free ebooks, quiz, and premium subscription. DIY branding that actually works.",
-      pricing: "Free - $97/year",
-      features: [
-        "Free brand stage quiz",
-        "Startup branding ebooks",
-        "Visual identity mastery guide",
-        "Premium subscription access",
-        "Templates & frameworks",
-        "Quarterly content updates",
-      ],
-      link: "/services",
-    },
-    {
-      title: "Brand Consulting",
-      description:
-        "One-on-one sessions to get your brand investor-ready. From clarity sessions to AI design sprints.",
-      pricing: "$199 - $1,499",
-      badge: "Most Popular",
-      highlighted: true,
-      features: [
-        "Brand clarity session (1hr)",
-        "Brand scalability audit (2hrs)",
-        "AI design sprint (3hrs)",
-        "Custom brand brief",
-        "Actionable recommendations",
-        "Implementation roadmap",
-      ],
-      link: "/services",
-    },
-    {
-      title: "Custom Projects",
-      description:
-        "Bespoke branding, UI/UX, and AI prototyping to scale your startup from garage to unicorn.",
-      pricing: "$3,000 - $15,000",
-      features: [
-        "Complete brand identity",
-        "UI/UX design overhaul",
-        "AI/Vibe coding prototype",
-        "Investor presentation materials",
-        "Design system development",
-        "4-8 week delivery",
-      ],
-      link: "/services",
-    },
-  ];
-
-  const pillars = [
-    {
-      icon: Target,
-      title: "Scale-First Thinking",
-      description:
-        "We design for tomorrow's scale, not today's size. Building visual systems that expand without breaking.",
-      tagline: "\"Design for tomorrow's scale, not today's size\"",
-    },
-    {
-      icon: Shield,
-      title: "Investor-Grade Standards",
-      description:
-        "Build brands that open doors, don't just look good. Your brand is often your first impression with VCs.",
-      tagline: '"Build brands that open doors, don\'t just look good"',
-    },
-    {
-      icon: Zap,
-      title: "Pivot-Proof Architecture",
-      description:
-        "Change direction without changing identity. Flexible brand systems that evolve with your business.",
-      tagline: '"Change direction without changing identity"',
-    },
-    {
-      icon: Rocket,
-      title: "Startup-Native Execution",
-      description:
-        "Move fast without breaking brands. Delivering enterprise-quality work at startup speed and budgets.",
-      tagline: '"Move fast without breaking brands"',
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote:
-        "Over many years, I've worked with The Brand Whisperer team on more than a dozen branding projects. They continue to be my go-to partner for branding because they produce amazing, high quality results quickly that really bring the companies' identity to life. And they do it in a cost effective way. They are easily the best and easiest to work with design group I've ever used.",
-      author: "Lars Perkins",
-      title: "CEO/Founder",
-      company: "Seed Round",
-    },
-    {
-      quote:
-        "Tom's work extends far beyond design—he thoughtfully considers the brand, user interaction, and every detail to craft a truly world-class experience",
-      author: "Tamer Morsey",
-      title: "CEO/Founder Spotlight News",
-      company: "Seed Round",
-    },
-    {
-      quote:
-        "We went from 50 to 500 customers in 8 months without a single brand crisis. Every new hire, every product launch, every marketing campaign felt consistent. The system just works.",
-      author: "Marcus Rodriguez",
-      title: "Founder",
-      company: "Seed Round",
-    },
-    {
-      quote:
-        "Our first landing page converted at 45% ��� unheard of for B2B SaaS. The messaging framework helped us find product-market fit faster because prospects immediately understood our value.",
-      author: "Jennifer Lee",
-      title: "Co-founder",
-      company: "Series A",
-    },
-    {
-      quote:
-        "The investor deck template and brand materials were so polished, we started fundraising 3 months earlier than planned. Investors kept commenting on how 'mature' our brand felt for a Series A company.",
-      author: "Alex Rivera",
-      title: "Founder CEO",
-      company: "Series A",
-    },
-  ];
-
+const Index: React.FC = () => {
   return (
-    <div>
-      <SEO
-        title="The Brand Whisperer - Building Brands That Scale | Startup Brand Strategy"
-        description="Expert brand strategy & visual identity for hypergrowth startups. 150+ successful brands built from pre-seed to Series A. Get investor-ready branding that scales with your growth."
-        keywords="startup branding, brand strategy, hypergrowth branding, Series A branding, startup visual identity, scalable brand systems, startup brand consultant, investor-ready branding, brand strategy for startups"
-        url="https://brandwhisperer.com"
-        image="https://brandwhisperer.com/og-homepage.jpg"
-        schema={homePageSchema}
-      />
-      <Hero />
+    <>
+      <Helmet>
+        <title>The Brand Whisperer - Building Brands That Scale from Startup to Unicorn</title>
+        <meta
+          name="description"
+          content="Most branding agencies charge you $150k to make you look like everyone else. We scale your startup brand from pre-seed to unicorn without the rebrand tax."
+        />
+      </Helmet>
 
-      {/* Core Belief Section */}
-      <section className="section-spacing bg-secondary-400 text-dark-900">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge
-              variant="outline"
-              className="mb-6 border-dark-900/20 text-dark-700 bg-dark-900/10"
-            >
-              Our Core Belief
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-black mb-8 text-dark-900">
-              Brands are not logos. Brands are promises kept at scale.
-            </h2>
-            <p className="text-body-lg text-dark-700 leading-relaxed max-w-3xl mx-auto">
-              In the hypergrowth startup world, most companies build brands for
-              today that shatter tomorrow. We build brands for the company
-              you're becoming, not just the company you are. Every pixel, every
-              word, every decision considers one question: "Will this work when
-              we're 100x bigger?"
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Four Pillars Section */}
-      <section className="section-spacing" ref={pillarsRef}>
-        <div className="container-custom">
-          <div
-            className={`text-center mb-16 transition-all duration-1000 ${
-              pillarsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
-            >
-              Our Philosophy
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              The Four Pillars
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
-              Our methodology is built on four core principles that ensure your
-              brand scales from garage to IPO without breaking.
-            </p>
-          </div>
-
-          <div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
-            ref={pillarsGridRef}
-          >
-            {pillars.map((pillar, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-1000 ${
-                  pillarItems[index]
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-8 scale-95"
-                }`}
-                style={{ transitionDelay: `${index * 200}ms` }}
+      <div className="min-h-screen bg-black text-white">
+        {/* Hero Section */}
+        <section className="relative px-4 pt-12 md:pt-20 lg:pt-24 pb-8 md:pb-12">
+          <div className="max-w-7xl mx-auto">
+            {/* Lightning Bolt Icon */}
+            <div className="flex justify-center mb-8 md:mb-12">
+              <svg
+                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+                viewBox="0 0 97 88"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <Card className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 hover:bg-dark-800/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-secondary-500/10 group">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary-400/20 group-hover:border-secondary-400/40 group-hover:scale-110 transition-all duration-300">
-                      <pillar.icon className="w-8 h-8 text-secondary-400 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <CardTitle className="text-2xl text-white mb-2 group-hover:text-secondary-400 transition-colors duration-300">
-                      {pillar.title}
-                    </CardTitle>
-                    <div className="text-secondary-400 italic mb-4 group-hover:text-secondary-300 transition-colors duration-300">
-                      {pillar.tagline}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                      {pillar.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="section-spacing bg-dark-900/30" ref={servicesRef}>
-        <div className="container-custom">
-          <div
-            className={`text-center mb-16 transition-all duration-1000 ${
-              servicesVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
-            >
-              Service Offerings
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              From DIY Resources to Custom Magic
-            </h2>
-            <p className="text-body-lg text-gray-300 max-w-3xl mx-auto mb-8">
-              Start free with our ebooks and quiz, book a consulting session, or
-              go big with custom branding projects. We have solutions for every
-              stage and budget.
-            </p>
-            <Button
-              asChild
-              variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-white hover:text-dark-900 hover:scale-105 transition-all duration-300 group"
-            >
-              <Link
-                to="/services"
-                className="inline-flex items-center space-x-2"
-              >
-                <span>View All Services</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-1000 ${
-                  servicesVisible
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-8 scale-95"
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <ServiceCard {...service} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Metrics */}
-      <section className="section-spacing">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              Our Track Record
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              We Measure Success by Your Success
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                value: "87%",
-                label: "Series A funding success rate",
-                description: "Our clients raise funding within 12 months",
-              },
-              {
-                value: "15-30%",
-                label: "Higher valuations",
-                description: "vs comparable companies",
-              },
-              {
-                value: "150+",
-                label: "Startup projects",
-                description: "30 years of experience",
-              },
-              {
-                value: "5-10x",
-                label: "Scale without rebrands",
-                description: "Growth without breaking",
-              },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="bg-dark-900/50 border-dark-700 text-center card-hover"
-              >
-                <CardContent className="pt-8">
-                  <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-lg font-semibold text-secondary-400 mb-2">
-                    {stat.label}
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    {stat.description}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-spacing bg-dark-900/30" ref={testimonialsRef}>
-        <div className="container-custom">
-          <div
-            className={`text-center mb-16 transition-all duration-1000 ${
-              testimonialsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10 hover:bg-secondary-500/20 hover:border-secondary-400/50 hover:scale-105 transition-all duration-300"
-            >
-              Client Success
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Brands That Opened Doors
-            </h2>
-          </div>
-
-          <div
-            className={`max-w-4xl mx-auto relative transition-all duration-1000 delay-200 ${
-              testimonialsVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Card className="bg-dark-900/50 border-dark-700 hover:border-secondary-500/30 hover:shadow-xl hover:shadow-secondary-500/10 transition-all duration-500 group">
-              <CardContent className="p-8 lg:p-12 text-center">
-                <Quote className="w-12 h-12 lg:w-16 lg:h-16 text-secondary-400 mx-auto mb-6 lg:mb-8 group-hover:scale-110 group-hover:text-secondary-300 transition-all duration-300" />
-                <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-300 mb-6 lg:mb-8 leading-relaxed font-medium min-h-[120px] lg:min-h-[140px] flex items-center justify-center group-hover:text-gray-200 transition-colors duration-300">
-                  "{testimonials[currentTestimonial].quote}"
-                </blockquote>
-                <div className="flex items-center justify-center space-x-4 lg:space-x-6">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-400/10 border border-secondary-400/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-secondary-400/20 group-hover:border-secondary-400/40 group-hover:scale-110 transition-all duration-300">
-                    <Users className="w-6 h-6 lg:w-8 lg:h-8 text-secondary-400 group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <div className="text-left">
-                    <div className="text-lg lg:text-xl font-semibold text-white group-hover:text-secondary-400 transition-colors duration-300">
-                      {testimonials[currentTestimonial].author}
-                    </div>
-                    <div className="text-sm lg:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                      {testimonials[currentTestimonial].title}
-                    </div>
-                    <div className="text-sm lg:text-base text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300">
-                      {testimonials[currentTestimonial].company}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Navigation Controls */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 hover:bg-secondary-400/20 border border-dark-600 hover:border-secondary-400/40 rounded-full flex items-center justify-center text-gray-400 hover:text-secondary-400 transition-all duration-300 hover:scale-110"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark-800/80 hover:bg-dark-700 hover:bg-secondary-400/20 border border-dark-600 hover:border-secondary-400/40 rounded-full flex items-center justify-center text-gray-400 hover:text-secondary-400 transition-all duration-300 hover:scale-110"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                    index === currentTestimonial
-                      ? "bg-secondary-400 scale-125"
-                      : "bg-dark-600 hover:bg-secondary-400/60"
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                <path
+                  d="M23.8389 0H63.1459C90.4098 0 97 9.92956 97 20.7419C97 31.5542 89.8964 40.3562 76.2027 43.8743C84.6971 46.0136 90.6568 52.1737 90.6568 61.2205C90.6568 76.0536 78.7374 88 48.3018 88H0L23.8389 0ZM32.5023 46.1812H45.6956L40.3208 67.7414L64.5107 36.9797H53.5141L59.8638 20.2651H40.8082L32.5023 46.1876V46.1812Z"
+                  fill="#FFB100"
                 />
-              ))}
+              </svg>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="font-obviously font-[570] text-5xl md:text-7xl lg:text-[110px] leading-[1.1] lg:leading-[110px] text-gold text-center uppercase mb-6 md:mb-8 px-4">
+              Most branding agencies charge you $150k to make you look like
+              everyone else.
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[34px] max-w-5xl mx-auto mb-6 md:mb-8 px-4">
+              We scale your startup brand from pre-seed to unicorn without the
+              rebrand tax. One fixed price.{" "}
+              <span className="font-bold">Zero surprises. Ever.</span>
+            </p>
+
+            {/* CTA Button */}
+            <div className="flex justify-center mb-4">
+              <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105">
+                Get Your Free Brand Audit
+              </button>
+            </div>
+
+            {/* Link */}
+            <div className="flex justify-center">
+              <button className="text-gold text-sm font-medium px-8 py-3 hover:underline">
+                Or see who's under the bars →
+              </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Client Showcase */}
-      <ClientShowcase />
+        {/* Built the Brands Behind Section */}
+        <section className="px-4 py-12 md:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight lg:leading-[55px] text-gold text-center uppercase mb-6">
+                Built the brands behind{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 px-4">________</span>
+                  <span className="absolute inset-0 bg-black shadow-[0_0_10.4px_1px_#FFB100] rounded-sm"></span>
+                </span>
+                ,{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 px-4">________</span>
+                  <span className="absolute inset-0 bg-black shadow-[0_0_10.4px_1px_#FFB100] rounded-sm"></span>
+                </span>{" "}
+                raise, and 42 other hypergrowth monsters.
+              </h2>
+              <p className="text-white text-center text-xl md:text-[28px] leading-tight md:leading-[34px] mt-6">
+                Names hidden to protect the dangerous.
+              </p>
+            </div>
+          </div>
+        </section>
 
-      {/* What We Stand Against */}
-      <section className="section-spacing">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="mb-6 border-secondary-500/30 text-secondary-400 bg-secondary-500/10"
-            >
-              What We Stand Against
-            </Badge>
-            <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-              Not Your Typical{" "}
-              <span className="text-secondary-400">Brand Agency</span>
+        {/* Pricing Cards Section */}
+        <section className="px-4 py-12 md:py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+              {/* The Founder Brand Card */}
+              <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex flex-col">
+                <div className="flex flex-col items-center text-center gap-4 mb-8">
+                  <h3 className="text-white font-bold text-base uppercase">
+                    The Founder Brand
+                  </h3>
+                  <div className="text-gold font-obviously font-[570] text-[32px] leading-[48px]">
+                    15k
+                  </div>
+                  <p className="text-white font-bold text-base">
+                    one-time payment
+                  </p>
+                  <p className="text-white font-bold text-base">
+                    Full identity system, pitch deck, website wires, tone of
+                    voice.
+                  </p>
+                  <p className="text-white text-base">
+                    Built for pre-seed / seed founders who refuse to look
+                    early-stage.
+                  </p>
+                  <p className="text-white font-bold text-base">
+                    Done in 7 days or your round will thank you.
+                  </p>
+                </div>
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                  Build My Founder Brand →
+                </button>
+              </div>
+
+              {/* The Growth Brand Card */}
+              <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex flex-col">
+                <div className="flex flex-col items-center text-center gap-4 mb-8">
+                  <h3 className="text-white font-bold text-base uppercase">
+                    The Growth Brand
+                  </h3>
+                  <div className="text-gold font-obviously font-[570] text-[32px] leading-[48px]">
+                    5k
+                  </div>
+                  <p className="text-white font-bold text-base">
+                    monthly payment
+                  </p>
+                  <p className="text-white font-bold text-base">
+                    We become your fractional brand team.
+                  </p>
+                  <p className="text-white text-base">
+                    Product branding, launches, employer brand, executive
+                    positioning — everything that moves revenue, handled.
+                  </p>
+                  <p className="text-white font-bold text-base">
+                    No retainers, no 6-month contracts. Cancel anytime.
+                  </p>
+                </div>
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                  Build My Founder Brand →
+                </button>
+              </div>
+
+              {/* The Unicorn Brand Card */}
+              <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex flex-col md:col-span-2 lg:col-span-1">
+                <div className="flex flex-col items-center text-center gap-4 mb-8">
+                  <h3 className="text-white font-bold text-base uppercase">
+                    The Unicorn Brand
+                  </h3>
+                  <div className="text-gold font-obviously font-[570] text-[32px] leading-[48px] uppercase">
+                    Invite Only
+                  </div>
+                  <p className="text-white font-bold text-base">
+                    For companies already &gt;$20M ARR or on a $1B+ trajectory.
+                  </p>
+                  <p className="text-white text-base">
+                    We embed as your brand department for 12–36 months and 3–10×
+                    your valuation.
+                  </p>
+                  <p className="text-white font-bold text-base">
+                    Starts at $40k/mo + warrants
+                  </p>
+                </div>
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                  I Think I Qualify →
+                </button>
+              </div>
+            </div>
+
+            {/* Brand Audit Card - Full Width */}
+            <div className="border border-[#3A3A3A] rounded-lg bg-black p-8">
+              <div className="flex flex-col items-center text-center gap-5 max-w-5xl mx-auto">
+                <h3 className="text-white font-bold text-base">BRAND AUDIT</h3>
+                <div className="text-gold font-obviously font-[570] text-[32px] leading-[48px] uppercase tracking-tight">
+                  Free
+                </div>
+                <p className="text-white font-bold text-base">
+                  7-minute AI + human roast of your current brand.
+                </p>
+                <p className="text-white text-base">
+                  Logo, site, deck, messaging — we rip it apart and give you a
+                  brutal score out of 100 + the 3 biggest leaks. killing your
+                  deals and talent.
+                </p>
+                <p className="text-white font-bold text-base">
+                  No sales pitch. Just truth.
+                </p>
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 w-full max-w-[280px]">
+                  Roast My Brand →
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Anti Case Studies Section */}
+        <section className="px-4 py-12 md:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight md:leading-[50px] text-gold uppercase mb-6">
+              Anti Case Studies
             </h2>
+            <p className="text-white text-xl md:text-[28px] leading-tight md:leading-[34px]">
+              Real revenue. Real proof. No bullshit.
+            </p>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {[
-              {
-                title: '"Logo Mills" That Commoditize Branding',
-                description:
-                  "Your brand is not a contest where 100 designers compete for the cheapest price. It's a strategic business asset that requires deep understanding.",
-              },
-              {
-                title: '"Brand Theater" That Prioritizes Awards',
-                description:
-                  "We're not building brands to win design competitions. We're building brands to win customers, investors, and market share.",
-              },
-              {
-                title: "Corporate Consultants Who Don't Get Startups",
-                description:
-                  "Enterprise methodologies break startups. You can't spend 18 months on strategy when your runway is 12 months.",
-              },
-              {
-                title: "Aesthetic-Only Designers Who Ignore Strategy",
-                description:
-                  "Color palettes don't build businesses. Market positioning and scalable systems do. Design is the expression of strategy.",
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="bg-secondary-900/10 border-secondary-800/30"
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl text-white">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* What Founders Actually Said Section */}
+        <section className="px-4 py-12 md:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight md:leading-[50px] text-gold uppercase mb-6">
+                What founders actually said after we fixed their brand
+              </h2>
+              <p className="text-white text-xl md:text-[28px] leading-tight md:leading-[34px]">
+                (no ghostwritten fluff)
+              </p>
+            </div>
 
-      {/* CTA Section */}
-      <section className="section-spacing bg-primary-900">
-        <div className="container-custom text-center">
-          <h2 className="text-display-md lg:text-display-lg font-bold mb-8 text-white">
-            Ready to Build a Brand That Scales?
-          </h2>
-          <p className="text-body-lg text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join the ranks of successful startups who've built brands that grow
-            with their business. Let's start the conversation about your brand's
-            future.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-secondary-500 hover:bg-secondary-600 text-dark-900 font-semibold px-8 py-4"
-            >
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2"
-              >
-                <span>Start Your Brand Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary-300 text-primary-100 hover:bg-primary-100 hover:text-primary-900 px-8 py-4"
-            >
-              <Link to="/services">Explore Services</Link>
-            </Button>
+            {/* Testimonials Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Column 1 */}
+              <div className="flex flex-col gap-8">
+                {/* Testimonial 1 */}
+                <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
+                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <span className="text-gold font-semibold">
+                        Lars Perkins
+                      </span>{" "}
+                      <span className="text-white">CEO/Founder</span>
+                    </div>
+                    <p className="text-white font-semibold leading-6">
+                      Over many years, I've worked with The Brand Whisperer team
+                      on more than a dozen branding projects. They continue to
+                      be my go-to partner for branding because they produce
+                      amazing, high quality results quickly that really bring
+                      the companies' identity to life. And they do it in a cost
+                      effective way. They are easily the best and easiest to
+                      work with design group I've ever used.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Testimonial 2 */}
+                <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
+                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <span className="text-gold font-semibold">
+                        Mathew Wilson
+                      </span>
+                    </div>
+                    <p className="text-white font-semibold leading-6">
+                      Enterprise started replying to cold emails the day we
+                      shipped the new brand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Column 2 */}
+              <div className="flex flex-col gap-8">
+                {/* Testimonial 3 */}
+                <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
+                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <span className="text-gold font-semibold">
+                        Tamer Morsy
+                      </span>{" "}
+                      <span className="text-white">
+                        CEO/Founder Spotlight News
+                      </span>
+                    </div>
+                    <p className="text-white font-semibold leading-6">
+                      The Brand Whisperer extends far beyond design—he
+                      thoughtfully considers the brand, user interaction, and
+                      every detail to craft a truly world-class experience.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Testimonial 4 */}
+                <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
+                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <span className="text-gold font-semibold">
+                        Mathew Wilson
+                      </span>
+                    </div>
+                    <p className="text-white font-semibold leading-6">
+                      Old deck got ghosted. New deck got term sheets in 48
+                      hours. Same product.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="px-4 py-12 md:py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="font-obviously font-[570] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[110px] leading-[1.1] md:leading-[100px] text-gold text-center uppercase mb-8 md:mb-10">
+              Stop looking <br />
+              like every other startup.
+            </h2>
+
+            <p className="text-white text-center text-xl md:text-[28px] leading-tight md:leading-[34px] mb-6 max-w-4xl mx-auto">
+              Your competitors already have the same gradient logo, the same
+              bland deck, and the same forgettable website.
+            </p>
+
+            <p className="text-white text-center text-xl md:text-[28px] leading-tight md:leading-[34px] mb-8 max-w-3xl mx-auto">
+              Keep scrolling if you're fine staying invisible.
+            </p>
+
+            <div className="flex justify-center mb-6">
+              <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105">
+                Roast My Brand →
+              </button>
+            </div>
+
+            <p className="text-white text-center text-base md:text-lg leading-tight max-w-lg mx-auto">
+              <span className="font-normal">Takes 7 minutes.</span>{" "}
+              <span className="font-bold">
+                Costs nothing. Changes everything.
+              </span>
+              <br />
+              <span className="font-normal">
+                Or keep wondering why the term sheets never come.
+              </span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
