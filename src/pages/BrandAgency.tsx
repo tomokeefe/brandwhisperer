@@ -64,7 +64,7 @@ const BrandAgency: React.FC = () => {
         <section className="px-4 py-12 md:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto">
             <div className="relative">
-              <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight md:leading-[50px] text-gold text-center uppercase mb-6">
+              <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight lg:leading-[55px] text-gold text-center uppercase mb-6">
                 Built the brands behind{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 px-4">________</span>
