@@ -110,7 +110,7 @@ const AuditForm: React.FC = () => {
       navigate(`/thank-you?offer=${offer}`);
     } catch (error) {
       setSubmitError(
-        error instanceof Error ? error.message : "Failed to submit form",
+        error instanceof Error ? error.message : "Failed to submit form"
       );
     } finally {
       setIsSubmitting(false);

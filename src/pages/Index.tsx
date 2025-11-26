@@ -344,7 +344,15 @@ const Index: React.FC = () => {
                       <span className="text-white">CEO/Founder</span>
                     </div>
                     <p className="text-white font-semibold leading-6">
-                      Tom is an exceptional designer and creative director who excels across brand, web, communications, and UX. His broad experience and compelling vision pair with a hands-on, pragmatic approach that delivers high-quality work fast. He's a true collaborator—he listens carefully, welcomes feedback, and thoughtfully defends his ideas. I've hired Tom for everything from logos and identity systems to cutting-edge product UX, and I highly recommend him.
+                      Tom is an exceptional designer and creative director who
+                      excels across brand, web, communications, and UX. His
+                      broad experience and compelling vision pair with a
+                      hands-on, pragmatic approach that delivers high-quality
+                      work fast. He's a true collaborator—he listens carefully,
+                      welcomes feedback, and thoughtfully defends his ideas.
+                      I've hired Tom for everything from logos and identity
+                      systems to cutting-edge product UX, and I highly recommend
+                      him.
                     </p>
                   </div>
                 </div>
