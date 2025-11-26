@@ -315,7 +315,8 @@ const BrandAgency: React.FC = () => {
         <section className="px-4 py-12 md:py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-obviously font-[570] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[110px] leading-[1.1] md:leading-[100px] text-gold text-center uppercase mb-8 md:mb-10">
-              Stop looking like every other startup.
+              Stop looking <br />
+              like every other startup.
             </h2>
 
             <p className="text-white text-center text-xl md:text-[28px] leading-tight md:leading-[34px] mb-6 max-w-4xl mx-auto">
