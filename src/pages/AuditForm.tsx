@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 interface FormData {
@@ -138,6 +138,16 @@ const AuditForm: React.FC = () => {
                 {current.description}
               </p>
             )}
+
+            {/* Back Link */}
+            <div className="flex justify-center mt-8">
+              <Link
+                to="/"
+                className="text-gold text-sm font-medium px-8 py-3 hover:underline"
+              >
+                ← Back to home
+              </Link>
+            </div>
           </div>
         </section>
 
