@@ -213,19 +213,36 @@ const AuditForm: React.FC = () => {
                 <label className="block text-white font-bold text-sm mb-2">
                   Current Stage / ARR
                 </label>
-                <select
-                  name="stage"
-                  value={formData.stage}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white focus:outline-none focus:border-gold transition-colors cursor-pointer"
-                >
-                  <option>Pre-seed</option>
-                  <option>Seed</option>
-                  <option>Series A</option>
-                  <option>Series B+</option>
-                  <option>$10M+ ARR</option>
-                  <option>Rather not say</option>
-                </select>
+                <div className="relative">
+                  <select
+                    name="stage"
+                    value={formData.stage}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white focus:outline-none focus:border-gold transition-colors cursor-pointer appearance-none pr-10"
+                  >
+                    <option>Pre-seed</option>
+                    <option>Seed</option>
+                    <option>Series A</option>
+                    <option>Series B+</option>
+                    <option>$10M+ ARR</option>
+                    <option>Rather not say</option>
+                  </select>
+                  {/* Chevron Icon */}
+                  <svg
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gold pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                    />
+                  </svg>
+                </div>
               </div>
 
               {/* Message / What you want to achieve */}
