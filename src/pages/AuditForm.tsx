@@ -5,6 +5,7 @@ import { submitFormToSupabase } from "@/lib/supabase";
 
 interface FormData {
   name: string;
+  email: string;
   company: string;
   website: string;
   stage: string;
@@ -17,6 +18,7 @@ const AuditForm: React.FC = () => {
   const offer = searchParams.get("offer") || "free";
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    email: "",
     company: "",
     website: "",
     stage: "Pre-seed",
@@ -104,11 +106,18 @@ const AuditForm: React.FC = () => {
         offer_type: offer,
       });
 
+      // Also try to submit via email if available (fallback for debugging)
+      console.log("Form data with email:", {
+        ...formData,
+        offer_type: offer,
+      });
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
         setFormData({
           name: "",
+          email: "",
           company: "",
           website: "",
           stage: "Pre-seed",
