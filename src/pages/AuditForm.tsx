@@ -213,6 +213,23 @@ const AuditForm: React.FC = () => {
                 />
               </div>
 
+              {/* Email */}
+              <div>
+                <label className="block text-white font-bold text-sm mb-2">
+                  Email <span className="text-gold">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
+                  placeholder="your@email.com"
+                />
+                <p className="text-gray-500 text-xs mt-1">no spam, ever</p>
+              </div>
+
               {/* Company Name */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
