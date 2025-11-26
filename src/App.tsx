@@ -8,6 +8,7 @@ import PerformanceOptimizations, {
 import ConversionTracking from "@/components/ConversionTracking";
 import Index from "@/pages/Index";
 import AuditForm from "@/pages/AuditForm";
+import ThankYouPage from "@/pages/ThankYouPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/audit" element={<AuditForm />} />
+              <Route path="/thank-you" element={<ThankYouPage />} />
               <Route path="*" element={<Index />} />
             </Routes>
           </main>

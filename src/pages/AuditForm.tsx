@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { submitFormToSupabase } from "@/lib/supabase";
 
@@ -15,6 +15,7 @@ interface FormData {
 
 const AuditForm: React.FC = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const offer = searchParams.get("offer") || "free";
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -25,7 +26,6 @@ const AuditForm: React.FC = () => {
     message: "",
     callMe: false,
   });
-  const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -106,25 +106,8 @@ const AuditForm: React.FC = () => {
         offer_type: offer,
       });
 
-      // Also try to submit via email if available (fallback for debugging)
-      console.log("Form data with email:", {
-        ...formData,
-        offer_type: offer,
-      });
-
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          name: "",
-          email: "",
-          company: "",
-          website: "",
-          stage: "Pre-seed",
-          message: "",
-          callMe: false,
-        });
-      }, 2000);
+      // Navigate to thank-you page
+      navigate(`/thank-you?offer=${offer}`);
     } catch (error) {
       setSubmitError(
         error instanceof Error ? error.message : "Failed to submit form"
@@ -349,11 +332,6 @@ const AuditForm: React.FC = () => {
                 >
                   {isSubmitting ? "Submitting..." : current.buttonText}
                 </button>
-                {submitted && (
-                  <p className="text-gold text-center mt-4 font-semibold">
-                    Thank you! We'll be in touch shortly.
-                  </p>
-                )}
                 {submitError && (
                   <p className="text-red-500 text-center mt-4 font-semibold">
                     {submitError}
