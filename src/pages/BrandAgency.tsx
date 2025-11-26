@@ -32,7 +32,7 @@ const BrandAgency: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-obviously font-[570] text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[110px] leading-[1.1] md:leading-[100px] text-gold text-center uppercase mb-6 md:mb-8 px-4">
+            <h1 className="font-obviously font-[570] text-5xl md:text-7xl lg:text-[110px] leading-[1.1] lg:leading-[110px] text-gold text-center uppercase mb-6 md:mb-8 px-4">
               Most branding agencies charge you $150k to make you look like
               everyone else.
             </h1>
