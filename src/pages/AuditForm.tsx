@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { submitFormToSupabase } from "@/lib/supabase";
@@ -24,6 +25,8 @@ const AuditForm: React.FC = () => {
     callMe: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Scroll to top when form loads or offer changes
   useEffect(() => {
@@ -86,21 +89,41 @@ const AuditForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", { offer, ...formData });
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        company: "",
-        website: "",
-        stage: "Pre-seed",
-        message: "",
-        callMe: false,
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      await submitFormToSupabase({
+        name: formData.name,
+        company: formData.company,
+        website: formData.website,
+        stage: formData.stage,
+        message: formData.message,
+        call_preference: formData.callMe,
+        offer_type: offer,
       });
-    }, 2000);
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: "",
+          company: "",
+          website: "",
+          stage: "Pre-seed",
+          message: "",
+          callMe: false,
+        });
+      }, 2000);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : "Failed to submit form"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
