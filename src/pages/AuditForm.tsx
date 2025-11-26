@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { createClient } from "@supabase/supabase-js";
-
-// Initialize Supabase client
-const supabaseUrl = "https://ifrotpdogfkjfcaqzcfg.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlmcm90cGRvZ2ZramZjYXF6Y2ZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxODI5NzAsImV4cCI6MjA3OTc1ODk3MH0.-tZvtHOUF1_3QO0mUpwZXui7Vj6gjqZh54DImM6pcM0";
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 interface FormData {
   name: string;
@@ -91,45 +85,21 @@ const AuditForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      // Submit to Supabase
-      const { error } = await supabase.from("form_submissions").insert([
-        {
-          name: formData.name,
-          company: formData.company,
-          website: formData.website,
-          stage: formData.stage,
-          message: formData.message,
-          call_preference: formData.callMe,
-          offer_type: offer,
-        },
-      ]);
-
-      if (error) {
-        console.error("Supabase error:", error);
-        alert("Error submitting form. Please try again.");
-        return;
-      }
-
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setFormData({
-          name: "",
-          company: "",
-          website: "",
-          stage: "Pre-seed",
-          message: "",
-          callMe: false,
-        });
-      }, 2000);
-    } catch (err) {
-      console.error("Error:", err);
-      alert("Error submitting form. Please try again.");
-    }
+    console.log("Form submitted:", { offer, ...formData });
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: "",
+        company: "",
+        website: "",
+        stage: "Pre-seed",
+        message: "",
+        callMe: false,
+      });
+    }, 2000);
   };
 
   return (
