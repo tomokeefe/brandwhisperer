@@ -331,16 +331,20 @@ const Index: React.FC = () => {
 
                 {/* Testimonial 2 */}
                 <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
-                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F025145726aa44f5ca9731af3f7653cd8?format=webp&width=800"
+                    alt="Adam Berrey"
+                    className="w-14 h-14 rounded-full flex-shrink-0 object-cover"
+                  />
                   <div className="flex flex-col gap-4">
                     <div>
                       <span className="text-gold font-semibold">
-                        Mathew Wilson
-                      </span>
+                        Adam Berrey
+                      </span>{" "}
+                      <span className="text-white">CEO/Founder</span>
                     </div>
                     <p className="text-white font-semibold leading-6">
-                      Enterprise started replying to cold emails the day we
-                      shipped the new brand.
+                      Tom is an exceptional designer and creative director who excels across brand, web, communications, and UX. His broad experience and compelling vision pair with a hands-on, pragmatic approach that delivers high-quality work fast. He's a true collaborator—he listens carefully, welcomes feedback, and thoughtfully defends his ideas. I've hired Tom for everything from logos and identity systems to cutting-edge product UX, and I highly recommend him.
                     </p>
                   </div>
                 </div>
