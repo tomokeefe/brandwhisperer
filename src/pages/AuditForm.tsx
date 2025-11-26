@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -23,6 +23,11 @@ const AuditForm: React.FC = () => {
     callMe: false,
   });
   const [submitted, setSubmitted] = useState(false);
+
+  // Scroll to top when form loads or offer changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [offer]);
 
   const variants = {
     free: {
