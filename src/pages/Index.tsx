@@ -190,9 +190,12 @@ const Index: React.FC = () => {
                     Done in 7 days or your round will thank you.
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                <Link
+                  to="/audit?offer=founder"
+                  className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto block text-center"
+                >
                   Build My Founder Brand →
-                </button>
+                </Link>
               </div>
 
               {/* The Growth Brand Card */}
@@ -218,9 +221,12 @@ const Index: React.FC = () => {
                     No retainers, no 6-month contracts. Cancel anytime.
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                <Link
+                  to="/audit?offer=growth"
+                  className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto block text-center"
+                >
                   Lock In My Growth Team →
-                </button>
+                </Link>
               </div>
 
               {/* The Unicorn Brand Card */}
@@ -243,9 +249,12 @@ const Index: React.FC = () => {
                     Starts at $40k/mo + warrants
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
+                <Link
+                  to="/audit?offer=unicorn"
+                  className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto block text-center"
+                >
                   I Think I Qualify →
-                </button>
+                </Link>
               </div>
             </div>
 
