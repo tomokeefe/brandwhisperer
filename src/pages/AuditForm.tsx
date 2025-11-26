@@ -274,7 +274,11 @@ const AuditForm: React.FC = () => {
                   name="callMe"
                   checked={formData.callMe}
                   onChange={handleChange}
-                  className="mt-1 w-5 h-5 cursor-pointer"
+                  className="mt-1 w-5 h-5 cursor-pointer accent-gold"
+                  style={{
+                    appearance: "auto",
+                    accentColor: "#FFB100",
+                  }}
                 />
                 <label htmlFor="callMe" className="text-white text-sm font-medium cursor-pointer leading-6">
                   I'd rather jump on a 15-min live roast call with Tom than get a written report
