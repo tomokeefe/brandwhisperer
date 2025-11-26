@@ -112,7 +112,7 @@ const BrandAgency: React.FC = () => {
                     Done in 7 days or your round will thank you.
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-lg transition-all duration-200 mt-auto">
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
                   Build My Founder Brand →
                 </button>
               </div>
@@ -140,7 +140,7 @@ const BrandAgency: React.FC = () => {
                     No retainers, no 6-month contracts. Cancel anytime.
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-lg transition-all duration-200 mt-auto">
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
                   Build My Founder Brand →
                 </button>
               </div>
@@ -165,7 +165,7 @@ const BrandAgency: React.FC = () => {
                     Starts at $40k/mo + warrants
                   </p>
                 </div>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-lg transition-all duration-200 mt-auto">
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
                   I Think I Qualify →
                 </button>
               </div>
@@ -189,7 +189,7 @@ const BrandAgency: React.FC = () => {
                 <p className="text-white font-bold text-base">
                   No sales pitch. Just truth.
                 </p>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-lg transition-all duration-200 w-full max-w-[280px]">
+                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 w-full max-w-[280px]">
                   Roast My Brand →
                 </button>
               </div>
