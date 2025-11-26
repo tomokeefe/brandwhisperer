@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Index: React.FC = () => {
@@ -120,9 +121,12 @@ const Index: React.FC = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center mb-4">
-              <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105">
+              <Link
+                to="/audit"
+                className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105 inline-block"
+              >
                 Get Your Free Brand Audit
-              </button>
+              </Link>
             </div>
 
             {/* Link */}
@@ -263,9 +267,12 @@ const Index: React.FC = () => {
                 <p className="text-white font-bold text-base">
                   No sales pitch. Just truth.
                 </p>
-                <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 w-full max-w-[280px]">
+                <Link
+                  to="/audit"
+                  className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 w-full max-w-[280px] block text-center"
+                >
                   Roast My Brand →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -398,9 +405,12 @@ const Index: React.FC = () => {
             </p>
 
             <div className="flex justify-center mb-6">
-              <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105">
+              <Link
+                to="/audit"
+                className="bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-[17px] leading-5 px-8 py-5 md:py-6 rounded-md transition-all duration-200 hover:scale-105 inline-block"
+              >
                 Roast My Brand →
-              </button>
+              </Link>
             </div>
 
             <p className="text-white text-center text-base md:text-lg leading-tight max-w-lg mx-auto">
