@@ -270,12 +270,17 @@ const AuditForm: React.FC = () => {
               <div className="flex items-start gap-3 pt-2">
                 <input
                   type="checkbox"
+                  id="callMe"
                   name="callMe"
                   checked={formData.callMe}
                   onChange={handleChange}
-                  className="w-5 h-5 mt-1 rounded border-2 border-gold bg-black cursor-pointer accent-gold flex-shrink-0"
+                  className="w-5 h-5 mt-1 flex-shrink-0 cursor-pointer"
+                  style={{
+                    accentColor: "#FFB100",
+                    border: "2px solid #FFB100",
+                  }}
                 />
-                <label className="text-white text-sm font-medium cursor-pointer pt-0.5">
+                <label htmlFor="callMe" className="text-white text-sm font-medium cursor-pointer pt-0.5">
                   I'd rather jump on a 15-min live roast call with Tom than get a written report
                 </label>
               </div>
