@@ -1,0 +1,39 @@
+// Supabase REST API utility - no client library needed
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
+
+export interface FormSubmission {
+  name: string;
+  company: string;
+  website: string;
+  stage: string;
+  message: string;
+  call_preference: boolean;
+  offer_type: string;
+}
+
+export async function submitFormToSupabase(data: FormSubmission) {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/form_submissions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          apikey: SUPABASE_KEY,
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Supabase error: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error submitting form to Supabase:", error);
+    throw error;
+  }
+}
