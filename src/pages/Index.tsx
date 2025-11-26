@@ -130,7 +130,7 @@ const Index: React.FC = () => {
             </div>
 
             {/* Link */}
-            <div className="flex justify-center">
+            <div className="flex justify-center hidden">
               <button className="text-gold text-sm font-medium px-8 py-3 hover:underline">
                 Or see who's under the bars →
               </button>
