@@ -86,8 +86,8 @@ const AuditForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", { offer, ...formData });
+    // Let Netlify Forms handle the submission
+    // Just show success message and reset form
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -164,7 +164,13 @@ const AuditForm: React.FC = () => {
         {/* Form Section */}
         <section className="px-4 py-6 md:py-8 lg:py-10">
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              name="audit-form"
+              method="POST"
+              netlify
+              onSubmit={handleSubmit}
+              className="space-y-4"
+            >
               {/* Name */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
