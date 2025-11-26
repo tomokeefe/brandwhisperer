@@ -5,23 +5,23 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",
-  "theme_color": "#4F46E5",
+  "theme_color": "#FFB100",
   "orientation": "portrait-primary",
   "categories": ["business", "productivity", "lifestyle"],
   "lang": "en-US",
   "dir": "ltr",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Ff31a6b636bf9420d8cb5a3df2d57e33b?format=webp&width=192",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/webp",
+      "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2Ff31a6b636bf9420d8cb5a3df2d57e33b?format=webp&width=512",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/webp",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
