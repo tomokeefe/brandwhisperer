@@ -303,7 +303,7 @@ const AuditForm: React.FC = () => {
             </form>
 
             {/* Bottom Kicker */}
-            <div className="mt-16 md:mt-24 text-center">
+            <div className="mt-8 md:mt-12 text-center">
               <p className="text-white text-lg md:text-xl leading-tight">
                 Still hesitating?{" "}
                 <span className="text-gold font-bold">
