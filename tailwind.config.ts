@@ -85,10 +85,24 @@ const config: Config = {
           900: "#0F172A",
           950: "#020617",
         },
+        gold: {
+          DEFAULT: "#FFB100",
+          50: "#FFF9E6",
+          100: "#FFF3CC",
+          200: "#FFE799",
+          300: "#FFDB66",
+          400: "#FFCF33",
+          500: "#FFC300",
+          600: "#FFB100",
+          700: "#CC8E00",
+          800: "#996B00",
+          900: "#664700",
+        },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         heading: ["Inter", "system-ui", "sans-serif"],
+        obviously: ["Obviously", "Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
         "display-xl": [
