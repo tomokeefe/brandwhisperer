@@ -305,7 +305,11 @@ const Index: React.FC = () => {
               <div className="flex flex-col gap-8">
                 {/* Testimonial 1 */}
                 <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
-                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F7ed38c8a95994b848dc7d23f8c4f7442?format=webp&width=800"
+                    alt="Lars Perkins"
+                    className="w-14 h-14 rounded-full flex-shrink-0 object-cover"
+                  />
                   <div className="flex flex-col gap-4">
                     <div>
                       <span className="text-gold font-semibold">
@@ -346,7 +350,11 @@ const Index: React.FC = () => {
               <div className="flex flex-col gap-8">
                 {/* Testimonial 3 */}
                 <div className="border border-[#3A3A3A] rounded-lg bg-black p-8 flex gap-6">
-                  <div className="w-14 h-14 rounded-full bg-gray-700 flex-shrink-0"></div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F3987a9caf2124a12af27a15bdc5054fa?format=webp&width=800"
+                    alt="Tamer Morsy"
+                    className="w-14 h-14 rounded-full flex-shrink-0 object-cover"
+                  />
                   <div className="flex flex-col gap-4">
                     <div>
                       <span className="text-gold font-semibold">
