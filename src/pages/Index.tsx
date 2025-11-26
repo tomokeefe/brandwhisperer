@@ -219,7 +219,7 @@ const Index: React.FC = () => {
                   </p>
                 </div>
                 <button className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 mt-auto">
-                  Build My Founder Brand →
+                  Lock In My Growth Team →
                 </button>
               </div>
 
