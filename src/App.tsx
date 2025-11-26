@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,45 +31,54 @@ import Sitemap from "@/pages/Sitemap";
 import ThankYou from "@/pages/ThankYou";
 import NotFound from "@/pages/NotFound";
 
+function AppContent() {
+  const location = useLocation();
+  const isStandalonePage = location.pathname === "/brand-agency";
+
+  return (
+    <div className="min-h-screen bg-dark-950 text-white">
+      <ResourceHints />
+      <PerformanceOptimizations />
+      <Analytics />
+      <ConversionTracking />
+      {!isStandalonePage && <Navbar />}
+      <main>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/snapshot" element={<ResourceSnapshot />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/assessment" element={<Assessment />} />
+          <Route path="/brand-agency" element={<BrandAgency />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+
+          <Route path="/sitemap" element={<Sitemap />} />
+          {/* Blog post routes - in a real app, these would be dynamic */}
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      {!isStandalonePage && <Footer />}
+    </div>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
       <BrowserRouter future={{ v7_startTransition: true }}>
-        <div className="min-h-screen bg-dark-950 text-white">
-          <ResourceHints />
-          <PerformanceOptimizations />
-          <Analytics />
-          <ConversionTracking />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/clients" element={<Clients />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/newsletter" element={<Newsletter />} />
-              <Route path="/quiz" element={<Quiz />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/resources/snapshot" element={<ResourceSnapshot />} />
-              <Route path="/calculator" element={<Calculator />} />
-              <Route path="/assessment" element={<Assessment />} />
-              <Route path="/brand-agency" element={<BrandAgency />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/cookies" element={<CookiePolicy />} />
-              <Route path="/thank-you" element={<ThankYou />} />
-
-              <Route path="/sitemap" element={<Sitemap />} />
-              {/* Blog post routes - in a real app, these would be dynamic */}
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <AppContent />
       </BrowserRouter>
     </HelmetProvider>
   );
