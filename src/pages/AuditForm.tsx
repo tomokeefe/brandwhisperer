@@ -313,7 +313,8 @@ const AuditForm: React.FC = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold-700 text-white font-bold text-base md:text-lg leading-5 px-8 py-[20px] md:py-[20px] rounded-md transition-all duration-200 hover:scale-105 shadow-[0_0_20px_4px_rgba(255,177,0,0.4)] hover:shadow-[0_0_30px_8px_rgba(255,177,0,0.6)]"
+                  disabled={isSubmitting}
+                  className="w-full bg-gold hover:bg-gold-700 disabled:bg-gray-500 text-white font-bold text-base md:text-lg leading-5 px-8 py-[20px] md:py-[20px] rounded-md transition-all duration-200 hover:scale-105 shadow-[0_0_20px_4px_rgba(255,177,0,0.4)] hover:shadow-[0_0_30px_8px_rgba(255,177,0,0.6)] disabled:shadow-none disabled:scale-100"
                   style={{
                     minHeight: "80px",
                     display: "flex",
@@ -321,11 +322,16 @@ const AuditForm: React.FC = () => {
                     justifyContent: "center",
                   }}
                 >
-                  {current.buttonText}
+                  {isSubmitting ? "Submitting..." : current.buttonText}
                 </button>
                 {submitted && (
                   <p className="text-gold text-center mt-4 font-semibold">
                     Thank you! We'll be in touch shortly.
+                  </p>
+                )}
+                {submitError && (
+                  <p className="text-red-500 text-center mt-4 font-semibold">
+                    {submitError}
                   </p>
                 )}
               </div>
