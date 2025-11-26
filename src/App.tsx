@@ -22,6 +22,7 @@ import ResourceSnapshot from "@/pages/ResourceSnapshot";
 import Calculator from "@/pages/Calculator";
 import Clients from "@/pages/Clients";
 import Assessment from "@/pages/Assessment";
+import BrandAgency from "@/pages/BrandAgency";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookiePolicy from "@/pages/CookiePolicy";
@@ -54,6 +55,7 @@ function App() {
               <Route path="/resources/snapshot" element={<ResourceSnapshot />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/assessment" element={<Assessment />} />
+              <Route path="/brand-agency" element={<BrandAgency />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/cookies" element={<CookiePolicy />} />
