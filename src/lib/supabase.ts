@@ -4,6 +4,7 @@ const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
 export interface FormSubmission {
   name: string;
+  email?: string;
   company: string;
   website: string;
   stage: string;
