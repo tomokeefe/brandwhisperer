@@ -287,18 +287,6 @@ const Index: React.FC = () => {
           </div>
         </section>
 
-        {/* Anti Case Studies Section */}
-        <section className="px-4 py-12 md:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="font-obviously font-[570] text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight md:leading-[50px] text-gold uppercase mb-6">
-              Anti Case Studies
-            </h2>
-            <p className="text-white text-xl md:text-[28px] leading-tight md:leading-[34px]">
-              Real revenue. Real proof. No bullshit.
-            </p>
-          </div>
-        </section>
-
         {/* What Founders Actually Said Section */}
         <section className="px-4 py-12 md:py-16">
           <div className="max-w-6xl mx-auto">
