@@ -15,19 +15,16 @@ export interface FormSubmission {
 
 export async function submitFormToSupabase(data: FormSubmission) {
   try {
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/form_submissions`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          apikey: SUPABASE_KEY,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/form_submissions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        apikey: SUPABASE_KEY,
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify(data),
+    });
 
     if (!response.ok) {
       const errorText = await response.text();

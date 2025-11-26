@@ -44,8 +44,7 @@ const ThankYouPage: React.FC = () => {
     },
   };
 
-  const currentContent =
-    thankYouContent[offerType] || thankYouContent.free;
+  const currentContent = thankYouContent[offerType] || thankYouContent.free;
 
   return (
     <>

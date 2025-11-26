@@ -110,7 +110,7 @@ const AuditForm: React.FC = () => {
       navigate(`/thank-you?offer=${offer}`);
     } catch (error) {
       setSubmitError(
-        error instanceof Error ? error.message : "Failed to submit form"
+        error instanceof Error ? error.message : "Failed to submit form",
       );
     } finally {
       setIsSubmitting(false);
@@ -312,8 +312,12 @@ const AuditForm: React.FC = () => {
                     accentColor: "#FFB100",
                   }}
                 />
-                <label htmlFor="callMe" className="text-white text-sm font-medium cursor-pointer leading-6">
-                  I'd rather jump on a 15-min live roast call with Tom than get a written report
+                <label
+                  htmlFor="callMe"
+                  className="text-white text-sm font-medium cursor-pointer leading-6"
+                >
+                  I'd rather jump on a 15-min live roast call with Tom than get
+                  a written report
                 </label>
               </div>
 
