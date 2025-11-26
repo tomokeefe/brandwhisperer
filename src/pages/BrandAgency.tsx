@@ -197,11 +197,6 @@ const BrandAgency: React.FC = () => {
           </div>
         </section>
 
-        {/* Divider */}
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="h-px bg-gold"></div>
-        </div>
-
         {/* Anti Case Studies Section */}
         <section className="px-4 py-12 md:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto text-center">
