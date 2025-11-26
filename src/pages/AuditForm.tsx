@@ -286,8 +286,12 @@ const AuditForm: React.FC = () => {
                     accentColor: "#FFB100",
                   }}
                 />
-                <label htmlFor="callMe" className="text-white text-sm font-medium cursor-pointer leading-6">
-                  I'd rather jump on a 15-min live roast call with Tom than get a written report
+                <label
+                  htmlFor="callMe"
+                  className="text-white text-sm font-medium cursor-pointer leading-6"
+                >
+                  I'd rather jump on a 15-min live roast call with Tom than get
+                  a written report
                 </label>
               </div>
 
