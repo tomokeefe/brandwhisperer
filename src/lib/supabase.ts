@@ -22,16 +22,24 @@ export async function submitFormToSupabase(data: FormSubmission) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${SUPABASE_KEY}`,
           apikey: SUPABASE_KEY,
+          Prefer: "return=minimal",
         },
         body: JSON.stringify(data),
       }
     );
 
     if (!response.ok) {
-      throw new Error(`Supabase error: ${response.statusText}`);
+      const errorText = await response.text();
+      throw new Error(`Supabase error: ${response.statusText} - ${errorText}`);
     }
 
-    return await response.json();
+    // Handle both JSON and non-JSON responses
+    const contentType = response.headers.get("content-type");
+    if (contentType?.includes("application/json")) {
+      return await response.json();
+    } else {
+      return { success: true };
+    }
   } catch (error) {
     console.error("Error submitting form to Supabase:", error);
     throw error;
