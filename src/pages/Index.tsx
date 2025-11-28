@@ -279,6 +279,7 @@ const Index: React.FC = () => {
                 <Link
                   to="/audit"
                   className="bg-gold hover:bg-gold-700 text-white font-bold text-base leading-6 px-4 py-3 rounded-md transition-all duration-200 w-full max-w-[280px] block text-center"
+                  style={{ marginTop: "-2px" }}
                 >
                   Roast My Brand →
                 </Link>
