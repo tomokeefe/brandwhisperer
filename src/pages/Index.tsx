@@ -438,7 +438,7 @@ const Index: React.FC = () => {
               </span>
               <br />
               <span className="font-normal">
-                Or keep wondering why the term sheets never come.
+                Or keep watching customers bounce and investors ghost.
               </span>
             </p>
           </div>
