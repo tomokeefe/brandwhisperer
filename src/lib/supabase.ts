@@ -15,9 +15,6 @@ export interface FormSubmission {
 
 export async function submitFormToSupabase(data: FormSubmission) {
   try {
-    console.log("Submitting form data:", data);
-    console.log("Supabase URL:", SUPABASE_URL);
-
     const response = await fetch(`${SUPABASE_URL}/rest/v1/form_submissions`, {
       method: "POST",
       headers: {
@@ -29,12 +26,8 @@ export async function submitFormToSupabase(data: FormSubmission) {
       body: JSON.stringify(data),
     });
 
-    console.log("Response status:", response.status);
-    console.log("Response headers:", Object.fromEntries(response.headers));
-
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Error response:", errorText);
       throw new Error(`Supabase error: ${response.statusText} - ${errorText}`);
     }
 
