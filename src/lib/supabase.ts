@@ -52,7 +52,9 @@ export async function submitFormToSupabase(data: FormSubmission) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Error response body:", errorText.substring(0, 500));
-      throw new Error(`Supabase error: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Supabase error: ${response.status} ${response.statusText}`,
+      );
     }
 
     // Handle both JSON and non-JSON responses
