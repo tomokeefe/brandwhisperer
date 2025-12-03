@@ -6,7 +6,6 @@ import { submitFormToSupabase } from "@/lib/supabase";
 interface FormData {
   name: string;
   email: string;
-  company: string;
   website: string;
   stage: string;
   message: string;
