@@ -97,7 +97,7 @@ const AuditForm: React.FC = () => {
       await submitFormToSupabase({
         name: formData.name,
         email: formData.email,
-        company: formData.company,
+        company: "",
         website: formData.website,
         stage: formData.stage,
         message: formData.message,
