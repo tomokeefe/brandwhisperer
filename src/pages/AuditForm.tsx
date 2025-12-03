@@ -177,7 +177,7 @@ const AuditForm: React.FC = () => {
 
         {/* Form Section */}
         <section className="px-4 py-6 md:py-8 lg:py-10">
-          <div className="max-w-2xl mx-auto">
+          <div style={{ maxWidth: "680px" }} className="mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
@@ -209,23 +209,6 @@ const AuditForm: React.FC = () => {
                   className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
                   placeholder="your@email.com"
                 />
-                <p className="text-gray-500 text-xs mt-1">no spam, ever</p>
-              </div>
-
-              {/* Company Name */}
-              <div>
-                <label className="block text-white font-bold text-sm mb-2">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
-                  placeholder="Your company"
-                />
               </div>
 
               {/* Website URL */}
@@ -234,13 +217,29 @@ const AuditForm: React.FC = () => {
                   Website URL <span className="text-gold">*</span>
                 </label>
                 <input
-                  type="text"
+                  type="url"
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
-                  placeholder="yourcompany.com or www.yourcompany.com"
+                  placeholder="yourcompany.com"
+                />
+              </div>
+
+              {/* What pisses you off most about your current brand */}
+              <div>
+                <label className="block text-white font-bold text-sm mb-2">
+                  What pisses you off most about your current brand? <span className="text-gold">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors resize-none"
+                  placeholder="It looks like every other startup, Investors ghost me, We look early-stage"
                 />
               </div>
 
@@ -279,22 +278,6 @@ const AuditForm: React.FC = () => {
                     />
                   </svg>
                 </div>
-              </div>
-
-              {/* Message / What you want to achieve */}
-              <div>
-                <label className="block text-white font-bold text-sm mb-2">
-                  What You Want to Achieve
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors resize-none"
-                  placeholder="Tell us what you're looking to accomplish with your brand..."
-                />
               </div>
 
               {/* Checkbox */}
@@ -340,6 +323,11 @@ const AuditForm: React.FC = () => {
                     {submitError}
                   </p>
                 )}
+              </div>
+
+              {/* No spam message */}
+              <div className="text-center">
+                <p className="text-gray-500 text-xs">no spam, ever</p>
               </div>
             </form>
 
