@@ -19,7 +19,6 @@ const AuditForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    company: "",
     website: "",
     stage: "Pre-seed",
     message: "",
