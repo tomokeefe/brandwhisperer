@@ -230,7 +230,8 @@ const AuditForm: React.FC = () => {
               {/* What pisses you off most about your current brand */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
-                  What pisses you off most about your current brand? <span className="text-gold">*</span>
+                  What pisses you off most about your current brand?{" "}
+                  <span className="text-gold">*</span>
                 </label>
                 <textarea
                   name="message"
