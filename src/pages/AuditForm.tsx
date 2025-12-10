@@ -217,7 +217,7 @@ const AuditForm: React.FC = () => {
                   Website URL <span className="text-gold">*</span>
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
