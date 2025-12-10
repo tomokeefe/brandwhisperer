@@ -117,22 +117,6 @@ const AgencyPage: React.FC = () => {
               for founders.
             </p>
 
-            {/* Image with Caption */}
-            <div className="max-w-2xl mx-auto mb-8 px-4">
-              <div className="rounded-lg overflow-hidden mb-4">
-                <img
-                  src="/placeholder.svg"
-                  alt="EVA car wrap product audit example"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <p className="text-gray-400 text-center text-sm md:text-base">
-                Example: See the EVA car wrap product audit (score: 75/100). We
-                spotted eco-messaging leaks and recommended tweaks for instant
-                shelf dominance. Your clients get the same edge, branded as
-                yours.
-              </p>
-            </div>
 
             {/* Kicker Text */}
             <p className="text-gold text-center text-base md:text-lg font-medium mb-8 px-4">
