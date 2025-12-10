@@ -179,7 +179,7 @@ const AgencyPage: React.FC = () => {
                   Agency Website <span className="text-gold">*</span>
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   name="website"
                   value={formData.website}
                   onChange={handleChange}
