@@ -108,19 +108,6 @@ const AgencyPage: React.FC = () => {
               beta access.
             </p>
 
-            {/* Primary CTA Button */}
-            <div className="flex justify-center mb-8 md:mb-12">
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("agency-form")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="bg-gold hover:bg-gold-700 text-white font-bold text-lg px-8 py-4 rounded-md transition-all duration-200 hover:scale-105 shadow-[0_0_20px_4px_rgba(255,177,0,0.4)] hover:shadow-[0_0_30px_8px_rgba(255,177,0,0.6)]"
-              >
-                Join the Agency Waitlist →
-              </button>
-            </div>
 
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
