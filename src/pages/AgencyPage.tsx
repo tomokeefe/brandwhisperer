@@ -6,6 +6,7 @@ import { submitFormToSupabase } from "@/lib/supabase";
 interface AgencyFormData {
   email: string;
   agency_name: string;
+  website: string;
   audits_per_month: string;
   excites_you_most: string;
 }
