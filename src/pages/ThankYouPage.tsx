@@ -42,6 +42,12 @@ const ThankYouPage: React.FC = () => {
       buttonText: "Back to homepage →",
       seoTitle: "Thank You – Unicorn Brand | The Brand Whisperer",
     },
+    agency: {
+      headline: "You're on the Agency Waitlist.",
+      body: "We'll hit you up when beta spots open — get ready to deliver roasts that make your clients beg for more.",
+      buttonText: "Back to homepage →",
+      seoTitle: "Thank You – Agency Waitlist | The Brand Whisperer",
+    },
   };
 
   const currentContent = thankYouContent[offerType] || thankYouContent.free;
