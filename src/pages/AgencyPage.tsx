@@ -16,6 +16,7 @@ const AgencyPage: React.FC = () => {
   const [formData, setFormData] = useState<AgencyFormData>({
     email: "",
     agency_name: "",
+    website: "",
     audits_per_month: "1-10",
     excites_you_most: "",
   });
