@@ -9,6 +9,7 @@ import ConversionTracking from "@/components/ConversionTracking";
 import Index from "@/pages/Index";
 import AuditForm from "@/pages/AuditForm";
 import ThankYouPage from "@/pages/ThankYouPage";
+import AgencyPage from "@/pages/AgencyPage";
 
 function App() {
   return (
