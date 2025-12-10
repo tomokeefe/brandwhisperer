@@ -24,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/audit" element={<AuditForm />} />
+              <Route path="/agency" element={<AgencyPage />} />
               <Route path="/thank-you" element={<ThankYouPage />} />
               <Route path="*" element={<Index />} />
             </Routes>
