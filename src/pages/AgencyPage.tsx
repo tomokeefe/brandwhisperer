@@ -173,6 +173,22 @@ const AgencyPage: React.FC = () => {
                 />
               </div>
 
+              {/* Agency Website */}
+              <div>
+                <label className="block text-white font-bold text-sm mb-2">
+                  Agency Website <span className="text-gold">*</span>
+                </label>
+                <input
+                  type="url"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-black border border-[#3A3A3A] rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
+                  placeholder="youragency.com"
+                />
+              </div>
+
               {/* How many audits per month */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
