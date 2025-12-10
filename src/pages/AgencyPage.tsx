@@ -50,7 +50,7 @@ const AgencyPage: React.FC = () => {
         name: formData.agency_name,
         email: formData.email,
         company: formData.agency_name,
-        website: "",
+        website: formData.website,
         stage: formData.audits_per_month,
         message: formData.excites_you_most,
         call_preference: false,
