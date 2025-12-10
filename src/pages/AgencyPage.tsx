@@ -233,7 +233,7 @@ const AgencyPage: React.FC = () => {
                     justifyContent: "center",
                   }}
                 >
-                  {isSubmitting ? "Submitting..." : "Submit & Join →"}
+                  {isSubmitting ? "Submitting..." : "Join the Waitlist"}
                 </button>
                 {submitError && (
                   <p className="text-red-500 text-center mt-4 font-semibold">
