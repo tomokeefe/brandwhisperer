@@ -110,7 +110,6 @@ const AgencyPage: React.FC = () => {
               beta access.
             </p>
 
-
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
               Imagine delivering brutal, AI-powered brand audits (websites,
@@ -118,7 +117,6 @@ const AgencyPage: React.FC = () => {
               flat. No code. No bullshit. Just results that make you the go-to
               for founders.
             </p>
-
 
             {/* Kicker Text */}
             <p className="text-gold text-center text-base md:text-lg font-medium mb-8 px-4">
@@ -141,7 +139,11 @@ const AgencyPage: React.FC = () => {
         {/* Form Section */}
         <section className="px-4 py-6 md:py-8 lg:py-10">
           <div style={{ maxWidth: "640px" }} className="mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-4" id="agency-form">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              id="agency-form"
+            >
               {/* Email */}
               <div>
                 <label className="block text-white font-bold text-sm mb-2">
