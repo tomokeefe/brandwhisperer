@@ -105,17 +105,17 @@ const AgencyPage: React.FC = () => {
 
             {/* Subheadline */}
             <p className="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[34px] max-w-5xl mx-auto mb-6 md:mb-8 px-4">
-              Agencies: Deliver brutal, AI-powered roasts with your branding.
-              Start at $99/mo and close clients faster. Join the waitlist for
-              beta access.
+              Agencies: Deliver brutal, AI-powered roasts under your branding.
+              Start at $99/mo and close clients faster. Join the waitlist —
+              spots vanishing.
             </p>
 
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
               Imagine delivering brutal, AI-powered brand audits (websites,
-              decks, apps, products) with your logo slapped on — in 7 minutes
-              flat. No code. No bullshit. Just results that make you the go-to
-              for founders.
+              decks, apps, products) under your logo — in 7 minutes flat. No
+              code. No bullshit. Just results that make you the go-to for
+              founders.
             </p>
 
             {/* Kicker Text */}
