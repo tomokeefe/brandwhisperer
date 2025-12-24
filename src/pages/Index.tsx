@@ -108,15 +108,15 @@ const Index: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="font-obviously font-[570] text-5xl md:text-7xl lg:text-[110px] leading-[1.1] lg:leading-[110px] text-gold text-center uppercase mb-6 md:mb-8 px-4">
-              Most branding agencies charge you $150k to make you look like
-              everyone else.
+              Agencies charge $150k to make you look like the rest. We make
+              you look dangerous.
             </h1>
 
             {/* Subheadline */}
             <p className="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[34px] max-w-5xl mx-auto mb-6 md:mb-8 px-4">
-              We scale your startup brand from pre-seed to unicorn without the
-              rebrand tax. One fixed price.{" "}
-              <span className="font-bold">Zero surprises. Ever.</span>
+              We scale your startup from pre-seed to unicorn without $150k
+              surprises. Fixed price.{" "}
+              <span className="font-bold">Zero bullshit. Or stay mid forever.</span>
             </p>
 
             {/* CTA Button */}
