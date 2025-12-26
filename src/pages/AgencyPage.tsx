@@ -117,11 +117,6 @@ const AgencyPage: React.FC = () => {
               $500/hour consultant.
             </p>
 
-            {/* Availability */}
-            <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
-              Limited beta spots available. Join 247 agencies on the waitlist.
-            </p>
-
             {/* Beta Benefits */}
             <div className="bg-[#1A1A1A] border border-[#3A3A3A] rounded-lg p-6 md:p-8 max-w-2xl mx-auto mb-8 px-4">
               <p className="text-white text-center font-bold text-lg mb-4">
@@ -137,7 +132,7 @@ const AgencyPage: React.FC = () => {
 
             {/* Limitation Text */}
             <p className="text-gold text-center text-base md:text-lg font-medium mb-8 px-4">
-              Only taking 100 agencies. 53 spots left.
+              Only 53 of 100 spots remaining
             </p>
 
             {/* Back Link */}
