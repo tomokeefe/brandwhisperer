@@ -111,10 +111,10 @@ const AgencyPage: React.FC = () => {
 
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
-              Imagine delivering comprehensive brand audits—websites, app stores,
-              investor decks, emails, products—in minutes instead of weeks. All
-              under your brand. All powered by AI that thinks like a $500/hour
-              consultant.
+              Imagine delivering comprehensive brand audits—websites, app
+              stores, investor decks, emails, products—in minutes instead of
+              weeks. All under your brand. All powered by AI that thinks like a
+              $500/hour consultant.
             </p>
 
             {/* Availability */}
