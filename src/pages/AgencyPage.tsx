@@ -71,10 +71,10 @@ const AgencyPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Agency Waitlist | The Brand Whisperer</title>
+        <title>Agency Partners | The Brand Whisperer</title>
         <meta
           name="description"
-          content="Deliver brutal, AI-powered brand audits with your branding. Join the agency waitlist for beta access."
+          content="White-labeled brand audit platform for agencies. Turn $199/month into $50K+ annual revenue. Limited beta spots available."
         />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -100,28 +100,44 @@ const AgencyPage: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="font-obviously font-[570] text-5xl md:text-7xl lg:text-[110px] leading-[1.1] lg:leading-[110px] text-gold text-center uppercase mb-6 md:mb-8 px-4">
-              The Most Dangerous Brand Audit Tool: Now Custom for Agencies
+              We Built the Brand Audit Platform Agencies Have Been Begging For
             </h1>
 
             {/* Subheadline */}
             <p className="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-[32px] leading-tight md:leading-[34px] max-w-5xl mx-auto mb-6 md:mb-8 px-4">
-              Agencies: Deliver brutal, AI-powered roasts under your branding.
-              Start at $99/mo and close clients faster. Join the waitlist —
-              spots vanishing.
+              Turn $199/month into $50K+ in annual revenue. White-labeled.
+              AI-powered. Ridiculously fast.
             </p>
 
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
-              Imagine delivering brutal, AI-powered brand audits (websites,
-              decks, apps, products) under your logo — in 7 minutes flat. No
-              code. No bullshit. Just results that make you the go-to for
-              founders.
+              Imagine delivering comprehensive brand audits—websites, app stores,
+              investor decks, emails, products—in minutes instead of weeks. All
+              under your brand. All powered by AI that thinks like a $500/hour
+              consultant.
             </p>
 
-            {/* Kicker Text */}
+            {/* Availability */}
+            <p className="text-white text-center text-base md:text-lg max-w-3xl mx-auto mb-8 px-4">
+              Limited beta spots available. Join 247 agencies on the waitlist.
+            </p>
+
+            {/* Beta Benefits */}
+            <div className="bg-[#1A1A1A] border border-[#3A3A3A] rounded-lg p-6 md:p-8 max-w-2xl mx-auto mb-8 px-4">
+              <p className="text-white text-center font-bold text-lg mb-4">
+                Beta members get:
+              </p>
+              <ul className="text-white text-center space-y-2 text-base">
+                <li>🎁 50% off for life ($99/month instead of $199)</li>
+                <li>🚀 Early access to all new features</li>
+                <li>💬 Direct input on product roadmap</li>
+                <li>🏆 Featured as a founding agency partner</li>
+              </ul>
+            </div>
+
+            {/* Limitation Text */}
             <p className="text-gold text-center text-base md:text-lg font-medium mb-8 px-4">
-              Beta launches Q1 2026. Limited spots. Be the agency that owns the
-              roast game.
+              Only taking 100 agencies. 53 spots left.
             </p>
 
             {/* Back Link */}
@@ -253,7 +269,7 @@ const AgencyPage: React.FC = () => {
                     justifyContent: "center",
                   }}
                 >
-                  {isSubmitting ? "Submitting..." : "Join the Waitlist"}
+                  {isSubmitting ? "Submitting..." : "Claim Your Beta Spot"}
                 </button>
                 {submitError && (
                   <p className="text-red-500 text-center mt-4 font-semibold">
